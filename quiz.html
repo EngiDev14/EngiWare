@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quiz</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="subjects-page">
+
+<button class="back-btn"
+onclick="history.back()">
+← Back
+</button>
+
+<button class="theme-btn"
+onclick="toggleTheme()">
+🌙
+</button>
+
+<div class="subjects-container">
+
+<h1 id="quizTitle">
+Quiz
+</h1>
+
+<div id="quizContainer">
+
+</div>
+
+</div>
+
+<script>
+
+let subject = localStorage.getItem("subject");
+
+document.getElementById("quizTitle").innerHTML =
+"🎯 " + subject + " Quiz";
+
+let container =
+document.getElementById("quizContainer");
+
+if(subject === "Applied Mathematics - I")
+{
+container.innerHTML = `
+<div class="resource-card">
+<h3>Question 1</h3>
+
+<p>What is the value of i² ?</p>
+
+<button>1</button>
+<button>-1</button>
+<button>0</button>
+<button>2</button>
+
+</div>
+`;
+}
+else {
+container.innerHTML = `
+
+<div class="resource-card">
+Quiz Coming Soon 🚀
+</div>
+
+`;
+}
+
+</script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

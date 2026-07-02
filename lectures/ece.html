@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Lectures</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+</head>
+
+<body class="subjects-page">
+
+<button class="back-btn"
+onclick="history.back()">
+    ← Back
+</button>
+
+<button class="theme-btn"
+onclick="toggleTheme()">
+    🌙
+</button>
+
+<div class="subjects-container">
+
+    <h1>🎥 Lectures</h1>
+
+    <div class="resource-grid"
+         id="lectureContainer">
+    </div>
+
+</div>
+
+<script>
+
+let subject = localStorage.getItem("subject");
+
+let container =
+document.getElementById("lectureContainer");
+
+if(subject === "Applied Mathematics - I")
+{
+    container.innerHTML = `
+    <a href="https://youtu.be/Y4KdgqV1IqA?si=RNcHXkZ4ZnTe6PfD"
+       target="_blank"
+       class="resource-card">
+       📺 Complete Playlist
+    </a>
+    `;
+}
+
+else if(subject === "Web Development")
+{
+    container.innerHTML = `
+    <a href="YOUR_YOUTUBE_LINK"
+       target="_blank"
+       class="resource-card">
+       🌐 Complete Playlist
+    </a>
+    `;
+}
+
+else
+{
+    container.innerHTML = `
+    <div class="resource-card">
+    Lectures Coming Soon 🚀
+    </div>
+    `;
+}
+
+</script>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

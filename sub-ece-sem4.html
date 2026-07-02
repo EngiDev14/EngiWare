@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Semester 4</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="subjects-page">
+
+    <button class="back-btn" onclick="history.back()">
+        ← Back
+    </button>
+
+    <button class="theme-btn" onclick="toggleTheme()">
+        🌙
+    </button>
+
+    <div class="subjects-container">
+
+        <h1>ECE - Semester 4</h1>
+
+        <div class="subject-grid">
+
+            <button class="subject-card"
+            onclick="openSubject('E-Commerce')">
+                🛒 E-Commerce
+            </button>
+
+            <button class="subject-card"
+             onclick="openSubject('Analysis and Design of Algorithms (ADA)')">
+                🧠 Analysis and Design of Algorithms (ADA)
+            </button>
+
+            <button class="subject-card"
+            onclick="openSubject('Operating Systems')">
+                💻 Operating Systems
+            </button>
+
+            <button class="subject-card"
+            onclick="openSubject('Software Engineering')">
+                📋 Software Engineering
+            </button>
+
+            <button class="subject-card"
+            onclick="openSubject('Database Management Systems (DBMS)')">
+                🗄️ Database Management Systems (DBMS)
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

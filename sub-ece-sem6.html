@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Semester 6</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="subjects-page">
+
+    <button class="back-btn" onclick="history.back()">
+        ← Back
+    </button>
+
+    <button class="theme-btn" onclick="toggleTheme()">
+        🌙
+    </button>
+
+    <div class="subjects-container">
+
+        <h1>ECE - Semester 6</h1>
+
+        <div class="subject-grid">
+
+            <button class="subject-card"
+            onclick="openSubject('Cloud Computing')">
+                ☁️ Cloud Computing
+            </button>
+
+            <button class="subject-card"
+            onclick="openSubject('Compiler Design')">
+                ⚙️ Compiler Design
+            </button>
+
+            <button class="subject-card"
+            onclick="openSubject('Computer Graphics')">
+                🎨 Computer Graphics
+            </button>
+
+            <button class="subject-card"
+            onclick="openSubject('Mobile Application Development')">
+                📱 Mobile Application Development
+            </button>
+
+            <button class="subject-card"
+            onclick="openSubject('Machine Learning')">
+                🤖 Machine Learning
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

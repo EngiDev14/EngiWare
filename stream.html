@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Stream</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class = "stream-page"
+data-title="📚 Choose Branch">
+
+<div id="navbar"></div>
+
+<div id="overlay"
+onclick="closeSidebar()">
+</div>
+
+<aside id="sidebar"></aside>
+
+<div class="stream-container">
+
+    <h1>Select Your Branch</h1>
+
+    <div class="stream-grid">
+
+<button onclick="selectStream('CSE')">💻 CSE</button>
+
+<button onclick="selectStream('ECE')">📡 ECE</button>
+
+<button onclick="selectStream('ECM')">⚙️ ECM</button>
+
+<button onclick="selectStream('CIVIL')">🏗️ CIVIL</button>
+
+<button onclick="selectStream('ME')">🔧 ME</button>
+
+    </div>
+
+    <div class="message-box">
+
+        <h2 id="streamTitle">
+            Select a branch
+        </h2>
+
+        <p id="streamMessage">
+            Your personalized guidance will appear here.
+        </p>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/components.js"></script>
+
+</body>
+</html>

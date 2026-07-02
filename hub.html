@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>EngiWare Hub</title>
+
+<link rel="stylesheet"
+href="css/style.css">
+
+</head>
+
+<body class="subjects-page"
+data-title="🏠 EngiWare Hub">
+
+<div id="navbar"></div>
+
+<div id="overlay"
+onclick="closeSidebar()">
+</div>
+
+<aside id="sidebar"></aside>
+
+<div class="subjects-container">
+
+<div class="continue-card">
+
+    <div class="glow"></div>
+
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+
+    <div class="star s1"></div>
+    <div class="star s2"></div>
+    <div class="star s3"></div>
+    <div class="star s4"></div>
+    <div class="star s5"></div>
+
+    <div class="continue-content">
+        <div class="continue-icon">
+            📖
+        </div>
+        <div class="continue-text">
+            <h2>Continue Learning</h2>
+            <h3 id="lastSubject">
+                No recent subject
+            </h3>
+            <p>
+                Pick up where you left off.
+            </p>
+
+            <button class="continue-btn"
+            onclick="continueLearning()">
+                Continue <span class="arrow">→</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="bookmark-preview">
+    <h2>⭐ My Bookmarks</h2>
+    <div id="bookmarkPreview">
+    </div>
+    <button class="continue-btn"
+    onclick="window.location.href='bookmarks.html'">
+        View All →
+    </button>
+</div>
+
+<div class="quote-card">
+
+    <h3>💡 Today's Motivation</h3>
+
+    <p id="dailyQuote" class="fadeQuote">
+        Loading quote...
+    </p>
+
+</div>
+
+<div class="hub-banner">
+
+<h1>
+🎓 EngiWare Hub
+</h1>
+
+<p>
+Your Engineering Journey Starts Here 🚀
+</p>
+</div>
+
+<br>
+
+<div class="hub-grid">
+
+<div class="hub-card"
+onclick="goToStreams()">
+
+<h2>📚</h2>
+
+<h3>Study Materials</h3>
+
+<p>
+
+Notes • PYQs • Quiz • Lectures
+
+</p>
+
+</div>
+
+<div class="hub-card"
+onclick="comingSoon('💻 Coding Hub')">
+
+<h2>💻</h2>
+
+<h3>Coding Hub</h3>
+
+<p>
+
+DSA • LeetCode • Projects
+
+</p>
+
+</div>
+
+<div class="hub-card"
+onclick="comingSoon('🎯 Placement Cell')">
+
+<h2>🎯</h2>
+
+<h3>Placement Cell</h3>
+
+<p>
+
+Resume • Aptitude • HR
+
+</p>
+
+</div>
+
+<div class="hub-card"
+onclick="comingSoon('📖 GATE Preparation')">
+
+<h2>📖</h2>
+
+<h3>GATE Prep</h3>
+
+<p>
+
+Practice & Resources
+
+</p>
+
+</div>
+
+<div class="hub-card"
+onclick="comingSoon('🤖 AI Tools')">
+
+<h2>🤖</h2>
+
+<h3>AI Tools</h3>
+
+<p>
+
+Smart Learning
+
+</p>
+
+</div>
+
+<div class="hub-card"
+onclick="comingSoon('⚙ Settings')">
+
+<h2>⚙</h2>
+
+<h3>Settings</h3>
+
+<p>
+
+Customize EngiWare
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/components.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CSE Semester 1 Subjects</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="subjects-page">
+
+<button class="back-btn"
+        onclick="history.back()">
+    ← Back
+</button>
+
+<button class="theme-btn"
+        onclick="toggleTheme()">
+    🌙
+</button>
+
+<div class="subjects-container">
+
+    <h1>ME - Semester 1</h1>
+
+    <div class="subject-grid">
+
+        <button class="subject-card"
+         onclick="openSubject('Applied Mathematics - I')">
+            📘 Applied Mathematics - I
+        </button>
+
+        <button class="subject-card"
+        onclick="openSubject('Python Programmin')">
+            ⚛️  Python Programmin
+        </button>
+
+        <button class="subject-card"
+        onclick="openSubject('Basic Electronics Engineering')">
+            ⚡ Basic Electronics Engineering
+        </button>
+
+        <button class="subject-card"
+        onclick="openSubject('Computer Programming')">
+            💻 Computer Programming
+        </button>
+
+        <button class="subject-card"
+        onclick="openSubject('Manufacturing Processes')">
+            ✏️ Manufacturing Processes
+        </button>
+
+    </div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

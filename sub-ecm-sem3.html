@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Semester 3</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="subjects-page">
+
+    <button class="back-btn" onclick="history.back()">
+        ← Back
+    </button>
+
+    <button class="theme-btn" onclick="toggleTheme()">
+        🌙
+    </button>
+
+    <div class="subjects-container">
+
+        <h1>ECM - Semester 3</h1>
+
+        <div class="subject-grid">
+
+            <button class="subject-card"
+            onclick="openSubject('MPOB')">
+                🌐 MPOB
+            </button>
+
+            <button class="subject-card"
+            onclick="openSubject('Analog Electronic Circuit')">
+                📊 Analog Electronic Circuit
+            </button>
+
+            <button class="subject-card"
+             onclick="openSubject('Discrete Mathematics')">
+                🔢 Discrete Mathematics
+            </button>
+
+            <button class="subject-card"
+            onclick="openSubject('Object-Oriented Programming')">
+                🗣️ Object-Oriented Programming
+            </button>
+
+            <button class="subject-card"
+            onclick="openSubject('Operating System')">
+                🐍 Operating System
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PYQs</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="subjects-page">
+
+<button class="back-btn" onclick="history.back()">
+    ← Back
+</button>
+
+<button class="theme-btn" onclick="toggleTheme()">
+    🌙
+</button>
+
+<div class="subjects-container">
+
+    <h1>📝 Previous Year Questions</h1>
+
+    <div class="resource-grid"
+       id="pyqContainer">
+    </div>
+
+</div>
+
+<script>
+
+let subject = localStorage.getItem("subject");
+
+let container = document.getElementById("pyqContainer");
+
+if (!container) {
+    console.log("Container not found!");
+}
+else if(subject === "Applied Mathematics - I")
+{
+    container.innerHTML = `
+    <a href="pyqs/am1-2024.pdf"
+    target="_blank"
+    class="resource-card">
+    📄 2024 Paper
+    </a>
+
+    <a href="pyqs/am1-2023.pdf"
+    target="_blank"
+    class="resource-card">
+    📄 2023 Paper
+    </a>
+    `;
+}
+else
+{
+    container.innerHTML = `
+    <div class="resource-card">
+    PYQs Coming Soon 🚀
+    </div>
+    `;
+}
+
+</script>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

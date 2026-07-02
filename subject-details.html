@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Details</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="subjects-page"
+data-title="📚 Study Materials">
+
+<div id="navbar"></div>
+
+<div id="overlay"
+onclick="closeSidebar()">
+</div>
+
+<aside id="sidebar"></aside>
+
+    <div class="subjects-container">
+
+        <h1 id="subjectTitle">
+            Subject Name
+        </h1>
+
+        <button id="bookmarkBtn"
+        class="bookmark-btn"
+        onclick="toggleBookmark()">
+
+        ⭐ Bookmark
+
+        </button>
+
+        <div class="resource-grid">
+
+<div class="resource-card"
+     onclick="openNotes()">
+    📚 Notes
+</div>
+
+<div class="resource-card"
+     onclick="openLectures()">
+    🎥 Lectures
+</div>
+
+<div class="resource-card"
+     onclick="openPYQs()">
+    📝 PYQs
+</div>
+
+<div class="resource-card"
+     onclick="openQuiz()">
+    🎯 Quizzes
+</div>
+
+        </div>
+
+    </div>
+    
+<script src="js/script.js"></script>
+<script src="js/components.js"></script>
+
+<script>
+    const subject =
+    localStorage.getItem("subject");
+
+    document.getElementById("subjectTitle").innerHTML =
+    subject;
+
+    updateBookmarkButton();
+</script>
+
+</body>
+</html>

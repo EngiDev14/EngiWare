@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Notes</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+</head>
+
+<body class="subjects-page">
+
+<button class="back-btn"
+onclick="history.back()">
+    ← Back
+</button>
+
+<button class="theme-btn"
+onclick="toggleTheme()">
+    🌙
+</button>
+
+<div class="subjects-container">
+    <h1>📚 Notes</h1>
+   <div class="resource-grid" id="notesContainer"></div>
+</div>
+
+<script src="../js/script.js"></script>
+
+<script>
+
+window.onload = function () {
+
+    let subject = localStorage.getItem("subject");
+    let container = document.getElementById("notesContainer");
+
+    if (!container) {
+        console.log("Container not found!");
+        return;
+    }
+
+    if (subject === "Applied Mathematics - I") {
+        container.innerHTML = `
+            <a href="https://drive.google.com/drive/folders/1sw5jRgcO-beJLxHZKmH43E5gzjvkKkFO?usp=drive_link" target="_blank" class="resource-card">
+                📄 Whole AM Notes
+            </a>
+        `;
+    }
+    else if (subject === "Web Development") {
+        container.innerHTML = `
+            <a href="https://drive.google.com/drive/folders/1uvuDXlsYEsduo3v0rp3O34RAhCIyJLdm?usp=drive_link" target="_blank" class="resource-card">
+                📄 Whole WD Notes
+            </a>
+        `;
+    }
+    else if (subject === "Computer Programming") {
+        container.innerHTML = `
+            <a href="https://drive.google.com/drive/folders/1_v4qBlFTFDRXRjogDMa-coP75ke7W9_T?usp=drive_link" target="_blank" class="resource-card">
+                📄 Whole CP Notes
+            </a>
+        `;
+    }
+    else if (subject === "Basic Electrical Engineering") {
+        container.innerHTML = `
+            <a href="https://drive.google.com/drive/folders/1TMkI4OAkSqqIV-FHQuzY58YWqgAY_1QS?usp=drive_link" target="_blank" class="resource-card">
+                📄 Whole BEE Notes
+            </a>
+        `;
+    }
+    else if (subject === "Engineering Graphics") {
+        container.innerHTML = `
+            <a href="https://drive.google.com/drive/folders/1jhxb1_GgmtiG7gY0NLqVBN4iZ_0xlOcg?usp=drive_link" target="_blank" class="resource-card">
+                📄 Whole EG Notes
+            </a>
+        `;
+    }
+
+    else {
+        container.innerHTML = `
+            <div class="resource-card">
+                Notes Coming Soon 🚀
+            </div>
+        `;
+    }
+
+};
+
+</script>
+
+</body>
+</html>
