@@ -150,7 +150,7 @@ if(window.location.pathname
 .includes("branch-info.html"))
 {
     let stream =
-    localStorage.getItem("stream");
+    localStorage.getItem("branch");
 
     let title =
     document.getElementById("branchName");
