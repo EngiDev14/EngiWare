@@ -139,10 +139,22 @@ function goToSemester()
 
 function openSemester(sem){
 
-    let branch = localStorage.getItem("branch").toLowerCase();
+    let branch = localStorage.getItem("branch");
 
-    window.location.href =
-    "sub-" + branch + "-sem" + sem + ".html";
+    console.log("Branch:", branch);
+
+    alert("Branch = " + branch);
+
+    if(!branch){
+        alert("Branch is NULL");
+        return;
+    }
+
+    let file = "sub-" + branch.toLowerCase() + "-sem" + sem + ".html";
+
+    alert(file);
+
+    window.location.href = file;
 }
 // branch info paragraph :
 
