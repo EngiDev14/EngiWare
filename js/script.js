@@ -1,4 +1,3 @@
-alert(window.location.pathname);
 // Splash screen auto redirect
 
 if (
