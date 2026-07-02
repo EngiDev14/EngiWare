@@ -1,6 +1,6 @@
 // Splash screen auto redirect
 
-if(window.location.pathname.includes("splash.html"))
+if(window.location.pathname.includes("index.html"))
 {
     setTimeout(() => {
         window.location.href = "login.html";
