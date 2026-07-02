@@ -723,6 +723,44 @@ margin-top:15px;
     background:#d62d2d;
     transform:scale(1.05);
 }
+/* MOBILE : */
+
+@media (max-width:768px){
+.semester-page{
+padding:90px 15px 30px;
+}
+.semester-container{
+width:100%;
+padding:10px;
+margin:0 auto;
+}
+.semester-container h1{
+font-size:32px;
+margin-bottom:30px;
+}
+.semester-grid{
+grid-template-columns:1fr;
+gap:20px;
+}
+.semester-card{
+padding:20px;
+border-radius:18px;
+}
+.semester-card h2{
+font-size:26px;
+margin-bottom:15px;
+}
+.semester-card p{
+font-size:16px;
+line-height:1.7;
+}
+.semester-btn{
+width:100%;
+padding:14px;
+font-size:17px;
+margin-top:18px;
+}
+}
 
 /*light mode specifications : */
 
@@ -769,7 +807,7 @@ body.light-mode .info-card h1{
     color:#111;
 }
 
-/* subject cse sem 1*/
+/* subject */
 
 .subjects-page{
 
@@ -831,6 +869,33 @@ body.light-mode .info-card h1{
     box-shadow:
     0 0 20px rgba(255,0,0,0.3);
 }
+/* MOBILE : */
+
+@media (max-width:768px){
+.subjects-page{
+padding:90px 15px 30px;
+}
+.subjects-container{
+width:100%;
+margin:0 auto;
+padding:10px;
+}
+.subjects-container h1{
+font-size:32px;
+margin-bottom:30px;
+}
+.subject-grid{
+grid-template-columns:1fr;
+gap:18px;
+}
+.subject-card{
+padding:20px;
+font-size:18px;
+border-radius:18px;
+line-height:1.5;
+}
+}
+
 /*light mode*/
 body.light-mode .subject-card{
     background:white;
@@ -884,43 +949,18 @@ body.light-mode .resource-card{
     color:#111;
     border-left:5px solid #2563eb;
 }
+/* MOBILE */
 
-/* ================= QUIZ ================= */
-
-#questionBox{
-
-    width: 90%;
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 25px;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 15px;
+@media (max-width:768px){
+.resource-grid{
+grid-template-columns:1fr;
+gap:20px;
 }
-
-.option-btn{
-
-    display: block;
-    width: 90%;
-    max-width: 700px;
-    margin: 15px auto;
-    padding: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 12px;
-    transition: 0.3s;
+.resource-card{
+padding:25px;
+font-size:20px;
+border-radius:18px;
 }
-
-.option-btn:hover{
-    transform: scale(1.02);
-}
-
-#questionNo{
-
-    text-align: center;
-    margin-top: 20px;
-    color: #777;
 }
 
 /*================ QUIZ =================*/
@@ -1050,6 +1090,44 @@ body.light-mode .resource-card{
     font-size:18px;
     font-weight:bold;
 }
+/* MOBILE */
+
+@media (max-width:768px){
+#questionBox{
+width:95%;
+padding:22px;
+font-size:21px;
+border-radius:15px;
+}
+.option-btn{
+width:95%;
+padding:16px;
+font-size:16px;
+}
+.option-btn:hover{
+transform:none;
+}
+#questionNo{
+font-size:15px;
+}
+#resultMessage{
+font-size:19px;
+padding:0 10px;
+}
+.next-btn{
+width:95%;
+padding:15px;
+font-size:18px;
+}
+.progress-box{
+width:95%;
+}
+.quizStats{
+width:95%;
+font-size:15px;
+}
+}
+
 /* result of quiz */
 .result-card{
 
@@ -1120,6 +1198,65 @@ body.light-mode .resource-card{
     display:block;
     margin:25px auto;
     width:180px;
+}
+
+/*================ RESULT CARD MOBILE =================*/
+
+@media (max-width:768px){
+.result-card{
+width:95%;
+margin:25px auto;
+padding:28px 20px;
+border-radius:18px;
+}
+.result-card hr{
+margin:18px 0;
+}
+.result-card h1{
+font-size:42px;
+line-height:1.2;
+margin:8px 0;
+word-break:break-word;
+}
+.result-card h2{
+font-size:28px;
+line-height:1.3;
+margin:10px 0;
+word-break:break-word;
+}
+.result-card h3{
+font-size:21px;
+line-height:1.5;
+margin:12px 0;
+word-break:break-word;
+}
+#performanceMessage{
+font-size:20px;
+line-height:1.6;
+margin-top:18px;
+padding:0 8px;
+word-break:break-word;
+}
+#resultButtons{
+width:95%;
+}
+.result-btn{
+width:100%;
+padding:15px;
+font-size:18px;
+margin:12px 0;
+border-radius:14px;
+}
+.result-btn:hover{
+transform:none;
+}
+#nextButton{
+width:100%;
+max-width:280px;
+padding:15px;
+font-size:18px;
+margin:20px auto;
+}
 }
 
 /* MAIN DASHBOARD (HUB) : */
@@ -1304,13 +1441,92 @@ transform:scale(1);
 .continue-btn:hover{
     transform:scale(1.07);
 }
-@media(max-width:700px){
+
+/*CONTINUE MOBILE : */
+@media (max-width:768px){
+.continue-card{
+margin:85px auto 20px;
+padding:18px;
+border-radius:18px;
+}
 .continue-content{
-    flex-direction:column;
-    text-align:center;
+flex-direction:row;
+align-items:center;
+gap:15px;
 }
 .continue-icon{
-    margin-bottom:10px;
+width:60px;
+height:60px;
+font-size:28px;
+margin:0;
+flex-shrink:0;
+}
+.continue-text{
+text-align:left;
+flex:1;
+}
+.continue-text h2{
+font-size:22px;
+}
+.continue-text h3{
+font-size:16px;
+margin-top:6px;
+}
+.continue-text p{
+display:none;
+}
+.continue-btn{
+margin-top:12px;
+padding:10px 20px;
+font-size:15px;
+}
+/*================ HUB BANNER MOBILE =================*/
+
+.hub-banner{
+width:100%;
+padding:18px;
+margin:0 auto 20px auto;
+border-radius:18px;
+}
+.hub-banner h1{
+font-size:28px;
+margin-bottom:8px;
+line-height:1.2;
+}
+.hub-banner p{
+font-size:15px;
+letter-spacing:.3px;
+line-height:1.5;
+}
+/*================ HUB CARDS MOBILE =================*/
+
+.hub-grid{
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+margin-top:20px;
+}
+.hub-card{
+padding:18px 12px;
+border-radius:16px;
+min-height:140px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+.hub-card h2{
+font-size:32px;
+margin-bottom:8px;
+}
+.hub-card h3{
+font-size:17px;
+margin-bottom:6px;
+line-height:1.3;
+}
+.hub-card p{
+font-size:13px;
+line-height:1.4;
+opacity:.85;
 }
 }
 
