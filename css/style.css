@@ -1860,6 +1860,38 @@ transform:scale(1.08);
 background:#ff1744;
 }
 
+/*================ SIDEBAR MOBILE =================*/
+
+@media (max-width:768px){
+#sidebar{
+width:260px;
+left:-280px;
+padding:18px;
+}
+.sidebar-header{
+margin-bottom:25px;
+}
+.sidebar-header h2{
+font-size:22px;
+}
+.close-btn{
+font-size:24px;
+}
+#sidebar button{
+padding:12px;
+font-size:15px;
+margin-bottom:10px;
+border-radius:10px;
+}
+.menu-btn{
+top:15px;
+right:70px;
+width:46px;
+height:46px;
+font-size:22px;
+}
+}
+
 /*=============== TOP NAVBAR ===============*/
 
 .top-navbar{
@@ -1920,6 +1952,37 @@ body{
 
     margin:0;
     padding-top:80px;
+}
+
+/*================ NAVBAR MOBILE =================*/
+
+@media (max-width:768px){
+.top-navbar{
+height:65px;
+padding:0 12px;
+}
+.top-navbar h2{
+font-size:19px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+max-width:130px;
+text-align:center;
+}
+.nav-left{
+gap:8px;
+}
+.nav-menu-bt,
+.nav-back-btn
+.nav-theme-btn{
+width:42px;
+height:42px;
+font-size:20px;
+flex-shrink:0;
+}
+body{
+padding-top:70px;
+}
 }
 
 /*Quote : */
@@ -1985,6 +2048,26 @@ color:crimson;
 opacity:0;
 }
 }
+/*================ QUOTE CARD MOBILE =================*/
+
+.quote-card{
+width:100%;
+padding:18px;
+margin:20px auto;
+border-radius:16px;
+}
+.quote-card h3{
+font-size:20px;
+margin-bottom:10px;
+}
+.quote-card p{
+font-size:15px;
+line-height:1.5;
+min-height:auto;
+}
+#dailyQuote::after{
+display:none;
+}
 
 /*Bookmark Button : */
 
@@ -2039,4 +2122,34 @@ font-weight:bold;
 .bookmark-item:hover{
     background:crimson;
     transform:translateX(8px);
+}
+/*================ BOOKMARK MOBILE =================*/
+
+@media (max-width:768px){
+.bookmark-btn{
+width:100%;
+padding:12px 18px;
+font-size:16px;
+border-radius:10px;
+margin:15px 0;
+}
+.bookmark-preview{
+width:100%;
+padding:18px;
+margin:20px auto;
+border-radius:16px;
+}
+.bookmark-preview h2{
+font-size:22px;
+margin-bottom:15px;
+}
+.bookmark-item{
+padding:12px;
+font-size:15px;
+border-radius:10px;
+margin-bottom:10px;
+}
+.bookmark-item:hover{
+transform:none;
+}
 }
