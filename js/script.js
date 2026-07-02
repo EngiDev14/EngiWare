@@ -139,7 +139,7 @@ function goToSemester()
 
 function openSemester(sem){
 
-    let branch = localStorage.getItem("branch");
+    let branch = localStorage.getItem("branch").toLowerCase();
 
     window.location.href =
     "sub-" + branch + "-sem" + sem + ".html";
