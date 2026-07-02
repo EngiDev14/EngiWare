@@ -141,20 +141,14 @@ function openSemester(sem){
 
     let branch = localStorage.getItem("branch");
 
-    console.log("Branch:", branch);
-
-    alert("Branch = " + branch);
-
     if(!branch){
-        alert("Branch is NULL");
+        alert("Please select a branch first.");
+        window.location.href = "stream.html";
         return;
     }
 
-    let file = "sub-" + branch.toLowerCase() + "-sem" + sem + ".html";
-
-    alert(file);
-
-    window.location.href = file;
+    window.location.href =
+    "sub-" + branch.toLowerCase() + "-sem" + sem + ".html";
 }
 // branch info paragraph :
 
@@ -248,36 +242,35 @@ function openSubject(subjectName)
     window.location.href = "subject-details.html";
 }
 
-// notes details
-function openNotes()
-{
-    let branch = localStorage.getItem("branch");
+// notes and other blocks : 
+
+function openNotes(){
+
+    let branch = localStorage.getItem("branch").toLowerCase();
 
     window.location.href =
     "notes/" + branch + ".html";
 }
-// PYQs details
 
-function openPYQs()
-{
-    let branch = localStorage.getItem("branch");
+function openPYQs(){
+
+    let branch = localStorage.getItem("branch").toLowerCase();
 
     window.location.href =
     "pyqs/" + branch + ".html";
 }
-// lectures details : 
-function openLectures()
-{
-    let branch = localStorage.getItem("branch");
+
+function openLectures(){
+
+    let branch = localStorage.getItem("branch").toLowerCase();
 
     window.location.href =
     "lectures/" + branch + ".html";
 }
 
-// quiz details :
-function openQuiz()
-{
-    let branch = localStorage.getItem("branch");
+function openQuiz(){
+
+    let branch = localStorage.getItem("branch").toLowerCase();
 
     window.location.href =
     "quiz/" + branch + ".html";
