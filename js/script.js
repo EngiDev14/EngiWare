@@ -1,12 +1,14 @@
 // Splash screen auto redirect
 
-if(window.location.pathname.includes("index.html"))
+if (
+    window.location.pathname === "/EngiWare/" ||
+    window.location.pathname.endsWith("index.html")
+)
 {
     setTimeout(() => {
         window.location.href = "login.html";
-    },3000);
+    }, 3000);
 }
-
 
 // Login
 
