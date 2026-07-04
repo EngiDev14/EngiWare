@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - EngiWare</title>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css">
+<title>Login - EngiWare</title>
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
-<body class = "login-page">
 
-    <button class="back-btn" onclick="history.back()">
-    ← Back
-    </button>
+<body class="login-page">
 
-    <button class="theme-btn" onclick="toggleTheme()">
-    🌙
+<button class="back-btn"
+onclick="history.back()">
+← Back
 </button>
 
-    <div class="login-container">
+<button class="theme-btn"
+onclick="toggleTheme()">
+🌙
+</button>
 
-        <h1>ENGIWARE</h1>
+<div class="login-container">
 
-        <h2>Login</h2>
+<h1>ENGIWARE</h1>
 
-        <input type="text" id="username" placeholder="Enter Username">
+<h2>Welcome Back 👋</h2>
 
-        <input type="password" placeholder="Enter Password">
+<input
+type="email"
+id="email"
+placeholder="Enter Email">
 
-        <button onclick="loginUser()">
-            Login
-        </button>
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
 
-    </div>
+<button id="loginBtn">
 
-    <script src="js/script.js"></script>
+Login
+
+</button>
+
+<p>
+
+Don't have an account?
+
+<a href="register.html">
+
+Register
+
+</a>
+
+</p>
+
+<div id="toast" class="toast"></div>
+
+</div>
+
+<script src="js/script.js"></script>
+
+<script type="module" src="js/auth.js"></script>
 
 </body>
+
 </html>

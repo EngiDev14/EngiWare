@@ -1,13 +1,23 @@
 // Splash screen auto redirect
 
+// Splash screen auto redirect
+
 if (
     window.location.pathname === "/EngiWare/" ||
     window.location.pathname.endsWith("index.html")
 )
 {
     setTimeout(() => {
+
+        document.body.classList.add("fade-out");
+
+    },2500);
+
+    setTimeout(() => {
+
         window.location.href = "login.html";
-    }, 3000);
+
+    },3200);
 }
 
 // Login
@@ -454,4 +464,25 @@ function loadBookmarkPreview()
         </div>
         `;
     });
+}
+
+// register and login : 
+
+window.showToast = function(message,type="success"){
+
+const toast =
+document.getElementById("toast");
+
+toast.innerHTML = message;
+
+toast.className =
+"toast " + type;
+
+setTimeout(()=>{
+toast.classList.add("show");
+},100);
+
+setTimeout(()=>{
+toast.classList.remove("show");
+},2500);
 }

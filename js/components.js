@@ -24,7 +24,19 @@ window.addEventListener("DOMContentLoaded", async () =>
             "sidebar",
             "components/sidebar.html"
         );
+const logoutBtn = document.getElementById("logoutBtn");
+
+if (logoutBtn) {
+
+    logoutBtn.onclick = function () {
+
+        window.logoutUser();
+
+    };
+
+}
     }
+    
 
     // Change Navbar Title Automatically
     const title = document.body.dataset.title;
