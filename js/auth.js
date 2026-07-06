@@ -11,7 +11,9 @@ from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 import {
 doc,
-setDoc
+setDoc,
+getDoc,
+updateDoc
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
@@ -52,6 +54,15 @@ doc(db, "users", userCredential.user.uid),
 {
 name: name,
 email: email,
+
+college: "",
+
+branch: "",
+
+semester: "",
+
+role: "student",
+
 createdAt: new Date().toISOString()
 }
 );
@@ -123,12 +134,35 @@ error.message,
 
 // ---------------- AUTO LOGIN ----------------
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
 
 if(user){
 
 const page =
 window.location.pathname;
+
+const docRef =
+doc(db,"users",user.uid);
+
+const docSnap =
+await getDoc(docRef);
+
+if(docSnap.exists()){
+
+const data =
+docSnap.data();
+
+localStorage.setItem(
+"userName",
+data.name
+);
+
+localStorage.setItem(
+"userRole",
+data.role || "student"
+);
+
+}
 
 if(
 page.endsWith("login.html") ||
@@ -136,7 +170,9 @@ page.endsWith("register.html")
 ){
 window.location.replace("hub.html");
 }
+
 }
+
 });
 
 // ---------------- LOG OUT ----------------

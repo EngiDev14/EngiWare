@@ -1,13 +1,14 @@
 <div class="sidebar-header">
-
-        <h2>🎓 EngiWare</h2>
-
-        <button class="close-btn"
+    
+    <button class="close-btn"
         onclick="closeSidebar()">
+        ✕ Close
+    </button>
 
-            ✕
-
-        </button>
+    <img
+        src="images/logo.png"
+        alt="EngiWare Logo"
+        class="sidebar-logo">
 
 </div>
 
@@ -46,6 +47,23 @@
     <button onclick="comingSoon('⚙ Settings')">
         ⚙ Settings
     </button>
+
+    <button onclick="window.location.href='profile.html'">
+    👤 My Profile
+    </button>
+
+    <button
+id="adminBtn"
+style="display:none;"
+onclick="window.location.href='admin.html'">
+
+🛠 Admin Dashboard
+
+</button>
+
+    <br>
+    <hr>
+    <br>
 
     <button id="logoutBtn">
         🚪 Logout

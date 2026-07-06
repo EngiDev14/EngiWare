@@ -15,7 +15,7 @@ if (
 
     setTimeout(() => {
 
-        window.location.href = "login.html";
+        window.location.href = "loader.html";
 
     },3200);
 }
@@ -342,6 +342,8 @@ function toggleSidebar()
 
     document.getElementById("overlay").style.display = "block";
 
+    document.getElementById("navbar").style.display = "none";
+
     document.body.style.overflow = "hidden";
 }
 
@@ -350,6 +352,8 @@ function closeSidebar()
     document.getElementById("sidebar").style.left = "-320px";
 
     document.getElementById("overlay").style.display = "none";
+
+    document.getElementById("navbar").style.display = "flex";
 
     document.body.style.overflow = "auto";
 }
@@ -486,3 +490,46 @@ setTimeout(()=>{
 toast.classList.remove("show");
 },2500);
 }
+
+// -------- Welcome Message --------
+
+function loadWelcomeMessage(){
+
+const welcome =
+document.getElementById("welcomeText");
+
+const subtitle =
+document.getElementById("welcomeSub");
+
+if(!welcome) return;
+
+const name =
+localStorage.getItem("userName") || "Engineer";
+
+const hour =
+new Date().getHours();
+
+let greeting;
+
+if(hour < 12){
+greeting = "🌅 Good Morning";
+}
+
+else if(hour < 16){
+greeting = "☀️ Good Afternoon";
+}
+
+else{
+greeting = "🌙 Good Evening";
+}
+
+welcome.innerHTML =
+`${greeting}, ${name}`;
+
+subtitle.innerHTML =
+"Ready to continue your engineering journey? 🚀";
+}
+
+window.addEventListener("DOMContentLoaded",()=>{
+loadWelcomeMessage();
+});
