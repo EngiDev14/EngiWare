@@ -15,22 +15,372 @@ href="css/style.css">
 
 </head>
 
-<body>
+<body class="admin-page">
 
-<h1
-style="text-align:center;margin-top:100px;">
+<div class="admin-container">
 
-🛠 EngiWare Admin Dashboard
+    <div class="mobile-header">
 
-</h1>
+    <button
+    class="menu-btn"
+    onclick="openAdminSidebar()">
 
-<h2
-style="text-align:center;">
+        ☰
 
-Welcome Founder 👑
+    </button>
 
-</h2>
+    <h2>
+
+        Dashboard
+
+    </h2>
+
+    <img
+    src="images/logo.png"
+    class="mobile-profile">
+
+</div>
+
+<div
+class="admin-overlay"
+id="adminOverlay"
+onclick="closeAdminSidebar()">
+
+</div>
+
+    <aside class="admin-sidebar" id="adminSidebar">
+
+        <div class="admin-logo">
+
+            <img src="images/logo.png">
+            <h2>ENGIWARE</h2>
+            <span>Founder Panel 👑</span>
+        </div>
+
+        <button class="active">
+        <span class="icon">📊</span>
+        <span class="label">Dashboard</span>
+        </button>
+
+        <button>
+        <span class="icon">📚</span>
+        <span class="label">Study Materials</span>
+        </button>
+
+        <button>
+        <span class="icon">📄</span>
+        <span class="label">Notes</span>
+        </button>
+
+        <button>
+        <span class="icon">🎥</span>
+        <span class="label">Lectures</span>
+        </button>
+
+        <button>
+        <span class="icon">📑</span>
+        <span class="label">PYQs</span>
+        </button>
+
+        <button>
+        <span class="icon">👥</span>
+        <span class="label">Users</span>
+        </button>
+
+        <button>
+        <span class="icon">⚙</span>
+        <span class="label">Settings</span>
+        </button>
+
+        <button onclick="window.location.href='hub.html'">
+        <span class="icon">⬅</span>
+        <span class="label">Back To Hub</span>
+        </button>
+
+    </aside>
+
+    <main class="admin-main">
+
+<div class="topbar">
+
+    <div class="top-left">
+        <h1>
+            Dashboard
+        </h1>
+        <p>
+            Welcome back,
+            <span id="adminName">
+                Founder
+            </span>
+            👋
+        </p>
+    </div>
+
+<div class="top-right">
+
+    <div class="search-box">
+        <input
+        type="text"
+        placeholder="Search anything...">
+        <span>🔍</span>
+    </div>
+
+    <button class="notification-btn">
+        🔔
+        <small>3</small>
+    </button>
+
+    <div class="profile-box">
+
+        <img
+        src="images/logo.png"
+        class="profile-img">
+
+        <div>
+            <h4>
+                EREN
+            </h4>
+            <p>
+                Founder
+            </p>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <div class="stat-icon">
+                👥
+            </div>
+            <span class="stat-growth">
+                ↗ +12%
+            </span>
+
+        </div>
+
+        <h3>Total Users</h3>
+        <h1 id="totalUsers">0</h1>
+        <p>New registrations</p>
+
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <div class="stat-icon">
+                📚
+            </div>
+            <span class="stat-growth">
+                ↗ +8%
+            </span>
+
+        </div>
+
+        <h3>Subjects</h3>
+        <h1 id="totalSubjects">0</h1>
+        <p>Available subjects</p>
+
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <div class="stat-icon">
+                📄
+            </div>
+            <span class="stat-growth">
+                ↗ +15%
+            </span>
+
+        </div>
+
+        <h3>Notes</h3>
+        <h1 id="totalNotes">0</h1>
+        <p>Uploaded PDFs</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-top">
+            <div class="stat-icon">
+                🎥
+            </div>
+            <span class="stat-growth">
+                ↗ +5%
+            </span>
+        </div>
+
+        <h3>Lectures</h3>
+        <h1 id="totalLectures">0</h1>
+        <p>Video lectures</p>
+    </div>
+
+</div>
+<div class="quick-grid">
+
+    <div class="action-card" id="uploadNotesBtn">
+        <div class="action-icon">📄</div>
+        <div class="action-info">
+            <h3>Upload Notes</h3>
+            <p>Add PDFs to Firebase Storage</p>
+        </div>
+        <span>→</span>
+    </div>
+
+    <div class="action-card">
+        <div class="action-icon">🎥</div>
+        <div class="action-info">
+            <h3>Upload Lecture</h3>
+            <p>Manage lecture links</p>
+        </div>
+        <span>→</span>
+    </div>
+
+    <div class="action-card">
+        <div class="action-icon">📑</div>
+        <div class="action-info">
+            <h3>Upload PYQs</h3>
+            <p>Previous year papers</p>
+        </div>
+        <span>→</span>
+    </div>
+
+    <div class="action-card">
+        <div class="action-icon">👥</div>
+        <div class="action-info">
+            <h3>Manage Users</h3>
+            <p>Admin & student accounts</p>
+        </div>
+        <span>→</span>
+    </div>
+</div>
+
+<div class="recent-section">
+    <div class="section-title">
+        <h2>Recent Activity</h2>
+        <span>View All</span>
+    </div>
+
+    <div class="activity-card">
+        <div class="activity-icon">📄</div>
+        <div class="activity-info">
+
+            <h3>Upload your first Notes</h3>
+            <p>No study material uploaded yet.</p>
+
+        </div>
+        <small>Now</small>
+    </div>
+
+    <div class="activity-card">
+        <div class="activity-icon">👥</div>
+        <div class="activity-info">
+
+            <h3>User Management</h3>
+            <p>No recent registrations.</p>
+
+        </div>
+        <small>--</small>
+    </div>
+
+</div>
+
+    </main>
+</div>
+
+<!--================ Upload Notes Modal ================-->
+
+<div class="modal-overlay" id="uploadModal">
+    <div class="upload-modal">
+        <h2>Upload Notes</h2>
+
+        <input
+        type="text"
+        id="noteTitle"
+        placeholder="Title">
+
+        <select id="noteBranch">
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>ECM</option>
+            <option>EEE</option>
+            <option>ME</option>
+            <option>CIVIL</option>
+        </select>
+
+        <select id="noteSemester">
+
+            <option>Semester 1</option>
+            <option>Semester 2</option>
+            <option>Semester 3</option>
+            <option>Semester 4</option>
+            <option>Semester 5</option>
+            <option>Semester 6</option>
+            <option>Semester 7</option>
+            <option>Semester 8</option>
+
+        </select>
+
+        <input
+        type="text"
+        id="noteSubject"
+        placeholder="Subject">
+
+        <input
+        type="file"
+        id="noteFile"
+        accept=".pdf">
+
+        <div class="modal-buttons">
+            <button id="closeUpload">
+                Cancel
+            </button>
+
+            <button id="uploadPDF">
+                Upload
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+
+function toggleSidebar(){
+
+document
+.querySelector(".admin-container")
+.classList.toggle("collapsed");
+
+}
+
+function openAdminSidebar(){
+
+document
+.getElementById("adminSidebar")
+.classList.add("show");
+
+document
+.getElementById("adminOverlay")
+.style.display="block";
+
+}
+
+function closeAdminSidebar(){
+
+document
+.getElementById("adminSidebar")
+.classList.remove("show");
+
+document
+.getElementById("adminOverlay")
+.style.display="none";
+
+}
+
+</script>
+<script type="module" src="js/admin.js"></script>
 
 </body>
-
 </html>

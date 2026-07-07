@@ -344,7 +344,7 @@ function toggleSidebar()
 
     document.getElementById("navbar").style.display = "none";
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflowY = "hidden";
 }
 
 function closeSidebar()
@@ -355,7 +355,7 @@ function closeSidebar()
 
     document.getElementById("navbar").style.display = "flex";
 
-    document.body.style.overflow = "auto";
+    document.body.style.overflowY = "auto";
 }
 
 // bookmark block : 
