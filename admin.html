@@ -137,9 +137,6 @@ onclick="closeAdminSidebar()">
         class="profile-img">
 
         <div>
-            <h4>
-                EREN
-            </h4>
             <p>
                 Founder
             </p>
@@ -229,7 +226,7 @@ onclick="closeAdminSidebar()">
         <span>→</span>
     </div>
 
-    <div class="action-card">
+    <div class="action-card" id="uploadLectureBtn">
         <div class="action-icon">🎥</div>
         <div class="action-info">
             <h3>Upload Lecture</h3>
@@ -247,6 +244,15 @@ onclick="closeAdminSidebar()">
         <span>→</span>
     </div>
 
+    <div class="action-card" id="manageSubjectsBtn">
+        <div class="action-icon">📚</div>
+        <div class="action-info">
+            <h3>Manage Subjects</h3>
+            <p>Add & Manage Subjects</p>
+      </div>
+          <span>→</span>
+    </div>
+
     <div class="action-card">
         <div class="action-icon">👥</div>
         <div class="action-info">
@@ -258,35 +264,237 @@ onclick="closeAdminSidebar()">
 </div>
 
 <div class="recent-section">
+
     <div class="section-title">
+
         <h2>Recent Activity</h2>
-        <span>View All</span>
+
+        <span id="activityCount">
+            0 Items
+        </span>
+
     </div>
 
-    <div class="activity-card">
-        <div class="activity-icon">📄</div>
-        <div class="activity-info">
+    <div id="recentActivity">
 
-            <h3>Upload your first Notes</h3>
-            <p>No study material uploaded yet.</p>
+        <p>No Activity Yet.</p>
 
-        </div>
-        <small>Now</small>
-    </div>
-
-    <div class="activity-card">
-        <div class="activity-icon">👥</div>
-        <div class="activity-info">
-
-            <h3>User Management</h3>
-            <p>No recent registrations.</p>
-
-        </div>
-        <small>--</small>
     </div>
 
 </div>
 
+<!------- Notes manager ------->
+
+    <div class="notes-manager">
+
+    <div class="section-title">
+
+        <h2>📚 Notes Manager</h2>
+
+    </div>
+
+    <div class="notes-toolbar">
+
+        <input
+        type="text"
+        id="searchNotes"
+        placeholder="🔍 Search Notes...">
+
+        <select id="filterBranch">
+
+            <option value="">All Branches</option>
+
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>ECM</option>
+            <option>EEE</option>
+            <option>ME</option>
+            <option>CIVIL</option>
+
+        </select>
+
+        <select id="filterSemester">
+
+            <option value="">All Semesters</option>
+
+            <option>Semester 1</option>
+            <option>Semester 2</option>
+            <option>Semester 3</option>
+            <option>Semester 4</option>
+            <option>Semester 5</option>
+            <option>Semester 6</option>
+            <option>Semester 7</option>
+            <option>Semester 8</option>
+
+        </select>
+
+    </div>
+
+    <table class="notes-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Title</th>
+                <th>Branch</th>
+                <th>Semester</th>
+                <th>Subject</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="notesTableBody">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<!-------- Lecture Manager -------->
+
+<div class="notes-manager">
+
+    <div class="section-title">
+
+        <h2>🎥 Lecture Manager</h2>
+
+    </div>
+
+    <div class="notes-toolbar">
+
+        <input
+        type="text"
+        id="searchLectures"
+        placeholder="🔍 Search Lectures...">
+
+        <select id="filterLectureBranch">
+
+            <option value="">All Branches</option>
+
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>ECM</option>
+            <option>EEE</option>
+            <option>ME</option>
+            <option>CIVIL</option>
+
+        </select>
+
+        <select id="filterLectureSemester">
+
+            <option value="">All Semesters</option>
+
+            <option>Semester 1</option>
+            <option>Semester 2</option>
+            <option>Semester 3</option>
+            <option>Semester 4</option>
+            <option>Semester 5</option>
+            <option>Semester 6</option>
+            <option>Semester 7</option>
+            <option>Semester 8</option>
+
+        </select>
+
+    </div>
+
+    <table class="notes-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Title</th>
+                <th>Branch</th>
+                <th>Semester</th>
+                <th>Subject</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="lecturesTableBody">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<!------ Subject Manager ------->
+
+    <div class="notes-manager">
+
+        <div class="section-title">
+
+        <h2>📚 Subjects Manager</h2>
+
+        </div>
+
+        <div class="notes-toolbar">
+
+        <input
+        type="text"
+        id="searchSubjects"
+        placeholder="🔍 Search Subject...">
+
+        <select id="filterSubjectBranch">
+
+        <option value="">All Branches</option>
+
+        <option>CSE</option>
+        <option>ECE</option>
+        <option>ECM</option>
+        <option>EEE</option>
+        <option>ME</option>
+        <option>CIVIL</option>
+
+        </select>
+
+        <select id="filterSubjectSemester">
+
+        <option value="">All Semesters</option>
+
+        <option>Semester 1</option>
+        <option>Semester 2</option>
+        <option>Semester 3</option>
+        <option>Semester 4</option>
+        <option>Semester 5</option>
+        <option>Semester 6</option>
+        <option>Semester 7</option>
+        <option>Semester 8</option>
+
+        </select>
+
+        </div>
+
+        <table class="notes-table">
+
+        <thead>
+
+        <tr>
+
+        <th>Subject</th>
+
+        <th>Branch</th>
+
+        <th>Semester</th>
+
+        <th>Actions</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody id="subjectsTableBody">
+
+        </tbody>
+        </table>
+    </div>
     </main>
 </div>
 
@@ -323,15 +531,18 @@ onclick="closeAdminSidebar()">
 
         </select>
 
-        <input
-        type="text"
-        id="noteSubject"
-        placeholder="Subject">
+        <select id="noteSubject">
+
+        <option value="">
+        Select Subject
+        </option>
+
+        </select>
 
         <input
-        type="file"
-        id="noteFile"
-        accept=".pdf">
+        type="text"
+        id="noteFileName"
+        placeholder="PDF File Name (Example: DSA_Unit1.pdf)">
 
         <div class="modal-buttons">
             <button id="closeUpload">
@@ -344,6 +555,133 @@ onclick="closeAdminSidebar()">
         </div>
     </div>
 </div>
+
+<!--================ Upload Lecture Modal ================-->
+
+<div class="modal-overlay" id="lectureModal">
+
+    <div class="upload-modal">
+
+        <h2>Upload Lecture</h2>
+
+        <input
+        type="text"
+        id="lectureTitle"
+        placeholder="Lecture Title">
+
+        <select id="lectureBranch">
+
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>ECM</option>
+            <option>EEE</option>
+            <option>ME</option>
+            <option>CIVIL</option>
+
+        </select>
+
+        <select id="lectureSemester">
+
+            <option>Semester 1</option>
+            <option>Semester 2</option>
+            <option>Semester 3</option>
+            <option>Semester 4</option>
+            <option>Semester 5</option>
+            <option>Semester 6</option>
+            <option>Semester 7</option>
+            <option>Semester 8</option>
+
+        </select>
+
+        <select id="lectureSubject">
+
+            <option value="">
+                Select Subject
+            </option>
+
+        </select>
+
+        <input
+        type="text"
+        id="lectureUrl"
+        placeholder="YouTube / Drive Link">
+
+        <div class="modal-buttons">
+
+            <button id="closeLecture">
+
+                Cancel
+
+            </button>
+
+            <button id="uploadLecture">
+
+                Upload
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!--================ Upload Subjects Modal ================-->
+
+<div class="modal-overlay" id="subjectModal">
+
+        <div class="upload-modal">
+
+        <h2>Manage Subjects</h2>
+
+        <select id="subjectBranch">
+
+        <option>CSE</option>
+        <option>ECE</option>
+        <option>ECM</option>
+        <option>EEE</option>
+        <option>ME</option>
+        <option>CIVIL</option>
+
+        </select>
+
+        <select id="subjectSemester">
+
+        <option>Semester 1</option>
+        <option>Semester 2</option>
+        <option>Semester 3</option>
+        <option>Semester 4</option>
+        <option>Semester 5</option>
+        <option>Semester 6</option>
+        <option>Semester 7</option>
+        <option>Semester 8</option>
+
+        </select>
+
+        <input
+        type="text"
+        id="subjectName"
+        placeholder="Subject Name">
+
+        <div class="modal-buttons">
+
+        <button id="closeSubjectModal">
+
+        Cancel
+
+        </button>
+
+        <button id="addSubjectBtn">
+
+        Add Subject
+
+        </button>
+
+        </div>
+
+        </div>
+
+        </div>
 
 <script>
 
@@ -380,7 +718,10 @@ document
 }
 
 </script>
+
+<script src = "js/script.js"></script>
 <script type="module" src="js/admin.js"></script>
+<div id="toast" class="toast"></div>
 
 </body>
 </html>
