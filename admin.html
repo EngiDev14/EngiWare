@@ -235,7 +235,7 @@ onclick="closeAdminSidebar()">
         <span>→</span>
     </div>
 
-    <div class="action-card">
+    <div class="action-card" id="uploadPYQBtn">
         <div class="action-icon">📑</div>
         <div class="action-info">
             <h3>Upload PYQs</h3>
@@ -347,6 +347,77 @@ onclick="closeAdminSidebar()">
         </thead>
 
         <tbody id="notesTableBody">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<!--================ PYQ Manager =================-->
+
+<div class="notes-manager">
+
+    <div class="section-title">
+
+        <h2>📑 PYQ Manager</h2>
+
+    </div>
+
+    <div class="notes-toolbar">
+
+        <input
+        type="text"
+        id="searchPYQs"
+        placeholder="🔍 Search PYQs...">
+
+        <select id="filterPYQBranch">
+
+            <option value="">All Branches</option>
+
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>ECM</option>
+            <option>EEE</option>
+            <option>ME</option>
+            <option>CIVIL</option>
+
+        </select>
+
+        <select id="filterPYQSemester">
+
+            <option value="">All Semesters</option>
+
+            <option>Semester 1</option>
+            <option>Semester 2</option>
+            <option>Semester 3</option>
+            <option>Semester 4</option>
+            <option>Semester 5</option>
+            <option>Semester 6</option>
+            <option>Semester 7</option>
+            <option>Semester 8</option>
+
+        </select>
+
+    </div>
+
+    <table class="notes-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Title</th>
+                <th>Branch</th>
+                <th>Semester</th>
+                <th>Subject</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="pyqsTableBody">
 
         </tbody>
 
@@ -554,6 +625,76 @@ onclick="closeAdminSidebar()">
             </button>
         </div>
     </div>
+</div>
+
+<!--================ Upload PYQ Modal ================-->
+
+<div class="modal-overlay" id="pyqModal">
+
+    <div class="upload-modal">
+
+        <h2>Upload PYQ</h2>
+
+        <input
+        type="text"
+        id="pyqTitle"
+        placeholder="PYQ Title">
+
+        <select id="pyqBranch">
+
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>ECM</option>
+            <option>EEE</option>
+            <option>ME</option>
+            <option>CIVIL</option>
+
+        </select>
+
+        <select id="pyqSemester">
+
+            <option>Semester 1</option>
+            <option>Semester 2</option>
+            <option>Semester 3</option>
+            <option>Semester 4</option>
+            <option>Semester 5</option>
+            <option>Semester 6</option>
+            <option>Semester 7</option>
+            <option>Semester 8</option>
+
+        </select>
+
+        <select id="pyqSubject">
+
+            <option value="">
+                Select Subject
+            </option>
+
+        </select>
+
+        <input
+        type="text"
+        id="pyqFileName"
+        placeholder="PDF File Name (Example: MidSem2024.pdf)">
+
+        <div class="modal-buttons">
+
+            <button id="closePYQ">
+
+                Cancel
+
+            </button>
+
+            <button id="uploadPYQ">
+
+                Upload
+
+            </button>
+
+        </div>
+
+    </div>
+
 </div>
 
 <!--================ Upload Lecture Modal ================-->

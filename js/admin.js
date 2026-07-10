@@ -9,6 +9,8 @@ let allSubjects = [];
 let editingLectureId = null;
 let allLectures = [];
 
+let allPYQs = [];
+
 import{
 collection,
 getDocs,
@@ -313,6 +315,26 @@ async function loadDashboard(){
 
         }
 
+        // ================= Load PYQs =================
+
+        const pyqSnapshot =
+        await getDocs(collection(db,"pyqs"));
+
+        allPYQs = [];
+
+        pyqSnapshot.forEach((doc)=>{
+
+            allPYQs.push({
+
+                id: doc.id,
+
+                ...doc.data()
+
+            });
+
+        });
+
+        renderFilteredPYQs();
 
     // SUBJECTS
         const subjectsSnapshot =
@@ -346,18 +368,47 @@ async function loadDashboard(){
 
 loadDashboard();
 
+// ================= NOTES Modal =================
+
 const uploadModal =
 document.getElementById("uploadModal");
 
+// ================= PYQ Modal =================
+
+const pyqModal =
+document.getElementById("pyqModal");
+
+document
+.getElementById("uploadPYQBtn")
+.onclick = () => {
+
+pyqModal.style.display = "flex";
+
+loadPYQSubjects();
+
+};
+
+document
+.getElementById("closePYQ")
+.onclick = () => {
+
+pyqModal.style.display = "none";
+
+};
+
+// ================= LECTURES Modal =================
+
 const lectureModal =
 document.getElementById("lectureModal");
+
+// ================= SUBJECTS Modal =================
 
 const subjectModal =
 document.getElementById("subjectModal");
 
 document
 .getElementById("uploadNotesBtn")
-.onclick = () => {
+.onclick = () => {                            // upload notes modal
 
 uploadModal.style.display = "flex";
 
@@ -367,7 +418,7 @@ loadSubjectsDropdown();
 
 document
 .getElementById("uploadLectureBtn")
-.onclick = () => {
+.onclick = () => {                              // upload lectures modal
 
 lectureModal.style.display = "flex";
 
@@ -378,7 +429,7 @@ loadLectureSubjects();
 
 document
 .getElementById("closeUpload")
-.onclick = () => {
+.onclick = () => {                                  // close notes modal
 
     uploadModal.style.display = "none";
 
@@ -404,7 +455,7 @@ document
 .onclick = () => {
 
 lectureModal.style.display = "none";
-
+                                                                   // close lecture modal
 document.getElementById("lectureTitle").value = "";
 
 document.getElementById("lectureUrl").value = "";
@@ -425,7 +476,7 @@ loadDashboard();
 
 document
 .getElementById("manageSubjectsBtn")
-.onclick = ()=>{
+.onclick = ()=>{                                            // manage subjects modal
 
 subjectModal.style.display="flex";
 
@@ -436,7 +487,7 @@ document
 .onclick = ()=>{
 
 subjectModal.style.display="none";
-
+                                                               // close subjects modal
 editingSubjectId = null;
 
 document.getElementById("subjectName").value = "";
@@ -448,6 +499,8 @@ document.getElementById("subjectSemester").selectedIndex = 0;
 document.getElementById("addSubjectBtn").textContent = "Add Subject";
 
 };
+
+// ---------- EVENT LISTENERS ---------- //
 
 document
 .getElementById("uploadPDF")
@@ -468,6 +521,14 @@ document
 document
 .getElementById("lectureSemester")
 .addEventListener("change",loadLectureSubjects);
+
+document
+.getElementById("pyqBranch")
+.addEventListener("change",loadPYQSubjects);
+
+document
+.getElementById("pyqSemester")
+.addEventListener("change",loadPYQSubjects);
 
 // -------- Notes uploading -------- //
 
@@ -571,6 +632,91 @@ async function uploadNote(){
         );
 
     }
+
+}
+
+// ================= Upload PYQ to Firestore =================
+
+async function uploadPYQ(){
+
+const title =
+document.getElementById("pyqTitle").value.trim();
+
+const branch =
+document.getElementById("pyqBranch").value;
+
+const semester =
+document.getElementById("pyqSemester").value;
+
+const subject =
+document.getElementById("pyqSubject").value;
+
+const fileName =
+document.getElementById("pyqFileName").value.trim();
+
+if(
+
+title === "" ||
+
+subject === "" ||
+
+fileName === ""
+
+){
+
+alert("Please fill all fields.");
+
+return;
+
+}
+
+const pdfUrl =
+`pdfs/${fileName}`;
+
+await addDoc(
+
+collection(db,"pyqs"),
+
+{
+
+title,
+
+branch,
+
+semester,
+
+subject,
+
+fileName,
+
+pdfUrl,
+
+createdAt:
+serverTimestamp()
+
+}
+
+);
+
+alert("PYQ Uploaded Successfully ✅");
+
+document.getElementById("pyqModal").style.display = "none";
+
+// Clear Fields
+
+document.getElementById("pyqTitle").value = "";
+
+document.getElementById("pyqFileName").value = "";
+
+document.getElementById("pyqSubject").innerHTML = `
+
+<option value="">
+Select Subject
+</option>
+
+`;
+
+loadDashboard();
 
 }
 
@@ -979,6 +1125,232 @@ window.viewNote = function(pdfUrl){
         });
         }
 
+        // ================= Render Filtered PYQs =================
+
+        function renderFilteredPYQs(){
+
+        const keyword =
+        document.getElementById("searchPYQs").value.toLowerCase();
+
+        const branch =
+        document.getElementById("filterPYQBranch").value;
+
+        const semester =
+        document.getElementById("filterPYQSemester").value;
+
+        const table =
+        document.getElementById("pyqsTableBody");
+
+        table.innerHTML = "";
+
+        const filtered = allPYQs.filter(pyq=>{
+
+        const matchesKeyword =
+        pyq.title.toLowerCase().includes(keyword);
+
+        const matchesBranch =
+        branch === "" ||
+        pyq.branch.toLowerCase() === branch.toLowerCase();
+
+        const matchesSemester =
+        semester === "" ||
+        pyq.semester.toLowerCase() === semester.toLowerCase();
+
+        return matchesKeyword &&
+        matchesBranch &&
+        matchesSemester;
+
+        });
+
+        if(filtered.length===0){
+
+        table.innerHTML = `
+
+        <tr>
+
+        <td colspan="5"
+        style="text-align:center;padding:25px;">
+
+        No PYQs Found 📑
+
+        </td>
+
+        </tr>
+
+        `;
+
+        return;
+
+        }
+
+        filtered.forEach(pyq=>{
+
+        table.innerHTML += `
+
+        <tr>
+
+        <td>${pyq.title}</td>
+
+        <td>${pyq.branch}</td>
+
+        <td>${pyq.semester}</td>
+
+        <td>${pyq.subject}</td>
+
+        <td>
+
+        <button
+        class="edit-btn"
+        onclick="editPYQ('${pyq.id}')">
+
+        ✏
+
+        </button>
+
+        <button
+        class="delete-btn"
+        onclick="deletePYQ('${pyq.id}')">
+
+        🗑
+
+        </button>
+
+        </td>
+
+        </tr>
+
+        `;
+
+        });
+
+        }
+
+        // ================= Delete PYQ =================
+
+        async function deletePYQ(id){
+
+        const confirmDelete =
+        confirm("Delete this PYQ?");
+
+        if(!confirmDelete){
+
+        return;
+
+        }
+
+        await deleteDoc(
+
+        doc(db,"pyqs",id)
+
+        );
+
+        loadDashboard();
+
+        }
+
+        // ================= Edit PYQ =================
+
+        async function editPYQ(id){
+
+        const snapshot =
+        await getDoc(doc(db,"pyqs",id));
+
+        if(!snapshot.exists()){
+
+        alert("PYQ not found.");
+
+        return;
+
+        }
+
+        const pyq =
+        snapshot.data();
+
+        document.getElementById("pyqTitle").value =
+        pyq.title;
+
+        document.getElementById("pyqBranch").value =
+        pyq.branch;
+
+        document.getElementById("pyqSemester").value =
+        pyq.semester;
+
+        await loadPYQSubjects();
+
+        document.getElementById("pyqSubject").value =
+        pyq.subject;
+
+        document.getElementById("pyqFileName").value =
+        pyq.fileName;
+
+        pyqModal.style.display = "flex";
+
+        document.getElementById("uploadPYQ").innerText =
+        "Update";
+
+        document.getElementById("uploadPYQ").onclick =
+        ()=>updatePYQ(id);
+
+        }
+
+        // ================= Update PYQ =================
+
+        async function updatePYQ(id){
+
+        const title =
+        document.getElementById("pyqTitle").value.trim();
+
+        const branch =
+        document.getElementById("pyqBranch").value;
+
+        const semester =
+        document.getElementById("pyqSemester").value;
+
+        const subject =
+        document.getElementById("pyqSubject").value;
+
+        const fileName =
+        document.getElementById("pyqFileName").value.trim();
+
+        await updateDoc(
+
+        doc(db,"pyqs",id),
+
+        {
+
+        title,
+
+        branch,
+
+        semester,
+
+        subject,
+
+        fileName,
+
+        pdfUrl:
+        `pdfs/${fileName}`
+
+        }
+
+        );
+
+        alert("PYQ Updated Successfully ✅");
+
+        pyqModal.style.display = "none";
+
+        document.getElementById("uploadPYQ").innerText =
+        "Upload";
+
+        document.getElementById("uploadPYQ").onclick =
+        uploadPYQ;
+
+        loadDashboard();
+
+        }
+
+        
+
         // ---------- EDIT SUBJECT ----------//
 
         window.editSubject = async function(subjectId){
@@ -1268,6 +1640,60 @@ ${subject.name}
 }
 });
 }
+
+// PYQs LOADING --------->
+
+async function loadPYQSubjects(){
+
+const branch =
+document.getElementById("pyqBranch").value;
+
+const semester =
+document.getElementById("pyqSemester").value;
+
+const subjectSelect =
+document.getElementById("pyqSubject");
+
+subjectSelect.innerHTML = `
+<option value="">Select Subject</option>
+`;
+
+const snapshot =
+await getDocs(collection(db,"subjects"));
+
+snapshot.forEach((doc)=>{
+
+const subject = doc.data();
+
+if(
+
+subject.branch.toLowerCase() === branch.toLowerCase() &&
+
+subject.semester.toLowerCase() === semester.toLowerCase()
+
+){
+
+subjectSelect.innerHTML += `
+
+<option>
+
+${subject.name}
+
+</option>
+
+`;
+
+}
+
+});
+
+}
+
+// ================= Upload PYQ Button =================
+
+document
+.getElementById("uploadPYQ")
+.onclick = uploadPYQ;
 
 document
 .getElementById("uploadLecture")

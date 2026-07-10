@@ -246,11 +246,14 @@ function openSubject(subjectName)
 {
     localStorage.setItem("subject", subjectName);
 
-    // Save last opened subject
+    // Save Continue Learning data
     localStorage.setItem("lastSubject", subjectName);
-
-    // Save last opened page
     localStorage.setItem("lastPage", "subject-details.html");
+
+    // ⭐ Save current branch & semester too
+    localStorage.setItem("lastBranch", localStorage.getItem("branch"));
+
+    localStorage.setItem("lastSemester", localStorage.getItem("semester"));
 
     window.location.href = "subject-details.html";
 }
@@ -327,6 +330,13 @@ function continueLearning()
         alert("No recent subject found.");
         return;
     }
+
+    // Restore learning state
+    localStorage.setItem("branch",localStorage.getItem("lastBranch"));
+
+    localStorage.setItem("semester",localStorage.getItem("lastSemester"));
+
+    localStorage.setItem("subject",localStorage.getItem("lastSubject"));
 
     window.location.href = page;
 }

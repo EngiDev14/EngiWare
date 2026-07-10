@@ -7,6 +7,7 @@ async function loadComponent(id, file) {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
+  
   if (document.getElementById("navbar")) {
     await loadComponent("navbar", "components/navbar.html");
   }

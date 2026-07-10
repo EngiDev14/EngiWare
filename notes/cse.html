@@ -67,17 +67,9 @@ document.getElementById("notesContainer");
 
 container.innerHTML = "";
 
-if(!branch || !semester || !subject){
+if(!branch || !semester || !subject){ 
 
-container.innerHTML = `
-
-<div class="resource-card">
-
-Invalid Selection ❌
-
-</div>
-
-`;
+window.location.href="../stream.html";
 
 return;
 
