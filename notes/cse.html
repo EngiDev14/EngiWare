@@ -27,69 +27,115 @@ onclick="toggleTheme()">
 </button>
 
 <div class="subjects-container">
+
     <h1>📚 Notes</h1>
-   <div class="resource-grid" id="notesContainer"></div>
+
+    <div
+    class="resource-grid"
+    id="notesContainer">
+
+    </div>
+
 </div>
 
 <script src="../js/script.js"></script>
 
-<script>
+<script type="module">
 
-window.onload = function () {
+import { db } from "../js/firebase.js";
 
-    let subject = localStorage.getItem("subject");
-    let container = document.getElementById("notesContainer");
+import {
 
-    if (!container) {
-        console.log("Container not found!");
-        return;
-    }
+collection,
+getDocs
 
-    if (subject === "Applied Mathematics - I") {
-        container.innerHTML = `
-            <a href="https://drive.google.com/drive/folders/1sw5jRgcO-beJLxHZKmH43E5gzjvkKkFO?usp=drive_link" target="_blank" class="resource-card">
-                📄 Whole AM Notes
-            </a>
-        `;
-    }
-    else if (subject === "Web Development") {
-        container.innerHTML = `
-            <a href="https://drive.google.com/drive/folders/1uvuDXlsYEsduo3v0rp3O34RAhCIyJLdm?usp=drive_link" target="_blank" class="resource-card">
-                📄 Whole WD Notes
-            </a>
-        `;
-    }
-    else if (subject === "Computer Programming") {
-        container.innerHTML = `
-            <a href="https://drive.google.com/drive/folders/1_v4qBlFTFDRXRjogDMa-coP75ke7W9_T?usp=drive_link" target="_blank" class="resource-card">
-                📄 Whole CP Notes
-            </a>
-        `;
-    }
-    else if (subject === "Basic Electrical Engineering") {
-        container.innerHTML = `
-            <a href="https://drive.google.com/drive/folders/1TMkI4OAkSqqIV-FHQuzY58YWqgAY_1QS?usp=drive_link" target="_blank" class="resource-card">
-                📄 Whole BEE Notes
-            </a>
-        `;
-    }
-    else if (subject === "Engineering Graphics") {
-        container.innerHTML = `
-            <a href="https://drive.google.com/drive/folders/1jhxb1_GgmtiG7gY0NLqVBN4iZ_0xlOcg?usp=drive_link" target="_blank" class="resource-card">
-                📄 Whole EG Notes
-            </a>
-        `;
-    }
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-    else {
-        container.innerHTML = `
-            <div class="resource-card">
-                Notes Coming Soon 🚀
-            </div>
-        `;
-    }
+(async ()=>{
 
-};
+const branch =
+localStorage.getItem("branch");
+
+const semester =
+localStorage.getItem("semester");
+
+const subject =
+localStorage.getItem("subject");
+
+const container =
+document.getElementById("notesContainer");
+
+container.innerHTML = "";
+
+if(!branch || !semester || !subject){
+
+container.innerHTML = `
+
+<div class="resource-card">
+
+Invalid Selection ❌
+
+</div>
+
+`;
+
+return;
+
+}
+
+const snapshot =
+await getDocs(collection(db,"notes"));
+
+let found = false;
+
+snapshot.forEach((doc)=>{
+
+const note = doc.data();
+
+if(
+
+note.branch.toLowerCase() === branch.toLowerCase() &&
+
+note.semester.toLowerCase() === semester.toLowerCase() &&
+
+note.subject.toLowerCase() === subject.toLowerCase()
+
+){
+
+found = true;
+
+container.innerHTML += `
+
+<a
+href="${note.pdfUrl}"
+target="_blank"
+class="resource-card">
+
+📄 ${note.title}
+
+</a>
+
+`;
+
+}
+
+});
+
+if(!found){
+
+container.innerHTML = `
+
+<div class="resource-card">
+
+Notes Coming Soon 🚀
+
+</div>
+
+`;
+
+}
+
+})();
 
 </script>
 

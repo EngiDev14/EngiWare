@@ -157,6 +157,9 @@ function openSemester(sem){
         return;
     }
 
+     // ⭐ Save semester
+    localStorage.setItem("semester", "Semester " + sem);
+
     window.location.href =
     "sub-" + branch.toLowerCase() + "-sem" + sem + ".html";
 }
