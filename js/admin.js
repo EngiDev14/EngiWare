@@ -504,7 +504,7 @@ async function uploadNote(){
 
     // GitHub PDF URL
     const pdfUrl =
-    `notes/${fileName}`;
+    `pdfs/${fileName}`;
 
     try{
         // notes updating and uploading ----------- 
