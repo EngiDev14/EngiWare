@@ -262,26 +262,21 @@ function openSubject(subjectName)
 
 function openNotes(){
 
-    let branch = localStorage.getItem("branch").toLowerCase();
-
     window.location.href =
-    "notes/" + branch + ".html";
+    "notes/index.html";
+
 }
 
 function openPYQs(){
 
-    let branch = localStorage.getItem("branch").toLowerCase();
-
     window.location.href =
-    "pyqs/" + branch + ".html";
+    "pyqs/index.html";
 }
 
 function openLectures(){
 
-    let branch = localStorage.getItem("branch").toLowerCase();
-
     window.location.href =
-    "lectures/" + branch + ".html";
+    "lectures/index.html";
 }
 
 function openQuiz(){

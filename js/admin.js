@@ -11,6 +11,12 @@ let allLectures = [];
 
 let allPYQs = [];
 
+let allUsers = [];
+
+let deleteFunction = null;
+
+let deleteId = null;
+
 import{
 collection,
 getDocs,
@@ -364,6 +370,7 @@ async function loadDashboard(){
         });
         renderFilteredSubjects();
         renderFilteredLectures();
+        loadUsers();
 }
 
 loadDashboard();
@@ -529,6 +536,18 @@ document
 document
 .getElementById("pyqSemester")
 .addEventListener("change",loadPYQSubjects);
+
+document
+.getElementById("userSearch")
+.addEventListener("input",renderFilteredUsers);
+
+document
+.getElementById("userBranchFilter")
+.addEventListener("change",renderFilteredUsers);
+
+document
+.getElementById("userSemesterFilter")
+.addEventListener("change",renderFilteredUsers);
 
 // -------- Notes uploading -------- //
 
@@ -720,6 +739,186 @@ loadDashboard();
 
 }
 
+// ================= LOAD USERS =================
+
+async function loadUsers(){
+
+const snapshot =
+await getDocs(collection(db,"users"));
+
+allUsers = [];
+
+snapshot.forEach((doc)=>{
+
+allUsers.push({
+
+id: doc.id,
+
+...doc.data()
+
+});
+
+});
+
+renderFilteredUsers();
+
+}
+
+// ================= RENDER USERS =================
+
+function renderFilteredUsers(){
+
+const search =
+document.getElementById("userSearch").value.toLowerCase();
+
+const branch =
+document.getElementById("userBranchFilter").value;
+
+const semester =
+document.getElementById("userSemesterFilter").value;
+
+const tbody =
+document.getElementById("usersTableBody");
+
+tbody.innerHTML = "";
+
+const filtered = allUsers.filter((user)=>{
+
+const matchesSearch =
+
+(user.name || "").toLowerCase().includes(search) ||
+
+(user.email || "").toLowerCase().includes(search);
+
+const matchesBranch =
+
+branch === "" ||
+
+user.branch === branch;
+
+const matchesSemester =
+
+semester === "" ||
+
+user.semester === semester;
+
+return matchesSearch &&
+
+matchesBranch &&
+
+matchesSemester;
+
+});
+
+filtered.forEach((user)=>{
+
+tbody.innerHTML += `
+
+<tr>
+
+<td>${user.name || "-"}</td>
+
+<td>${user.email || "-"}</td>
+
+<td>${user.branch || "-"}</td>
+
+<td>${user.semester || "-"}</td>
+
+<td>${user.role || "student"}</td>
+
+<td>
+
+<button
+class="view-btn"
+onclick="viewUser('${user.id}')">
+
+👁
+
+</button>
+
+<button
+class="delete-btn"
+onclick="deleteUser('${user.id}')">
+
+🗑
+
+</button>
+
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+// ================= VIEW USER =================
+
+window.viewUser = function(id){
+
+const user =
+allUsers.find(u => u.id === id);
+
+if(!user) return;
+
+document.getElementById("viewUserName").textContent =
+user.name || "-";
+
+document.getElementById("viewUserEmail").textContent =
+user.email || "-";
+
+document.getElementById("viewUserCollege").textContent =
+user.college || "-";
+
+document.getElementById("viewUserBranch").textContent =
+user.branch || "-";
+
+document.getElementById("viewUserSemester").textContent =
+user.semester || "-";
+
+document.getElementById("viewUserRole").textContent =
+user.role || "student";
+
+document.getElementById("userModal").style.display = "flex";
+
+}
+
+// ================= ASK DELETE USER =================
+
+window.deleteUser = function(id){
+
+openDeleteModal(
+"Delete this user?",
+id,
+confirmDeleteUser
+);
+};
+
+// ================= CONFIRM DELETE USER =================
+
+async function confirmDeleteUser(id){
+
+try{
+await deleteDoc(
+doc(db,"users",id)
+);
+
+window.showToast(
+"🗑 User Deleted Successfully!"
+);
+loadUsers();
+}
+
+catch(error){
+window.showToast(
+error.message,
+"error"
+);
+}
+}
+
 // ------------ EDIT NOTES ------------ //
 
 window.editNote = async function(noteId){
@@ -763,16 +962,19 @@ window.editNote = async function(noteId){
 
 // -------- DELETE NOTES --------//
 
-window.deleteNote = async function(noteId){
+window.deleteNote=function(id){
 
-const confirmDelete =
-confirm("Delete this note?");
+openDeleteModal(
+"Delete this note?",
+id,
+confirmDeleteNote
+);
+}
 
-if(!confirmDelete)
-return;
+async function confirmDeleteNote(id){
 
 await deleteDoc(
-doc(db,"notes",noteId)
+doc(db,"notes",id)
 );
 
 loadDashboard();
@@ -780,7 +982,6 @@ loadDashboard();
 window.showToast(
 "🗑 Note Deleted Successfully!"
 );
-
 }
 
 // ---------- VIEW NOTES ----------//
@@ -1227,25 +1428,24 @@ window.viewNote = function(pdfUrl){
 
         // ================= Delete PYQ =================
 
-        async function deletePYQ(id){
+        window.deletePyq=function(id){
 
-        const confirmDelete =
-        confirm("Delete this PYQ?");
-
-        if(!confirmDelete){
-
-        return;
-
+        openDeleteModal(
+        "Delete this PYQ?",
+        id,
+        confirmDeletePyq
+        );
         }
 
+        async function confirmDeletePyq(id){
+
         await deleteDoc(
-
         doc(db,"pyqs",id)
-
         );
-
+        window.showToast(
+        "🗑 PYQ Deleted Successfully!"
+        );
         loadDashboard();
-
         }
 
         // ================= Edit PYQ =================
@@ -1395,16 +1595,19 @@ window.viewNote = function(pdfUrl){
 
         // ---------- DELETE SUBJECT ----------//
 
-        window.deleteSubject = async function(subjectId){
+        window.deleteSubject=function(id){
 
-        const confirmDelete =
-        confirm("Delete this subject?");
+        openDeleteModal(
+        "Delete this subject?",
+        id,
+        confirmDeleteSubject
+        );
+        }
 
-        if(!confirmDelete)
-        return;
+        async function confirmDeleteSubject(id){
 
         await deleteDoc(
-        doc(db,"subjects",subjectId)
+        doc(db,"subjects",id)
         );
 
         loadDashboard();
@@ -1412,8 +1615,21 @@ window.viewNote = function(pdfUrl){
         window.showToast(
         "🗑 Subject Deleted Successfully!"
         );
-
         }
+
+// ================= OPEN DELETE MODAL =================
+
+function openDeleteModal(message,id,callback){
+
+deleteId = id;
+
+deleteFunction = callback;
+
+document.getElementById("deleteMessage").textContent = message;
+
+document.getElementById("deleteModal").style.display = "flex";
+
+}
 
 // ------- search bar ---------//
 
@@ -1452,6 +1668,27 @@ document
 document
 .getElementById("filterLectureSemester")
 .addEventListener("change",renderFilteredLectures);
+
+document
+.getElementById("closeUserModal")
+.onclick = ()=>{
+document.getElementById("userModal").style.display = "none";
+};
+
+document
+.getElementById("cancelDelete")
+.onclick = ()=>{
+document.getElementById("deleteModal").style.display = "none";
+};
+
+document
+.getElementById("confirmDelete")
+.onclick = ()=>{
+document.getElementById("deleteModal").style.display = "none";
+if(deleteFunction){
+deleteFunction(deleteId);
+}
+};
 
 // --------- ADD SUBJECT ---------//
 
@@ -1861,16 +2098,19 @@ lectureModal.style.display = "flex";
 
 // ---------- DELETE LECTURE ----------//
 
-window.deleteLecture = async function(lectureId){
+window.deleteLecture=function(id){
 
-const confirmDelete =
-confirm("Delete this lecture?");
+openDeleteModal(
+"Delete this lecture?",
+id,
+confirmDeleteLecture
+);
+}
 
-if(!confirmDelete)
-return;
+async function confirmDeleteLecture(id){
 
 await deleteDoc(
-doc(db,"lectures",lectureId)
+doc(db,"lectures",id)
 );
 
 window.showToast(
@@ -1878,5 +2118,4 @@ window.showToast(
 );
 
 loadDashboard();
-
 }

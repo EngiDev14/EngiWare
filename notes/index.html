@@ -7,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Lectures</title>
+    <title>Notes</title>
 
     <link rel="stylesheet"
           href="../css/style.css">
@@ -28,10 +28,11 @@ onclick="toggleTheme()">
 
 <div class="subjects-container">
 
-    <h1>🎥 Lectures</h1>
+    <h1>📚 Notes</h1>
 
-    <div class="resource-grid"
-         id="lectureContainer">
+    <div
+    class="resource-grid"
+    id="notesContainer">
 
     </div>
 
@@ -41,23 +42,16 @@ onclick="toggleTheme()">
 
 <script type="module">
 
-// ================= Firebase =================
-
-import { db }
-from "../js/firebase.js";
+import { db } from "../js/firebase.js";
 
 import {
 
 collection,
 getDocs
 
-}
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
-
-// ================= Load Lectures =================
-
-(async () => {
+(async ()=>{
 
 const branch =
 localStorage.getItem("branch");
@@ -69,42 +63,34 @@ const subject =
 localStorage.getItem("subject");
 
 const container =
-document.getElementById("lectureContainer");
+document.getElementById("notesContainer");
 
-if(!branch || !semester || !subject){
+container.innerHTML = "";
 
-container.innerHTML = `
+if(!branch || !semester || !subject){ 
 
-<div class="resource-card">
-
-Invalid Selection ❌
-
-</div>
-
-`;
+window.location.href="../stream.html";
 
 return;
 
 }
 
-container.innerHTML = "";
-
 const snapshot =
-await getDocs(collection(db,"lectures"));
+await getDocs(collection(db,"notes"));
 
 let found = false;
 
 snapshot.forEach((doc)=>{
 
-const lecture = doc.data();
+const note = doc.data();
 
 if(
 
-lecture.branch.toLowerCase() === branch.toLowerCase() &&
+note.branch.toLowerCase() === branch.toLowerCase() &&
 
-lecture.semester.toLowerCase() === semester.toLowerCase() &&
+note.semester.toLowerCase() === semester.toLowerCase() &&
 
-lecture.subject.toLowerCase() === subject.toLowerCase()
+note.subject.toLowerCase() === subject.toLowerCase()
 
 ){
 
@@ -113,11 +99,11 @@ found = true;
 container.innerHTML += `
 
 <a
-href="${lecture.lectureUrl}"
+href="${note.pdfUrl}"
 target="_blank"
 class="resource-card">
 
-🎥 ${lecture.title}
+📄 ${note.title}
 
 </a>
 
@@ -133,7 +119,7 @@ container.innerHTML = `
 
 <div class="resource-card">
 
-Lectures Coming Soon 🚀
+Notes Coming Soon 🚀
 
 </div>
 

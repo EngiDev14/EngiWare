@@ -3252,7 +3252,9 @@ z-index:5000;
 }
 
 .upload-modal{
-width:430px;
+width:min(430px,95%);
+max-height:90vh;
+overflow-y:auto;
 background:#181818;
 padding:30px;
 border-radius:22px;
@@ -3379,6 +3381,8 @@ border:none;
 border-radius:10px;
 color:white;
 font-size:15px;
+flex:1;
+min-width:220px;
 }
 
 .notes-table{
@@ -3407,4 +3411,9 @@ margin-top:35px;
 background:#1a1a1a;
 padding:25px;
 border-radius:18px;
+}
+
+.table-wrapper{
+overflow-x:auto;
+border-radius:14px;
 }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quiz</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body class="subjects-page">
+
+<button class="back-btn"
+onclick="history.back()">
+← Back
+</button>
+
+<button class="theme-btn"
+onclick="toggleTheme()">
+🌙
+</button>
+
+<div class="subjects-container">
+
+<h1 id="quizTitle">
+Quiz
+</h1>
+
+<h2 id="questionNo">
+    Question 1 of 5
+</h2>
+
+<div class="quizStats">
+
+<span id="correctCount">
+✔ Correct : 0
+</span>
+
+<span id="wrongCount">
+❌ Wrong : 0
+</span>
+
+</div>
+
+<div class="resource-card" id="questionBox">
+    Question will appear here...
+</div>
+
+<br>
+
+<button class="semester-btn option-btn"
+        onclick="checkAnswer(0)"
+        id="option0">
+    Option 1
+</button>
+
+<button class="semester-btn option-btn"
+        onclick="checkAnswer(1)"
+        id="option1">
+    Option 2
+</button>
+
+<button class="semester-btn option-btn"
+        onclick="checkAnswer(2)"
+        id="option2">
+    Option 3
+</button>
+
+<button class="semester-btn option-btn"
+        onclick="checkAnswer(3)"
+        id="option3">
+    Option 4
+</button>
+
+<p id="resultMessage"></p>
+
+<div id="resultCard" class="result-card" style="display:none;">
+
+    <h1>🏆</h1>
+
+    <h2>Quiz Completed</h2>
+
+    <hr>
+
+    <h1 id="finalScore"></h1>
+
+    <h3 id="finalPercentage"></h3>
+
+    <h3 id="finalGrade"></h3>
+
+    <p id="performanceMessage"></p>
+
+</div>
+
+<div id="resultButtons"
+style="display:none;">
+
+<button
+class="semester-btn result-btn"
+onclick="restartQuiz()">
+
+🔄 Restart Quiz
+
+</button>
+
+<button
+class="semester-btn result-btn"
+onclick="goBackSubjects()">
+
+📚 Subject List
+
+</button>
+
+<button
+class="semester-btn result-btn"
+onclick="goHome()">
+
+🏠 Home
+
+</button>
+
+</div>
+
+<div class="progress-box">
+    <div id="progressBar"></div>
+</div>
+<br>
+<button
+id="nextButton"
+class="semester-btn"
+onclick="nextQuestion()">
+Next →
+</button>
+
+</div>
+
+<script src="../js/script.js"></script>
+<script src="../quizzes/cse.js"></script>
+<script src="../js/quiz.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+/*================ TABLE WRAPPER ================*/
+
+.table-wrapper{
+width:100%;
+overflow-x:auto;
+border-radius:16px;
+margin-top:18px;
+}
+
+.table-wrapper::-webkit-scrollbar{
+height:8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb{
+background:crimson;
+border-radius:20px;
+}
+
+.notes-toolbar{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin:20px 0;
+}
+
+.notes-toolbar input,
+.notes-toolbar select{
+flex:1;
+min-width:220px;
+padding:14px 16px;
+background:#242424;
+border:1px solid rgba(255,255,255,.08);
+border-radius:12px;
+color:white;
+font-size:15px;
+transition:.25s;
+}
+
+.notes-toolbar input:focus,
+.notes-toolbar select:focus{
+outline:none;
+border-color:crimson;
+box-shadow:0 0 12px rgba(220,20,60,.25);
+}
+
+.notes-manager,
+.subjects-manager{
+margin-top:35px;
+background:#1b1b1b;
+padding:28px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.06);
+box-shadow:0 10px 35px rgba(0,0,0,.25);
+}
+
+.notes-table{
+width:100%;
+min-width:780px;
+border-collapse:collapse;
+}
+
+.notes-table th{
+padding:16px;
+background:#202020;
+font-size:15px;
+font-weight:600;
+color:white;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.notes-table td{
+padding:16px;
+color:#d8d8d8;
+font-size:15px;
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.notes-table tbody tr{
+transition:.25s;
+}
+
+.notes-table tbody tr:hover{
+background:#232323;
+}
+
+.edit-btn,
+.delete-btn,
+.view-btn{
+width:42px;
+height:42px;
+display:inline-flex;
+justify-content:center;
+align-items:center;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-size:17px;
+transition:.25s;
+margin-right:6px;
+background:#292929;
+color:white;
+}
+
+.edit-btn:hover{
+background:#f59e0b;
+transform:translateY(-2px);
+}
+
+.delete-btn:hover{
+background:crimson;
+transform:translateY(-2px);
+}
+
+.view-btn:hover{
+background:#2563eb;
+transform:translateY(-2px);
+}
+
+/*================ MOBILE MANAGERS ================*/
+
+@media(max-width:768px){
+
+.notes-manager,
+.subjects-manager{
+padding:18px;
+}
+
+.notes-toolbar{
+flex-direction:column;
+}
+
+.notes-toolbar input,
+.notes-toolbar select{
+width:100%;
+min-width:100%;
+}
+
+.notes-table{
+min-width:720px;
+}
+}
+
+/*================ MOBILE TABLE MANAGERS ================*/
+
+@media(max-width:768px){
+
+.table-wrapper{
+overflow-x:auto;
+border-radius:16px;
+margin-top:15px;
+-webkit-overflow-scrolling:touch;
+}
+
+.notes-table{
+min-width:760px;
+}
+
+.notes-table th{
+padding:16px 14px;
+font-size:14px;
+white-space:nowrap;
+}
+
+.notes-table td{
+padding:16px 14px;
+font-size:14px;
+white-space:nowrap;
+}
+
+.notes-manager,
+.subjects-manager{
+padding:18px;
+border-radius:18px;
+}
+
+.notes-toolbar{
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.notes-toolbar input,
+.notes-toolbar select{
+width:100%;
+min-width:100%;
+}
+
+.section-title{
+flex-direction:column;
+align-items:flex-start;
+gap:10px;
+}
+
+.section-title h2{
+font-size:24px;
+}
+
+.edit-btn,
+.delete-btn,
+.view-btn{
+width:44px;
+height:44px;
+font-size:18px;
+}
+}
+
+/*================ DELETE MODAL ================*/
+
+#deleteMessage{
+margin:20px 0;
+font-size:17px;
+line-height:1.6;
+color:#d8d8d8;
+}
+
+#cancelDelete{
+background:#333;
+color:white;
+}
+
+#confirmDelete{
+background:crimson;
+color:white;
+}
