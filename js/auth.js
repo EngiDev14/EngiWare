@@ -162,6 +162,11 @@ localStorage.setItem(
 data.role || "student"
 );
 
+localStorage.setItem(
+"userId",
+user.uid
+);
+
 }
 
 if(

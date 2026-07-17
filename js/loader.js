@@ -54,19 +54,13 @@ updateProgress(
 setTimeout(()=>{
 
 if(user){
-
 window.location.replace("hub.html");
-
 }
 
 else{
-
 window.location.replace("login.html");
-
 }
 
 },700);
-
 });
-
 },1800);

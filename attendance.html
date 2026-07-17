@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AttendGuard</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/attendance.css">
+
+</head>
+
+<body class="attendance-page">
+
+<!-- ================= TOP BAR ================= -->
+
+<button class="back-btn"
+onclick="history.back()">
+← Back
+</button>
+
+<button class="theme-btn"
+onclick="toggleTheme()">
+🌙
+</button>
+
+<!-- ================= PAGE ================= -->
+
+<div class="attendance-container">
+
+<h1>📅 AttendGuard</h1>
+<p class="attendance-subtitle">
+Track your attendance smartly.
+</p>
+
+<!-- ================= SUMMARY ================= -->
+
+<div class="attendance-summary">
+
+<div class="summary-card">
+
+<h3>Total Subjects</h3>
+<h2 id="totalSubjects">
+0
+</h2>
+
+</div>
+
+<div class="summary-card">
+
+<h3>Overall Attendance</h3>
+<h2 id="overallAttendance">
+0%
+</h2>
+
+</div>
+</div>
+
+<!-- ================= BUTTON ================= -->
+
+<div class="attendance-toolbar">
+
+<button id="addSubjectBtn">
+➕ Add Subject
+</button>
+
+</div>
+
+<!-- ================= SUBJECTS ================= -->
+
+<div
+class="attendance-grid"
+id="attendanceContainer">
+<!-- Cards will come here -->
+</div>
+</div>
+
+<!-- ================= ADD SUBJECT MODAL ================= -->
+
+<div
+class="modal-overlay"
+id="attendanceModal">
+
+<div class="upload-modal">
+
+<h2>
+📚 Add Subject
+</h2>
+
+<input
+type="text"
+id="attendanceSubject"
+placeholder="Subject Name">
+
+<input
+type="text"
+id="attendanceFaculty"
+placeholder="Faculty Name (Optional)">
+
+<div class="modal-buttons">
+
+<button
+id="closeAttendanceModal">
+Cancel
+</button>
+
+<button
+id="saveAttendanceSubject">
+Save
+</button>
+
+</div>
+</div>
+</div>
+
+<script src="js/script.js"></script>
+<script type="module" src="js/attendance.js"></script>
+
+<div id="toast" class="toast"></div>
+
+<!-------------- Delete Modal ------------->
+
+<div class="modal-overlay" id="deleteModal">
+
+    <div class="upload-modal">
+
+        <h2>⚠ Confirm Delete</h2>
+
+        <p id="deleteMessage">
+            Are you sure you want to delete this?
+        </p>
+
+        <div class="modal-buttons">
+
+            <button id="cancelDelete">
+                Cancel
+            </button>
+
+            <button id="confirmDelete">
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
