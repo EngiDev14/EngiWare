@@ -10,8 +10,8 @@ content="width=device-width, initial-scale=1.0">
 
 <title>My Profile</title>
 
-<link rel="stylesheet"
-href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/profile.css">
 
 </head>
 
@@ -25,11 +25,66 @@ onclick="closeSidebar()"></div>
 
 <aside id="sidebar"></aside>
 
+<!------------ PROFILE CHANGES AND UPDATES ------------>
+
 <div class="subjects-container">
 
-<div class="profile-card">
+<div class="profile-wrapper">
 
-<h1>👤 My Profile</h1>
+<div class="profile-header">
+
+<div class="profile-avatar">
+👤
+</div>
+
+<h1 id="welcomeName">
+Welcome Back
+</h1>
+
+<p>
+Manage your EngiWare profile
+</p>
+
+</div>
+
+<div class="profile-info-card">
+
+<h2>📋 Profile Information</h2>
+
+<div class="profile-info">
+
+<div class="info-item">
+<span>Name</span>
+<p id="displayName">-</p>
+</div>
+
+<div class="info-item">
+<span>Email</span>
+<p id="displayEmail">-</p>
+</div>
+
+<div class="info-item">
+<span>College</span>
+<p id="displayCollege">-</p>
+</div>
+
+<div class="info-item">
+<span>Branch</span>
+<p id="displayBranch">-</p>
+</div>
+
+<div class="info-item">
+<span>Semester</span>
+<p id="displaySemester">-</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="profile-edit-card">
+
+<h2>✏ Edit Profile</h2>
 
 <input
 type="text"
@@ -52,10 +107,13 @@ id="profileSemester"
 placeholder="Semester">
 
 <button id="saveProfileBtn">
-Save Profile
+💾 Save Changes
 </button>
 
 </div>
+
+</div>
+
 </div>
 
 <div id="toast" class="toast"></div>

@@ -12,8 +12,9 @@ padding:40px 25px;
 }
 
 .attendance-container h1{
-font-size:40px;
-margin-bottom:8px;
+font-size:30px;
+font-weight:700;
+margin-bottom:5px;
 }
 
 .attendance-subtitle{
@@ -34,8 +35,8 @@ margin-bottom:35px;
 .summary-card{
 background:#181818;
 border:1px solid rgba(255,255,255,.08);
-border-radius:18px;
-padding:25px;
+border-radius:17px;
+padding:18px;
 transition:.3s;
 }
 
@@ -51,8 +52,9 @@ margin-bottom:12px;
 }
 
 .summary-card h2{
-font-size:34px;
+font-size:26px;
 color:white;
+font-weight:700;
 }
 
 /*================ TOOLBAR =================*/
@@ -91,8 +93,8 @@ gap:22px;
 .attendance-card{
 background:#181818;
 border:1px solid rgba(255,255,255,.08);
-border-radius:20px;
-padding:22px;
+border-radius:18px;
+padding:18px;
 transition:.3s;
 }
 
@@ -102,8 +104,9 @@ transform:translateY(-5px);
 }
 
 .attendance-card h2{
-font-size:22px;
-margin-bottom:8px;
+font-size:19px;
+font-weight:600;
+margin-bottom:6px;
 }
 
 .attendance-card p{
@@ -140,11 +143,11 @@ flex-wrap:wrap;
 
 .attendance-actions button{
 flex:1;
-padding:12px;
+padding:10px;
 border:none;
 border-radius:10px;
 cursor:pointer;
-font-size:15px;
+font-size:14px;
 transition:.3s;
 }
 
@@ -222,14 +225,14 @@ gap:10px;
 }
 
 .small-btn{
-width:34px;
-height:34px;
+width:30px;
+height:30px;
 border:none;
 border-radius:8px;
 background:#2b2b2b;
 color:white;
 cursor:pointer;
-font-size:18px;
+font-size:16px;
 transition:.25s;
 }
 
@@ -296,4 +299,117 @@ background:rgba(239,68,68,0.06);
 .danger-card .attendance-status{
 background:rgba(239,68,68,0.15);
 color:#fca5a5;
+}
+
+.attendance-summary{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+margin-bottom:30px;
+}
+
+/*================ SEARCH =================*/
+
+.attendance-search{
+margin:25px 0;
+}
+
+.attendance-search input{
+width:100%;
+padding:14px 18px;
+background:#1f1f1f;
+border:1px solid rgba(255,255,255,.08);
+border-radius:14px;
+color:white;
+font-size:16px;
+outline:none;
+transition:.3s;
+}
+
+.attendance-search input:focus{
+border-color:crimson;
+box-shadow:0 0 10px rgba(220,20,60,.25);
+}
+
+/* --------- MOBILE CSS --------- */
+
+@media(max-width:768px){
+
+.attendance-summary{
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+.summary-card{
+padding:14px;
+}
+
+.summary-card h3{
+font-size:13px;
+}
+
+.summary-card h2{
+font-size:20px;
+}
+
+.attendance-card{
+padding:16px;
+}
+
+.attendance-card h2{
+font-size:18px;
+}
+
+.attendance-actions{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:6px;
+}
+
+.attendance-actions button{
+font-size:13px;
+padding:10px;
+}
+
+.counter-row{
+flex-direction:column;
+align-items:flex-start;
+gap:8px;
+}
+
+.attendance-container{
+padding:18px;
+}
+
+.attendance-container h1{
+font-size:25px;
+}
+
+.attendance-search{
+margin:18px 0;
+}
+
+.attendance-search input{
+padding:12px 14px;
+font-size:15px;
+}
+
+.attendance-status{
+font-size:13px;
+padding:6px 10px;
+}
+
+.attendance-prediction{
+font-size:12px;
+padding:10px;
+}
+
+.attendance-toolbar button{
+padding:12px;
+font-size:15px;
+}
+
+.progress{
+height:7px;
+}
 }

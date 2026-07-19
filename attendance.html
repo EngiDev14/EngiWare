@@ -41,32 +41,35 @@ Track your attendance smartly.
 <div class="attendance-summary">
 
 <div class="summary-card">
-
 <h3>Total Subjects</h3>
-<h2 id="totalSubjects">
-0
-</h2>
-
+<h2 id="totalSubjects"> 0 </h2>
 </div>
 
 <div class="summary-card">
-
 <h3>Overall Attendance</h3>
-<h2 id="overallAttendance">
-0%
-</h2>
-
+<h2 id="overallAttendance"> 0% </h2>
 </div>
+
+<div class="summary-card">
+<h3>Total Present</h3>
+<p id="totalPresent">0</p>
+</div>
+
+<div class="summary-card">
+<h3>Total Absent</h3>
+<p id="totalAbsent">0</p>
+</div>
+
 </div>
 
 <!-- ================= BUTTON ================= -->
 
 <div class="attendance-toolbar">
+<button id="addSubjectBtn"> ➕ Add Subject </button>
+</div>
 
-<button id="addSubjectBtn">
-➕ Add Subject
-</button>
-
+<div class="attendance-search">
+<input type="text" id="attendanceSearch" placeholder="🔍 Search Subject...">
 </div>
 
 <!-- ================= SUBJECTS ================= -->

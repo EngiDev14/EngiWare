@@ -1,8 +1,63 @@
+import { db, auth } from "./firebase.js";
+
+import {
+collection,
+addDoc,
+serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+const branch =
+localStorage.getItem("branch").toLowerCase();
+
+const script =
+document.createElement("script");
+
+script.src = `../quizzes/${branch}.js`;
+
+script.onload = () => {
+    startQuiz();
+};
+
+document.body.appendChild(script);
+
+function startQuiz(){
+
 let subject = localStorage.getItem("subject");
 
 document.getElementById("quizTitle").innerHTML = "🎯 " + subject + " Quiz";
 
-let questions = quizData[subject];
+const semester = localStorage.getItem("semester").replace(" ", "").toLowerCase();
+
+// accessing questions of each semster of a particular branch .........
+
+const semesterData = quizData[semester];
+
+if (!semesterData) {
+    showComingSoon();
+    return;
+}
+
+const questions = semesterData[subject];
+
+if (!questions || questions.length === 0) {
+    showComingSoon();
+    return;
+}
+
+function showComingSoon(){
+
+document.getElementById("questionBox").innerHTML =
+"🚧 Quiz Coming Soon";
+
+document.getElementById("option0").style.display="none";
+document.getElementById("option1").style.display="none";
+document.getElementById("option2").style.display="none";
+document.getElementById("option3").style.display="none";
+
+document.getElementById("nextButton").style.display="none";
+
+}
 
 let currentQuestion = 0;
 let score = 0;
@@ -37,7 +92,7 @@ function showQuestion() {
 
 let answered = false;
 
-function checkAnswer(option) {
+window.checkAnswer = function(option){
   if (answered) {
     return;
   }
@@ -47,13 +102,16 @@ function checkAnswer(option) {
   if (option == correct) {
     score++;
     document.getElementById("resultMessage").innerHTML = "✅ Correct Answer!";
+    document.getElementById("explanationBox").innerHTML = "💡 " + questions[currentQuestion].explanation;
     document.getElementById("option" + option).style.background = "green";
     correctAnswers++;
 
     document.getElementById("correctCount").innerHTML =
       "✔ Correct : " + correctAnswers;
-  } else {
+  }
+  else {
     document.getElementById("resultMessage").innerHTML = "❌ Wrong Answer!";
+    document.getElementById("explanationBox").innerHTML = "💡 " + questions[currentQuestion].explanation;
     document.getElementById("option" + option).style.background = "red";
     document.getElementById("option" + correct).style.background = "green";
     wrongAnswers++;
@@ -62,7 +120,8 @@ function checkAnswer(option) {
       "❌ Wrong : " + wrongAnswers;
   }
 }
-function nextQuestion() {
+
+window.nextQuestion = async function(){
   if (!answered) {
     alert("Please answer the question first!");
     return;
@@ -77,12 +136,27 @@ function nextQuestion() {
 
     document.getElementById("resultMessage").innerHTML = "";
 
+    document.getElementById("explanationBox").innerHTML = "";
+
     document.getElementById("option0").style.display = "none";
     document.getElementById("option1").style.display = "none";
     document.getElementById("option2").style.display = "none";
     document.getElementById("option3").style.display = "none";
 
     let percentage = Math.round((score / questions.length) * 100);
+
+    const quizResult = {
+    userId: auth.currentUser.uid,
+    subject: subject,
+    branch: branch,
+    semester: semester,
+    score: score,
+    totalQuestions: questions.length,
+    correct: correctAnswers,
+    wrong: wrongAnswers,
+    percentage: percentage,
+    createdAt: serverTimestamp()
+    };
 
     let message = "";
     let grade = "";
@@ -112,34 +186,31 @@ function nextQuestion() {
       "📊 Percentage : " + percentage + "%";
 
     document.getElementById("finalGrade").innerHTML = grade;
-
     document.getElementById("performanceMessage").innerHTML = message;
-    
     document.getElementById("resultCard").style.display = "block";
-
     document.getElementById("resultButtons").style.display = "block";
-
     document.getElementById("questionBox").style.display = "none";
-
     document.getElementById("questionNo").style.display = "none";
-
     document.getElementById("progressContainer").style.display = "none";
-
     document.getElementById("correctCount").style.display = "none";
-
     document.getElementById("wrongCount").style.display = "none";
-
     document.getElementById("resultMessage").style.display = "none";
 
     document.getElementById("option0").style.display = "none";
-
     document.getElementById("option1").style.display = "none";
-
     document.getElementById("option2").style.display = "none";
-
     document.getElementById("option3").style.display = "none";
-
     document.getElementById("nextButton").style.display = "none";
+
+      try{
+      await addDoc(
+      collection(db,"quizResults"),
+      quizResult
+      );
+      }
+      catch(error){
+      console.error(error);
+      }
 
 
     return;
@@ -158,14 +229,15 @@ function nextQuestion() {
 }
 // new buttons on quiz dashboard :
 
-function restartQuiz() {
+window.restartQuiz = function(){
   location.reload();
 }
 
-function goHome() {
+window.goHome = function(){
   window.location.href = "/stream.html";
 }
 
-function goBackSubjects() {
+window.goBackSubjects = function(){
   history.back();
+}
 }

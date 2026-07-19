@@ -36,6 +36,24 @@ if(userSnap.exists()){
 const data =
 userSnap.data();
 
+document.getElementById("welcomeName").textContent =
+`Welcome Back, ${data.name || "Student"}`;
+
+document.getElementById("displayName").textContent =
+data.name || "-";
+
+document.getElementById("displayEmail").textContent =
+user.email;
+
+document.getElementById("displayCollege").textContent =
+data.college || "-";
+
+document.getElementById("displayBranch").textContent =
+data.branch || "-";
+
+document.getElementById("displaySemester").textContent =
+data.semester || "-";
+
 document.getElementById("profileName").value =
 data.name || "";
 
@@ -75,14 +93,21 @@ localStorage.setItem(
 document.getElementById("profileName").value
 );
 
-showToast("✅ Profile Updated");
+document.getElementById("welcomeName").textContent =
+`Welcome Back, ${document.getElementById("profileName").value}`;
 
-setTimeout(() => {
+document.getElementById("displayName").textContent =
+document.getElementById("profileName").value;
 
-window.location.href = "hub.html";
+document.getElementById("displayCollege").textContent =
+document.getElementById("profileCollege").value;
 
-},1500);
+document.getElementById("displayBranch").textContent =
+document.getElementById("profileBranch").value;
 
+document.getElementById("displaySemester").textContent =
+document.getElementById("profileSemester").value;
+
+showToast("✅ Profile Updated Successfully!");
 });
-
 });

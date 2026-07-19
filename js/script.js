@@ -1,22 +1,16 @@
 // Splash screen auto redirect
 
-// Splash screen auto redirect
-
 if (
     window.location.pathname === "/EngiWare/" ||
     window.location.pathname.endsWith("index.html")
 )
 {
     setTimeout(() => {
-
         document.body.classList.add("fade-out");
-
     },2500);
 
     setTimeout(() => {
-
         window.location.href = "loader.html";
-
     },3200);
 }
 
@@ -281,11 +275,10 @@ function openLectures(){
 
 function openQuiz(){
 
-    let branch = localStorage.getItem("branch").toLowerCase();
-
     window.location.href =
-    "quiz/" + branch + ".html";
+    "quiz/quiz-player.html";
 }
+
 // main dashboard settings : 
 
 function goToHub()

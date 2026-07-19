@@ -240,6 +240,12 @@ const data = doc.data();
 if(data.userId !== localStorage.getItem("userId"))
 return;
 
+const searchText =
+document.getElementById("attendanceSearch")?.value.toLowerCase() || "";
+
+if(!data.subject.toLowerCase().includes(searchText))
+return;
+
 const present = data.present;
 const absent = data.absent;
 
@@ -447,11 +453,21 @@ totalClasses === 0
 document.getElementById("overallAttendance").textContent =
 overall + "%";
 
+document.getElementById("totalPresent").textContent =
+totalPresent;
+
+document.getElementById("totalAbsent").textContent =
+totalAbsent;
+
 }
 
 // ================= START =================
 
 loadAttendance();
+
+document
+.getElementById("attendanceSearch")
+.addEventListener("input",loadAttendance);
 
 // ================= PRESENT =================
 
