@@ -3417,3 +3417,20 @@ border-radius:18px;
 overflow-x:auto;
 border-radius:14px;
 }
+
+/* ========== PASSWORD SECURITY ==========*/
+
+.forgot-password{
+    text-align:right;
+    margin-top:8px;
+}
+
+.forgot-password a{
+    color:#3b82f6;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+.forgot-password a:hover{
+    text-decoration:underline;
+}

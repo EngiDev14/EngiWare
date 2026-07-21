@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Settings | EngiWare</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/settings.css">
+
+</head>
+
+<body>
+
+<div class="settings-container">
+
+<div class="settings-card">
+
+<button id="backBtn" class="back-btn">
+← Back
+</button>
+
+<h1>⚙ Settings</h1>
+
+<p class="subtitle">
+Manage your EngiWare account
+</p>
+
+<div class="divider"></div>
+
+<div class="settings-item">
+
+<div>
+
+<h3>👤 My Profile</h3>
+
+<p>
+View and edit your profile information.
+</p>
+
+</div>
+
+<button class="settings-btn" onclick="goProfile()">
+Open
+</button>
+
+</div>
+
+<div class="settings-item">
+
+<div>
+
+<h3>🔒 Change Password</h3>
+
+<p>
+Update your account password.
+</p>
+
+</div>
+
+<button class="settings-btn" onclick="togglePasswordSection()">
+Change
+</button>
+
+</div>
+
+<div class="settings-item">
+
+<div>
+
+<h3>🚪 Logout</h3>
+
+<p>
+Logout from your account.
+</p>
+
+</div>
+
+<button class="settings-btn logout-btn" onclick="logoutUser()">
+Logout
+</button>
+
+</div>
+
+<div class="settings-item">
+
+<div>
+
+<h3>ℹ About EngiWare</h3>
+
+<p>
+Version, developer and app information.
+</p>
+
+</div>
+
+<button class="settings-btn" onclick="toggleAboutSection()">
+View
+</button>
+
+</div>
+
+<div id="passwordSection" style="display:none;">
+
+<h2>🔒 Change Password</h2>
+
+<label>Current Password</label>
+<input type="password" id="currentPassword">
+
+<label>New Password</label>
+<input type="password" id="newPassword">
+
+<label>Confirm Password</label>
+<input type="password" id="confirmPassword">
+
+<button id="changePasswordBtn">
+Change Password
+</button>
+
+</div>
+
+<div id="aboutSection" style="display:none;">
+
+<h2>About EngiWare</h2>
+
+<p><b>Version:</b> 1.0</p>
+
+<p><b>Developer:</b> Tanish Garg</p>
+
+<p><b>Platform:</b> Engineering Learning Portal</p>
+
+<p><b>Status:</b> Production Build 🚀</p>
+
+<p>
+Made for engineering students to access Notes,
+Lectures, PYQs, Quizzes and Attendance from one place.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="js/script.js"></script>
+<script type="module" src="js/change-password.js"></script>
+
+<div id="toast" class="toast"></div>
+
+</body>
+</html>

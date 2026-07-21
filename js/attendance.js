@@ -40,6 +40,8 @@ await deleteCallback(deleteId);
 
 };
 
+import { auth } from "./firebase.js";
+
 import {
 collection,
 addDoc,
@@ -48,7 +50,9 @@ getDoc,
 deleteDoc,
 serverTimestamp,
 updateDoc,
-doc
+doc,
+query,
+where
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
@@ -228,8 +232,12 @@ container.innerHTML="";
 let totalPresent = 0;
 let totalAbsent = 0;
 
-const snapshot =
-await getDocs(collection(db,"attendance"));
+const q = query(
+    collection(db, "attendance"),
+    where("userId", "==", auth.currentUser.uid)
+);
+
+const snapshot = await getDocs(q);
 
 let totalSubjects = 0;
 

@@ -3,6 +3,7 @@ import { auth, db } from "./firebase.js";
 import {
 createUserWithEmailAndPassword,
 signInWithEmailAndPassword,
+sendPasswordResetEmail,
 onAuthStateChanged,
 signOut
 }
@@ -130,6 +131,45 @@ error.message,
 );
 }
 });
+}
+
+// ------------ Forgot Password ------------- //
+
+const forgotPassword =
+document.getElementById("forgotPassword");
+
+if (forgotPassword) {
+
+forgotPassword.onclick = async function(e){
+
+    e.preventDefault();
+
+    const email =
+    document.getElementById("email").value.trim();
+
+    if(email === ""){
+
+        window.showToast(
+        "Please enter your email first.",
+        "error"
+        );
+        return;
+    }
+
+    try{
+        await sendPasswordResetEmail(auth,email);
+        window.showToast(
+        "📧 Password reset link sent to your email."
+        );
+    }
+
+    catch(error){
+        window.showToast(
+        error.message,
+        "error"
+        );
+    }
+};
 }
 
 // ---------------- AUTO LOGIN ----------------
