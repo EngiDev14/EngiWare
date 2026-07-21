@@ -22,7 +22,7 @@ max-width:500px;
 }
 
 .settings-card{
-background:#1f2937;
+background:var(--card-bg,#1f2937);
 padding:35px;
 border-radius:18px;
 box-shadow:0 0 20px rgba(0,0,0,.4);
@@ -135,6 +135,164 @@ margin-top:30px;
 
 #aboutSection{
 margin-top:30px;
-color:white;
 line-height:1.8;
+}
+
+/* ================= SETTINGS RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+body{
+padding:18px;
+align-items:flex-start;
+padding-top:35px;
+}
+.settings-container{
+max-width:100%;
+}
+.settings-card{
+padding:24px 20px;
+border-radius:16px;
+}
+.settings-card h1{
+font-size:26px;
+}
+.settings-card h2{
+font-size:20px;
+}
+.subtitle{
+font-size:14px;
+line-height:1.5;
+}
+label{
+font-size:14px;
+}
+input{
+padding:13px;
+font-size:15px;
+}
+button{
+padding:13px;
+font-size:15px;
+}
+.back-btn{
+width:100%;
+margin-bottom:18px;
+padding:12px;
+}
+.settings-item{
+flex-direction:column;
+align-items:flex-start;
+gap:14px;
+padding:18px;
+}
+.settings-btn{
+width:100%;
+}
+.logout-btn{
+width:100%;
+}
+#aboutSection{
+font-size:14px;
+line-height:1.7;
+}
+}
+
+@media (max-width:480px){
+
+body{
+padding:14px;
+padding-top:20px;
+}
+.settings-card{
+padding:18px 16px;
+}
+.settings-card h1{
+font-size:23px;
+}
+.settings-card h2{
+font-size:18px;
+}
+.subtitle{
+font-size:13px;
+}
+input{
+padding:12px;
+font-size:14px;
+}
+button{
+font-size:14px;
+padding:12px;
+}
+.settings-item{
+padding:16px;
+}
+}
+
+/*================ LIGHT THEME - SETTINGS =================*/
+
+body.light-mode{
+background:#f5f7fb;
+}
+
+body.light-mode .settings-card{
+background:white;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+body.light-mode .settings-card h1,
+body.light-mode .settings-card h2,
+body.light-mode .settings-card h3,
+body.light-mode .settings-card p,
+body.light-mode .settings-card b{
+color:#111827;
+}
+
+body.light-mode .subtitle{
+color:#6b7280;
+}
+
+body.light-mode label{
+color:#111827;
+}
+
+body.light-mode input{
+background:#f3f4f6;
+color:#111827;
+border:1px solid #d1d5db;
+}
+
+body.light-mode input::placeholder{
+color:#6b7280;
+}
+
+body.light-mode .divider{
+background:#d1d5db;
+}
+
+body.light-mode .back-btn{
+background:#e5e7eb;
+color:#111827;
+}
+
+body.light-mode .back-btn:hover{
+background:#d1d5db;
+}
+
+body.light-mode .settings-item{
+background:#f9fafb;
+border:1px solid #e5e7eb;
+}
+
+body.light-mode .settings-item p{
+color:#6b7280;
+}
+
+/*========== DARK THEME ABOUT SECTION ==========*/
+
+#aboutSection,
+#aboutSection h2,
+#aboutSection p,
+#aboutSection b{
+color:white;
 }

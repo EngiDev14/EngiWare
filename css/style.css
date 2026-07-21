@@ -1099,9 +1099,9 @@ body.light-mode .subject-card{
     border-left:5px solid #2563eb;
 }
 
-body.light-mode .subjects-container h1{
-    color:#111;
-    text-shadow:none;
+body.light-mode .subjects-container > h1{
+color:#111;
+text-shadow:none;
 }
 
 .subject-section{

@@ -11,7 +11,7 @@ gap:28px;
 /*================ HEADER =================*/
 
 .profile-header{
-background:#181818;
+background:linear-gradient(145deg,#1b1b1b,#151515);
 border:1px solid rgba(255,255,255,.08);
 border-radius:18px;
 padding:30px;
@@ -40,6 +40,7 @@ box-shadow:0 0 20px rgba(220,20,60,.25);
 .profile-header h1{
 font-size:30px;
 margin-bottom:8px;
+color:white;
 }
 
 .profile-header p{
@@ -51,7 +52,7 @@ font-size:15px;
 
 .profile-info-card,
 .profile-edit-card{
-background:#181818;
+background:linear-gradient(145deg,#1b1b1b,#151515);
 border:1px solid rgba(255,255,255,.08);
 border-radius:18px;
 padding:25px;
@@ -80,7 +81,14 @@ gap:18px;
 .info-item{
 background:#222;
 padding:16px;
-border-radius:12px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.05);
+transition:.25s;
+}
+
+.info-item:hover{
+transform:translateY(-3px);
+border-color:crimson;
 }
 
 .info-item span{
@@ -184,4 +192,52 @@ font-size:14px;
 padding:13px;
 font-size:15px;
 }
+}
+
+/*================ LIGHT THEME PROFILE =================*/
+
+body.light-mode .profile-header,
+body.light-mode .profile-info-card,
+body.light-mode .profile-edit-card{
+background:#ffffff;
+border:1px solid #e5e7eb;
+box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+body.light-mode .profile-header h1,
+body.light-mode .profile-info-card h2,
+body.light-mode .profile-edit-card h2{
+color:#111827;
+}
+
+body.light-mode .profile-header p{
+color:#6b7280;
+}
+
+body.light-mode .info-item{
+background:#f8fafc;
+border:1px solid #e5e7eb;
+}
+
+body.light-mode .info-item span{
+color:#6b7280;
+}
+
+body.light-mode .info-item p{
+color:#111827;
+}
+
+body.light-mode .profile-edit-card input{
+background:#f9fafb;
+color:#111827;
+border:1px solid #d1d5db;
+}
+
+body.light-mode .profile-edit-card input::placeholder{
+color:#9ca3af;
+}
+
+body.light-mode .profile-edit-card input:focus{
+background:white;
+border-color:crimson;
 }
