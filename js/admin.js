@@ -583,8 +583,7 @@ async function uploadNote(){
     }
 
     // GitHub PDF URL
-    const pdfUrl =
-    `pdfs/${fileName}`;
+    const pdfUrl = `/pdfs/${fileName}`;
 
     try{
         // notes updating and uploading ----------- 
@@ -689,8 +688,7 @@ return;
 
 }
 
-const pdfUrl =
-`pdfs/${fileName}`;
+const pdfUrl = `/pdfs/${fileName}`;
 
 await addDoc(
 
@@ -1519,20 +1517,13 @@ window.viewNote = function(pdfUrl){
         {
 
         title,
-
         branch,
-
         semester,
-
         subject,
-
         fileName,
-
         pdfUrl:
-        `pdfs/${fileName}`
-
+        `/pdfs/${fileName}`
         }
-
         );
 
         alert("PYQ Updated Successfully ✅");

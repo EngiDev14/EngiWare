@@ -257,20 +257,20 @@ function openSubject(subjectName)
 function openNotes(){
 
     window.location.href =
-    "notes/index.html";
+    "notes/notes-viewer.html";
 
 }
 
 function openPYQs(){
 
     window.location.href =
-    "pyqs/index.html";
+    "pyqs/pyq-viewer.html";
 }
 
 function openLectures(){
 
     window.location.href =
-    "lectures/index.html";
+    "lectures/lecture-viewer.html";
 }
 
 function openQuiz(){
