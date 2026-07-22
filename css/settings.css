@@ -138,6 +138,24 @@ margin-top:30px;
 line-height:1.8;
 }
 
+#aboutSection{
+margin-top:30px;
+color:white;
+line-height:1.8;
+}
+
+body.light-mode #aboutSection{
+color:#111827;
+}
+
+body.light-mode #aboutSection p{
+color:#111827;
+}
+
+body.light-mode #aboutSection b{
+color:#000;
+}
+
 /* ================= SETTINGS RESPONSIVE ================= */
 
 @media (max-width:768px){
