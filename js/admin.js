@@ -583,7 +583,7 @@ async function uploadNote(){
     }
 
     // GitHub PDF URL
-    const pdfUrl = `/pdfs/${fileName}`;
+    const pdfUrl = `pdfs/${fileName}`;
 
     try{
         // notes updating and uploading ----------- 
@@ -688,7 +688,7 @@ return;
 
 }
 
-const pdfUrl = `/pdfs/${fileName}`;
+const pdfUrl = `pdfs/${fileName}`;
 
 await addDoc(
 
@@ -993,7 +993,8 @@ window.viewNote = function(pdfUrl){
         );
         return;
     }
-    window.open(pdfUrl, "_blank");
+
+    window.open(`${window.BASE_PATH}/${pdfUrl}`, "_blank");
 }
 
 // --------- RENDERING NOTES -----------//
@@ -1522,7 +1523,7 @@ window.viewNote = function(pdfUrl){
         subject,
         fileName,
         pdfUrl:
-        `/pdfs/${fileName}`
+        `pdfs/${fileName}`
         }
         );
 

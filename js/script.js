@@ -14,6 +14,11 @@ if (
     },3200);
 }
 
+window.BASE_PATH =
+window.location.hostname.includes("github.io")
+? "/EngiWare"
+: "";
+
 // Login
 
 function loginUser()
