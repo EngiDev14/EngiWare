@@ -260,63 +260,61 @@ const absent = data.absent;
 const total = present + absent;
 
 const percentage =
-total === 0
-? 0
-: Number(((present / total) * 100).toFixed(1));
+total === 0 ? 0 : Number(((present / total) * 100).toFixed(1));
 
 let cardClass = "";
 let statusText = "";
 
 if(percentage >= 90){
-
 cardClass = "excellent-card";
 statusText = "🟢 Excellent";
-
 }
-else if(percentage >= 75){
 
+else if(percentage >= 75){
 cardClass = "safe-card";
 statusText = "🟡 Safe";
-
 }
-else{
 
+else{
 cardClass = "danger-card";
 statusText = "🔴 Danger";
-
 }
 
 let predictionMessage = "";
 
-// ================= ATTENDANCE PREDICTOR =================
+if(total === 0){
 
-if(percentage < 75){
+    cardClass = "notstarted-card";
+    statusText = "📖 Ready to Start";
 
-let need = 0;
+    predictionMessage =
+`📚 Attendance tracking hasn't started yet.<br>
+<span>Mark your first class to begin tracking.</span>`;
 
-while(
-((present + need) /
-(total + need)) * 100 < 75
-){
-need++;
 }
+else if(percentage < 75){
 
-predictionMessage =
-`⚠ Need <b>${need}</b> more Present classes to reach 75%.`;
+    let need = 0;
+
+    while(((present+need)/(total+need))*100 < 75){
+        need++;
+    }
+
+    predictionMessage =
+    `⚠ Need <b>${need}</b> more Present classes to reach 75%.`;
+
 }
 else{
 
-let bunk = 0;
+    let bunk = 0;
 
-while(
-(present /
-(total + bunk + 1)) * 100 >= 75
-){
-bunk++;
-}
+    while((present/(total+bunk+1))*100 >= 75){
+        bunk++;
+    }
 
-predictionMessage =
-`🎉 You can miss <b>${bunk}</b> classes safely.`;
+    predictionMessage =
+    `🎉 You can miss <b>${bunk}</b> classes safely.`;
+
 }
 
 totalPresent += data.present;
@@ -410,17 +408,27 @@ onclick="markAbsent('${doc.id}')">
 
 </div>
 
-<p> Attendance : <strong>${percentage}%</strong> </p>
+<p>
+Attendance :
+<strong>
+${total === 0 ? "Not Started" : percentage + "%"}
+</strong>
+</p>
 
+${total === 0 ? "" : `
 <div class="progress">
-<div
-class="progress-bar" style = "width:${percentage}%; background:${progressColor};">
+    <div
+        class="progress-bar"
+        style="width:${percentage}%; background:${progressColor};">
+    </div>
 </div>
-</div>
+`}
 
-<div class="attendance-prediction">
+${predictionMessage ? `
+<p class="attendance-prediction">
 ${predictionMessage}
-</div>
+</p>
+` : ""}
 
 <div class="attendance-actions">
 
