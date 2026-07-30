@@ -19,7 +19,7 @@ if (
     }, 2500);
 
     setTimeout(() => {
-        window.location.href = window.BASE_PATH + "/loader.html";
+        window.location.replace(window.BASE_PATH + "/loader.html");
     }, 3200);
 }
 
