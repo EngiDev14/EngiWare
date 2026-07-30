@@ -12,16 +12,6 @@ setDoc
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-import {
-getStorage,
-ref,
-uploadBytes,
-getDownloadURL
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-storage.js";
-
-const storage = getStorage();
-
 const saveBtn =
 document.getElementById("saveProfileBtn");
 
@@ -31,7 +21,7 @@ document.getElementById("profileImageInput");
 const profileImagePreview =
 document.getElementById("profileImagePreview");
 
-let selectedImage = null;
+let selectedImage = "";
 
 profileImageInput.addEventListener("change",(e)=>{
 
@@ -39,10 +29,17 @@ const file = e.target.files[0];
 
 if(!file) return;
 
-selectedImage = file;
+const reader = new FileReader();
 
-profileImagePreview.src =
-URL.createObjectURL(file);
+reader.onload = function(event){
+
+selectedImage = event.target.result;
+
+profileImagePreview.src = selectedImage;
+
+};
+
+reader.readAsDataURL(file);
 
 });
 
@@ -114,31 +111,31 @@ let imageURL = latestSnap.data()?.profileImage || "";
 
 if(selectedImage){
 
-    const imageRef =
-    ref(storage, `profilePictures/${user.uid}`);
-
-    await uploadBytes(imageRef, selectedImage);
-
-    imageURL =
-    await getDownloadURL(imageRef);
+imageURL = selectedImage;
 
 }
 
 const updateData = {
 
-name: document.getElementById("profileName").value,
+name:
+document.getElementById("profileName").value,
 
-college: document.getElementById("profileCollege").value,
+college:
+document.getElementById("profileCollege").value,
 
-branch: document.getElementById("profileBranch").value,
+branch:
+document.getElementById("profileBranch").value,
 
-semester: document.getElementById("profileSemester").value
+semester:
+document.getElementById("profileSemester").value,
+
+profileImage: imageURL
 
 };
 
-if(imageURL){
-    updateData.profileImage = imageURL;
-}
+await setDoc(userRef, updateData,{
+merge:true
+});
 
 await setDoc(userRef, updateData,{
 
