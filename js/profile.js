@@ -15,34 +15,6 @@ from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 const saveBtn =
 document.getElementById("saveProfileBtn");
 
-const profileImageInput =
-document.getElementById("profileImageInput");
-
-const profileImagePreview =
-document.getElementById("profileImagePreview");
-
-let selectedImage = "";
-
-profileImageInput.addEventListener("change",(e)=>{
-
-const file = e.target.files[0];
-
-if(!file) return;
-
-const reader = new FileReader();
-
-reader.onload = function(event){
-
-selectedImage = event.target.result;
-
-profileImagePreview.src = selectedImage;
-
-};
-
-reader.readAsDataURL(file);
-
-});
-
 onAuthStateChanged(auth, async(user)=>{
 
 if(!user){
@@ -63,13 +35,6 @@ if(userSnap.exists()){
 
 const data =
 userSnap.data();
-
-if(data.profileImage){
-
-profileImagePreview.src =
-data.profileImage;
-
-}
 
 document.getElementById("welcomeName").textContent =
 `Welcome Back, ${data.name || "Student"}`;
@@ -105,17 +70,7 @@ data.semester || "";
 
 saveBtn.addEventListener("click", async()=>{
 
-const latestSnap = await getDoc(userRef);
-
-let imageURL = latestSnap.data()?.profileImage || "";
-
-if(selectedImage){
-
-imageURL = selectedImage;
-
-}
-
-const updateData = {
+await setDoc(userRef,{
 
 name:
 document.getElementById("profileName").value,
@@ -127,41 +82,11 @@ branch:
 document.getElementById("profileBranch").value,
 
 semester:
-document.getElementById("profileSemester").value,
-
-profileImage: imageURL
-
-};
-
-await setDoc(userRef, updateData,{
-merge:true
-});
-
-await setDoc(userRef, updateData,{
-
-name:
-document.getElementById("profileName").value,
-
-college:
-document.getElementById("profileCollege").value,
-
-branch:
-document.getElementById("profileBranch").value,
-
-semester:
-document.getElementById("profileSemester").value,
-
-profileImage: imageURL
+document.getElementById("profileSemester").value
 
 },{
 merge:true
 });
-
-if(imageURL){
-
-profileImagePreview.src = imageURL;
-
-}
 
 localStorage.setItem(
 "userName",
@@ -186,4 +111,5 @@ document.getElementById("profileSemester").value;
 showToast("✅ Profile Updated Successfully!");
 
 });
+
 });
