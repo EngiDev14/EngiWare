@@ -1,23 +1,27 @@
 // Splash screen auto redirect
 
+window.BASE_PATH =
+window.location.hostname === "engidev14.github.io"
+? "/EngiWare"
+: "";
+
+const path = window.location.pathname;
+
 if (
-    window.location.pathname === "/EngiWare/" ||
-    window.location.pathname.endsWith("index.html")
+    path === "/" ||
+    path === "/EngiWare/" ||
+    path.endsWith("/index.html") ||
+    path.endsWith("index.html")
 )
 {
     setTimeout(() => {
         document.body.classList.add("fade-out");
-    },2500);
+    }, 2500);
 
     setTimeout(() => {
-        window.location.href = "loader.html";
-    },3200);
+        window.location.href = window.BASE_PATH + "/loader.html";
+    }, 3200);
 }
-
-window.BASE_PATH =
-window.location.hostname.includes("github.io")
-? "/EngiWare"
-: "";
 
 // Login
 
