@@ -12,8 +12,39 @@ setDoc
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
+import {
+getStorage,
+ref,
+uploadBytes,
+getDownloadURL
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-storage.js";
+
+const storage = getStorage();
+
 const saveBtn =
 document.getElementById("saveProfileBtn");
+
+const profileImageInput =
+document.getElementById("profileImageInput");
+
+const profileImagePreview =
+document.getElementById("profileImagePreview");
+
+let selectedImage = null;
+
+profileImageInput.addEventListener("change",(e)=>{
+
+const file = e.target.files[0];
+
+if(!file) return;
+
+selectedImage = file;
+
+profileImagePreview.src =
+URL.createObjectURL(file);
+
+});
 
 onAuthStateChanged(auth, async(user)=>{
 
@@ -35,6 +66,13 @@ if(userSnap.exists()){
 
 const data =
 userSnap.data();
+
+if(data.profileImage){
+
+profileImagePreview.src =
+data.profileImage;
+
+}
 
 document.getElementById("welcomeName").textContent =
 `Welcome Back, ${data.name || "Student"}`;
@@ -70,7 +108,39 @@ data.semester || "";
 
 saveBtn.addEventListener("click", async()=>{
 
-await setDoc(userRef,{
+const latestSnap = await getDoc(userRef);
+
+let imageURL = latestSnap.data()?.profileImage || "";
+
+if(selectedImage){
+
+    const imageRef =
+    ref(storage, `profilePictures/${user.uid}`);
+
+    await uploadBytes(imageRef, selectedImage);
+
+    imageURL =
+    await getDownloadURL(imageRef);
+
+}
+
+const updateData = {
+
+name: document.getElementById("profileName").value,
+
+college: document.getElementById("profileCollege").value,
+
+branch: document.getElementById("profileBranch").value,
+
+semester: document.getElementById("profileSemester").value
+
+};
+
+if(imageURL){
+    updateData.profileImage = imageURL;
+}
+
+await setDoc(userRef, updateData,{
 
 name:
 document.getElementById("profileName").value,
@@ -82,11 +152,19 @@ branch:
 document.getElementById("profileBranch").value,
 
 semester:
-document.getElementById("profileSemester").value
+document.getElementById("profileSemester").value,
+
+profileImage: imageURL
 
 },{
 merge:true
 });
+
+if(imageURL){
+
+profileImagePreview.src = imageURL;
+
+}
 
 localStorage.setItem(
 "userName",
@@ -109,5 +187,6 @@ document.getElementById("displaySemester").textContent =
 document.getElementById("profileSemester").value;
 
 showToast("✅ Profile Updated Successfully!");
+
 });
 });

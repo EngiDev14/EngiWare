@@ -23,18 +23,50 @@ transition:.3s;
 border-color:crimson;
 }
 
-.profile-avatar{
-width:90px;
-height:90px;
+.profile-avatar-container{
+position:relative;
+width:120px;
 margin:auto;
+margin-bottom:20px;
+}
+
+.profile-avatar{
+width:120px;
+height:120px;
 border-radius:50%;
-background:linear-gradient(135deg,crimson,#ff4d6d);
+overflow:hidden;
+border:4px solid crimson;
+background:#222;
+box-shadow:0 0 18px rgba(220,20,60,.3);
+}
+
+.profile-avatar img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.camera-btn{
+
+position:absolute;
+bottom:0;
+right:0;
+width:38px;
+height:38px;
+border-radius:50%;
+background:crimson;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:42px;
-margin-bottom:18px;
-box-shadow:0 0 20px rgba(220,20,60,.25);
+cursor:pointer;
+font-size:18px;
+color:white;
+border:3px solid white;
+transition:.25s;
+}
+
+.camera-btn:hover{
+transform:scale(1.1);
 }
 
 .profile-header h1{

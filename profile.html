@@ -33,8 +33,29 @@ onclick="closeSidebar()"></div>
 
 <div class="profile-header">
 
+<div class="profile-avatar-container">
+
+    <!-- PROFILE IMAGE ADDITION -->
+
 <div class="profile-avatar">
-👤
+
+<img
+id="profileImagePreview"
+src="images/default-profile.png"
+alt="Profile Picture">
+
+</div>
+
+<label for="profileImageInput" class="camera-btn">
+📷
+</label>
+
+<input
+type="file"
+id="profileImageInput"
+accept="image/*"
+hidden>
+
 </div>
 
 <h1 id="welcomeName">
