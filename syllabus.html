@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Notes</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+</head>
+
+<body class="subjects-page">
+
+<button class="back-btn"
+onclick="history.back()">
+    ← Back
+</button>
+
+<button class="theme-btn"
+onclick="toggleTheme()">
+    🌙
+</button>
+
+<div class="subjects-container">
+
+    <h1>📚 Syllabus</h1>
+
+    <div
+    class="resource-grid"
+    id="notesContainer">
+
+    </div>
+
+</div>
+
+<script src="../js/script.js"></script>
+
+<script type="module">
+
+import { db } from "../js/firebase.js";
+
+import {
+
+collection,
+getDocs
+
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+(async ()=>{
+
+const branch =
+localStorage.getItem("branch");
+
+const semester =
+localStorage.getItem("semester");
+
+const container =
+document.getElementById("notesContainer");
+
+container.innerHTML = "";
+
+if(!branch || !semester){ 
+
+window.location.href="../stream.html";
+
+return;
+
+}
+
+const snapshot =
+await getDocs(collection(db,"syllabus"));
+
+let found = false;
+
+snapshot.forEach((doc)=>{
+
+const note = doc.data();
+
+if(
+note.branch.toLowerCase()===branch.toLowerCase()
+&&
+note.semester.toLowerCase()===semester.toLowerCase()
+){
+
+found = true;
+
+container.innerHTML += `
+
+<a
+href="${window.BASE_PATH}/${note.pdfUrl}"
+target="_blank"
+class="resource-card">
+
+📄 ${note.title}
+
+</a>
+
+`;
+
+}
+
+});
+
+if(!found){
+
+container.innerHTML = `
+
+<div class="resource-card">
+
+Notes Coming Soon 🚀
+
+</div>
+
+`;
+
+}
+
+})();
+
+</script>
+
+</body>
+</html>

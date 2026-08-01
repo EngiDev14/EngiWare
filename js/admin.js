@@ -10,12 +10,12 @@ let editingLectureId = null;
 let allLectures = [];
 
 let allPYQs = [];
-
 let allUsers = [];
 
 let deleteFunction = null;
-
 let deleteId = null;
+
+let editingType = "notes";
 
 import{
 collection,
@@ -321,6 +321,13 @@ async function loadDashboard(){
 
         }
 
+        // SYLLABUS
+        const syllabusSnapshot =
+        await getDocs(collection(db,"syllabus"));
+
+        document.getElementById("totalSyllabus").textContent =
+        syllabusSnapshot.size;
+
         // ================= Load PYQs =================
 
         const pyqSnapshot =
@@ -415,13 +422,33 @@ document.getElementById("subjectModal");
 
 document
 .getElementById("uploadNotesBtn")
-.onclick = () => {                            // upload notes modal
+.onclick = () => {
+
+editingType = "notes";
+
+document.querySelector("#uploadModal h2").textContent =
+"Upload Notes";
+
+document.getElementById("noteSubject").style.display = "block";
 
 uploadModal.style.display = "flex";
 
 loadSubjectsDropdown();
 
 };
+
+document.getElementById("uploadSyllabusBtn").addEventListener("click",()=>{
+
+editingType = "syllabus";
+
+document.querySelector("#uploadModal h2").textContent =
+"Upload Syllabus";
+
+document.getElementById("noteSubject").style.display = "none";
+
+uploadModal.style.display = "flex";
+
+});
 
 document
 .getElementById("uploadLectureBtn")
@@ -563,16 +590,18 @@ async function uploadNote(){
     document.getElementById("noteSemester").value;
 
     const subject =
-    document.getElementById("noteSubject").value;
+    editingType==="syllabus"
+    ? ""
+    : document.getElementById("noteSubject").value;
 
     const fileName =
     document.getElementById("noteFileName").value.trim();
 
-    if(
+        if(
         title === "" ||
-        subject === "" ||
-        fileName === ""
-    ){
+        fileName === "" ||
+        (editingType!=="syllabus" && subject==="")
+        ){
 
         window.showToast(
         "Please fill all fields.",
@@ -590,22 +619,29 @@ async function uploadNote(){
 
         const noteData = {
 
-            title,
-            branch,
-            semester,
-            subject,
-            fileName,
-            pdfUrl,
-
-            createdAt:
-            serverTimestamp()
-
+        title,
+        branch,
+        semester,
+        fileName,
+        pdfUrl,
+        createdAt:
+        serverTimestamp()
         };
+
+        if(editingType!=="syllabus"){
+        noteData.subject = subject;
+        }
 
         if(editingNoteId){
 
             await updateDoc(
-                doc(db,"notes",editingNoteId),
+                doc(
+                db,
+                editingType==="syllabus"
+                ? "syllabus"
+                : "notes",
+                editingNoteId
+                ),
                 noteData
                 );
             window.showToast(
@@ -619,19 +655,35 @@ async function uploadNote(){
 
             await addDoc(
 
-                collection(db,"notes"),
+                collection(
+                db,
+                editingType==="syllabus"
+                ? "syllabus"
+                : "notes"
+                ),
 
                 noteData
 
             );
 
             window.showToast(
-            "📄 Note Uploaded Successfully!"
+
+            editingType === "syllabus"
+            ? "📘 Syllabus Uploaded Successfully!"
+            : "📄 Note Uploaded Successfully!"
+
             );
 
         }
 
         uploadModal.style.display = "none";
+
+        editingType = "notes";
+
+        document.querySelector("#uploadModal h2").textContent =
+        "Upload Notes";
+
+        document.getElementById("noteSubject").style.display = "block";
 
         document.getElementById("noteTitle").value = "";
         document.getElementById("noteSubject").value = "";

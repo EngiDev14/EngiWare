@@ -282,6 +282,12 @@ function openLectures(){
     "lectures/lecture-viewer.html";
 }
 
+function openSyllabus(){
+
+    window.location.href =
+    "syllabus.html";
+}
+
 function openQuiz(){
 
     window.location.href =
