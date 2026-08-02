@@ -46,15 +46,10 @@ async function loadDashboard(){
     allNotes = [];
 
     notesSnapshot.forEach(doc=>{
-
     allNotes.push({
-
     id:doc.id,
-
     ...doc.data()
-
     });
-
     });
 
     document.getElementById("totalNotes").textContent =
@@ -327,6 +322,78 @@ async function loadDashboard(){
 
         document.getElementById("totalSyllabus").textContent =
         syllabusSnapshot.size;
+
+        const syllabusTable =
+        document.getElementById("syllabusTableBody");
+
+        syllabusTable.innerHTML = "";
+
+        syllabusSnapshot.forEach((syllabusDoc)=>{
+
+            const syllabus = syllabusDoc.data();
+
+            syllabusTable.innerHTML += `
+
+        <tr>
+
+        <td>${syllabus.title}</td>
+
+        <td>${syllabus.branch}</td>
+
+        <td>${syllabus.semester}</td>
+
+        <td>
+
+        <button
+        class="view-btn"
+        onclick="viewSyllabus('${syllabus.pdfUrl}')">
+
+        👁
+
+        </button>
+
+        <button
+        class="edit-btn"
+        onclick="editSyllabus('${syllabusDoc.id}')">
+
+        ✏
+
+        </button>
+
+        <button
+        class="delete-btn"
+        onclick="deleteSyllabus('${syllabusDoc.id}')">
+
+        🗑
+
+        </button>
+
+        </td>
+
+        </tr>
+
+        `;
+
+        });
+
+        if(syllabusSnapshot.empty){
+
+        syllabusTable.innerHTML = `
+
+        <tr>
+
+        <td colspan="4"
+        style="text-align:center;padding:25px;">
+
+        No Syllabus Uploaded 📘
+
+        </td>
+
+        </tr>
+
+        `;
+
+        }
 
         // ================= Load PYQs =================
 
@@ -645,7 +712,9 @@ async function uploadNote(){
                 noteData
                 );
             window.showToast(
-            "✏ Note Updated Successfully!"
+            editingType === "syllabus"
+            ? "📘 Syllabus Updated Successfully!"
+            : "📄 Notes Updated Successfully!"
             );
 
             editingNoteId = null;
@@ -670,7 +739,7 @@ async function uploadNote(){
 
             editingType === "syllabus"
             ? "📘 Syllabus Uploaded Successfully!"
-            : "📄 Note Uploaded Successfully!"
+            : "📄 Notes Uploaded Successfully!"
 
             );
 
@@ -968,6 +1037,82 @@ error.message,
 );
 }
 }
+
+// view syllabus
+
+function viewSyllabus(url){
+
+window.open(url,"_blank");
+
+}
+
+window.viewSyllabus = viewSyllabus;
+
+// delete syllabus
+
+window.deleteSyllabus = function(id){
+
+openDeleteModal(
+"Delete this syllabus?",
+id,
+confirmDeleteSyllabus
+);
+}
+
+async function confirmDeleteSyllabus(id){
+
+await deleteDoc(
+doc(db,"syllabus",id)
+);
+
+loadDashboard();
+
+window.showToast(
+"🗑 Syllabus Deleted Successfully!"
+);
+}
+
+// editing syllabus
+
+async function editSyllabus(id){
+
+editingType = "syllabus";
+
+editingNoteId = id;
+
+const snap =
+await getDoc(doc(db,"syllabus",id));
+
+const data =
+snap.data();
+
+document.querySelector("#uploadModal h2").textContent =
+"Edit Syllabus";
+
+document.getElementById("noteSubject").style.display =
+"none";
+
+document.getElementById("noteTitle").value =
+data.title;
+
+document.getElementById("noteBranch").value =
+data.branch;
+
+document.getElementById("noteSemester").value =
+data.semester;
+
+document.getElementById("noteFileName").value =
+data.fileName;
+
+document.getElementById("uploadPDF").textContent =
+"Update";
+
+uploadModal.style.display =
+"flex";
+
+}
+
+window.editSyllabus = editSyllabus;
 
 // ------------ EDIT NOTES ------------ //
 
