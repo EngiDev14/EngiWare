@@ -802,7 +802,10 @@ subject === "" ||
 fileName === ""
 ){
 
-alert("Please fill all fields.");
+window.showToast(
+    "Please fill all fields.",
+    "error"
+);
 return;
 }
 
@@ -822,7 +825,9 @@ serverTimestamp()
 }
 );
 
-alert("PYQ Uploaded Successfully ✅");
+window.showToast(
+    "📑 PYQ Uploaded Successfully!"
+);
 
 document.getElementById("pyqModal").style.display = "none";
 
@@ -1165,18 +1170,18 @@ window.showToast(
 
 // ---------- VIEW NOTES ----------//
 
-window.viewNote = function(pdfUrl){
+    window.viewNote = function(pdfUrl){
 
-    if(!pdfUrl){
-        window.showToast(
-        "PDF URL not found!",
-        "error"
-        );
-        return;
+        if(!pdfUrl){
+            window.showToast(
+            "PDF URL not found!",
+            "error"
+            );
+            return;
+        }
+
+        window.open(`${window.BASE_PATH}/${pdfUrl}`, "_blank");
     }
-
-    window.open(`${window.BASE_PATH}/${pdfUrl}`, "_blank");
-}
 
 // --------- RENDERING NOTES -----------//
 
@@ -1635,7 +1640,7 @@ window.viewNote = function(pdfUrl){
         );
         }
 
-        async function confirmDeletePYQ(id){
+        window.editPYQ = async function(id){
 
         await deleteDoc(
         doc(db,"pyqs",id)
@@ -1655,7 +1660,10 @@ window.viewNote = function(pdfUrl){
 
         if(!snapshot.exists()){
 
-        alert("PYQ not found.");
+        window.showToast(
+            "PYQ not found",
+            "error"
+        );
 
         return;
 
@@ -1726,7 +1734,9 @@ window.viewNote = function(pdfUrl){
         }
         );
 
-        alert("PYQ Updated Successfully ✅");
+        window.showToast(
+            "PYQ updated successfully",
+        );
 
         pyqModal.style.display = "none";
 
