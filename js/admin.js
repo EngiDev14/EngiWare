@@ -679,7 +679,10 @@ async function uploadNote(){
     }
 
     // GitHub PDF URL
-    const pdfUrl = `pdfs/${fileName}`;
+        const pdfUrl =
+        editingType === "syllabus"
+        ? `syllabus/${fileName}`
+        : `note.pdf/${fileName}`;
 
     try{
         // notes updating and uploading ----------- 
@@ -794,46 +797,29 @@ const fileName =
 document.getElementById("pyqFileName").value.trim();
 
 if(
-
 title === "" ||
-
 subject === "" ||
-
 fileName === ""
-
 ){
 
 alert("Please fill all fields.");
-
 return;
-
 }
 
-const pdfUrl = `pdfs/${fileName}`;
-
+const pdfUrl = `pyq.pdf/${fileName}`;
 await addDoc(
-
 collection(db,"pyqs"),
 
 {
-
 title,
-
 branch,
-
 semester,
-
 subject,
-
 fileName,
-
 pdfUrl,
-
 createdAt:
 serverTimestamp()
-
 }
-
 );
 
 alert("PYQ Uploaded Successfully ✅");
@@ -843,9 +829,7 @@ document.getElementById("pyqModal").style.display = "none";
 // Clear Fields
 
 document.getElementById("pyqTitle").value = "";
-
 document.getElementById("pyqFileName").value = "";
-
 document.getElementById("pyqSubject").innerHTML = `
 
 <option value="">
@@ -1720,7 +1704,7 @@ window.viewNote = function(pdfUrl){
         subject,
         fileName,
         pdfUrl:
-        `pdfs/${fileName}`
+        `pyq.pdf/${fileName}`
         }
         );
 
