@@ -681,7 +681,7 @@ async function uploadNote(){
     // GitHub PDF URL
         const pdfUrl =
         editingType === "syllabus"
-        ? `syllabus/${fileName}`
+        ? `syllabus.pdf/${fileName}`
         : `note.pdf/${fileName}`;
 
     try{
@@ -1581,19 +1581,21 @@ window.viewNote = function(pdfUrl){
         <td>
 
         <button
+        class="view-btn"
+        onclick="viewPYQ('${pyq.pdfUrl}')">
+        👁
+        </button>
+
+        <button
         class="edit-btn"
         onclick="editPYQ('${pyq.id}')">
-
         ✏
-
         </button>
 
         <button
         class="delete-btn"
         onclick="deletePYQ('${pyq.id}')">
-
         🗑
-
         </button>
 
         </td>
@@ -1606,18 +1608,34 @@ window.viewNote = function(pdfUrl){
 
         }
 
+        // ================= View PYQ =================
+
+        window.viewPYQ = function(pdfUrl){
+
+            if(!pdfUrl){
+                window.showToast(
+                "PDF URL not found!",
+                "error"
+                );
+                return;
+            }
+
+            window.open(`${window.BASE_PATH}/${pdfUrl}`, "_blank");
+
+        }
+
         // ================= Delete PYQ =================
 
-        window.deletePyq=function(id){
+        window.deletePYQ=function(id){
 
         openDeleteModal(
         "Delete this PYQ?",
         id,
-        confirmDeletePyq
+        confirmDeletePYQ
         );
         }
 
-        async function confirmDeletePyq(id){
+        async function confirmDeletePYQ(id){
 
         await deleteDoc(
         doc(db,"pyqs",id)
@@ -1720,9 +1738,7 @@ window.viewNote = function(pdfUrl){
 
         loadDashboard();
 
-        }
-
-        
+        }        
 
         // ---------- EDIT SUBJECT ----------//
 
