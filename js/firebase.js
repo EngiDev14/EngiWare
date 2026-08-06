@@ -11,6 +11,11 @@ from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 import { getFirestore }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
+import {
+getMessaging
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-messaging.js";
+
 const firebaseConfig = {
 
 apiKey: "AIzaSyCH50y_J4xH8R1rFuzK9DMQbBEv677UrgQ",
@@ -38,9 +43,12 @@ getAuth(app);
 const db =
 getFirestore(app);
 
+const messaging =
+getMessaging(app);
+
 await setPersistence(
 auth,
 browserLocalPersistence
 );
 
-export { auth, db };
+export { auth, db, messaging };
