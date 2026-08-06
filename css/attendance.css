@@ -1,5 +1,17 @@
 /*================ ATTENDANCE PAGE ================*/
 
+:root{
+--card-bg:#ffffff;
+--text-color:#111827;
+--border-color:#d1d5db;
+}
+
+body.dark{
+--card-bg:#1f2937;
+--text-color:#f3f4f6;
+--border-color:#374151;
+}
+
 .attendance-page{
 background:#0f0f0f;
 color:white;
@@ -399,6 +411,174 @@ text-align:center;
 color:#93c5fd;
 }
 
+/* ================= Attendance History ================= */
+
+.history-container{
+
+    max-width:1100px;
+    margin:110px auto 40px;
+    padding:25px;
+
+    background:var(--card-bg);
+    border:1px solid var(--border-color);
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.history-container h1{
+
+    text-align:center;
+    margin-bottom:30px;
+    color:var(--text-color);
+
+}
+
+/* ---------- Filters ---------- */
+
+.history-filters{
+
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+
+}
+
+.history-filters input,
+.history-filters select{
+
+    flex:1;
+    min-width:180px;
+
+    padding:12px 15px;
+
+    border-radius:12px;
+    border:1px solid var(--border-color);
+
+    background:var(--card-bg);
+
+    color:var(--text-color);
+
+    font-size:15px;
+
+}
+
+/* ---------- Table ---------- */
+
+.history-table{
+
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+
+    border-radius:15px;
+
+}
+
+.history-table thead{
+
+    background:#2563eb;
+    color:white;
+
+}
+
+.history-table th{
+
+    padding:15px;
+    text-align:left;
+    font-weight:600;
+
+}
+
+.history-table td{
+
+    padding:15px;
+    border-bottom:1px solid var(--border-color);
+
+    color:var(--text-color);
+
+}
+
+.history-table tbody tr{
+
+    transition:.3s;
+
+}
+
+.history-table tbody tr:hover{
+
+    background:rgba(37,99,235,.08);
+
+}
+
+/* ---------- Status ---------- */
+
+.present{
+
+    color:#16a34a;
+    font-weight:600;
+
+}
+
+.absent{
+
+    color:#dc2626;
+    font-weight:600;
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:768px){
+
+.history-container{
+
+margin:95px 15px 30px;
+padding:18px;
+
+}
+
+.history-table{
+
+display:block;
+overflow-x:auto;
+
+}
+
+}
+
+/* ================= Mobile ================= */
+
+@media(max-width:768px){
+.history-container{
+margin:85px 12px 20px;
+padding:18px;
+}
+
+.history-container h1{
+font-size:24px;
+text-align:center;
+}
+
+.history-filters{
+flex-direction:column;
+}
+
+.history-filters input,
+.history-filters select{
+width:100%;
+min-width:100%;
+}
+
+.history-table th,
+.history-table td{
+padding:12px;
+font-size:14px;
+}
+}
+
 /* --------- MOBILE CSS --------- */
 
 @media(max-width:768px){
@@ -516,5 +696,11 @@ font-size:15px;
 .notstarted-card p{
 font-size:14px;
 line-height:1.5;
+}
+
+.history-btn{
+width:100%;
+margin-left:0;
+margin-top:10px;
 }
 }

@@ -499,6 +499,27 @@ window.markPresent = async function(id){
         const data =
         snapshot.data();
 
+        await addDoc(collection(db, "attendanceHistory"), {
+
+            userId: auth.currentUser.uid,
+
+            subject: data.subject,
+
+            faculty: data.faculty || "",
+
+            status: "Present",
+
+            date: new Date().toLocaleDateString("en-GB"),
+
+            time: new Date().toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit"
+            }),
+
+            timestamp: serverTimestamp()
+
+        });
+
         await updateDoc(docRef,{
             present : data.present + 1
         });
@@ -531,6 +552,27 @@ window.markAbsent = async function(id){
 
         const data =
         snapshot.data();
+
+        await addDoc(collection(db, "attendanceHistory"), {
+
+            userId: auth.currentUser.uid,
+
+            subject: data.subject,
+
+            faculty: data.faculty || "",
+
+            status: "Absent",
+
+            date: new Date().toLocaleDateString("en-GB"),
+
+            time: new Date().toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit"
+            }),
+
+            timestamp: serverTimestamp()
+
+        });
 
         await updateDoc(docRef,{
             absent : data.absent + 1

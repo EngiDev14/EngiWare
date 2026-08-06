@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>EngiWare Hub</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/attendance.css">
+
+</head>
+
+<body class="subjects-page"
+data-title="🏠 Attendance-History">
+
+<div id="navbar"></div>
+
+<div id="overlay"
+onclick="closeSidebar()">
+</div>
+
+<aside id="sidebar"></aside>
+
+<div class="history-container">
+
+    <h1>📜 Attendance History</h1>
+
+    <div class="history-filters">
+
+        <input
+            type="text"
+            id="historySearch"
+            placeholder="Search Subject">
+
+        <input
+            type="date"
+            id="historyDate">
+
+        <select id="historyStatus">
+
+            <option value="">All</option>
+
+            <option value="Present">Present</option>
+
+            <option value="Absent">Absent</option>
+
+        </select>
+
+    </div>
+
+        <table class="history-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Subject</th>
+                <th>Faculty</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Time</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="historyTableBody">
+
+        </tbody>
+
+    </table>
+
+</div>
+<script src="js/script.js"></script>
+<script src="js/components.js"></script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/history.js"></script>
+
+<div id="toast" class="toast"></div>
+
+</body>
+
+</html>
