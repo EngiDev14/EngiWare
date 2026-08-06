@@ -186,9 +186,42 @@ onclick="window.location.href='attendance.html'">
 
 </div>
 
+<!-- ================= Notification Permission ================= -->
+
+<div id="notificationModal" class="notification-modal">
+    <div class="notification-card">
+        <div class="notification-icon">
+            🔔
+        </div>
+
+        <h2>Enable Attendance Reminders</h2>
+
+        <p>
+            Never forget to mark your attendance.
+            AttendGuard can remind you at
+            <strong>12 PM</strong>,
+            <strong>5 PM</strong>,
+            and
+            <strong>8 PM</strong>.
+        </p>
+
+        <div class="notification-buttons">
+
+            <button id="allowNotifications" class="allow-btn">
+                Allow
+            </button>
+
+            <button id="skipNotifications" class="skip-btn">
+                Not Now
+            </button>
+        </div>
+    </div>
+</div>
+
 <script src="js/script.js"></script>
 <script src="js/components.js"></script>
 <script type="module" src="js/auth.js"></script>
+<script type="module" src="js/notification.js"></script>
 
 <div id="toast" class="toast"></div>
 

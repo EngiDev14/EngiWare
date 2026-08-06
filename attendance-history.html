@@ -27,50 +27,71 @@ onclick="closeSidebar()">
 <aside id="sidebar"></aside>
 
 <div class="history-container">
-
     <h1>📜 Attendance History</h1>
 
-    <div class="history-filters">
+    <div class="history-stats">
+
+        <div class="history-stat-card">
+        <h3>Total</h3>
+        <p id="historyTotal">0</p>
+        </div>
+
+        <div class="history-stat-card">
+        <h3>Present</h3>
+        <p id="historyPresent">0</p>
+        </div>
+
+        <div class="history-stat-card">
+        <h3>Absent</h3>
+        <p id="historyAbsent">0</p>
+        </div>
+
+        <div class="history-stat-card">
+        <h3>Attendance</h3>
+        <p id="historyPercentage">0%</p>
+        </div>
+
+        </div>
+
+        <div class="history-filters">
 
         <input
-            type="text"
-            id="historySearch"
-            placeholder="Search Subject">
+        type="text"
+        id="historySearch"
+        placeholder="🔍 Search Subject">
 
         <input
-            type="date"
-            id="historyDate">
+        type="date"
+        id="historyDate">
 
         <select id="historyStatus">
 
-            <option value="">All</option>
-
-            <option value="Present">Present</option>
-
-            <option value="Absent">Absent</option>
+        <option value="">All Status</option>
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
 
         </select>
 
-    </div>
+        <select id="historySort">
+        <option value="latest">Latest First</option>
+        <option value="oldest">Oldest First</option>
+        <option value="az">Subject A-Z</option>
+        <option value="za">Subject Z-A</option>
+        </select>
+
+        </div>
 
         <table class="history-table">
-
         <thead>
-
             <tr>
-
                 <th>Subject</th>
                 <th>Faculty</th>
                 <th>Status</th>
                 <th>Date</th>
                 <th>Time</th>
-
             </tr>
-
         </thead>
-
         <tbody id="historyTableBody">
-
         </tbody>
 
     </table>
