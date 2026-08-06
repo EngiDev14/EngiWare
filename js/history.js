@@ -140,7 +140,6 @@ b.subject.localeCompare(a.subject));
 
 if(filtered.length===0){
 tableBody.innerHTML=`
-
 <tr>
 <td colspan="5"
 style="text-align:center;padding:20px;">
@@ -148,13 +147,10 @@ No Attendance History Found 📅
 </td>
 </tr>
 `;
-
 return;
-
 }
 
 filtered.forEach(item=>{
-
 tableBody.innerHTML += `
 
 <tr>
