@@ -16,11 +16,8 @@ const alreadyAsked =
 localStorage.getItem("notificationAsked");
 
 if(!alreadyAsked){
-
 notificationModal.style.display="flex";
-
 }
-
 });
 
 // ---------------- Allow ----------------

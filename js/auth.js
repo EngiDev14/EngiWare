@@ -55,15 +55,10 @@ doc(db, "users", userCredential.user.uid),
 {
 name: name,
 email: email,
-
 college: "",
-
 branch: "",
-
 semester: "",
-
 role: "student",
-
 createdAt: new Date().toISOString()
 }
 );
@@ -73,24 +68,17 @@ window.showToast(
 );
 
 setTimeout(()=>{
-
 window.location.replace("login.html");
-
 },2500);
-
 }
 
 catch(error){
-
 window.showToast(
 error.message,
 "error"
 );
-
 }
-
 });
-
 }
 
 // ---------------- LOGIN ----------------
