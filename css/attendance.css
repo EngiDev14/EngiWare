@@ -92,25 +92,45 @@ transition:.3s;
 transform:scale(1.05);
 }
 
+/* ===== Top Buttons ===== */
+
+.attendance-top-actions{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    gap:15px;
+}
+
+/* History Button */
+
 .history-btn{
-display:flex;
-justify-content:flex-end;
-margin-bottom:30px;
+    padding:12px 22px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:white;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    white-space:nowrap;
 }
 
-.history-btn button{
-background:crimson;
-color:white;
-border:none;
-padding:14px 22px;
-border-radius:12px;
-font-size:16px;
-cursor:pointer;
-transition:.3s;
+.history-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(37,99,235,.35);
 }
 
-.history-btn button:hover{
-transform:scale(1.05);
+@media(max-width:768px){
+.attendance-top-actions{
+    flex-direction:column;
+}
+
+.attendance-top-actions button{
+    width:100%;
+}
 }
 
 /*================ GRID =================*/
