@@ -92,6 +92,27 @@ transition:.3s;
 transform:scale(1.05);
 }
 
+.history-btn{
+display:flex;
+justify-content:flex-end;
+margin-bottom:30px;
+}
+
+.history-btn button{
+background:crimson;
+color:white;
+border:none;
+padding:14px 22px;
+border-radius:12px;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+.history-btn button:hover{
+transform:scale(1.05);
+}
+
 /*================ GRID =================*/
 
 .attendance-grid{
