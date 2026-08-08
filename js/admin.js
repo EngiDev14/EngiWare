@@ -1524,11 +1524,6 @@ window.showToast(
         const semester =
         document.getElementById("filterPYQSemester").value;
 
-        console.log("FILTER RUNNING");
-
-        console.log("Selected branch:", branch);
-        console.log("Selected semester:", semester);
-
         const table =
         document.getElementById("pyqsTableBody");
 
@@ -1540,24 +1535,14 @@ window.showToast(
         pyq.title.toLowerCase().includes(keyword);
 
         const matchesBranch =
-        branch === "" ||
-        pyq.branch.toLowerCase() === branch.toLowerCase();
+            branch === "" ||
+            String(pyq.branch).trim().toLowerCase() ===
+            String(branch).trim().toLowerCase();
 
         const matchesSemester =
-        semester === "" ||
-        pyq.semester.toLowerCase() === semester.toLowerCase();
-
-        console.log(
-        "Firestore:",
-        pyq.branch,
-        pyq.semester
-        );
-
-        console.log(
-        "Dropdown:",
-        branch,
-        semester
-        );
+            semester === "" ||
+            String(pyq.semester).trim().toLowerCase() ===
+            String(semester).trim().toLowerCase();
 
         return matchesKeyword &&
         matchesBranch &&
