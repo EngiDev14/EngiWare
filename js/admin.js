@@ -1524,6 +1524,11 @@ window.showToast(
         const semester =
         document.getElementById("filterPYQSemester").value;
 
+        console.log("FILTER RUNNING");
+
+        console.log("Selected branch:", branch);
+        console.log("Selected semester:", semester);
+
         const table =
         document.getElementById("pyqsTableBody");
 
@@ -1542,6 +1547,18 @@ window.showToast(
         semester === "" ||
         pyq.semester.toLowerCase() === semester.toLowerCase();
 
+        console.log(
+        "Firestore:",
+        pyq.branch,
+        pyq.semester
+        );
+
+        console.log(
+        "Dropdown:",
+        branch,
+        semester
+        );
+
         return matchesKeyword &&
         matchesBranch &&
         matchesSemester;
@@ -1551,22 +1568,14 @@ window.showToast(
         if(filtered.length===0){
 
         table.innerHTML = `
-
         <tr>
-
         <td colspan="5"
         style="text-align:center;padding:25px;">
-
         No PYQs Found 📑
-
         </td>
-
         </tr>
-
         `;
-
         return;
-
         }
 
         filtered.forEach(pyq=>{
@@ -1612,6 +1621,18 @@ window.showToast(
         });
 
         }
+
+        document
+        .getElementById("filterPYQBranch")
+        .addEventListener("change", renderFilteredPYQs);
+
+        document
+        .getElementById("filterPYQSemester")
+        .addEventListener("change", renderFilteredPYQs);
+
+        document
+        .getElementById("searchPYQs")
+        .addEventListener("input", renderFilteredPYQs);
 
         // ================= View PYQ =================
 
