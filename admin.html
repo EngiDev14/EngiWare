@@ -428,7 +428,8 @@ onclick="closeAdminSidebar()">
         id="searchPYQs"
         placeholder="🔍 Search PYQs...">
 
-        <select id="filterPYQBranch">
+        <select id="filterPYQBranch"
+        onchange="renderFilteredPYQs()">
 
             <option value="">All Branches</option>
 
@@ -440,7 +441,8 @@ onclick="closeAdminSidebar()">
 
         </select>
 
-        <select id="filterPYQSemester">
+        <select id="filterPYQSemester"
+        onchange="renderFilteredPYQs()">
 
             <option value="">All Semesters</option>
 

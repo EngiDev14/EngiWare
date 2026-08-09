@@ -1607,17 +1607,7 @@ window.showToast(
 
         }
 
-        document
-        .getElementById("filterPYQBranch")
-        .addEventListener("change", renderFilteredPYQs);
-
-        document
-        .getElementById("filterPYQSemester")
-        .addEventListener("change", renderFilteredPYQs);
-
-        document
-        .getElementById("searchPYQs")
-        .addEventListener("input", renderFilteredPYQs);
+        window.renderFilteredPYQs = renderFilteredPYQs;
 
         // ================= View PYQ =================
 
@@ -1644,17 +1634,6 @@ window.showToast(
         id,
         confirmDeletePYQ
         );
-        }
-
-        window.editPYQ = async function(id){
-
-        await deleteDoc(
-        doc(db,"pyqs",id)
-        );
-        window.showToast(
-        "🗑 PYQ Deleted Successfully!"
-        );
-        loadDashboard();
         }
 
         // ================= Edit PYQ =================
@@ -1704,6 +1683,8 @@ window.showToast(
         ()=>updatePYQ(id);
 
         }
+
+        window.editPYQ = editPYQ;
 
         // ================= Update PYQ =================
 
