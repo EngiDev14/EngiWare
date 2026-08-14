@@ -552,6 +552,34 @@ body.light-mode .gate-content-page .gate-pyq-card .gate-pdf-btn {
     color: #ffffff !important;
 }
 
+/* =====================================================
+   GATE PYQ CARDS — MOBILE LIGHT THEME
+   ===================================================== */
+
+@media (max-width: 700px) {
+    body.light-mode .gate-pyq-card {
+        background: rgba(255, 255, 255, 0.92);
+        color: #111827;
+        border: 1px solid rgba(37, 99, 235, 0.35);
+        box-shadow: 0 6px 20px rgba(37, 99, 235, 0.15);
+    }
+
+    body.light-mode .gate-pyq-card h3 {
+        color: #111827;
+    }
+
+    body.light-mode .gate-pyq-card p {
+        color: #374151;
+    }
+
+    /* Keep PDF button blue */
+
+    body.light-mode .gate-pyq-card .gate-pdf-btn {
+        background: #1268e8;
+        color: #ffffff;
+    }
+}
+
 /* ================= ICON ================= */
 
 .pyq-icon {
