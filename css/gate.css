@@ -526,10 +526,10 @@ body.light-mode .gate-pyq-card {
 /* PYQ text in light mode */
 
 body.light-mode .gate-pyq-card h3 {
-    color: #111827;
+    color: #e4e6eb;
 }
 body.light-mode .gate-pyq-card p {
-    color: #374151;
+    color: #a8aaae;
 }
 
 /* ================= ICON ================= */
