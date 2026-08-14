@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EngiWare | GATE Preparation</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/gate.css">
+
+</head>
+
+<body class="subjects-page gate-content-body"
+data-title="🎯 GATE Preparation">
+
+<div id="navbar"></div>
+
+<div id="overlay"
+onclick="closeSidebar()">
+</div>
+
+<aside id="sidebar"></aside>
+
+
+<!-- ================= GATE PAGE ================= -->
+
+<div class="gate-page">
+
+    <div class="gate-network">
+
+        <!-- Center -->
+        <div class="gate-center">
+            <span>GATE</span>
+            <small>Preparation Hub</small>
+        </div>
+
+        <!-- Syllabus -->
+        <button
+            class="gate-card gate-syllabus"
+            onclick="window.location.href='gate-syllabus.html'">
+            <span>📘</span>
+            <h2>Syllabus</h2>
+            <p>Syllabus & Brochure</p>
+        </button>
+
+        <!-- PYQs -->
+        <button
+            class="gate-card gate-pyqs"
+            onclick="window.location.href='gate-pyqs.html'">
+            <span>📚</span>
+            <h2>PYQs</h2>
+            <p>Previous Year Questions</p>
+        </button>
+
+        <!-- Lectures -->
+        <button
+            class="gate-card gate-lectures"
+            onclick="window.location.href='gate-lectures.html'">
+            <span>🎥</span>
+            <h2>Lectures</h2>
+            <p>Important Lectures</p>
+        </button>
+
+        <!-- Important -->
+        <button
+            class="gate-card gate-important"
+            onclick="window.location.href='gate-important.html'">
+            <span>📢</span>
+            <h2>Important</h2>
+            <p>GATE Updates & Information</p>
+        </button>
+    </div>
+</div>
+
+
+<script src="js/script.js"></script>
+<script src="js/components.js"></script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/notifications.js"></script>
+
+
+<div id="toast" class="toast"></div>
+</body>
+</html>

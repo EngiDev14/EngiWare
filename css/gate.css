@@ -1,0 +1,618 @@
+/* =====================================================
+   GATE PREPARATION HUB
+   ===================================================== */
+
+.gate-page {
+    min-height: calc(100vh - 70px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    box-sizing: border-box;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../images/gate-bgi.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.gate-network {
+    position: relative;
+    width: min(900px, 90vw);
+    height: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =====================================================
+   CENTER GATE — PREMIUM CIRCLE
+   ===================================================== */
+
+.gate-center {
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(59,130,246,.25),
+            transparent 55%
+        ),
+        var(--card-bg, #151515);
+    border: 2px solid rgba(59,130,246,.75);
+    box-shadow:
+        0 0 20px rgba(59,130,246,.35),
+        0 0 50px rgba(59,130,246,.18),
+        inset 0 0 30px rgba(59,130,246,.08);
+    z-index: 5;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.gate-center::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    border: 1px solid rgba(59,130,246,.20);
+    box-shadow:
+        0 0 20px rgba(59,130,246,.15);
+    pointer-events: none;
+}
+
+.gate-center:hover {
+    transform: scale(1.07);
+    box-shadow:
+        0 0 30px rgba(59,130,246,.55),
+        0 0 75px rgba(59,130,246,.25),
+        inset 0 0 35px rgba(59,130,246,.12);
+}
+
+.gate-center span {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    color: #60a5fa;
+    text-shadow:
+        0 0 10px rgba(96,165,250,.7),
+        0 0 25px rgba(59,130,246,.35);
+}
+
+.gate-center small {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-muted, #aaa);
+    letter-spacing: .5px;
+}
+
+/* =====================================================
+   GATE RESOURCE CIRCLES
+   ===================================================== */
+
+.gate-card {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: inherit;
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(59,130,246,.16),
+            transparent 58%
+        ),
+        rgba(20,20,20,.92);
+    color: #fff;
+    border: 1.5px solid rgba(96,165,250,.45);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.30),
+        0 0 18px rgba(59,130,246,.10),
+        inset 0 0 20px rgba(59,130,246,.04);
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+/* luminous outer ring */
+
+.gate-card::before {
+    content: "";
+    position: absolute;
+    inset: -7px;
+    border-radius: 50%;
+    border: 1px solid rgba(59,130,246,.15);
+    box-shadow:
+        0 0 15px rgba(59,130,246,.10);
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+/* icon */
+
+.gate-card span {
+    font-size: 32px;
+    margin-bottom: 8px;
+    filter:
+        drop-shadow(
+            0 0 8px
+            rgba(96,165,250,.35)
+        );
+}
+
+
+/* title */
+
+.gate-card h2 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+/* description */
+
+.gate-card p {
+    margin: 6px 0 0;
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+    color: #a7a7a7;
+    max-width: 120px;
+}
+
+
+/* =====================================================
+   HOVER
+   ===================================================== */
+
+.gate-card:hover {
+    border-color: rgba(96,165,250,.95);
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.40),
+        0 0 25px rgba(59,130,246,.35),
+        0 0 55px rgba(59,130,246,.12),
+        inset 0 0 25px rgba(59,130,246,.08);
+}
+
+.gate-card:hover::before {
+    border-color: rgba(96,165,250,.45);
+    box-shadow:
+        0 0 25px rgba(59,130,246,.25);
+}
+
+/* =====================================================
+   RESOURCE POSITIONS
+   ===================================================== */
+
+/* ---------- TOP ---------- */
+
+.gate-syllabus {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gate-syllabus:hover {
+    transform:
+        translateX(-50%)
+        translateY(-6px)
+        scale(1.06);
+}
+
+/* ---------- LEFT ---------- */
+
+.gate-pyqs {
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gate-pyqs:hover {
+    transform:
+        translateY(-50%)
+        translateX(6px)
+        scale(1.06);
+}
+
+/* ---------- RIGHT ---------- */
+
+.gate-lectures {
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.gate-lectures:hover {
+    transform:
+        translateY(-50%)
+        translateX(-6px)
+        scale(1.06);
+}
+
+/* ---------- BOTTOM ---------- */
+
+.gate-important {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gate-important:hover {
+    transform:
+        translateX(-50%)
+        translateY(6px)
+        scale(1.06);
+}
+
+/* =====================================================
+   RADIAL CONNECTIONS
+   ===================================================== */
+
+.gate-network::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 1px;
+    height: 82%;
+    transform: translate(-50%, -50%);
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(59,130,246,.35),
+            transparent
+        );
+    z-index: 0;
+}
+
+.gate-network::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 82%;
+    height: 1px;
+    transform: translate(-50%, -50%);
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(59,130,246,.35),
+            transparent
+        );
+    z-index: 0;
+}
+
+/* =====================================================
+   LIGHT MODE
+   ===================================================== */
+
+body.light-mode .gate-page {
+    background:
+        radial-gradient(
+            circle at center,
+            #151b27 0%,
+            #0d121c 55%,
+            #070b12 100%
+        );
+
+    color: #ffffff;
+}
+
+/* ================= GATE LIGHT MODE ================= */
+
+body.light-mode .gate-page {
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.25),
+            rgba(255,255,255,0.25)
+        ),
+        url("../images/gate-bg-light.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+body.light-mode .gate-center {
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(37,99,235,.12),
+            transparent 58%
+        ),
+        #ffffff;
+    border-color: rgba(37,99,235,.65);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.10),
+        0 0 25px rgba(37,99,235,.15),
+        inset 0 0 25px rgba(37,99,235,.04);
+}
+
+body.light-mode .gate-card {
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            rgba(37,99,235,.08),
+            transparent 60%
+        ),
+        #ffffff;
+    color: #222;
+    border-color: rgba(37,99,235,.25);
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.08),
+        0 0 15px rgba(37,99,235,.06);
+}
+
+body.light-mode .gate-card h2 {
+    color: #222;
+}
+
+body.light-mode .gate-card p {
+    color: #666;
+}
+
+body.light-mode .gate-center small {
+    color: #666;
+}
+
+body.light-mode .gate-card:hover {
+    border-color: #2563eb;
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12),
+        0 0 30px rgba(37,99,235,.20);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+    .gate-network {
+        width: 100%;
+        min-height: 650px;
+    }
+    .gate-center {
+        width: 135px;
+        height: 135px;
+    }
+    .gate-center span {
+        font-size: 34px;
+    }
+    .gate-center small {
+        font-size: 11px;
+    }
+    .gate-card {
+        width: 125px;
+        height: 125px;
+        padding: 15px;
+    }
+    .gate-card span {
+        font-size: 25px;
+    }
+    .gate-card h2 {
+        font-size: 15px;
+    }
+    .gate-card p {
+        font-size: 10px;
+        max-width: 95px;
+    }
+    .gate-syllabus {
+        top: 10px;
+    }
+    .gate-pyqs {
+        left: 0;
+    }
+    .gate-lectures {
+        right: 0;
+    }
+    .gate-important {
+        bottom: 10px;
+    }
+}
+
+/* =====================================================
+   GATE SYLLABUS PAGE BACKGROUND
+   ===================================================== */
+
+body.subjects-page .gate-content-page {
+
+    min-height: calc(100vh - 70px);
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("../images/gate-bgi.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/* ---------- Light Theme ---------- */
+
+body.light-mode .gate-content-page {
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.18)
+        ),
+        url("../images/gate-bg-light.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ================= GATE PYQ GRID ================= */
+
+.gate-pyq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: 25px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* ================= PYQ CARD ================= */
+
+.gate-pyq-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(10, 15, 25, 0.85);
+    border: 1px solid rgba(0, 140, 255, 0.5);
+    box-shadow:
+        0 0 15px rgba(0, 120, 255, 0.25);
+    transition: 0.3s ease;
+}
+
+.gate-pyq-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 25px rgba(0, 150, 255, 0.55);
+    border-color: #168cff;
+}
+
+/* ================= ICON ================= */
+
+.pyq-icon {
+    font-size: 40px;
+    min-width: 55px;
+    text-align: center;
+}
+
+/* ================= INFO ================= */
+
+.pyq-info {
+    flex: 1;
+}
+
+.pyq-info h3 {
+    margin: 0 0 6px;
+}
+
+.pyq-info p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* ================= PDF BUTTON ================= */
+
+.gate-pdf-btn {
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    background: #1268e8;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.gate-pdf-btn:hover {
+    background: #168cff;
+    box-shadow:
+        0 0 15px rgba(0, 140, 255, 0.7);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+    .gate-pyq-grid {
+        grid-template-columns: 1fr;
+    }
+    .gate-pyq-card {
+        flex-wrap: wrap;
+    }
+    .gate-pdf-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* =====================================================
+   GATE SYLLABUS CARDS — FIX CONTENT OVERLAP
+   ===================================================== */
+
+.gate-info-grid {
+    align-items: stretch;
+}
+
+.gate-info-card {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-height: 280px;
+    padding: 35px;
+}
+
+.gate-info-card span {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.gate-info-card h2 {
+    margin: 0 0 12px;
+}
+
+.gate-info-card p {
+    margin: 0;
+    line-height: 1.6;
+    flex: 1;
+    max-width: 500px;
+}
+
+.gate-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-top: 25px;
+    padding: 12px 22px;
+    box-sizing: border-box;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+/* Hide original website background on GATE content pages */
+
+body.gate-content-body {
+    background: transparent !important;
+}
