@@ -510,6 +510,28 @@ body.light-mode .gate-content-page {
     border-color: #168cff;
 }
 
+/* =====================================================
+   PYQ CARDS — LIGHT THEME
+   ===================================================== */
+
+body.light-mode .gate-pyq-card {
+
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(37, 99, 235, 0.35);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+    color: #111827;
+}
+
+
+/* PYQ text in light mode */
+
+body.light-mode .gate-pyq-card h3 {
+    color: #111827;
+}
+body.light-mode .gate-pyq-card p {
+    color: #374151;
+}
+
 /* ================= ICON ================= */
 
 .pyq-icon {
