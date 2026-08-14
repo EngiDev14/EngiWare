@@ -523,13 +523,33 @@ body.light-mode .gate-pyq-card {
 }
 
 
-/* PYQ text in light mode */
+/* =====================================================
+   GATE PYQ CARDS — LIGHT MODE ONLY
+   ===================================================== */
 
-body.light-mode .gate-pyq-card h3 {
-    color: #e4e6eb;
+body.light-mode .gate-content-page .gate-pyq-grid .gate-pyq-card {
+    background: #ffffff !important;
+    color: #111827 !important;
+    border: 1px solid rgba(37, 99, 235, 0.35) !important;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15) !important;
 }
-body.light-mode .gate-pyq-card p {
-    color: #a8aaae;
+
+/* Text */
+
+body.light-mode .gate-content-page .gate-pyq-card h3 {
+    color: #111827 !important;
+}
+
+body.light-mode .gate-content-page .gate-pyq-card p {
+    color: #374151 !important;
+}
+
+
+/* Keep PDF button unchanged */
+
+body.light-mode .gate-content-page .gate-pyq-card .gate-pdf-btn {
+    background: #1268e8 !important;
+    color: #ffffff !important;
 }
 
 /* ================= ICON ================= */
