@@ -3994,34 +3994,24 @@ body.light-mode
 
 }
 
-
 body.light-mode
 .quiz-topic-name {
-
     color: #222;
-
 }
-
 
 body.light-mode
 .quiz-topic-count {
-
     color: #c51f1f;
-
     background:
     rgba(220, 30, 30, 0.08);
-
     border-color:
     rgba(220, 30, 30, 0.20);
 
 }
 
-
 body.light-mode
 .quiz-topic-arrow {
-
     color: #d62828;
-
 }
 
 /* =====================================================
@@ -4030,38 +4020,55 @@ body.light-mode
 
 .quiz-subtitle-card {
 
-    width: fit-content;
+    width: 75%;
+    max-width: 650px;
+    min-height: 65px;
 
-    max-width: 90%;
-
-    margin: 18px auto 35px;
-
-    padding: 12px 22px;
+    margin: 20px auto 40px;
+    padding: 18px 28px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
+    gap: 14px;
 
-    gap: 10px;
+    box-sizing: border-box;
 
-    border-radius: 14px;
+    border-radius: 18px;
 
     background:
     linear-gradient(
         135deg,
-        rgba(40, 8, 10, 0.90),
-        rgba(10, 10, 12, 0.92)
+        #24080b,
+        #0d0d0f
     );
 
-    border:
-    1px solid
-    rgba(255, 55, 55, 0.28);
+    border: 1px solid rgba(255, 50, 50, 0.5);
 
     box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.25),
-    0 0 12px rgba(255, 40, 40, 0.08);
+        0 8px 25px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 30, 30, 0.15);
+
+}
+
+
+/* TOP RED GLOW */
+
+.quiz-subtitle-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 3px;
+
+    background: #ff3b3b;
+
+    border-radius: 10px;
+
+    box-shadow:
+    0 0 12px rgba(255, 40, 40, 0.8);
 
 }
 
@@ -4070,7 +4077,9 @@ body.light-mode
 
 .quiz-subtitle-icon {
 
-    font-size: 20px;
+    font-size: 25px;
+
+    z-index: 1;
 
 }
 
@@ -4081,11 +4090,13 @@ body.light-mode
 
     margin: 0;
 
-    color: #f2f2f2;
+    color: #ffffff;
 
-    font-size: 15px;
+    font-size: 16px;
 
-    font-weight: 500;
+    font-weight: 600;
+
+    z-index: 1;
 
 }
 
@@ -4094,27 +4105,52 @@ body.light-mode
    LIGHT MODE
    ===================================================== */
 
-body.light-mode
-.quiz-subtitle-card {
+body.light-mode .quiz-subtitle-card {
 
     background:
     linear-gradient(
         135deg,
         #ffffff,
-        #fff4f4
+        #fff1f1
     );
 
-    border-color:
-    rgba(220, 30, 30, 0.22);
+    border:
+    1px solid rgba(210, 30, 30, 0.35);
 
     box-shadow:
-    0 6px 18px rgba(120, 20, 20, 0.08);
+        0 8px 22px rgba(150, 20, 20, 0.12),
+        0 0 15px rgba(255, 40, 40, 0.08);
 
 }
 
-body.light-mode
-.quiz-subtitle-card p {
 
-    color: #2b2b2b;
+body.light-mode .quiz-subtitle-card p {
+
+    color: #222222;
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .quiz-subtitle-card {
+
+        width: 90%;
+
+        padding: 16px;
+
+        margin-bottom: 30px;
+
+    }
+
+    .quiz-subtitle-card p {
+
+        font-size: 14px;
+
+    }
 
 }
