@@ -23,9 +23,21 @@ document.body.appendChild(script);
 
 function startQuiz(){
 
-let subject = localStorage.getItem("subject");
+let subject =
+localStorage.getItem("subject");
 
-document.getElementById("quizTitle").innerHTML = "🎯 " + subject + " Quiz";
+let topic =
+localStorage.getItem("quizTopic");
+
+document
+.getElementById("quizTitle")
+.innerHTML =
+
+topic && topic !== "General Quiz"
+
+? `🎯 ${topic}`
+
+: `🎯 ${subject} Quiz`;
 
 const semester = localStorage.getItem("semester").replace(" ", "").toLowerCase();
 
@@ -38,7 +50,24 @@ if (!semesterData) {
     return;
 }
 
-const questions = semesterData[subject];
+const subjectData =
+semesterData[subject];
+
+let questions;
+
+// ================= OLD QUIZ FORMAT =================
+
+if(Array.isArray(subjectData)){
+    questions =
+    subjectData;
+}
+
+// ================= NEW TOPIC FORMAT =================
+
+else{
+    questions =
+    subjectData?.[topic];
+}
 
 if (!questions || questions.length === 0) {
     showComingSoon();

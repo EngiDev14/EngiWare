@@ -291,7 +291,7 @@ function openSyllabus(){
 function openQuiz(){
 
     window.location.href =
-    "quiz/quiz-player.html";
+    "quiz.html";
 }
 
 // main dashboard settings : 

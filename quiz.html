@@ -1,79 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Quiz</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="css/style.css">
+<title>Quiz Topics | EngiWare</title>
+
+<link rel="stylesheet"
+href="css/style.css">
 
 </head>
 
+
 <body class="subjects-page">
 
-<button class="back-btn"
+<button
+class="back-btn"
 onclick="history.back()">
+
 ← Back
+
 </button>
 
-<button class="theme-btn"
+
+<button
+class="theme-btn"
 onclick="toggleTheme()">
+
 🌙
+
 </button>
+
 
 <div class="subjects-container">
 
-<h1 id="quizTitle">
-Quiz
-</h1>
+    <h1 id="quizTitle">
 
-<div id="quizContainer">
+        🎯 Quiz Topics
+
+    </h1>
+
+
+    <p
+    id="quizSubtitle"
+    style="text-align:center;">
+
+        Select a topic to start practicing 🚀
+
+    </p>
+
+
+    <div
+    id="quizContainer"
+    class="semester-grid">
+
+    </div>
+
 
 </div>
 
-</div>
+
+<script src="js/script.js"></script>
+
 
 <script>
 
-let subject = localStorage.getItem("subject");
+const branch =
+localStorage.getItem("branch");
 
-document.getElementById("quizTitle").innerHTML =
-"🎯 " + subject + " Quiz";
+const semester =
+localStorage
+.getItem("semester");
 
-let container =
-document.getElementById("quizContainer");
+const subject =
+localStorage
+.getItem("subject");
 
-if(subject === "Applied Mathematics - I")
-{
-container.innerHTML = `
-<div class="resource-card">
-<h3>Question 1</h3>
 
-<p>What is the value of i² ?</p>
+document
+.getElementById("quizTitle")
+.innerHTML =
+"🎯 " + subject + " Quizzes";
 
-<button>1</button>
-<button>-1</button>
-<button>0</button>
-<button>2</button>
 
-</div>
-`;
+const script =
+document.createElement("script");
+
+
+script.src =
+`quizzes/${branch.toLowerCase()}.js`;
+
+
+script.onload = () => {
+
+    loadQuizTopics();
+
+};
+
+
+script.onerror = () => {
+
+    document
+    .getElementById("quizContainer")
+    .innerHTML = `
+
+        <div class="resource-card">
+
+            ❌ Quiz data could not be loaded.
+
+        </div>
+
+    `;
+
+};
+
+
+document.body.appendChild(script);
+
+
+
+function loadQuizTopics(){
+
+    const container =
+    document
+    .getElementById("quizContainer");
+
+
+    const semesterKey =
+    semester
+    .replace(" ","")
+    .toLowerCase();
+
+
+    const semesterData =
+    quizData[semesterKey];
+
+
+    if(!semesterData){
+
+        showNoQuiz();
+
+        return;
+
+    }
+
+
+    const subjectData =
+    semesterData[subject];
+
+
+    if(!subjectData){
+
+        showNoQuiz();
+
+        return;
+
+    }
+
+
+    // ================= OLD QUIZ FORMAT SUPPORT =================
+
+    if(Array.isArray(subjectData)){
+
+        if(subjectData.length === 0){
+
+            showNoQuiz();
+
+            return;
+
+        }
+
+
+        container.innerHTML = `
+
+        <button
+        class="semester-btn"
+        onclick="startQuizTopic('General Quiz')">
+
+            📚 General Quiz
+
+        </button>
+
+        `;
+
+        return;
+
+    }
+
+
+    // ================= NEW TOPIC FORMAT =================
+
+    const topics =
+    Object.keys(subjectData);
+
+
+    if(topics.length === 0){
+
+        showNoQuiz();
+
+        return;
+
+    }
+
+
+    topics.forEach(topic => {
+
+        const questionCount =
+        subjectData[topic].length;
+
+
+        container.innerHTML += `
+
+        <button
+        class="semester-btn"
+        onclick="startQuizTopic(${JSON.stringify(topic)})">
+
+            📘 ${topic}
+
+            <br>
+
+            <small>
+
+                ${questionCount} Questions
+
+            </small>
+
+        </button>
+
+        `;
+
+    });
+
 }
-else {
-container.innerHTML = `
 
-<div class="resource-card">
-Quiz Coming Soon 🚀
-</div>
 
-`;
+
+function startQuizTopic(topic){
+
+    localStorage.setItem(
+        "quizTopic",
+        topic
+    );
+
+
+    window.location.href =
+    "quiz/quiz-player.html";
+
+}
+
+
+
+function showNoQuiz(){
+
+    document
+    .getElementById("quizContainer")
+    .innerHTML = `
+
+    <div class="resource-card">
+
+        <h2>
+
+            🚧 No Quizzes Available Yet
+
+        </h2>
+
+        <p>
+
+            Quizzes for this subject
+            will be added soon 🚀
+
+        </p>
+
+    </div>
+
+    `;
+
 }
 
 </script>
 
-<script src="js/script.js"></script>
-
 </body>
+
 </html>
