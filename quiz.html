@@ -217,20 +217,24 @@ function loadQuizTopics(){
 
 }
 
-function startQuizTopic(topic){
+window.startQuizTopic = function(topic){
+
+    console.log("TOPIC CLICKED:", topic);
 
     localStorage.setItem(
         "quizTopic",
         topic
     );
 
+    console.log(
+        "SAVED TOPIC:",
+        localStorage.getItem("quizTopic")
+    );
 
     window.location.href =
     "quiz/quiz-player.html";
 
 }
-
-
 
 function showNoQuiz(){
 
