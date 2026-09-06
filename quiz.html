@@ -196,18 +196,24 @@ function loadQuizTopics(){
         container.innerHTML += `
 
         <button
-        class="semester-btn"
+        class="quiz-topic-card"
         onclick='startQuizTopic(${JSON.stringify(topic)})'>
 
-            📘 ${topic}
+            <div class="quiz-topic-icon">
+                📘
+            </div>
 
-            <br>
+            <div class="quiz-topic-name">
+                ${topic}
+            </div>
 
-            <small>
-
+            <div class="quiz-topic-count">
                 ${questionCount} Questions
+            </div>
 
-            </small>
+            <div class="quiz-topic-arrow">
+                →
+            </div>
 
         </button>
 
