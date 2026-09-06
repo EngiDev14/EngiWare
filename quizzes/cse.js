@@ -173,8 +173,11 @@ semester1: {
 
     },
 
+},
 
-    "Physics": {
+semester2: {
+
+        "Applied Physics": {
 
         "Optics": [
 
@@ -261,10 +264,6 @@ semester1: {
         ]
 
     }
-
-},
-
-semester2: {
 
 },
 
