@@ -3791,7 +3791,7 @@ body.light-mode
 }
 
 /* =====================================================
-   QUIZ TOPIC CARDS
+   QUIZ TOPIC CARDS - ENGIWARE RED / BLACK THEME
    ===================================================== */
 
 .quiz-topic-card {
@@ -3806,13 +3806,13 @@ body.light-mode
 
     border-radius: 22px;
 
-    border: 1px solid rgba(0, 140, 255, 0.45);
+    border: 1px solid rgba(255, 50, 50, 0.35);
 
     background:
     linear-gradient(
         145deg,
-        rgba(15, 25, 45, 0.95),
-        rgba(5, 10, 20, 0.95)
+        rgba(35, 8, 10, 0.96),
+        rgba(8, 8, 10, 0.98)
     );
 
     color: white;
@@ -3832,8 +3832,8 @@ body.light-mode
     gap: 12px;
 
     box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.4),
-    0 0 18px rgba(0, 120, 255, 0.18);
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    0 0 18px rgba(255, 30, 30, 0.12);
 
     transition:
     transform 0.3s ease,
@@ -3843,7 +3843,7 @@ body.light-mode
 }
 
 
-/* BLUE TOP LIGHT */
+/* RED GLOW AT TOP */
 
 .quiz-topic-card::before {
 
@@ -3863,7 +3863,7 @@ body.light-mode
     linear-gradient(
         90deg,
         transparent,
-        #168cff,
+        #ff3131,
         transparent
     );
 
@@ -3878,25 +3878,31 @@ body.light-mode
     translateY(-8px);
 
     border-color:
-    rgba(0, 150, 255, 0.9);
+    rgba(255, 50, 50, 0.85);
 
     box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(0, 130, 255, 0.45);
+    0 18px 40px rgba(0, 0, 0, 0.55),
+    0 0 30px rgba(255, 35, 35, 0.28);
 
 }
 
 
-/* ICON */
+/* ================= ICON ================= */
 
 .quiz-topic-icon {
 
     font-size: 42px;
 
+    filter:
+    drop-shadow(
+        0 0 8px
+        rgba(255, 50, 50, 0.35)
+    );
+
 }
 
 
-/* TOPIC NAME */
+/* ================= TOPIC NAME ================= */
 
 .quiz-topic-name {
 
@@ -3906,14 +3912,16 @@ body.light-mode
 
     text-align: center;
 
+    color: white;
+
 }
 
 
-/* QUESTION COUNT */
+/* ================= QUESTION COUNT ================= */
 
 .quiz-topic-count {
 
-    padding: 7px 14px;
+    padding: 7px 15px;
 
     border-radius: 20px;
 
@@ -3921,19 +3929,19 @@ body.light-mode
 
     font-weight: 600;
 
-    color: #9dd4ff;
+    color: #ffb0b0;
 
     background:
-    rgba(0, 120, 255, 0.12);
+    rgba(255, 40, 40, 0.10);
 
     border:
     1px solid
-    rgba(0, 140, 255, 0.3);
+    rgba(255, 50, 50, 0.25);
 
 }
 
 
-/* ARROW */
+/* ================= ARROW ================= */
 
 .quiz-topic-arrow {
 
@@ -3945,7 +3953,7 @@ body.light-mode
 
     font-size: 24px;
 
-    color: #168cff;
+    color: #ff4545;
 
     transition: 0.3s ease;
 
@@ -3971,18 +3979,26 @@ body.light-mode
     background:
     linear-gradient(
         145deg,
-        rgba(255, 255, 255, 0.96),
-        rgba(230, 242, 255, 0.96)
+        #ffffff,
+        #fff4f4
     );
 
-    color: #102033;
+    color: #1f1f1f;
 
     border-color:
-    rgba(0, 100, 220, 0.28);
+    rgba(220, 30, 30, 0.28);
 
     box-shadow:
-    0 10px 28px rgba(0, 70, 150, 0.12),
-    0 0 15px rgba(0, 120, 255, 0.08);
+    0 10px 28px rgba(120, 20, 20, 0.10),
+    0 0 15px rgba(255, 40, 40, 0.08);
+
+}
+
+
+body.light-mode
+.quiz-topic-name {
+
+    color: #222;
 
 }
 
@@ -3990,9 +4006,20 @@ body.light-mode
 body.light-mode
 .quiz-topic-count {
 
-    color: #1268e8;
+    color: #c51f1f;
 
     background:
-    rgba(0, 120, 255, 0.08);
+    rgba(220, 30, 30, 0.08);
+
+    border-color:
+    rgba(220, 30, 30, 0.20);
+
+}
+
+
+body.light-mode
+.quiz-topic-arrow {
+
+    color: #d62828;
 
 }
