@@ -289,9 +289,11 @@ function openSyllabus(){
 }
 
 function openQuiz(){
+    // Clear previously selected topic
+    localStorage.removeItem("quizTopic");
 
-    window.location.href =
-    "quiz.html";
+    // Open topic selection page
+    window.location.href = "quiz.html";
 }
 
 // main dashboard settings : 

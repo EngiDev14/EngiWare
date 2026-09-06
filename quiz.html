@@ -15,26 +15,19 @@ href="css/style.css">
 
 </head>
 
-
 <body class="subjects-page">
 
 <button
 class="back-btn"
 onclick="history.back()">
-
 ← Back
-
 </button>
-
 
 <button
 class="theme-btn"
 onclick="toggleTheme()">
-
 🌙
-
 </button>
-
 
 <div class="subjects-container">
 
@@ -44,15 +37,11 @@ onclick="toggleTheme()">
 
     </h1>
 
-
     <p
     id="quizSubtitle"
     style="text-align:center;">
-
         Select a topic to start practicing 🚀
-
     </p>
-
 
     <div
     id="quizContainer"
@@ -60,12 +49,9 @@ onclick="toggleTheme()">
 
     </div>
 
-
 </div>
 
-
 <script src="js/script.js"></script>
-
 
 <script>
 
@@ -86,7 +72,6 @@ document
 .innerHTML =
 "🎯 " + subject + " Quizzes";
 
-
 const script =
 document.createElement("script");
 
@@ -100,7 +85,6 @@ script.onload = () => {
     loadQuizTopics();
 
 };
-
 
 script.onerror = () => {
 
@@ -118,21 +102,29 @@ script.onerror = () => {
 
 };
 
-
 document.body.appendChild(script);
-
-
 
 function loadQuizTopics(){
 
     const container =
-    document
-    .getElementById("quizContainer");
+    document.getElementById("quizContainer");
+
+
+    container.innerHTML = "";
+
+
+    if(!branch || !semester || !subject){
+
+        showNoQuiz();
+
+        return;
+
+    }
 
 
     const semesterKey =
     semester
-    .replace(" ","")
+    .replace(/\s/g, "")
     .toLowerCase();
 
 
@@ -140,55 +132,49 @@ function loadQuizTopics(){
     quizData[semesterKey];
 
 
+    console.log("Branch:", branch);
+    console.log("Semester:", semester);
+    console.log("Semester Key:", semesterKey);
+    console.log("Subject:", subject);
+    console.log("Semester Data:", semesterData);
+
+
     if(!semesterData){
-
         showNoQuiz();
-
         return;
-
     }
-
 
     const subjectData =
     semesterData[subject];
 
+    console.log("Subject Data:", subjectData);
 
     if(!subjectData){
-
         showNoQuiz();
-
         return;
-
     }
 
-
-    // ================= OLD QUIZ FORMAT SUPPORT =================
+    // ================= OLD QUIZ FORMAT =================
 
     if(Array.isArray(subjectData)){
-
         if(subjectData.length === 0){
-
             showNoQuiz();
-
             return;
-
         }
-
 
         container.innerHTML = `
 
         <button
         class="semester-btn"
         onclick="startQuizTopic('General Quiz')">
-
             📚 General Quiz
-
+            <br>
+            <small>
+                ${subjectData.length} Questions
+            </small>
         </button>
-
         `;
-
         return;
-
     }
 
 
@@ -197,27 +183,21 @@ function loadQuizTopics(){
     const topics =
     Object.keys(subjectData);
 
-
     if(topics.length === 0){
-
         showNoQuiz();
-
         return;
-
     }
-
 
     topics.forEach(topic => {
 
         const questionCount =
         subjectData[topic].length;
 
-
         container.innerHTML += `
 
         <button
         class="semester-btn"
-        onclick="startQuizTopic(${JSON.stringify(topic)})">
+        onclick='startQuizTopic(${JSON.stringify(topic)})'>
 
             📘 ${topic}
 
@@ -236,8 +216,6 @@ function loadQuizTopics(){
     });
 
 }
-
-
 
 function startQuizTopic(topic){
 
