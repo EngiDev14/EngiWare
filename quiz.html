@@ -150,10 +150,53 @@ function loadQuizTopics(){
         return;
     }
 
-    const subjectData =
+    // ================= FIND SUBJECT DATA =================
+
+    let subjectData =
     semesterData[subject];
 
-    console.log("Subject Data:", subjectData);
+    // If exact subject name is not found,
+    // try matching normalized subject names
+
+    if (!subjectData) {
+
+        const normalizedSubject =
+        subject
+        .trim()
+        .toLowerCase()
+        .replace(/[\s-]+/g, "");
+
+        const matchingSubjectKey =
+        Object.keys(semesterData).find(key =>
+
+            key
+            .trim()
+            .toLowerCase()
+            .replace(/[\s-]+/g, "")
+
+            ===
+
+            normalizedSubject
+        );
+
+        if (matchingSubjectKey) {
+
+            subjectData =
+            semesterData[matchingSubjectKey];
+
+            console.log(
+                "Matched Subject:",
+                matchingSubjectKey
+            );
+
+        }
+
+    }
+
+    console.log(
+        "Subject Data:",
+        subjectData
+    );
 
     if(!subjectData){
         showNoQuiz();
