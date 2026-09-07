@@ -3216,6 +3216,794 @@ semester3: {
             ]
     },
 
+    "Data Structures": {
+
+        "Basic Terminology & Elementary Data Organization": [
+
+            { question:"What is a data structure?", options:["A programming language","A way of organizing and storing data","A computer hardware device","A type of operating system"], answer:1, explanation:"A data structure is a systematic way of organizing and storing data so that it can be accessed and modified efficiently." },
+
+            { question:"The main purpose of a data structure is to?", options:["Increase program size","Organize data for efficient operations","Replace algorithms","Remove all memory usage"], answer:1, explanation:"Data structures organize data so operations such as searching, insertion and deletion can be performed efficiently." },
+
+            { question:"Which of the following is an example of a linear data structure?", options:["Tree","Graph","Array","Heap"], answer:2, explanation:"An array is a linear data structure because its elements are arranged sequentially." },
+
+            { question:"Which of the following is a non-linear data structure?", options:["Array","Stack","Queue","Tree"], answer:3, explanation:"A tree is a non-linear data structure because its elements are organized hierarchically." },
+
+            { question:"Data structures are mainly classified into?", options:["Simple and difficult","Linear and non-linear","Fast and slow","Hardware and software"], answer:1, explanation:"Data structures are commonly classified as linear and non-linear." },
+
+            { question:"In a linear data structure, elements are generally arranged?", options:["Hierarchically","Sequentially","Randomly without relationships","Only in two dimensions"], answer:1, explanation:"Linear data structures arrange elements in a sequential order." },
+
+            { question:"Which of the following is NOT a linear data structure?", options:["Array","Stack","Queue","Graph"], answer:3, explanation:"A graph is a non-linear data structure." },
+
+            { question:"Which data structure follows the Last In First Out principle?", options:["Queue","Stack","Array","Graph"], answer:1, explanation:"A stack follows the LIFO principle where the last inserted element is removed first." },
+
+            { question:"Which data structure follows the First In First Out principle?", options:["Stack","Queue","Tree","Array"], answer:1, explanation:"A queue follows the FIFO principle where the first inserted element is removed first." },
+
+            { question:"A collection of related data items is called?", options:["Data structure","Algorithm","Compiler","Program"], answer:0, explanation:"A data structure is a collection of related data items organized in a particular way." },
+
+            { question:"Which operation adds a new element into a data structure?", options:["Deletion","Insertion","Traversal","Searching"], answer:1, explanation:"Insertion is the operation of adding a new element to a data structure." },
+
+            { question:"Which operation removes an existing element from a data structure?", options:["Insertion","Traversal","Deletion","Searching"], answer:2, explanation:"Deletion removes an existing element from a data structure." },
+
+            { question:"Which operation visits each element of a data structure?", options:["Searching","Traversal","Insertion","Sorting"], answer:1, explanation:"Traversal means visiting or processing the elements of a data structure." },
+
+            { question:"Which operation is used to locate a particular element?", options:["Traversal","Searching","Insertion","Deletion"], answer:1, explanation:"Searching is used to locate a required element in a collection of data." },
+
+            { question:"Which operation arranges data in a particular order?", options:["Searching","Sorting","Deletion","Traversal"], answer:1, explanation:"Sorting arranges elements according to a specified order such as ascending or descending." },
+
+            { question:"An array generally stores elements?", options:["Without any order","In contiguous memory locations","Only in different computers","Only as characters"], answer:1, explanation:"Array elements are typically stored in contiguous memory locations." },
+
+            { question:"Which data structure represents a hierarchical relationship?", options:["Array","Queue","Tree","Stack"], answer:2, explanation:"Trees represent hierarchical relationships between elements." },
+
+            { question:"Which data structure consists of vertices and edges?", options:["Stack","Queue","Graph","Array"], answer:2, explanation:"A graph consists of vertices, also called nodes, and edges connecting them." },
+
+            { question:"A node is commonly associated with?", options:["Linked structures such as linked lists and trees","Only arrays","Only integers","Only operating systems"], answer:0, explanation:"Nodes are fundamental elements in linked lists, trees and other linked data structures." },
+
+            { question:"A data item is?", options:["A single unit of information","A complete algorithm","A programming language","A computer network"], answer:0, explanation:"A data item represents a single unit of information." },
+
+            { question:"A data type defines?", options:["Only the memory address","The kind of values and operations allowed","Only program execution time","Only the operating system"], answer:1, explanation:"A data type specifies the kind of values that can be stored and the operations that can be performed on them." },
+
+            { question:"Which of the following is a primitive data type?", options:["Integer","Linked list","Tree","Graph"], answer:0, explanation:"Integer is a primitive data type, while linked lists, trees and graphs are more complex data structures." },
+
+            { question:"Which of the following is a basic operation performed on data structures?", options:["Searching","Compiling only","Booting the computer","Installing an operating system"], answer:0, explanation:"Searching is one of the common operations performed on data structures." },
+
+            { question:"Which data structure can dynamically grow or shrink by linking nodes?", options:["Static array","Linked list","Fixed table","Constant variable"], answer:1, explanation:"A linked list uses nodes connected through links and can dynamically grow or shrink." },
+
+            { question:"Elementary data organization mainly focuses on?", options:["How data is represented and organized","Only computer hardware","Only network communication","Only graphics processing"], answer:0, explanation:"Elementary data organization deals with how data items are represented, stored and organized." }
+
+        ],
+
+        "Algorithms & Algorithm Efficiency": [
+
+            { question:"An algorithm is?", options:["A programming language","A finite sequence of well-defined steps to solve a problem","A computer hardware component","A data type"], answer:1, explanation:"An algorithm is a finite and well-defined sequence of steps used to solve a problem." },
+
+            { question:"An algorithm should have?", options:["Infinite steps","A finite number of steps","No input","No output"], answer:1, explanation:"An algorithm must terminate after a finite number of steps." },
+
+            { question:"The property that every algorithm step must be clearly defined is called?", options:["Ambiguity","Definiteness","Recursion","Complexity"], answer:1, explanation:"Definiteness means every step of an algorithm must be clear and unambiguous." },
+
+            { question:"An algorithm should produce?", options:["Only input","At least one output","Only errors","No result"], answer:1, explanation:"An algorithm should produce one or more outputs corresponding to the given input." },
+
+            { question:"The data supplied to an algorithm before processing is called?", options:["Output","Input","Complexity","Efficiency"], answer:1, explanation:"Input is the data provided to an algorithm for processing." },
+
+            { question:"The result produced after an algorithm completes is called?", options:["Input","Output","Loop","Memory"], answer:1, explanation:"Output is the result generated by the algorithm after processing input." },
+
+            { question:"An algorithm must terminate after?", options:["Infinite time","A finite number of steps","Exactly one step","Only recursion"], answer:1, explanation:"Finiteness is a fundamental property requiring an algorithm to terminate after a finite number of steps." },
+
+            { question:"Which of the following is NOT generally a characteristic of a good algorithm?", options:["Definiteness","Finiteness","Ambiguous instructions","Correct output"], answer:2, explanation:"An algorithm should contain clear and unambiguous instructions." },
+
+            { question:"Algorithm efficiency refers to?", options:["How efficiently an algorithm uses resources","The color of the program","The programming language name","The number of comments"], answer:0, explanation:"Algorithm efficiency measures the resources such as time and memory required by an algorithm." },
+
+            { question:"The two major measures of algorithm efficiency are?", options:["Input and output","Time and space complexity","Loops and functions","Hardware and software"], answer:1, explanation:"Algorithm efficiency is commonly evaluated using time complexity and space complexity." },
+
+            { question:"Time complexity measures?", options:["Amount of memory used only","Growth of execution time with input size","Program file size","Number of variables only"], answer:1, explanation:"Time complexity describes how the running time of an algorithm grows as input size increases." },
+
+            { question:"Space complexity measures?", options:["Execution speed","Memory required by an algorithm","Number of outputs","Number of loops only"], answer:1, explanation:"Space complexity describes the amount of memory required as input size grows." },
+
+            { question:"Algorithm efficiency is generally analyzed in terms of?", options:["Input size","Screen resolution","Keyboard type","Programming font"], answer:0, explanation:"The performance of algorithms is generally analyzed according to input size, usually represented by n." },
+
+            { question:"Which algorithm is generally more efficient for large input sizes?", options:["One with slower growth in running time","One with more instructions regardless of input","One with the largest memory use","One with infinite execution"], answer:0, explanation:"For large inputs, algorithms with slower growth rates are generally more efficient." },
+
+            { question:"Why is algorithm analysis important?", options:["To compare efficiency of different solutions","To remove all programming languages","To avoid writing code","To eliminate input data"], answer:0, explanation:"Algorithm analysis helps compare different approaches for solving the same problem." },
+
+            { question:"The performance of an algorithm is commonly studied before?", options:["Writing any problem statement","Actual implementation on a specific machine","Defining input","Understanding the problem"], answer:1, explanation:"Theoretical analysis allows algorithms to be evaluated without depending on a particular machine or implementation." },
+
+            { question:"Which factor is generally ignored during asymptotic algorithm analysis?", options:["Growth rate for large input","Hardware-specific execution speed","Input size","Number of basic operations"], answer:1, explanation:"Asymptotic analysis focuses on growth with input size rather than machine-specific factors." },
+
+            { question:"An algorithm that performs a fixed number of operations regardless of input size has complexity?", options:["O(n)","O(n²)","O(1)","O(log n)"], answer:2, explanation:"Constant-time algorithms have complexity O(1) because their work does not grow with input size." },
+
+            { question:"If the number of operations grows directly with n, the complexity is generally?", options:["O(1)","O(log n)","O(n)","O(n²)"], answer:2, explanation:"Linear complexity means the number of operations grows proportionally with input size." },
+
+            { question:"Nested loops each running n times commonly produce?", options:["O(1)","O(log n)","O(n)","O(n²)"], answer:3, explanation:"Two nested loops each running approximately n times produce roughly n × n operations." },
+
+            { question:"Which approach is useful for comparing algorithms independently of hardware?", options:["Asymptotic analysis","Screen testing","Keyboard testing","Font analysis"], answer:0, explanation:"Asymptotic analysis compares algorithms based on growth rates rather than specific hardware." },
+
+            { question:"The efficiency of an algorithm can depend on?", options:["Input size","Algorithm design","Required operations","All of these"], answer:3, explanation:"Algorithm efficiency depends on input size, the operations performed and the algorithm design." },
+
+            { question:"An algorithm with lower time complexity is always?", options:["Guaranteed to be faster for every tiny input","Generally more scalable for large inputs","Impossible to implement","Guaranteed to use less memory"], answer:1, explanation:"Lower asymptotic time complexity generally provides better scalability for large input sizes." }
+
+        ],
+
+        "Complexity, Asymptotic Notations & Time-Space Trade-off": [
+
+            { question:"What does Big-O notation generally represent?", options:["Exact running time","An asymptotic upper bound on growth","Only best-case complexity","Memory address"], answer:1, explanation:"Big-O notation describes an asymptotic upper bound on the growth rate of an algorithm." },
+
+            { question:"Big-O notation is mainly used to describe?", options:["Hardware cost","Growth rate of algorithm resource usage","Variable names","Programming syntax"], answer:1, explanation:"Big-O describes how time or space requirements grow as input size increases." },
+
+            { question:"Which notation is commonly associated with an upper bound?", options:["Big-O","Big-Omega only","Theta only","Constant notation"], answer:0, explanation:"Big-O notation gives an asymptotic upper bound." },
+
+            { question:"Which complexity represents constant time?", options:["O(n)","O(log n)","O(1)","O(n²)"], answer:2, explanation:"O(1) means the amount of work remains constant regardless of input size." },
+
+            { question:"Which complexity generally grows logarithmically?", options:["O(1)","O(log n)","O(n)","O(n²)"], answer:1, explanation:"O(log n) represents logarithmic growth." },
+
+            { question:"Which complexity represents linear growth?", options:["O(n)","O(1)","O(log n)","O(n²)"], answer:0, explanation:"O(n) means the work grows approximately proportionally to input size." },
+
+            { question:"Which complexity grows faster for large n?", options:["O(log n)","O(n)","O(n²)","O(1)"], answer:2, explanation:"Quadratic growth O(n²) grows faster than linear, logarithmic and constant growth." },
+
+            { question:"Which complexity is generally considered most efficient for very large input sizes?", options:["O(n²)","O(n)","O(log n)","O(1)"], answer:3, explanation:"Constant complexity O(1) does not grow with input size and is generally the most efficient asymptotically." },
+
+            { question:"What is the dominant term of 3n² + 5n + 2 for large n?", options:["3n²","5n","2","n²"], answer:3, explanation:"In asymptotic analysis, constant factors are ignored and the highest-growth term dominates, giving O(n²)." },
+
+            { question:"What is the Big-O complexity of 7n + 10?", options:["O(1)","O(log n)","O(n)","O(n²)"], answer:2, explanation:"The linear term dominates for large n, so the complexity is O(n)." },
+
+            { question:"What is the Big-O complexity of a constant number of operations?", options:["O(n)","O(n²)","O(log n)","O(1)"], answer:3, explanation:"A fixed amount of work is represented by O(1)." },
+
+            { question:"What is the Big-O complexity of two consecutive loops each running n times?", options:["O(n²)","O(n)","O(log n)","O(1)"], answer:1, explanation:"Consecutive loops add their operations, producing approximately 2n operations, which simplifies to O(n)." },
+
+            { question:"What is the Big-O complexity of two nested loops each running n times?", options:["O(1)","O(log n)","O(n)","O(n²)"], answer:3, explanation:"Nested loops multiply their iteration counts, giving approximately n² operations." },
+
+            { question:"Why are constant multipliers ignored in Big-O notation?", options:["They never exist","Growth rate is more important for large input sizes","They cause syntax errors","They only affect memory"], answer:1, explanation:"Asymptotic analysis focuses on how rapidly the function grows for large input sizes." },
+
+            { question:"Which complexity grows slowest as n becomes very large?", options:["O(n²)","O(n)","O(log n)","O(2ⁿ)"], answer:2, explanation:"Logarithmic growth increases more slowly than linear, quadratic and exponential growth." },
+
+            { question:"Which complexity generally grows fastest?", options:["O(log n)","O(n)","O(n²)","O(2ⁿ)"], answer:3, explanation:"Exponential complexity grows extremely rapidly as input size increases." },
+
+            { question:"Space complexity refers to?", options:["Execution time","Memory required by an algorithm","Number of loops","CPU frequency"], answer:1, explanation:"Space complexity measures memory usage as a function of input size." },
+
+            { question:"Auxiliary space refers to?", options:["Input storage only","Extra memory used by an algorithm excluding input storage","Only output memory","Computer disk space"], answer:1, explanation:"Auxiliary space is the additional memory required during algorithm execution, apart from the input itself." },
+
+            { question:"An algorithm using only a fixed number of extra variables generally has auxiliary space?", options:["O(1)","O(n)","O(n²)","O(log n²)"], answer:0, explanation:"A fixed number of variables requires constant auxiliary space." },
+
+            { question:"If an algorithm creates an additional array of size n, its extra space is generally?", options:["O(1)","O(log n)","O(n)","O(n²)"], answer:2, explanation:"An additional array proportional to input size requires O(n) auxiliary space." },
+
+            { question:"A time-space trade-off means?", options:["Reducing both time and space always","Using more memory to reduce execution time or vice versa","Ignoring memory completely","Only changing programming languages"], answer:1, explanation:"A time-space trade-off occurs when additional memory can be used to improve speed, or additional time can reduce memory requirements." },
+
+            { question:"Which situation is an example of a time-space trade-off?", options:["Using extra memory to store previously computed results","Deleting all data","Avoiding algorithms","Increasing program comments"], answer:0, explanation:"Storing previously computed results can use extra memory while reducing repeated computation time." },
+
+            { question:"Using a lookup table can often?", options:["Increase time and reduce memory","Reduce time by using additional memory","Remove all input","Make an algorithm infinite"], answer:1, explanation:"Lookup tables trade additional memory for faster retrieval and reduced computation time." },
+
+            { question:"What is the main purpose of asymptotic notation?", options:["To calculate exact execution time in seconds","To describe algorithm growth for large input sizes","To measure screen resolution","To count comments"], answer:1, explanation:"Asymptotic notation describes the growth behavior of algorithms as input size becomes large." },
+
+            { question:"Which factor is most important when comparing asymptotic complexity?", options:["Growth rate as input size increases","Variable name length","Code indentation only","Computer monitor size"], answer:0, explanation:"Asymptotic analysis focuses primarily on how resource requirements grow with increasing input size." },
+
+            { question:"If one algorithm is O(n) and another is O(n²), which is generally more scalable for large n?", options:["O(n²)","O(n)","Both are always identical","Neither can run"], answer:1, explanation:"Linear growth increases much more slowly than quadratic growth for large inputs." },
+
+            { question:"What does Time-Space trade-off help a programmer do?", options:["Balance execution speed and memory usage","Avoid all data structures","Remove algorithms","Guarantee O(1) complexity"], answer:0, explanation:"The time-space trade-off helps choose an appropriate balance between running time and memory consumption." }
+
+        ],
+
+        "Arrays": [
+
+            { question:"An array is best described as?", options:["A collection of elements stored in contiguous memory locations","A collection of unrelated files","A hierarchical structure","A set of random memory locations"], answer:0, explanation:"An array stores elements of the same type in contiguous memory locations." },
+
+            { question:"Array elements are generally accessed using?", options:["Pointers only","Indexes","Edges","Keys only"], answer:1, explanation:"Array elements are accessed using their index positions." },
+
+            { question:"What is the index of the first element in most programming languages?", options:["0","1","-1","Depends on memory"], answer:0, explanation:"Most common programming languages such as C++ use zero-based indexing." },
+
+            { question:"Which of the following is a major advantage of arrays?", options:["Fast random access using indexes","No memory requirement","Unlimited size always","Elements stored randomly"], answer:0, explanation:"Arrays provide efficient direct access to elements using their indexes." },
+
+            { question:"Accessing an array element using its index generally takes?", options:["O(1)","O(n)","O(n²)","O(log n)"], answer:0, explanation:"Array indexing provides direct access, which generally takes constant time." },
+
+            { question:"Inserting an element at the beginning of a normal array generally requires?", options:["No operation","Shifting existing elements","Deleting all elements","Sorting the array"], answer:1, explanation:"Elements usually need to be shifted to create space at the beginning." },
+
+            { question:"Insertion at the beginning of an array generally has complexity?", options:["O(1)","O(log n)","O(n)","O(n²)"], answer:2, explanation:"Up to n elements may need to be shifted, resulting in O(n) time." },
+
+            { question:"Deleting an element from the middle of an array may require?", options:["Shifting elements","Creating a tree","Adding a stack","Changing the data type"], answer:0, explanation:"Elements after the deleted position may need to be shifted." },
+
+            { question:"Which operation is generally efficient in an array?", options:["Accessing an element by index","Insertion at the beginning","Deletion from the beginning","Insertion in the middle without shifting"], answer:0, explanation:"Direct indexed access is one of the main advantages of arrays." },
+
+            { question:"An array generally stores elements?", options:["Of the same data type","Only strings","Only objects","Of unlimited unrelated types"], answer:0, explanation:"Traditional arrays generally store homogeneous elements of the same data type." },
+
+            { question:"A two-dimensional array is commonly used to represent?", options:["A matrix","A queue only","A single variable","A linked list"], answer:0, explanation:"A two-dimensional array is commonly used to represent rows and columns of a matrix." },
+
+            { question:"Which of the following is a limitation of a static array?", options:["Fixed size","Fast access","Contiguous storage","Indexed elements"], answer:0, explanation:"A static array generally has a fixed size that cannot easily change during execution." },
+
+            { question:"Array traversal means?", options:["Visiting array elements sequentially","Deleting the array","Changing its data type","Sorting automatically"], answer:0, explanation:"Traversal means visiting or processing each element of an array." },
+
+            { question:"Searching for an element sequentially in an unsorted array generally takes?", options:["O(1)","O(log n)","O(n)","O(n²)"], answer:2, explanation:"In the worst case, every element may need to be checked." },
+
+            { question:"Which memory arrangement is generally used by arrays?", options:["Contiguous memory allocation","Random allocation only","Hierarchical allocation","Circular allocation only"], answer:0, explanation:"Array elements are generally stored in contiguous memory locations." },
+
+            { question:"What happens when an array index is outside its valid range?", options:["It accesses a valid next element","It may cause an out-of-bounds error or undefined behavior","The array automatically doubles","The array becomes circular"], answer:1, explanation:"Accessing an invalid index can cause errors or undefined behavior depending on the language." },
+
+            { question:"Which operation usually requires the least time in an array?", options:["Access by index","Insertion at beginning","Deletion at beginning","Insertion in middle"], answer:0, explanation:"Direct indexing generally takes constant time O(1)." },
+
+            { question:"An array with n elements generally has valid indexes?", options:["0 to n","1 to n","0 to n-1","1 to n-1 only"], answer:2, explanation:"For zero-based indexing, an array of size n has indexes from 0 through n-1." },
+
+            { question:"Which data structure provides direct random access?", options:["Array","Singly linked list","Queue only","Stack only"], answer:0, explanation:"Arrays provide direct access to elements using indexes." },
+
+            { question:"Which operation can require shifting many elements in an array?", options:["Insertion","Reading an indexed element","Checking array size","Accessing first element"], answer:0, explanation:"Insertion at many positions may require shifting existing elements." }
+
+        ],
+
+        "Strings & String Processing": [
+
+            { question:"A string is generally a?", options:["Collection of characters","Collection of integers only","Tree structure","Graph structure"], answer:0, explanation:"A string is a sequence or collection of characters." },
+
+            { question:"In C and C++, a string can commonly be represented using?", options:["Character arrays","Only integers","Only floating-point variables","Graphs"], answer:0, explanation:"Strings can be represented using arrays of characters." },
+
+            { question:"A C-style string is generally terminated by?", options:["A space character","A null character '\\0'","A newline only","A comma"], answer:1, explanation:"C-style strings use the null character '\\0' to mark the end of the string." },
+
+            { question:"String processing refers to?", options:["Operations performed on strings","Only storing integers","Creating trees","Managing hardware"], answer:0, explanation:"String processing includes operations such as searching, comparing and manipulating strings." },
+
+            { question:"Which operation joins two strings?", options:["Concatenation","Traversal","Deletion","Indexing"], answer:0, explanation:"Concatenation combines two strings into one." },
+
+            { question:"Finding the number of characters in a string is called?", options:["Length calculation","Traversal only","Sorting","Deletion"], answer:0, explanation:"The length of a string represents the number of characters it contains." },
+
+            { question:"Which operation checks whether two strings contain the same characters in the same order?", options:["Comparison","Insertion","Traversal","Deletion"], answer:0, explanation:"String comparison determines whether strings are equal or how they differ." },
+
+            { question:"Searching for a pattern inside a string is called?", options:["String searching","String deletion","Array resizing","Stack processing"], answer:0, explanation:"String searching finds a character or sequence of characters inside another string." },
+
+            { question:"Which operation changes one string by adding another string to its end?", options:["Concatenation","Traversal","Searching","Sorting"], answer:0, explanation:"Concatenation combines strings by appending one sequence to another." },
+
+            { question:"Visiting every character of a string is called?", options:["Traversal","Deletion","Allocation","Rotation only"], answer:0, explanation:"Traversal processes the characters of a string one by one." },
+
+            { question:"Which of the following is an example of string processing?", options:["Searching for a word in a sentence","Adding two matrices only","Traversing a tree only","Changing CPU speed"], answer:0, explanation:"Searching for a word or pattern is a common string processing operation." },
+
+            { question:"What is substring?", options:["A contiguous part of a string","A complete linked list","A type of array memory","A graph edge"], answer:0, explanation:"A substring is a sequence of consecutive characters taken from a larger string." },
+
+            { question:"Which operation reverses the order of characters?", options:["String reversal","Concatenation","Comparison","Searching"], answer:0, explanation:"String reversal rearranges characters in the opposite order." },
+
+            { question:"String matching is mainly concerned with?", options:["Finding whether a pattern occurs in text","Allocating array memory","Creating queues","Deleting trees"], answer:0, explanation:"String matching determines whether and where a pattern occurs within a text." },
+
+            { question:"Which is commonly used to access an individual character in a string?", options:["Index","Edge","Node pointer only","Root"], answer:0, explanation:"Characters in indexed string representations can be accessed using positions or indexes." },
+
+            { question:"A string of length n contains how many characters?", options:["n","n-1","n+1 always","0"], answer:0, explanation:"A string of length n contains n actual characters." },
+
+            { question:"Which operation removes characters from a string?", options:["Deletion","Concatenation","Comparison","Traversal"], answer:0, explanation:"Deletion removes one or more characters from a string." },
+
+            { question:"Which operation adds characters into a string?", options:["Insertion","Traversal","Searching","Sorting only"], answer:0, explanation:"Insertion adds new characters at a specified position." },
+
+            { question:"Which operation determines whether a particular character exists in a string?", options:["Searching","Concatenation","Deletion","Copying only"], answer:0, explanation:"Searching is used to locate characters or patterns." },
+
+            { question:"A string is commonly considered a linear data structure because?", options:["Characters are arranged sequentially","It always forms a tree","It contains edges","It has no order"], answer:0, explanation:"Characters in a string occur in a sequential order." }
+
+        ],
+
+        "Linked Lists - Singly, Doubly, Circular & Header": [
+
+            { question:"A linked list is best described as?", options:["A collection of nodes connected through links","A fixed-size contiguous array","A tree only","A set of unrelated variables"], answer:0, explanation:"A linked list consists of nodes connected using links or pointers." },
+
+            { question:"A node in a linked list generally contains?", options:["Data and link(s)","Only data","Only an index","Only a function"], answer:0, explanation:"A linked list node generally stores data along with one or more links to other nodes." },
+
+            { question:"Linked list nodes are generally stored?", options:["In contiguous memory locations","At arbitrary memory locations connected by pointers","Only in registers","Only on disk"], answer:1, explanation:"Linked list nodes can exist at different memory locations and are connected using pointers." },
+
+            { question:"Which is an advantage of linked lists over fixed arrays?", options:["Dynamic size","Always faster random access","Contiguous memory required","No pointers required"], answer:0, explanation:"Linked lists can dynamically grow or shrink during program execution." },
+
+            { question:"Which operation is generally inefficient in a singly linked list?", options:["Random access by index","Insertion at beginning","Deletion at beginning","Accessing head node"], answer:0, explanation:"A singly linked list does not provide direct indexed access and nodes must be traversed sequentially." },
+
+            { question:"Accessing the nth element of a singly linked list generally takes?", options:["O(1)","O(log n)","O(n)","O(n²)"], answer:2, explanation:"Nodes generally must be traversed from the beginning to reach the nth node." },
+
+            { question:"A singly linked list node generally contains?", options:["Data and one next pointer","Data and two pointers always","Only previous pointer","Only data"], answer:0, explanation:"Each singly linked list node generally contains data and a pointer to the next node." },
+
+            { question:"The last node of a singly linked list generally points to?", options:["NULL","The first node always","The previous node","Random memory"], answer:0, explanation:"In a standard singly linked list, the last node's next pointer is NULL." },
+
+            { question:"Which pointer identifies the first node of a linked list?", options:["Head pointer","Tail pointer only","Next pointer","Previous pointer"], answer:0, explanation:"The head pointer generally stores the address of the first node." },
+
+            { question:"Insertion at the beginning of a singly linked list generally takes?", options:["O(1)","O(n)","O(n²)","O(log n)"], answer:0, explanation:"A new node can be linked directly before the current head in constant time." },
+
+            { question:"A doubly linked list node generally contains?", options:["Data, previous pointer and next pointer","Only data and next pointer","Only previous pointer","Only an index"], answer:0, explanation:"Each doubly linked list node generally has links to both the previous and next nodes." },
+
+            { question:"A major advantage of a doubly linked list is?", options:["Traversal in both directions","No memory usage","Constant random indexing","No pointers needed"], answer:0, explanation:"Doubly linked lists allow forward and backward traversal." },
+
+            { question:"Compared with a singly linked list, a doubly linked list generally requires?", options:["More memory per node","Less memory always","No memory for links","Only one pointer"], answer:0, explanation:"Doubly linked list nodes store an additional previous pointer." },
+
+            { question:"In a doubly linked list, the first node's previous pointer generally is?", options:["NULL","The last node always","The second node","Random"], answer:0, explanation:"In a standard doubly linked list, the first node has no previous node." },
+
+            { question:"A circular linked list is characterized by?", options:["The last node links back to another node, usually the first","All nodes are stored contiguously","It has no nodes","Every node contains an array"], answer:0, explanation:"In a circular linked list, the last node links back to the first node instead of NULL." },
+
+            { question:"In a circular singly linked list, the last node generally points to?", options:["The first node","NULL","The previous node","A random node"], answer:0, explanation:"The last node links back to the first node, forming a circular structure." },
+
+            { question:"Which linked list structure has no NULL link at the end in a typical circular implementation?", options:["Circular linked list","Singly linked list","Linear array","Normal stack"], answer:0, explanation:"Circular linked lists connect the last node back into the list rather than ending with NULL." },
+
+            { question:"A header linked list contains?", options:["A special header node at the beginning","Only a tail node","No first node","Only circular pointers"], answer:0, explanation:"A header linked list uses an additional special node before the actual data nodes." },
+
+            { question:"The header node in a header linked list may contain?", options:["List information or a link to the first node","Only the last node data","No link at all","Only an array index"], answer:0, explanation:"A header node can store metadata or simplify list operations by linking to the actual first node." },
+
+            { question:"One advantage of using a header node is?", options:["Simplifying insertion and deletion operations","Providing constant random access","Removing all memory requirements","Eliminating nodes"], answer:0, explanation:"Header nodes can simplify operations by providing a consistent starting node." },
+
+            { question:"Which linked list allows traversal both forward and backward?", options:["Doubly linked list","Singly linked list","Simple array","Stack"], answer:0, explanation:"Doubly linked lists contain both next and previous links." },
+
+            { question:"Which linked list uses one link per node in its basic form?", options:["Singly linked list","Doubly linked list","Circular doubly linked list always","Header doubly list only"], answer:0, explanation:"A basic singly linked list node has one link pointing to the next node." },
+
+            { question:"Which linked list can repeatedly traverse from the last node back to the first without reaching NULL?", options:["Circular linked list","Standard singly linked list","Static array","Stack"], answer:0, explanation:"Circular linked lists connect the last node back to the beginning." },
+
+            { question:"Which operation can generally be efficient in a linked list when the node position is already known?", options:["Insertion","Random indexed access","Binary search directly","Direct array indexing"], answer:0, explanation:"If the relevant node is already known, insertion can often be performed by changing links." },
+
+            { question:"Which operation is a major disadvantage of linked lists compared with arrays?", options:["Direct indexed access","Dynamic growth","Insertion using pointers","Deletion using links"], answer:0, explanation:"Linked lists do not support direct random access like arrays." },
+
+            { question:"Which data structure requires pointer links between nodes?", options:["Linked list","Simple array","Primitive integer","Static constant"], answer:0, explanation:"Linked lists use pointers or references to connect nodes." },
+
+            { question:"What is traversal in a linked list?", options:["Moving through nodes sequentially","Directly accessing any node by index","Deleting the entire list","Sorting automatically"], answer:0, explanation:"Traversal visits linked list nodes one after another using their links." },
+
+            { question:"Which linked list is most suitable when backward traversal is required?", options:["Doubly linked list","Singly linked list","Simple array only","Stack"], answer:0, explanation:"Doubly linked lists provide previous links that allow backward traversal." },
+
+            { question:"What distinguishes a circular linked list from a normal singly linked list?", options:["The final node links back into the list","Nodes are stored contiguously","It has no pointers","It cannot be traversed"], answer:0, explanation:"The last node links back to the first node or another earlier node, creating a cycle." },
+
+            { question:"In a standard singly linked list, traversal normally ends when?", options:["The next pointer becomes NULL","The first node is reached again","The array becomes full","The stack is empty"], answer:0, explanation:"A standard linear singly linked list ends when the next pointer is NULL." }
+
+        ],
+
+        "Linear Search and Binary Search": [
+
+            { question: "Linear search checks elements?", options: ["In random order", "Sequentially one by one", "Only from the middle", "Using recursion only"], answer: 1, explanation: "Linear search examines elements sequentially until the required element is found or the list ends." },
+
+            { question: "What is the worst-case time complexity of linear search?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: 2, explanation: "In the worst case, linear search may examine all n elements." },
+
+            { question: "What is the best-case time complexity of linear search?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: 0, explanation: "The best case occurs when the required element is found at the first position." },
+
+            { question: "Linear search can be applied to?", options: ["Only sorted arrays", "Only linked lists", "Both sorted and unsorted data", "Only binary trees"], answer: 2, explanation: "Linear search does not require the data to be sorted." },
+
+            { question: "Binary search requires the data to be?", options: ["Random", "Sorted", "Duplicated", "Stored in a linked list only"], answer: 1, explanation: "Binary search works by repeatedly dividing a sorted search space." },
+
+            { question: "Binary search compares the target element with?", options: ["The first element only", "The last element only", "The middle element", "Every element"], answer: 2, explanation: "Binary search compares the target with the middle element of the current search range." },
+
+            { question: "What is the worst-case time complexity of binary search?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: 1, explanation: "Binary search halves the search space repeatedly, giving logarithmic complexity." },
+
+            { question: "What is the best-case time complexity of binary search?", options: ["O(1)", "O(log n)", "O(n)", "O(n log n)"], answer: 0, explanation: "The best case occurs when the target is immediately found at the middle position." },
+
+            { question: "Which search algorithm is generally faster for a large sorted array?", options: ["Linear search", "Binary search", "Bubble search", "Selection search"], answer: 1, explanation: "Binary search is generally faster because it eliminates half of the remaining elements in each comparison." },
+
+            { question: "After comparing the target with the middle element in binary search, the algorithm?", options: ["Checks every remaining element", "Discards half of the search range", "Sorts the array again", "Stops immediately"], answer: 1, explanation: "Binary search eliminates the half in which the target cannot exist." },
+
+            { question: "Binary search is most naturally efficient on?", options: ["Arrays with random access", "Unsorted files only", "Stacks only", "Queues only"], answer: 0, explanation: "Arrays provide efficient direct access to the middle element required by binary search." },
+
+            { question: "If an array is not sorted, which search should generally be used without sorting first?", options: ["Binary search", "Linear search", "Quick search", "Merge search"], answer: 1, explanation: "Linear search can directly search unsorted data." }
+
+        ],
+
+
+        "Internal and External Sorting": [
+
+            { question: "Internal sorting is performed when?", options: ["All data fits in main memory", "Data is only on the internet", "Data cannot fit in memory", "Only one element exists"], answer: 0, explanation: "Internal sorting is used when the complete data set can be stored in main memory during sorting." },
+
+            { question: "External sorting is mainly used when?", options: ["Data is very small", "All data fits easily in RAM", "Data is too large to fit in main memory", "The data is already sorted"], answer: 2, explanation: "External sorting is required when the data set is too large to be processed entirely in main memory." },
+
+            { question: "Which storage is commonly involved in external sorting?", options: ["Only CPU registers", "Secondary storage such as disks", "Only cache memory", "Only ROM"], answer: 1, explanation: "External sorting uses secondary storage because the complete data cannot fit into main memory." },
+
+            { question: "Which of the following is commonly an internal sorting algorithm?", options: ["Bubble sort", "External merge process only", "Disk-only sorting", "Tape sorting only"], answer: 0, explanation: "Bubble sort is normally considered an internal sorting algorithm." },
+
+            { question: "External sorting is important mainly because?", options: ["CPU cannot compare values", "Main memory capacity is limited", "Arrays cannot be sorted", "Algorithms cannot use loops"], answer: 1, explanation: "Large data sets may exceed available RAM, requiring external storage." },
+
+            { question: "External merge sort is commonly associated with?", options: ["Small in-memory data only", "Large files stored externally", "Searching strings only", "Stack operations"], answer: 1, explanation: "Merge-based techniques are commonly used for sorting very large external files." },
+
+            { question: "The main difference between internal and external sorting depends on?", options: ["Programming language", "Memory availability for the data", "Variable names", "Operating system color theme"], answer: 1, explanation: "The classification depends on whether the complete data set fits into main memory." },
+
+            { question: "Disk I/O performance is especially important in?", options: ["Internal sorting only", "External sorting", "Linear search only", "Recursion only"], answer: 1, explanation: "External sorting involves reading and writing large amounts of data to secondary storage." }
+
+        ],
+
+
+        "Bubble, Selection and Insertion Sort": [
+
+            { question: "Bubble sort works by repeatedly comparing?", options: ["Random elements", "Adjacent elements", "Only first and last elements", "Middle elements only"], answer: 1, explanation: "Bubble sort repeatedly compares adjacent elements and swaps them when they are in the wrong order." },
+
+            { question: "In ascending bubble sort, after one complete pass, which element reaches its correct final position?", options: ["Smallest element", "Largest remaining element", "Middle element", "Random element"], answer: 1, explanation: "The largest unsorted element moves toward the end during a complete bubble sort pass." },
+
+            { question: "What is the worst-case time complexity of bubble sort?", options: ["O(log n)", "O(n)", "O(n²)", "O(n log n)"], answer: 2, explanation: "Bubble sort may perform a quadratic number of comparisons and swaps." },
+
+            { question: "Bubble sort is based mainly on?", options: ["Partitioning", "Adjacent swapping", "Merging arrays", "Digit processing"], answer: 1, explanation: "Bubble sort repeatedly swaps incorrectly ordered adjacent elements." },
+
+            { question: "Selection sort works by repeatedly selecting?", options: ["The largest file", "The minimum or maximum element", "A random element", "Two middle elements"], answer: 1, explanation: "Selection sort repeatedly finds the minimum or maximum element from the unsorted portion." },
+
+            { question: "In ascending selection sort, the selected minimum element is usually placed?", options: ["At the beginning of the unsorted portion", "At the end of the array always", "Randomly", "In a separate file"], answer: 0, explanation: "The minimum element is placed into the next position of the sorted portion." },
+
+            { question: "What is the worst-case time complexity of selection sort?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: 3, explanation: "Selection sort performs approximately n² comparisons in the general case." },
+
+            { question: "Selection sort generally performs?", options: ["Many swaps for every comparison", "At most one main swap per pass", "No comparisons", "Only recursive calls"], answer: 1, explanation: "Selection sort finds the required element and usually performs one swap at the end of each pass." },
+
+            { question: "Insertion sort builds?", options: ["A sorted portion of the array", "A binary tree", "A hash table", "A file system"], answer: 0, explanation: "Insertion sort gradually expands a sorted portion by inserting each new element into its correct position." },
+
+            { question: "Insertion sort is conceptually similar to?", options: ["Choosing cards and inserting them into the correct position", "Dividing arrays into halves only", "Using a queue", "Hashing values"], answer: 0, explanation: "Insertion sort resembles arranging playing cards by inserting each card into the correct position." },
+
+            { question: "Insertion sort is generally efficient for?", options: ["Very large random data only", "Small or nearly sorted data", "Only external files", "Graphs only"], answer: 1, explanation: "Insertion sort performs well for small arrays and arrays that are already nearly sorted." },
+
+            { question: "What is the worst-case time complexity of insertion sort?", options: ["O(log n)", "O(n)", "O(n²)", "O(n log n)"], answer: 2, explanation: "In the worst case, each new element may need to be compared and shifted across the sorted portion." },
+
+            { question: "Which sorting algorithm repeatedly swaps adjacent elements?", options: ["Selection sort", "Bubble sort", "Merge sort", "Radix sort"], answer: 1, explanation: "Bubble sort is based on comparisons and swaps between adjacent elements." },
+
+            { question: "Which sorting algorithm repeatedly selects the minimum element?", options: ["Bubble sort", "Selection sort", "Insertion sort", "Quick sort"], answer: 1, explanation: "Selection sort repeatedly selects the smallest remaining element in ascending order." },
+
+            { question: "Which sorting algorithm inserts each element into a sorted portion?", options: ["Bubble sort", "Selection sort", "Insertion sort", "Radix sort"], answer: 2, explanation: "Insertion sort places each element into its correct position within the already sorted portion." }
+
+        ],
+
+
+        "Shell Sort": [
+
+            { question: "Shell sort is an improvement of?", options: ["Bubble sort", "Insertion sort", "Merge sort", "Radix sort"], answer: 1, explanation: "Shell sort improves insertion sort by allowing exchanges between elements that are initially far apart." },
+
+            { question: "Shell sort primarily uses?", options: ["A gap between compared elements", "A pivot only", "A queue", "A hash function"], answer: 0, explanation: "Shell sort performs insertion-like sorting using elements separated by a gap." },
+
+            { question: "During Shell sort, the gap generally?", options: ["Remains constant forever", "Gradually decreases", "Always increases", "Is always zero"], answer: 1, explanation: "The gap is progressively reduced until it eventually becomes 1." },
+
+            { question: "When the gap becomes 1, Shell sort behaves similarly to?", options: ["Linear search", "Insertion sort", "Merge sort", "Binary search"], answer: 1, explanation: "The final pass with gap 1 is essentially an insertion sort pass." },
+
+            { question: "The main purpose of Shell sort is to?", options: ["Move distant elements faster toward correct positions", "Avoid all comparisons", "Use external storage", "Search for an element"], answer: 0, explanation: "Using larger gaps helps move elements long distances before the final insertion-sort stage." },
+
+            { question: "Shell sort is generally classified as?", options: ["A comparison-based sorting algorithm", "A searching algorithm", "A graph algorithm", "A hashing technique"], answer: 0, explanation: "Shell sort sorts data by comparing elements and performing shifts." },
+
+            { question: "Shell sort usually performs better than basic insertion sort because?", options: ["It never compares elements", "It initially compares elements far apart", "It uses no memory", "It always has O(log n) complexity"], answer: 1, explanation: "Long-distance comparisons reduce disorder before the final insertion-sort pass." },
+
+            { question: "The performance of Shell sort depends significantly on?", options: ["The chosen gap sequence", "The programming language only", "The variable names", "The file extension"], answer: 0, explanation: "Different gap sequences can significantly affect Shell sort performance." }
+
+        ],
+
+
+        "Quick Sort and Merge Sort": [
+
+            { question: "Quick sort is based on?", options: ["Adjacent swapping only", "Partitioning around a pivot", "Digit-by-digit processing", "Sequential searching"], answer: 1, explanation: "Quick sort selects a pivot and partitions elements around it." },
+
+            { question: "The pivot in quick sort is used to?", options: ["Store the entire array", "Partition elements into groups", "Create a linked list", "Search a file"], answer: 1, explanation: "The pivot divides elements into groups based on whether they are smaller or larger." },
+
+            { question: "Quick sort generally uses which technique?", options: ["Divide and conquer", "Dynamic programming only", "Greedy searching", "Hashing"], answer: 0, explanation: "Quick sort divides the array into partitions and recursively sorts them." },
+
+            { question: "What is the average time complexity of quick sort?", options: ["O(n)", "O(log n)", "O(n log n)", "O(n²)"], answer: 2, explanation: "Quick sort has average-case time complexity of O(n log n)." },
+
+            { question: "What is the worst-case time complexity of quick sort?", options: ["O(log n)", "O(n)", "O(n log n)", "O(n²)"], answer: 3, explanation: "Poor pivot choices can produce highly unbalanced partitions, resulting in O(n²) time." },
+
+            { question: "Merge sort is based on?", options: ["Divide and conquer", "Adjacent swapping only", "Linear searching", "Hashing"], answer: 0, explanation: "Merge sort repeatedly divides data into smaller parts and then merges sorted parts." },
+
+            { question: "Merge sort divides an array until?", options: ["Each subarray contains one element", "Only two elements remain", "The array is reversed", "A pivot is found"], answer: 0, explanation: "Single-element arrays are already sorted, forming the base case of merge sort." },
+
+            { question: "The merge step combines?", options: ["Two sorted subarrays", "Two unsorted random arrays only", "Two files without comparison", "A stack and queue"], answer: 0, explanation: "Merge sort combines sorted subarrays into a larger sorted sequence." },
+
+            { question: "What is the worst-case time complexity of merge sort?", options: ["O(n)", "O(log n)", "O(n log n)", "O(n²)"], answer: 2, explanation: "Merge sort consistently divides and merges data in O(n log n) time." },
+
+            { question: "Which sorting algorithm generally requires additional memory for merging?", options: ["Selection sort", "Bubble sort", "Merge sort", "Insertion sort"], answer: 2, explanation: "Standard merge sort generally requires auxiliary storage during merging." },
+
+            { question: "Which algorithm uses a pivot?", options: ["Merge sort", "Quick sort", "Bubble sort", "Radix sort"], answer: 1, explanation: "Quick sort partitions the data around a selected pivot." },
+
+            { question: "Which algorithm guarantees O(n log n) worst-case time complexity?", options: ["Quick sort", "Merge sort", "Bubble sort", "Selection sort"], answer: 1, explanation: "Merge sort has O(n log n) complexity even in the worst case." },
+
+            { question: "Quick sort is often faster in practice because?", options: ["It performs no comparisons", "It can have good cache performance and low overhead", "It never uses recursion", "It always uses external storage"], answer: 1, explanation: "Quick sort is often efficient in practice because partitioning can have good memory locality and low overhead." }
+
+        ],
+
+
+        "Radix Sort": [
+
+            { question: "Radix sort is generally classified as?", options: ["A comparison sort only", "A non-comparison sorting algorithm", "A searching algorithm", "A graph traversal"], answer: 1, explanation: "Radix sort sorts values according to digits or positions rather than directly comparing every pair of elements." },
+
+            { question: "Radix sort processes numbers based on?", options: ["Digits or positions", "Only adjacent elements", "A pivot", "A middle element"], answer: 0, explanation: "Radix sort groups and processes numbers according to their digits." },
+
+            { question: "LSD radix sort begins sorting from?", options: ["The most significant digit", "The least significant digit", "The middle digit", "A random digit"], answer: 1, explanation: "LSD radix sort processes digits starting from the least significant digit." },
+
+            { question: "MSD radix sort begins sorting from?", options: ["The least significant digit", "The most significant digit", "The middle digit", "The decimal point only"], answer: 1, explanation: "MSD radix sort starts processing from the most significant digit." },
+
+            { question: "Radix sort commonly uses which stable sorting method internally?", options: ["Counting sort", "Binary search", "Linear search", "Quick search"], answer: 0, explanation: "Counting sort is commonly used as the stable subroutine for processing each digit." },
+
+            { question: "Radix sort is especially suitable for?", options: ["Data with fixed-length integer or digit representations", "Only linked lists", "Random text paragraphs only", "Graphs"], answer: 0, explanation: "Radix sort works particularly well for integers or keys that can be processed digit by digit." },
+
+            { question: "A stable sorting algorithm means?", options: ["It never changes memory", "Equal elements keep their relative order", "It always uses O(1) time", "It cannot sort duplicates"], answer: 1, explanation: "Stability means equal keys retain their original relative ordering." },
+
+            { question: "Why is stability important in LSD radix sort?", options: ["To preserve the ordering established by previous digit passes", "To avoid recursion", "To remove duplicates", "To make arrays immutable"], answer: 0, explanation: "Each digit pass must preserve the ordering created by earlier digit passes." },
+
+            { question: "Radix sort compares elements directly with operators such as < and > for every ordering decision?", options: ["Always", "Generally no", "Only for strings", "Only in binary search"], answer: 1, explanation: "Radix sort primarily distributes elements according to digit values rather than direct pairwise comparison." },
+
+            { question: "Which of the following is NOT normally a comparison-based sorting algorithm?", options: ["Bubble sort", "Selection sort", "Merge sort", "Radix sort"], answer: 3, explanation: "Radix sort is generally categorized as a non-comparison sorting algorithm." }
+
+        ],
+
+        "Abstract Data Types (ADT)": [
+
+            { question: "An Abstract Data Type (ADT) is primarily defined by?", options: ["Its implementation details", "Its behavior and operations", "Its memory address only", "Its programming language"], answer: 1, explanation: "An ADT specifies what operations can be performed and their behavior without necessarily specifying the implementation." },
+
+            { question: "Which of the following best describes an ADT?", options: ["A specific CPU instruction", "A logical model of a data structure", "Only an array implementation", "A compiler feature"], answer: 1, explanation: "An ADT describes data and the operations allowed on that data at a logical level." },
+
+            { question: "Which of the following can be used to implement a Stack ADT?", options: ["Only arrays", "Only linked lists", "Arrays or linked lists", "Only trees"], answer: 2, explanation: "A stack can be implemented using different physical data structures such as arrays or linked lists." },
+
+            { question: "An ADT hides?", options: ["The operations it supports", "The implementation details", "The data completely", "The program output"], answer: 1, explanation: "ADT focuses on what operations are available while hiding how they are implemented." },
+
+            { question: "Stack, Queue and List are examples of?", options: ["Algorithms", "Abstract Data Types", "Operating systems", "Programming languages"], answer: 1, explanation: "Stack, Queue and List describe logical collections and operations and are common ADTs." },
+
+            { question: "The implementation of an ADT refers to?", options: ["How the ADT is physically represented", "Only its name", "Only its applications", "Its time complexity only"], answer: 0, explanation: "Implementation specifies how the ADT and its operations are physically realized using structures such as arrays or linked lists." },
+
+            { question: "The interface of an ADT specifies?", options: ["Only memory allocation", "The operations available to users", "Only the internal variables", "Only CPU instructions"], answer: 1, explanation: "The ADT interface defines the operations that can be performed on the data." },
+
+            { question: "One advantage of using ADTs is?", options: ["No memory is required", "Separation of interface and implementation", "Programs need no algorithms", "All operations become O(1)"], answer: 1, explanation: "ADTs separate what an operation does from how it is implemented." },
+
+            { question: "Changing the implementation of an ADT while keeping its interface unchanged mainly improves?", options: ["Encapsulation and flexibility", "Syntax errors", "File size only", "CPU clock speed"], answer: 0, explanation: "Different implementations can be substituted without changing code that uses the ADT interface." },
+
+            { question: "Which is NOT necessarily part of an ADT definition?", options: ["Allowed operations", "Behavior of operations", "Implementation details", "Data organization concept"], answer: 2, explanation: "An ADT specifies logical behavior rather than requiring a particular implementation." }
+
+        ],
+
+
+        "Stacks - Concepts and Array Implementation": [
+
+            { question: "A stack follows which principle?", options: ["FIFO", "LIFO", "Random access only", "Priority first"], answer: 1, explanation: "Stack follows Last In First Out (LIFO)." },
+
+            { question: "LIFO stands for?", options: ["Last In First Out", "Last Input Final Output", "Linked In First Out", "Linear Input First Output"], answer: 0, explanation: "In a stack, the last inserted element is removed first." },
+
+            { question: "The insertion operation in a stack is called?", options: ["Enqueue", "Push", "Pop", "Delete"], answer: 1, explanation: "Push adds an element to the top of a stack." },
+
+            { question: "The deletion operation in a stack is called?", options: ["Push", "Pop", "Enqueue", "Insert"], answer: 1, explanation: "Pop removes the element from the top of the stack." },
+
+            { question: "The element that can be directly accessed in a stack is?", options: ["First inserted element", "Middle element", "Top element", "Any random element"], answer: 2, explanation: "Stack operations are performed at the top." },
+
+            { question: "Which variable is commonly used to represent the top of an array stack?", options: ["front", "rear", "top", "head"], answer: 2, explanation: "The top variable usually stores the index of the current top element." },
+
+            { question: "An empty array-based stack commonly has top equal to?", options: ["0", "-1", "1", "MAX"], answer: 1, explanation: "A common convention initializes top to -1 to indicate that no element exists." },
+
+            { question: "Stack overflow occurs when?", options: ["Pop is performed on an empty stack", "Push is performed on a full stack", "The top becomes -1", "A queue is created"], answer: 1, explanation: "Overflow occurs when an attempt is made to insert an element into a full stack." },
+
+            { question: "Stack underflow occurs when?", options: ["Push is performed", "Pop is performed on an empty stack", "Stack becomes full", "Two stacks are merged"], answer: 1, explanation: "Underflow occurs when deletion is attempted from an empty stack." },
+
+            { question: "In an array stack of size MAX, the stack is full when?", options: ["top == -1", "top == MAX", "top == MAX - 1", "top == 0"], answer: 2, explanation: "With zero-based indexing, the last valid position is MAX - 1." },
+
+            { question: "Push operation on an array stack generally takes?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: 0, explanation: "Push modifies the top index and inserts one element, requiring constant time." },
+
+            { question: "Pop operation on an array stack generally takes?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: 0, explanation: "Pop removes the current top element and updates the top index in constant time." },
+
+            { question: "Which operation returns the top element without removing it?", options: ["Push", "Pop", "Peek", "Enqueue"], answer: 2, explanation: "Peek or top returns the top element without deleting it." }
+
+        ],
+
+
+        "Stacks using Linked Lists": [
+
+            { question: "A stack implemented using a linked list usually performs push and pop at?", options: ["The beginning only", "The end only", "The middle", "Different random positions"], answer: 0, explanation: "Using the head as the stack top allows efficient O(1) insertion and deletion." },
+
+            { question: "In a linked-list implementation of a stack, the top usually points to?", options: ["The first node", "The last node only", "A random node", "The middle node"], answer: 0, explanation: "The head node is commonly treated as the top of the stack." },
+
+            { question: "The main advantage of a linked-list stack over a fixed-size array stack is?", options: ["No memory usage", "Dynamic size", "No pointers required", "No operations required"], answer: 1, explanation: "Linked-list stacks can grow dynamically as long as memory is available." },
+
+            { question: "Stack overflow in a linked-list implementation mainly occurs when?", options: ["The array becomes full", "Dynamic memory allocation fails", "Top becomes zero", "Pop is called"], answer: 1, explanation: "A linked-list stack can grow until system memory is unavailable." },
+
+            { question: "Push in a linked-list stack generally involves?", options: ["Adding a node at the top", "Sorting all nodes", "Traversing the entire list", "Deleting the last node"], answer: 0, explanation: "A new node is inserted at the head and becomes the new top." },
+
+            { question: "Pop in a linked-list stack generally involves?", options: ["Deleting the top node", "Deleting every node", "Adding a node", "Sorting the list"], answer: 0, explanation: "The current head node is removed and the next node becomes the top." },
+
+            { question: "What is the time complexity of push in a linked-list stack?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: 0, explanation: "Adding a node at the beginning requires only constant-time pointer updates." },
+
+            { question: "What is the time complexity of pop in a linked-list stack?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: 0, explanation: "Removing the head node requires constant-time pointer updates." },
+
+            { question: "Which data structure is required internally for a linked-list stack?", options: ["Nodes and pointers", "Only indexes", "Only matrices", "Only files"], answer: 0, explanation: "Linked lists store elements in nodes connected through links or pointers." }
+
+        ],
+
+
+        "Stack Applications and Prefix/Postfix Expressions": [
+
+            { question: "Which of the following is a common application of stacks?", options: ["Function call management", "Only file storage", "Only printing", "Only networking"], answer: 0, explanation: "Stacks are used internally for managing function calls and return addresses." },
+
+            { question: "Which application commonly uses a stack?", options: ["Undo operations", "Sorting without algorithms", "Replacing RAM", "Network routing only"], answer: 0, explanation: "Undo operations can be implemented by storing previous states on a stack." },
+
+            { question: "Parentheses matching is commonly solved using?", options: ["Queue", "Stack", "Binary search", "Heap only"], answer: 1, explanation: "Opening symbols are pushed and matching closing symbols pop them from the stack." },
+
+            { question: "In an infix expression, an operator is placed?", options: ["Before operands", "Between operands", "After operands", "Only at the end"], answer: 1, explanation: "Infix notation places operators between operands, such as A + B." },
+
+            { question: "In prefix notation, an operator is placed?", options: ["Before its operands", "Between operands", "After its operands", "At a random position"], answer: 0, explanation: "Prefix notation places the operator before its operands, such as +AB." },
+
+            { question: "In postfix notation, an operator is placed?", options: ["Before operands", "Between operands", "After operands", "Only at the beginning"], answer: 2, explanation: "Postfix notation places the operator after its operands, such as AB+." },
+
+            { question: "The postfix form of A + B is?", options: ["+AB", "AB+", "A+B", "BA+"], answer: 1, explanation: "In postfix notation, operands come first followed by the operator." },
+
+            { question: "The prefix form of A + B is?", options: ["AB+", "+AB", "A+B", "BA+"], answer: 1, explanation: "In prefix notation, the operator appears before both operands." },
+
+            { question: "Which expression notation usually eliminates the need for parentheses?", options: ["Postfix", "Prefix", "Both prefix and postfix", "Only infix"], answer: 2, explanation: "Prefix and postfix notation specify evaluation order without requiring parentheses." },
+
+            { question: "Stacks are commonly used for conversion between?", options: ["Different expression notations", "Only arrays and lists", "Files and folders", "Integers and memory"], answer: 0, explanation: "Stacks are widely used for infix, prefix and postfix expression conversion." },
+
+            { question: "The postfix expression for A * (B + C) is?", options: ["ABC+*", "*A+BC", "AB*C+", "A*BC+"], answer: 0, explanation: "B+C becomes BC+, then multiplying by A gives ABC+*." },
+
+            { question: "The prefix expression for A * (B + C) is?", options: ["*A+BC", "ABC+*", "+*ABC", "A*BC+"], answer: 0, explanation: "The multiplication operator comes first, followed by A and the prefix form of B+C." }
+
+        ],
+
+
+        "Postfix Expression Evaluation": [
+
+            { question: "Which data structure is mainly used to evaluate a postfix expression?", options: ["Stack", "Queue", "Linked list only", "Binary search tree"], answer: 0, explanation: "Operands are stored on a stack until an operator is encountered." },
+
+            { question: "While evaluating postfix notation, when an operand is encountered it is?", options: ["Pushed onto the stack", "Immediately deleted", "Sent to a queue", "Used as a pivot"], answer: 0, explanation: "Operands are pushed onto the stack for later operations." },
+
+            { question: "When an operator is encountered during postfix evaluation, the required operands are?", options: ["Pushed onto the stack", "Popped from the stack", "Ignored", "Sorted"], answer: 1, explanation: "Operands are popped from the stack and the operation is performed." },
+
+            { question: "For a binary operator, how many operands are generally popped?", options: ["One", "Two", "Three", "Four"], answer: 1, explanation: "Binary operators such as +, -, * and / require two operands." },
+
+            { question: "For postfix expression AB+, the result represents?", options: ["A + B", "A - B", "B - A", "A * B"], answer: 0, explanation: "A and B are pushed, then + combines them as A + B." },
+
+            { question: "During postfix evaluation, operand order is important for?", options: ["Addition only", "Multiplication only", "Subtraction and division", "None of the operations"], answer: 2, explanation: "For subtraction and division, reversing operand order changes the result." },
+
+            { question: "If operands are popped as right then left for operator -, the calculation is?", options: ["right - left", "left - right", "left + right", "right / left"], answer: 1, explanation: "The first popped value is the right operand and the second popped value is the left operand." },
+
+            { question: "After evaluating a valid postfix expression, the final result should normally be?", options: ["One value on the stack", "An empty queue", "Many unsorted values", "A linked list"], answer: 0, explanation: "A valid complete postfix expression normally leaves one final result on the stack." },
+
+            { question: "The postfix expression 23+ evaluates to?", options: ["5", "6", "23", "1"], answer: 0, explanation: "2 and 3 are added, giving 5." },
+
+            { question: "The postfix expression 23* evaluates to?", options: ["5", "6", "8", "1"], answer: 1, explanation: "2 multiplied by 3 equals 6." },
+
+            { question: "The postfix expression 82/ evaluates to?", options: ["16", "4", "6", "10"], answer: 1, explanation: "8 divided by 2 equals 4." },
+
+            { question: "What is the postfix evaluation result of 23+4*?", options: ["20", "14", "10", "9"], answer: 0, explanation: "First 2+3 = 5, then 5×4 = 20." }
+
+        ],
+
+
+        "Recursion and Simulating Recursion": [
+
+            { question: "Recursion occurs when?", options: ["A function calls itself", "A loop stops", "An array is sorted", "A queue is created"], answer: 0, explanation: "Recursion is a programming technique in which a function calls itself directly or indirectly." },
+
+            { question: "Every recursive function must have?", options: ["A base case", "A queue", "A file", "A linked list"], answer: 0, explanation: "A base case stops the recursive calls and prevents infinite recursion." },
+
+            { question: "The recursive case usually?", options: ["Moves the problem toward the base case", "Stops all programs immediately", "Creates an infinite loop intentionally", "Deletes the stack"], answer: 0, explanation: "Each recursive call should reduce or transform the problem toward a terminating base case." },
+
+            { question: "Recursive function calls are generally managed using?", options: ["A stack", "A queue", "A set", "A file"], answer: 0, explanation: "Each function call creates a stack frame that is managed using the call stack." },
+
+            { question: "What can happen if a recursive function has no reachable base case?", options: ["Infinite recursion or stack overflow", "Automatic sorting", "Queue underflow", "Binary search"], answer: 0, explanation: "Calls continue until the system call stack is exhausted." },
+
+            { question: "The memory used for recursive calls is generally?", options: ["Call stack memory", "Only disk memory", "Queue memory", "Set memory"], answer: 0, explanation: "Each active recursive call has its own activation record or stack frame." },
+
+            { question: "Simulating recursion usually involves explicitly using a?", options: ["Stack", "Queue only", "Binary tree", "Hash table"], answer: 0, explanation: "An explicit stack can store the states that the system call stack would normally manage." },
+
+            { question: "Which data structure best simulates recursive function calls?", options: ["Stack", "Queue", "Deque only", "Priority queue"], answer: 0, explanation: "The LIFO behavior of a stack matches nested function calls and returns." },
+
+            { question: "Recursion is naturally suitable for problems that can be?", options: ["Defined in terms of smaller similar subproblems", "Solved only by arrays", "Solved without conditions", "Stored only in files"], answer: 0, explanation: "Recursive solutions work well when a problem can be reduced into smaller instances of the same problem." },
+
+            { question: "The return from recursive calls generally occurs in?", options: ["Reverse order of calls", "Same order as calls", "Random order", "Priority order"], answer: 0, explanation: "Because the call stack is LIFO, the most recent call returns first." },
+
+            { question: "Which is a major disadvantage of deep recursion?", options: ["It may consume large stack memory", "It cannot use functions", "It cannot have a base case", "It never performs calculations"], answer: 0, explanation: "Each recursive call consumes stack space, so very deep recursion can cause stack overflow." }
+
+        ],
+
+
+        "Tower of Hanoi": [
+
+            { question: "Tower of Hanoi is a classic example of?", options: ["Recursion", "Binary search", "Hashing", "Priority queue"], answer: 0, explanation: "Tower of Hanoi is commonly solved using a recursive divide-and-conquer approach." },
+
+            { question: "How many pegs are used in the classic Tower of Hanoi problem?", options: ["2", "3", "4", "5"], answer: 1, explanation: "The classic problem uses source, auxiliary and destination pegs." },
+
+            { question: "The main objective of Tower of Hanoi is to?", options: ["Move all disks from source to destination", "Sort disks randomly", "Delete the disks", "Search for a disk"], answer: 0, explanation: "The objective is to move the complete stack from one peg to another." },
+
+            { question: "A larger disk can be placed on?", options: ["A smaller disk", "Only another larger disk", "An empty peg or larger disk", "Any disk"], answer: 2, explanation: "A larger disk must never be placed on top of a smaller disk." },
+
+            { question: "How many disks can be moved at one time in Tower of Hanoi?", options: ["One", "Two", "All", "Depends on disk size"], answer: 0, explanation: "Only one disk may be moved in each individual operation." },
+
+            { question: "The minimum number of moves for n disks in Tower of Hanoi is?", options: ["n", "n²", "2ⁿ - 1", "n!"], answer: 2, explanation: "The recursive solution requires 2ⁿ - 1 minimum moves." },
+
+            { question: "The minimum number of moves for 3 disks is?", options: ["3", "5", "7", "9"], answer: 2, explanation: "2³ - 1 = 7 moves." },
+
+            { question: "The minimum number of moves for 4 disks is?", options: ["8", "12", "15", "16"], answer: 2, explanation: "2⁴ - 1 = 15 moves." },
+
+            { question: "To move n disks recursively, the first major step is to?", options: ["Move n-1 disks to the auxiliary peg", "Move all disks directly", "Delete the largest disk", "Sort the disks"], answer: 0, explanation: "The smaller n-1 disks must first be moved away so the largest disk can be moved." },
+
+            { question: "The largest disk is moved?", options: ["First", "After moving n-1 disks away", "Never", "Randomly"], answer: 1, explanation: "The largest disk is moved after the smaller disks have been moved to the auxiliary peg." },
+
+            { question: "The time complexity of Tower of Hanoi is?", options: ["O(log n)", "O(n)", "O(n²)", "O(2ⁿ)"], answer: 3, explanation: "The number of required moves grows exponentially as 2ⁿ - 1." }
+
+        ],
+
+
+        "Queues - Concepts, Operations and Array Implementation": [
+
+            { question: "A queue follows which principle?", options: ["LIFO", "FIFO", "Random access", "Priority first always"], answer: 1, explanation: "Queue follows First In First Out (FIFO)." },
+
+            { question: "FIFO stands for?", options: ["First In First Out", "Final Input First Output", "First Input Final Operation", "File In File Out"], answer: 0, explanation: "The first element inserted into a queue is removed first." },
+
+            { question: "Insertion into a queue is called?", options: ["Push", "Pop", "Enqueue", "Peek"], answer: 2, explanation: "Enqueue adds an element at the rear of a queue." },
+
+            { question: "Deletion from a queue is called?", options: ["Push", "Pop", "Dequeue", "Insert"], answer: 2, explanation: "Dequeue removes an element from the front of the queue." },
+
+            { question: "In a queue, insertion normally occurs at?", options: ["Front", "Rear", "Middle", "Random position"], answer: 1, explanation: "New elements are added at the rear." },
+
+            { question: "In a queue, deletion normally occurs at?", options: ["Rear", "Front", "Middle", "Any position"], answer: 1, explanation: "The oldest element is removed from the front." },
+
+            { question: "Which variables are commonly used in an array queue?", options: ["top and bottom", "front and rear", "left and right", "head and tail only"], answer: 1, explanation: "Front and rear indexes track the positions of elements in a queue." },
+
+            { question: "A queue is empty when?", options: ["No elements are stored", "Rear reaches maximum", "Front is always zero", "All values are sorted"], answer: 0, explanation: "An empty queue contains no elements available for deletion." },
+
+            { question: "Queue overflow occurs when?", options: ["Insertion is attempted into a full fixed-size queue", "Deletion occurs from a full queue", "The queue is empty", "Front equals rear always"], answer: 0, explanation: "Overflow occurs when enqueue is attempted but no space is available." },
+
+            { question: "Queue underflow occurs when?", options: ["Insertion into a full queue", "Deletion from an empty queue", "Rear moves forward", "A queue becomes circular"], answer: 1, explanation: "Underflow occurs when dequeue is attempted on an empty queue." },
+
+            { question: "The create operation for a queue generally initializes?", options: ["Front and rear state", "All data as sorted", "Only a stack", "A binary tree"], answer: 0, explanation: "Creating a queue initializes the front and rear indicators to represent an empty queue." },
+
+            { question: "The Add operation in a queue is another name for?", options: ["Dequeue", "Enqueue", "Pop", "Peek"], answer: 1, explanation: "Adding an element to a queue means enqueuing it at the rear." },
+
+            { question: "The Delete operation in a queue is another name for?", options: ["Push", "Enqueue", "Dequeue", "Insert"], answer: 2, explanation: "Deleting an element from a queue means removing it from the front." },
+
+            { question: "Queue applications commonly include?", options: ["CPU scheduling", "Only recursion", "Only postfix evaluation", "Only sorting arrays"], answer: 0, explanation: "Queues are used in scheduling, buffering, printing and other FIFO processes." }
+
+        ],
+
+
+        "Queues using Linked Lists": [
+
+            { question: "A linked-list queue generally uses pointers to?", options: ["Front and rear", "Top only", "Pivot and middle", "Root only"], answer: 0, explanation: "Front and rear pointers allow efficient queue operations." },
+
+            { question: "In a linked-list queue, insertion is generally performed at?", options: ["Front", "Rear", "Middle", "Random position"], answer: 1, explanation: "New nodes are added at the rear of the queue." },
+
+            { question: "In a linked-list queue, deletion is generally performed at?", options: ["Rear", "Front", "Middle", "Random position"], answer: 1, explanation: "The front node is removed to maintain FIFO order." },
+
+            { question: "What is the main advantage of a linked-list queue over a fixed-size array queue?", options: ["Dynamic size", "No memory required", "No pointers required", "No operations required"], answer: 0, explanation: "A linked-list queue can grow dynamically while memory is available." },
+
+            { question: "Enqueue in a linked-list queue generally takes?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: 0, explanation: "With a rear pointer, insertion at the rear requires constant time." },
+
+            { question: "Dequeue in a linked-list queue generally takes?", options: ["O(1)", "O(log n)", "O(n)", "O(n²)"], answer: 0, explanation: "Removing the front node requires constant-time pointer updates." },
+
+            { question: "When the last node is removed from a linked-list queue?", options: ["Both front and rear should represent empty state", "Only rear is changed", "Only front remains unchanged", "The queue becomes circular automatically"], answer: 0, explanation: "When the final element is removed, both front and rear should indicate that the queue is empty." },
+
+            { question: "Linked-list queue overflow can occur when?", options: ["The array reaches MAX", "Memory allocation fails", "Front equals rear", "Queue is sorted"], answer: 1, explanation: "A dynamically allocated queue can grow until system memory is exhausted." }
+
+        ],
+
+
+        "Circular Queues": [
+
+            { question: "A circular queue is designed to?", options: ["Reuse empty positions in an array queue", "Remove all elements automatically", "Sort elements", "Replace linked lists"], answer: 0, explanation: "Circular queues wrap around to reuse positions that become free after deletions." },
+
+            { question: "In a circular queue, after the last array position, the next position is?", options: ["The first position", "Always an error", "The middle position", "Deleted"], answer: 0, explanation: "The queue wraps around to index 0." },
+
+            { question: "Circular queues are commonly implemented using?", options: ["Modulo arithmetic", "Binary search", "Recursion only", "Hashing"], answer: 0, explanation: "Modulo arithmetic is used to wrap front and rear indexes around the array." },
+
+            { question: "Which expression is commonly used to move an index forward circularly in an array of size MAX?", options: ["index + 1", "(index + 1) % MAX", "index % 1", "MAX - index"], answer: 1, explanation: "Modulo MAX causes the index to return to 0 after reaching MAX - 1." },
+
+            { question: "The main problem solved by a circular queue is?", options: ["Wasted unused positions in a linear queue", "Stack overflow", "Recursion", "Sorting"], answer: 0, explanation: "Circular queues reuse positions freed at the front instead of wasting them." },
+
+            { question: "A circular queue still follows?", options: ["FIFO", "LIFO", "Random order", "Priority order only"], answer: 0, explanation: "The circular structure changes index movement but the logical order remains FIFO." },
+
+            { question: "Which operation adds an element in a circular queue?", options: ["Push", "Enqueue", "Pop", "Merge"], answer: 1, explanation: "Elements are still inserted using enqueue at the rear." },
+
+            { question: "Which operation removes an element from a circular queue?", options: ["Pop", "Dequeue", "Push", "Partition"], answer: 1, explanation: "Elements are removed from the front using dequeue." },
+
+            { question: "Circular queues are useful for?", options: ["Buffers and cyclic resource management", "Only postfix evaluation", "Only binary search", "Only recursion"], answer: 0, explanation: "Circular queues are commonly used in circular buffers and cyclic scheduling systems." }
+
+        ],
+
+
+        "Deque (Double Ended Queue)": [
+
+            { question: "Deque stands for?", options: ["Double Ended Queue", "Deleted Queue", "Dynamic Equal Queue", "Double Entry Query"], answer: 0, explanation: "Deque means Double Ended Queue." },
+
+            { question: "A deque allows insertion at?", options: ["Front only", "Rear only", "Both front and rear", "Middle only"], answer: 2, explanation: "Deque allows insertion at both ends." },
+
+            { question: "A deque allows deletion at?", options: ["Front only", "Rear only", "Both front and rear", "Middle only"], answer: 2, explanation: "Elements can be removed from either end of a deque." },
+
+            { question: "A deque is more flexible than a normal queue because?", options: ["It allows operations at both ends", "It has no elements", "It cannot overflow", "It always sorts data"], answer: 0, explanation: "Normal queues restrict insertion and deletion to different ends, while deques allow both ends." },
+
+            { question: "Which is NOT a standard deque operation?", options: ["InsertFront", "InsertRear", "DeleteFront", "BinarySearch"], answer: 3, explanation: "Binary search is not a deque operation." },
+
+            { question: "An input-restricted deque allows?", options: ["Insertion at one end and deletion at both ends", "Insertion at both ends only", "Deletion at one end only", "No deletion"], answer: 0, explanation: "Input-restricted deque restricts insertion to one end but allows deletion from both ends." },
+
+            { question: "An output-restricted deque allows?", options: ["Insertion at both ends and deletion at one end", "Insertion at one end only", "Deletion at both ends", "No insertion"], answer: 0, explanation: "Output-restricted deque allows insertion at both ends but restricts deletion to one end." },
+
+            { question: "A deque can be implemented using?", options: ["Arrays or linked lists", "Only binary trees", "Only recursion", "Only files"], answer: 0, explanation: "Both arrays and linked lists can be used to implement deques." }
+
+        ],
+
+
+        "Priority Queue": [
+
+            { question: "In a priority queue, elements are removed based primarily on?", options: ["Insertion order only", "Priority", "Random order", "Memory address"], answer: 1, explanation: "A priority queue removes elements according to their assigned priority." },
+
+            { question: "A priority queue differs from a normal queue because?", options: ["Removal may depend on priority rather than only FIFO order", "It has no insertion operation", "It cannot contain elements", "It uses only arrays"], answer: 0, explanation: "Priority determines which element is served first." },
+
+            { question: "If two elements have the same priority, they are commonly processed according to?", options: ["FIFO order", "LIFO order always", "Random order only", "No rule is possible"], answer: 0, explanation: "Many priority queue implementations preserve FIFO order among elements with equal priority." },
+
+            { question: "Which application commonly uses priority queues?", options: ["CPU scheduling", "Simple stack pop only", "String concatenation only", "File naming"], answer: 0, explanation: "Priority queues are widely used in scheduling and systems where important tasks must be handled first." },
+
+            { question: "A priority queue can be implemented using?", options: ["Arrays, linked lists or heaps", "Only stacks", "Only recursion", "Only strings"], answer: 0, explanation: "Priority queues can have multiple implementations, with heaps being particularly efficient." },
+
+            { question: "In a highest-priority-first queue, which element is removed first?", options: ["The oldest element regardless of priority", "The element with highest priority", "The newest element", "A random element"], answer: 1, explanation: "Priority determines removal order in such a priority queue." },
+
+            { question: "Priority queues are useful when?", options: ["Some tasks must be handled before others", "All elements must always remain in insertion order", "No deletion is required", "Sorting is impossible"], answer: 0, explanation: "Priority queues are designed for situations where urgency or importance affects processing order." },
+
+            { question: "Which of the following is NOT the main defining principle of a priority queue?", options: ["Priority-based removal", "FIFO for every element regardless of priority", "Different elements can have different priorities", "Important tasks can be processed first"], answer: 1, explanation: "Unlike a normal queue, a priority queue does not necessarily process every element strictly in FIFO order." }
+
+        ],
+
+  },
+
 },
 
 semester4: {
