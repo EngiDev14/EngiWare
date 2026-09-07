@@ -3216,8 +3216,6 @@ semester3: {
             ]
     },
 
-    
-
 },
 
 semester4: {
@@ -3237,3 +3235,63 @@ semester7: {
 }
 
 };
+
+// ============================================
+// RANDOMIZE OPTIONS AND UPDATE ANSWER INDEX
+// ============================================
+
+function shuffleQuizOptions(quizData) {
+
+    for (const semester in quizData) {
+
+        for (const subject in quizData[semester]) {
+
+            for (const topic in quizData[semester][subject]) {
+
+                quizData[semester][subject][topic].forEach(question => {
+
+                    // Store correct answer text BEFORE shuffling
+                    const correctAnswer =
+                        question.options[question.answer];
+
+                    // Fisher-Yates shuffle
+                    for (
+                        let i = question.options.length - 1;
+                        i > 0;
+                        i--
+                    ) {
+
+                        const j = Math.floor(
+                            Math.random() * (i + 1)
+                        );
+
+                        // Swap options
+                        [
+                            question.options[i],
+                            question.options[j]
+                        ] = [
+                            question.options[j],
+                            question.options[i]
+                        ];
+                    }
+
+                    // Update correct answer index
+                    question.answer =
+                        question.options.indexOf(correctAnswer);
+                });
+            }
+        }
+    }
+}
+
+// ===================================
+// CALL IT HERE 🔥
+// ===================================
+
+shuffleQuizOptions(quizData);
+
+// ===================================
+// THEN START YOUR QUIZ CODE
+// ===================================
+
+loadSubjects();
