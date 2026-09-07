@@ -1352,6 +1352,1872 @@ semester2: {
 
 semester3: {
 
+    "Discrete Mathematics": {
+
+        // =====================================================
+        // QUIZ 1 — BINARY RELATIONS & PROPERTIES
+        // =====================================================
+
+        "Binary Relations & Properties": [
+
+            {
+                question: "A binary relation R from a set A to a set B is defined as:",
+                options: ["A subset of A × B", "A subset of A ∪ B", "A function from A to B", "A subset of B × A only"],
+                answer: 0,
+                explanation: "A binary relation from A to B is any subset of the Cartesian product A × B."
+            },
+
+            {
+                question: "If A = {1,2,3}, then the universal relation on A contains:",
+                options: ["3 ordered pairs", "6 ordered pairs", "9 ordered pairs", "27 ordered pairs"],
+                answer: 2,
+                explanation: "The universal relation is A × A. Since |A| = 3, it contains 3² = 9 ordered pairs."
+            },
+
+            {
+                question: "A relation R on A is reflexive if:",
+                options: ["(a,a) ∈ R for every a ∈ A", "(a,b) ∈ R implies (b,a) ∈ R", "(a,b) and (b,c) imply (a,c)", "No element is related to itself"],
+                answer: 0,
+                explanation: "Reflexivity requires every element of A to be related to itself."
+            },
+
+            {
+                question: "A relation R is symmetric if:",
+                options: ["(a,a) belongs to R", "(a,b) ∈ R implies (b,a) ∈ R", "(a,b) and (b,c) imply (a,c)", "(a,b) ∈ R implies a = b"],
+                answer: 1,
+                explanation: "In a symmetric relation, reversing every related ordered pair must also produce a pair in R."
+            },
+
+            {
+                question: "A relation R is antisymmetric if:",
+                options: ["(a,b) ∈ R always implies (b,a) ∈ R", "(a,b) ∈ R and (b,a) ∈ R imply a = b", "(a,a) is not in R", "R contains only one ordered pair"],
+                answer: 1,
+                explanation: "Antisymmetry allows both (a,b) and (b,a) only when a and b are the same element."
+            },
+
+            {
+                question: "A relation R is transitive if:",
+                options: ["aRb implies bRa", "aRa for every a", "aRb and bRc imply aRc", "aRb implies a = b"],
+                answer: 2,
+                explanation: "Transitivity means the relation can be chained: aRb and bRc imply aRc."
+            },
+
+            {
+                question: "The relation R = {(1,1),(2,2),(3,3)} on {1,2,3} is:",
+                options: ["Only symmetric", "Only transitive", "Reflexive, symmetric and transitive", "Only antisymmetric"],
+                answer: 2,
+                explanation: "The identity relation on a set is reflexive, symmetric and transitive."
+            },
+
+            {
+                question: "The relation ≤ on integers is:",
+                options: ["Reflexive, antisymmetric and transitive", "Symmetric and transitive only", "Reflexive and symmetric only", "Only reflexive"],
+                answer: 0,
+                explanation: "≤ is reflexive, antisymmetric and transitive, making it a partial order."
+            },
+
+            {
+                question: "Which property is NOT satisfied by the relation < on integers?",
+                options: ["Transitivity", "Irreflexivity", "Symmetry", "Antisymmetry"],
+                answer: 2,
+                explanation: "If a < b, generally b < a is false, so < is not symmetric."
+            },
+
+            {
+                question: "The domain of a relation R consists of:",
+                options: ["All second components appearing in R", "All first components appearing in R", "All elements of the codomain only", "Only elements related to themselves"],
+                answer: 1,
+                explanation: "The domain contains all elements that occur as first components of ordered pairs."
+            },
+
+            {
+                question: "The range of a relation R consists of:",
+                options: ["All first components", "All second components", "Only common components", "The Cartesian product"],
+                answer: 1,
+                explanation: "The range contains all elements that occur as second components."
+            },
+
+            {
+                question: "The relation R = {(1,2),(2,1)} on {1,2} is:",
+                options: ["Reflexive only", "Symmetric but not reflexive", "Transitive and reflexive", "Antisymmetric"],
+                answer: 1,
+                explanation: "It is symmetric because reversing pairs gives pairs in R, but (1,1) and (2,2) are missing."
+            },
+
+            {
+                question: "If a relation is both symmetric and antisymmetric, then:",
+                options: ["Every pair must contain distinct elements", "Only pairs of the form (a,a) can occur", "It must be non-reflexive", "It cannot be transitive"],
+                answer: 1,
+                explanation: "For distinct a and b, symmetry gives both directions while antisymmetry would force a = b. Thus only diagonal pairs may occur."
+            },
+
+            {
+                question: "The empty relation on a non-empty set is:",
+                options: ["Reflexive", "Symmetric and transitive", "Only antisymmetric", "Reflexive and symmetric"],
+                answer: 1,
+                explanation: "Symmetric and transitive conditions are vacuously true, but reflexivity fails because no (a,a) pairs exist."
+            }
+
+        ],
+
+
+        // =====================================================
+        // QUIZ 2 — COMPOSITION OF RELATIONS
+        // =====================================================
+
+        "Composition of Relations": [
+
+            {
+                question: "If R is a relation from A to B and S is a relation from B to C, then S ∘ R is a relation from:",
+                options: ["A to C", "C to A", "B to A", "A to B"],
+                answer: 0,
+                explanation: "Composition first applies R from A to B and then S from B to C."
+            },
+
+            {
+                question: "(a,c) belongs to S ∘ R when:",
+                options: ["There exists b such that (a,b) ∈ R and (b,c) ∈ S", "(a,c) belongs to both R and S", "(c,a) ∈ R", "a = c"],
+                answer: 0,
+                explanation: "The middle element b connects the two relations."
+            },
+
+            {
+                question: "In general, composition of relations is:",
+                options: ["Commutative", "Not necessarily commutative", "Always symmetric", "Always reflexive"],
+                answer: 1,
+                explanation: "Usually S ∘ R is not equal to R ∘ S."
+            },
+
+            {
+                question: "Let R = {(1,2),(2,3)} and S = {(2,4),(3,5)}. Then S ∘ R is:",
+                options: ["{(1,4),(2,5)}", "{(2,4),(3,5)}", "{(1,2),(2,3)}", "{(4,1),(5,2)}"],
+                answer: 0,
+                explanation: "1R2 and 2S4 gives (1,4); 2R3 and 3S5 gives (2,5)."
+            },
+
+            {
+                question: "Composition of relations is associative because:",
+                options: ["R ∘ S = S ∘ R", "(T ∘ S) ∘ R = T ∘ (S ∘ R)", "Every relation has an inverse", "Every relation is transitive"],
+                answer: 1,
+                explanation: "Relation composition is associative, although it is generally not commutative."
+            },
+
+            {
+                question: "The identity relation I on A satisfies:",
+                options: ["R ∘ I = I", "I ∘ R = R and R ∘ I = R where defined", "I ∘ R is always empty", "I has no ordered pairs"],
+                answer: 1,
+                explanation: "The identity relation acts as an identity element under composition."
+            },
+
+            {
+                question: "Which condition is necessary to compose S ∘ R?",
+                options: ["The range-side set of R must match the domain-side set of S", "R and S must be equal", "Both relations must be symmetric", "Both relations must be functions"],
+                answer: 0,
+                explanation: "The output set of R must connect to the input set of S."
+            },
+
+            {
+                question: "If R maps a to b and S maps b to c, then under S ∘ R:",
+                options: ["a maps to c", "c maps to a", "b maps to a", "a maps to b only"],
+                answer: 0,
+                explanation: "Composition follows the chain a → b → c."
+            },
+
+            {
+                question: "Which statement about composition of relations is correct?",
+                options: ["It is always commutative", "It is associative but generally not commutative", "It is neither associative nor commutative", "It is always commutative and associative"],
+                answer: 1,
+                explanation: "Associativity always holds, but commutativity generally does not."
+            }
+
+        ],
+
+
+        // =====================================================
+        // QUIZ 3 — EQUIVALENCE RELATIONS & PARTITIONS
+        // =====================================================
+
+        "Equivalence Relations & Partitions": [
+
+            {
+                question: "An equivalence relation must be:",
+                options: ["Reflexive, symmetric and transitive", "Reflexive, antisymmetric and transitive", "Symmetric and antisymmetric only", "Irreflexive and transitive"],
+                answer: 0,
+                explanation: "These three properties define an equivalence relation."
+            },
+
+            {
+                question: "If ~ is an equivalence relation on A, the equivalence class of a is:",
+                options: ["{x ∈ A | x ~ a}", "{x ∈ A | x = a only}", "The complement of a", "A Cartesian product"],
+                answer: 0,
+                explanation: "An equivalence class contains all elements equivalent to a."
+            },
+
+            {
+                question: "If two equivalence classes have at least one common element, then:",
+                options: ["They are disjoint", "They are equal", "One must be empty", "They cannot exist"],
+                answer: 1,
+                explanation: "Equivalence classes are either disjoint or exactly equal."
+            },
+
+            {
+                question: "Equivalence classes of an equivalence relation on A:",
+                options: ["Always overlap partially", "Form a partition of A", "Always contain one element", "Never cover A"],
+                answer: 1,
+                explanation: "Equivalence classes divide the set into non-empty disjoint subsets whose union is A."
+            },
+
+            {
+                question: "A partition of a set A consists of:",
+                options: ["Overlapping subsets only", "Non-empty disjoint subsets whose union is A", "Only singleton subsets", "All possible subsets of A"],
+                answer: 1,
+                explanation: "This is the formal definition of a partition."
+            },
+
+            {
+                question: "Which relation on integers is an equivalence relation?",
+                options: ["a < b", "a ≤ b", "a ≡ b (mod n)", "a > b"],
+                answer: 2,
+                explanation: "Congruence modulo n is reflexive, symmetric and transitive."
+            },
+
+            {
+                question: "The relation aRb on integers defined by a − b being even is:",
+                options: ["Only symmetric", "An equivalence relation", "A partial order", "Not transitive"],
+                answer: 1,
+                explanation: "Same parity is reflexive, symmetric and transitive."
+            },
+
+            {
+                question: "For an equivalence relation, every element of the set:",
+                options: ["Belongs to exactly one equivalence class", "Belongs to no class", "Belongs to infinitely many different classes", "Must form a singleton class"],
+                answer: 0,
+                explanation: "The equivalence classes form a partition, so every element belongs to exactly one class."
+            },
+
+            {
+                question: "If [a] = [b] for an equivalence relation, then:",
+                options: ["a is not related to b", "a ~ b", "a and b must be numerically equal", "The relation is not symmetric"],
+                answer: 1,
+                explanation: "Two elements have the same equivalence class exactly when they are equivalent."
+            },
+
+            {
+                question: "A relation that is reflexive and transitive but not necessarily symmetric is generally called:",
+                options: ["An equivalence relation", "A preorder", "A bijection", "A partition"],
+                answer: 1,
+                explanation: "Reflexive + transitive relations are commonly called preorders."
+            },
+
+            {
+                question: "If A = {1,2,3,4} and a relation divides A into {1,3} and {2,4}, these subsets represent:",
+                options: ["A partition of A", "A Cartesian product", "A non-reflexive relation only", "A function"],
+                answer: 0,
+                explanation: "They are non-empty, disjoint and their union is A."
+            }
+
+        ],
+
+
+        // =====================================================
+        // QUIZ 4 — POSETS & PARTIAL ORDERS
+        // =====================================================
+
+        "Posets & Partial Orders": [
+
+            {
+                question: "A partial order relation must be:",
+                options: ["Reflexive, symmetric and transitive", "Reflexive, antisymmetric and transitive", "Symmetric and antisymmetric only", "Irreflexive and transitive"],
+                answer: 1,
+                explanation: "These three properties define a partial order."
+            },
+
+            {
+                question: "A set together with a partial order relation is called:",
+                options: ["A lattice", "A poset", "An equivalence class", "A permutation"],
+                answer: 1,
+                explanation: "A partially ordered set is called a poset."
+            },
+
+            {
+                question: "Two elements a and b in a poset are comparable if:",
+                options: ["a ≤ b or b ≤ a", "a = b only", "Neither is related to the other", "They belong to different sets"],
+                answer: 0,
+                explanation: "Comparability means at least one of the two elements precedes the other."
+            },
+
+            {
+                question: "A partial order is called total if:",
+                options: ["Every pair of elements is comparable", "No elements are comparable", "It is symmetric", "It has no maximal element"],
+                answer: 0,
+                explanation: "A total order compares every pair of elements."
+            },
+
+            {
+                question: "A minimal element of a poset is an element:",
+                options: ["Smaller than every element", "Having no distinct element strictly below it", "Larger than every element", "Equal to the least element always"],
+                answer: 1,
+                explanation: "A minimal element has no smaller distinct element in the poset."
+            },
+
+            {
+                question: "A least element of a poset:",
+                options: ["Is less than or equal to every element", "May be incomparable with some elements", "Is always one of many least elements", "Need not be minimal"],
+                answer: 0,
+                explanation: "A least element is below every element and is unique if it exists."
+            },
+
+            {
+                question: "Which statement is correct?",
+                options: ["Every minimal element is necessarily the least element", "Every least element is minimal", "A poset can have several least elements", "Minimal and maximal mean the same thing"],
+                answer: 1,
+                explanation: "A least element must be minimal, but a minimal element need not be least."
+            },
+
+            {
+                question: "A poset can have:",
+                options: ["At most one minimal element", "Several minimal elements", "Several least elements", "No maximal elements ever"],
+                answer: 1,
+                explanation: "Multiple incomparable minimal elements may exist, but a least element is unique."
+            },
+
+            {
+                question: "An upper bound of a subset S of a poset is an element u such that:",
+                options: ["u ≤ s for every s ∈ S", "s ≤ u for every s ∈ S", "u is always in S", "u is always the greatest element"],
+                answer: 1,
+                explanation: "An upper bound lies above every element of the subset."
+            },
+
+            {
+                question: "A lower bound of a subset S is an element l such that:",
+                options: ["l ≤ s for every s ∈ S", "l ≥ s for every s ∈ S", "l must be outside the poset", "l must be maximal"],
+                answer: 0,
+                explanation: "A lower bound lies below every element of the subset."
+            },
+
+            {
+                question: "The divisibility relation | on positive integers is:",
+                options: ["A partial order", "An equivalence relation", "Symmetric", "A bijection"],
+                answer: 0,
+                explanation: "Divisibility is reflexive, antisymmetric and transitive."
+            }
+
+        ],
+
+
+        // =====================================================
+        // QUIZ 5 — HASSE DIAGRAMS & LATTICES
+        // =====================================================
+
+        "Hasse Diagrams & Lattices": [
+
+            {
+                question: "A Hasse diagram is used to represent:",
+                options: ["Equivalence relations", "Partially ordered sets", "Only functions", "Probability distributions"],
+                answer: 1,
+                explanation: "Hasse diagrams visually represent finite posets."
+            },
+
+            {
+                question: "In a Hasse diagram, reflexive loops are:",
+                options: ["Always drawn", "Usually omitted", "Drawn twice", "Mandatory at every vertex"],
+                answer: 1,
+                explanation: "Reflexive relations are understood and therefore not explicitly drawn."
+            },
+
+            {
+                question: "In a Hasse diagram, edges implied by transitivity are:",
+                options: ["Always added", "Usually omitted", "Drawn as loops", "Replaced by arrows"],
+                answer: 1,
+                explanation: "Only cover relations are generally shown."
+            },
+
+            {
+                question: "In a standard Hasse diagram, if x is drawn above y, it generally means:",
+                options: ["x is below y in the order", "y ≤ x", "x and y are incomparable", "x = y"],
+                answer: 1,
+                explanation: "Higher elements represent greater elements under the partial order."
+            },
+
+            {
+                question: "A lattice is a poset in which every pair of elements has:",
+                options: ["Only a greatest element", "Only a least element", "A unique least upper bound and greatest lower bound", "No comparable elements"],
+                answer: 2,
+                explanation: "Every pair must have both join (LUB) and meet (GLB)."
+            },
+
+            {
+                question: "The least upper bound of two elements is also called:",
+                options: ["Meet", "Join", "Minimal element", "Lower bound"],
+                answer: 1,
+                explanation: "The least upper bound is called the join."
+            },
+
+            {
+                question: "The greatest lower bound of two elements is also called:",
+                options: ["Join", "Meet", "Maximum", "Upper bound"],
+                answer: 1,
+                explanation: "The greatest lower bound is called the meet."
+            },
+
+            {
+                question: "A greatest element in a poset, if it exists:",
+                options: ["Need not be unique", "Is unique", "Must be incomparable", "Cannot be maximal"],
+                answer: 1,
+                explanation: "A greatest element is unique and is also maximal."
+            },
+
+            {
+                question: "If two elements of a poset have no least upper bound, then:",
+                options: ["The poset cannot be a lattice", "They must be equal", "The poset is an equivalence relation", "The relation becomes symmetric"],
+                answer: 0,
+                explanation: "A lattice requires every pair to have both LUB and GLB."
+            },
+
+            {
+                question: "In a lattice, the join of elements a and b is denoted by:",
+                options: ["a ∧ b", "a ∨ b", "a × b", "a ∘ b"],
+                answer: 1,
+                explanation: "∨ denotes join, while ∧ denotes meet."
+            },
+
+            {
+                question: "In a lattice, the meet of a and b is denoted by:",
+                options: ["a ∨ b", "a ∧ b", "a + b", "a ∘ b"],
+                answer: 1,
+                explanation: "∧ represents the greatest lower bound."
+            }
+
+        ],
+
+
+        // =====================================================
+        // QUIZ 6 — FUNCTIONS FUNDAMENTALS
+        // =====================================================
+
+        "Functions Fundamentals": [
+
+            {
+                question: "A function f from A to B assigns:",
+                options: ["Exactly one element of B to each element of A", "At least two outputs to every input", "Every element of B to every element of A", "Only some elements of A an output"],
+                answer: 0,
+                explanation: "Every input in the domain must have exactly one output."
+            },
+
+            {
+                question: "The set A in f: A → B is called:",
+                options: ["Range", "Domain", "Codomain", "Image only"],
+                answer: 1,
+                explanation: "A is the domain, the set of allowed inputs."
+            },
+
+            {
+                question: "The set B in f: A → B is called:",
+                options: ["Domain", "Range", "Codomain", "Preimage"],
+                answer: 2,
+                explanation: "B is the codomain, the target set."
+            },
+
+            {
+                question: "The range of a function is:",
+                options: ["Always equal to the domain", "The set of actual output values", "Always equal to the codomain", "The Cartesian product"],
+                answer: 1,
+                explanation: "The range is the subset of the codomain actually produced by the function."
+            },
+
+            {
+                question: "Which relation cannot represent a function?",
+                options: ["Each input has exactly one output", "One input has two different outputs", "Different inputs have the same output", "Every domain element has an image"],
+                answer: 1,
+                explanation: "A function cannot assign two different outputs to the same input."
+            },
+
+            {
+                question: "Different elements of the domain mapping to the same output:",
+                options: ["Always violates the definition of a function", "Is allowed for a function", "Makes the relation symmetric", "Makes the function impossible"],
+                answer: 1,
+                explanation: "Many-to-one mappings are allowed; one-to-many mappings are not."
+            },
+
+            {
+                question: "For f: A → B, the range is:",
+                options: ["Always a subset of B", "Always larger than B", "Always equal to A", "Always empty"],
+                answer: 0,
+                explanation: "Every output lies in the codomain B, so the range is a subset of B."
+            },
+
+            {
+                question: "The function f(x) = x² from real numbers to real numbers is:",
+                options: ["One-to-one", "Onto", "Neither one-to-one nor onto", "Bijective"],
+                answer: 2,
+                explanation: "f(1)=f(-1), so not injective; negative real numbers are not outputs, so not onto R."
+            }
+
+        ],
+
+
+        // =====================================================
+        // QUIZ 7 — INJECTION, SURJECTION & BIJECTION
+        // =====================================================
+
+        "Injection, Surjection & Bijection": [
+
+            {
+                question: "A function f: A → B is injective if:",
+                options: ["Every element of B has a preimage", "Different inputs have different outputs", "Every input has two outputs", "Range is empty"],
+                answer: 1,
+                explanation: "Injective means f(a)=f(b) implies a=b."
+            },
+
+            {
+                question: "A function f: A → B is surjective if:",
+                options: ["Every element of B is the image of at least one element of A", "Different inputs must have different outputs", "A = B always", "The domain is empty"],
+                answer: 0,
+                explanation: "An onto function covers every element of its codomain."
+            },
+
+            {
+                question: "A bijective function is:",
+                options: ["Only injective", "Only surjective", "Both injective and surjective", "Neither injective nor surjective"],
+                answer: 2,
+                explanation: "A bijection establishes a one-to-one correspondence between domain and codomain."
+            },
+
+            {
+                question: "For a finite set A and B with |A| > |B|, a function A → B:",
+                options: ["Can always be injective", "Cannot be injective", "Must be bijective", "Must be one-to-one"],
+                answer: 1,
+                explanation: "By the pigeonhole principle, more domain elements than codomain elements prevent injectivity."
+            },
+
+            {
+                question: "For finite sets A and B with |A| < |B|, a function A → B:",
+                options: ["Can be onto", "Cannot be onto", "Must be bijective", "Must be many-to-one"],
+                answer: 1,
+                explanation: "There are not enough domain elements to cover every codomain element."
+            },
+
+            {
+                question: "A function from a finite set A to itself is injective if and only if it is:",
+                options: ["Constant", "Surjective", "Undefined", "Many-to-one"],
+                answer: 1,
+                explanation: "For finite sets of equal size, injectivity and surjectivity are equivalent."
+            },
+
+            {
+                question: "The function f(x)=2x+1 from R to R is:",
+                options: ["Bijective", "Only injective", "Only surjective", "Neither"],
+                answer: 0,
+                explanation: "It is injective and every real y has x=(y−1)/2, so it is onto."
+            },
+
+            {
+                question: "The function f(x)=x² from R to R is not injective because:",
+                options: ["f(x) is always negative", "f(1)=f(-1)", "Its range is all real numbers", "It has no outputs"],
+                answer: 1,
+                explanation: "Different inputs 1 and −1 produce the same output."
+            },
+
+            {
+                question: "Which property is necessary for a function to have an inverse function from its codomain?",
+                options: ["It must be bijective", "It must be symmetric", "It must be constant", "It must be many-to-one"],
+                answer: 0,
+                explanation: "A two-sided inverse exists when the function is bijective."
+            }
+
+        ],
+
+
+        // =====================================================
+        // QUIZ 8 — COMPOSITION & INVERSE FUNCTIONS
+        // =====================================================
+
+        "Composition & Inverse Functions": [
+
+            {
+                question: "The composition (g ∘ f)(x) means:",
+                options: ["f(g(x))", "g(f(x))", "f(x)+g(x)", "f(x)g(x)"],
+                answer: 1,
+                explanation: "g ∘ f means apply f first and then apply g."
+            },
+
+            {
+                question: "Function composition is generally:",
+                options: ["Commutative", "Not commutative", "Always symmetric", "Always equal to addition"],
+                answer: 1,
+                explanation: "Usually f ∘ g is not equal to g ∘ f."
+            },
+
+            {
+                question: "If f(x)=x+1 and g(x)=2x, then (g ∘ f)(x) is:",
+                options: ["2x+1", "2x+2", "x+2", "x+1"],
+                answer: 1,
+                explanation: "First f(x)=x+1, then g(f(x))=2(x+1)=2x+2."
+            },
+
+            {
+                question: "If f(x)=2x+3, then f⁻¹(x) is:",
+                options: ["2x−3", "(x−3)/2", "(x+3)/2", "1/(2x+3)"],
+                answer: 1,
+                explanation: "Set y=2x+3 and solve for x: x=(y−3)/2."
+            },
+
+            {
+                question: "For a function f and its inverse f⁻¹:",
+                options: ["f ∘ f = I", "f⁻¹ ∘ f = I and f ∘ f⁻¹ = I", "f⁻¹ = f always", "They cannot be composed"],
+                answer: 1,
+                explanation: "Composing a bijection with its inverse gives the identity function."
+            },
+
+            {
+                question: "A function has an inverse function if it is:",
+                options: ["Bijective", "Only symmetric", "Only transitive", "Constant"],
+                answer: 0,
+                explanation: "The function must be both one-to-one and onto."
+            },
+
+            {
+                question: "If f(x)=x+2 and g(x)=x², then (f ∘ g)(x) is:",
+                options: ["(x+2)²", "x²+2", "x²+4", "2x²"],
+                answer: 1,
+                explanation: "First apply g: x², then apply f: x²+2."
+            },
+
+            {
+                question: "Which statement about inverse functions is true?",
+                options: ["Every function has an inverse", "Only bijective functions have inverses as functions on the full codomain", "Constant functions are always invertible", "Many-to-one functions are always invertible"],
+                answer: 1,
+                explanation: "Non-bijective functions fail uniqueness or full coverage required for an inverse."
+            }
+
+        ],
+
+
+        // =====================================================
+        // QUIZ 9 — RECURRENCE RELATIONS
+        // =====================================================
+
+        "Recurrence Relations": [
+
+            {
+                question: "A recurrence relation defines:",
+                options: ["A sequence using previous terms", "A set with no elements", "Only a function graph", "A binary relation only"],
+                answer: 0,
+                explanation: "A recurrence relation expresses terms of a sequence in terms of earlier terms."
+            },
+
+            {
+                question: "In a recurrence relation a_n = a_(n−1) + 2, the recurrence is of:",
+                options: ["First order", "Second order", "Third order", "Infinite order"],
+                answer: 0,
+                explanation: "The current term depends only on the immediately preceding term."
+            },
+
+            {
+                question: "The Fibonacci recurrence is:",
+                options: ["F_n = F_(n−1)+F_(n−2)", "F_n = 2F_(n−1)", "F_n = n²", "F_n = F_(n+1)"],
+                answer: 0,
+                explanation: "Each Fibonacci term is the sum of the previous two terms."
+            },
+
+            {
+                question: "Initial conditions in a recurrence relation are needed to:",
+                options: ["Make the sequence unique", "Remove all previous terms", "Make the relation symmetric", "Convert it into a set"],
+                answer: 0,
+                explanation: "A recurrence alone may describe many sequences; initial conditions determine one specific sequence."
+            },
+
+            {
+                question: "A linear homogeneous recurrence relation has:",
+                options: ["No products or nonlinear powers of sequence terms and zero non-recurrence part", "Only squares of a_n", "Only constants", "No previous terms"],
+                answer: 0,
+                explanation: "Linear homogeneous recurrences are linear combinations of earlier terms equal to zero."
+            },
+
+            {
+                question: "For a_n = 3a_(n−1), the characteristic equation is:",
+                options: ["r = 3", "r² = 3", "r+3=0 only", "r=0"],
+                answer: 0,
+                explanation: "Assuming a_n=r^n gives r^n=3r^(n−1), so r=3."
+            },
+
+            {
+                question: "If a_n = 2a_(n−1) and a_0=1, then a_3 equals:",
+                options: ["4", "6", "8", "16"],
+                answer: 2,
+                explanation: "The sequence is 1,2,4,8."
+            },
+
+            {
+                question: "The recurrence a_n = a_(n−1)+5 generates:",
+                options: ["An arithmetic sequence", "A geometric sequence", "A constant sequence only", "A periodic sequence necessarily"],
+                answer: 0,
+                explanation: "Each term differs from the previous one by the constant 5."
+            },
+
+            {
+                question: "The recurrence a_n = 2a_(n−1) generates a sequence that is:",
+                options: ["Arithmetic", "Geometric", "Always constant", "Always decreasing"],
+                answer: 1,
+                explanation: "Each term is obtained by multiplying the previous term by 2."
+            },
+
+            {
+                question: "A recurrence involving a_n, a_(n−1), and a_(n−2) has order:",
+                options: ["1", "2", "3", "0"],
+                answer: 1,
+                explanation: "The farthest previous term is two positions back."
+            },
+
+            {
+                question: "For a_n − 5a_(n−1) + 6a_(n−2)=0, the characteristic equation is:",
+                options: ["r²−5r+6=0", "r−5+6=0", "r²+5r+6=0", "5r²−6=0"],
+                answer: 0,
+                explanation: "Replace a_n by r^n and divide by r^(n−2)."
+            },
+
+            {
+                question: "The roots of r²−5r+6=0 are:",
+                options: ["1 and 6", "2 and 3", "-2 and -3", "5 and 6"],
+                answer: 1,
+                explanation: "(r−2)(r−3)=0."
+            },
+
+            {
+                question: "For distinct roots r1 and r2 of a second-order homogeneous recurrence, the general solution has the form:",
+                options: ["C1r1^n + C2r2^n", "C1+C2 only", "r1+r2", "n² only"],
+                answer: 0,
+                explanation: "Each distinct characteristic root contributes an independent exponential term."
+            },
+
+            {
+                question: "The main purpose of the characteristic equation method is to:",
+                options: ["Solve suitable linear recurrence relations", "Construct Hasse diagrams", "Find set partitions", "Test symmetry"],
+                answer: 0,
+                explanation: "Characteristic roots help form closed-form solutions."
+            }
+
+        ],
+
+
+        // =====================================================
+        // QUIZ 10 — GENERATING FUNCTIONS
+        // =====================================================
+
+        "Generating Functions": [
+
+            {
+                question: "The ordinary generating function of a sequence a₀,a₁,a₂,... is:",
+                options: ["Σ a_n x^n", "Σ x/a_n", "Σ a_n/n", "Σ n^x"],
+                answer: 0,
+                explanation: "The ordinary generating function is G(x)=a₀+a₁x+a₂x²+...=Σa_nx^n."
+            },
+
+            {
+                question: "The coefficient of x^n in a generating function represents:",
+                options: ["The nth term of the represented sequence", "Always the sum of all terms", "The derivative", "The inverse relation"],
+                answer: 0,
+                explanation: "The coefficient of x^n corresponds to a_n."
+            },
+
+            {
+                question: "The generating function for the sequence 1,1,1,1,... is:",
+                options: ["1/(1−x)", "1/(1+x)", "x/(1−x)", "1+x"],
+                answer: 0,
+                explanation: "1+x+x²+...=1/(1−x) for |x|<1."
+            },
+
+            {
+                question: "The generating function for the sequence 1,0,0,0,... is:",
+                options: ["1", "x", "1/(1−x)", "x/(1+x)"],
+                answer: 0,
+                explanation: "Only the constant coefficient is 1."
+            },
+
+            {
+                question: "The generating function for 0,1,0,0,... is:",
+                options: ["1", "x", "x²", "1/(1−x)"],
+                answer: 1,
+                explanation: "The coefficient of x is 1 and all other coefficients are zero."
+            },
+
+            {
+                question: "The generating function for the sequence 0,0,1,0,... is:",
+                options: ["x", "x²", "1+x", "1/(1−x)"],
+                answer: 1,
+                explanation: "The coefficient of x² is 1."
+            },
+
+            {
+                question: "The generating function 1+x+x²+x³+... can be written as:",
+                options: ["1/(1−x)", "1/(1+x)", "x/(1−x)", "(1−x)"],
+                answer: 0,
+                explanation: "It is the infinite geometric series with common ratio x."
+            },
+
+            {
+                question: "If G(x)=3+2x+5x², then the represented sequence begins with:",
+                options: ["3,2,5", "2,3,5", "5,2,3", "3,5,2"],
+                answer: 0,
+                explanation: "Coefficients correspond in order to a₀,a₁,a₂."
+            },
+
+            {
+                question: "Multiplying a generating function G(x) by x shifts the sequence:",
+                options: ["One position to the right, inserting 0 at the beginning", "One position to the left always", "Without changing coefficients", "Into an inverse function"],
+                answer: 0,
+                explanation: "xG(x) changes a₀+a₁x+... into 0+a₀x+a₁x²+...."
+            },
+
+            {
+                question: "Generating functions are particularly useful for:",
+                options: ["Studying sequences and solving combinatorial/recurrence problems", "Only drawing graphs", "Only checking symmetry", "Replacing all functions"],
+                answer: 0,
+                explanation: "Generating functions encode sequences algebraically and are powerful in counting and recurrence problems."
+            },
+
+            {
+                question: "The generating function x/(1−x) represents the sequence:",
+                options: ["1,1,1,...", "0,1,1,1,...", "1,0,1,0,...", "0,0,1,1,..."],
+                answer: 1,
+                explanation: "x/(1−x)=x+x²+x³+..., so coefficients are 0,1,1,1,..."
+            }
+
+        ]
+
+    },
+
+    "Computer System and Architecture": {
+
+      "Half Adder and Full Adder":[
+
+        { question:"What are the two outputs of a Half Adder?", options:["Sum and Carry","Input and Output","Sum and Difference","Carry and Borrow"], answer:0, explanation:"A Half Adder produces two outputs: Sum and Carry." },
+
+        { question:"The Sum output of a Half Adder is represented by?", options:["A AND B","A OR B","A XOR B","A XNOR B"], answer:2, explanation:"The Sum of a Half Adder is S = A XOR B." },
+
+        { question:"The Carry output of a Half Adder is represented by?", options:["A AND B","A XOR B","A OR B","A XNOR B"], answer:0, explanation:"The Carry output is C = A AND B." },
+
+        { question:"What is the Sum output of a Half Adder when A=1 and B=1?", options:["0","1","2","Undefined"], answer:0, explanation:"1 XOR 1 = 0, so the Sum is 0." },
+
+        { question:"What is the Carry output of a Half Adder when A=1 and B=1?", options:["0","1","2","Undefined"], answer:1, explanation:"1 AND 1 = 1, so Carry is 1." },
+
+        { question:"A Full Adder has how many input bits?", options:["1","2","3","4"], answer:2, explanation:"A Full Adder has three inputs: A, B and Carry-in." },
+
+        { question:"Which additional input does a Full Adder have compared with a Half Adder?", options:["Borrow","Carry-in","Enable","Clock"], answer:1, explanation:"A Full Adder includes a Carry-in input." },
+
+        { question:"The Sum expression of a Full Adder is?", options:["A+B+Cin","A XOR B XOR Cin","AB+Cin","A AND B AND Cin"], answer:1, explanation:"The Full Adder Sum is S = A XOR B XOR Cin." },
+
+        { question:"The Carry-out expression of a Full Adder is?", options:["AB + BCin + ACin","A XOR B XOR Cin","A+B+Cin","ABCin"], answer:0, explanation:"Carry-out is generated when at least two of the three inputs are 1: Cout = AB + BCin + ACin." },
+
+        { question:"How can a Full Adder be implemented using Half Adders?", options:["Using one Half Adder","Using two Half Adders and one OR gate","Using three Half Adders","Using only OR gates"], answer:1, explanation:"Two Half Adders generate intermediate sums and carries, and an OR gate combines the carries." }
+
+        ],
+
+
+      "Multiplexer and Demultiplexer":[
+
+        { question:"A Multiplexer is commonly called a?", options:["Data distributor","Data selector","Code converter","Memory device"], answer:1, explanation:"A Multiplexer selects one input from many inputs and sends it to a single output." },
+
+        { question:"A 4-to-1 Multiplexer has how many select lines?", options:["1","2","3","4"], answer:1, explanation:"For n inputs, select lines = log₂(n). Therefore log₂4 = 2." },
+
+        { question:"An 8-to-1 Multiplexer requires how many select lines?", options:["2","3","4","8"], answer:1, explanation:"log₂8 = 3 select lines are required." },
+
+        { question:"A 16-to-1 Multiplexer requires how many select lines?", options:["2","3","4","5"], answer:2, explanation:"log₂16 = 4 select lines." },
+
+        { question:"A Multiplexer generally has?", options:["Many inputs and one output","One input and many outputs","Many inputs and many outputs","One input and one output"], answer:0, explanation:"A Multiplexer selects one of many inputs and connects it to a single output." },
+
+        { question:"A Demultiplexer generally has?", options:["Many inputs and one output","One input and many outputs","Many inputs and many outputs","No input"], answer:1, explanation:"A Demultiplexer routes one input to one of several outputs." },
+
+        { question:"A 1-to-8 Demultiplexer requires how many select lines?", options:["1","2","3","8"], answer:2, explanation:"log₂8 = 3 select lines are needed." },
+
+        { question:"The main function of a Demultiplexer is?", options:["Add binary numbers","Route one input to one of many outputs","Store data","Convert analog to digital"], answer:1, explanation:"A Demultiplexer distributes a single input to a selected output." },
+
+        { question:"Which device can be used to implement Boolean functions efficiently?", options:["Multiplexer","Register","Flip-Flop","Counter"], answer:0, explanation:"Multiplexers can implement Boolean functions by connecting variables and constants to data inputs." },
+
+        { question:"If a Multiplexer has 32 input lines, how many select lines are required?", options:["4","5","6","32"], answer:1, explanation:"log₂32 = 5 select lines." }
+
+        ],
+
+
+      "Encoder and Decoder":[
+
+        { question:"A Decoder converts?", options:["Binary code into one active output","One input into many inputs","Analog into digital","Digital into analog"], answer:0, explanation:"A Decoder activates one output corresponding to the binary input combination." },
+
+        { question:"A 2-to-4 Decoder has?", options:["2 inputs and 4 outputs","4 inputs and 2 outputs","2 inputs and 2 outputs","4 inputs and 4 outputs"], answer:0, explanation:"A 2-to-4 Decoder accepts 2 binary inputs and activates one of 4 outputs." },
+
+        { question:"How many outputs does a 3-to-8 Decoder have?", options:["3","6","8","16"], answer:2, explanation:"For n input lines, a decoder has 2ⁿ outputs. Therefore 2³ = 8." },
+
+        { question:"How many outputs does a 4-to-16 Decoder have?", options:["4","8","12","16"], answer:3, explanation:"A 4-to-16 Decoder has 2⁴ = 16 outputs." },
+
+        { question:"An Encoder performs the reverse operation of a?", options:["Multiplexer","Decoder","Register","Flip-Flop"], answer:1, explanation:"An Encoder converts an active input into a binary code, the reverse of decoding." },
+
+        { question:"An 8-to-3 Encoder converts?", options:["3 inputs into 8 outputs","8 input lines into a 3-bit binary code","8 bits into 3 outputs","3 inputs into 3 outputs"], answer:1, explanation:"An 8-to-3 Encoder produces a 3-bit code representing the active input." },
+
+        { question:"A major problem with a simple Encoder occurs when?", options:["No input is active","More than one input is active","Clock is absent","Output is zero"], answer:1, explanation:"A simple Encoder assumes only one input is active; multiple active inputs cause ambiguity." },
+
+        { question:"Which Encoder solves the multiple-active-input problem?", options:["Half Encoder","Priority Encoder","Binary Decoder","Multiplexer"], answer:1, explanation:"A Priority Encoder assigns priority to inputs and encodes the highest-priority active input." },
+
+        { question:"The Enable input of a Decoder is used to?", options:["Store data permanently","Control whether the decoder operates","Increase number of inputs","Add binary numbers"], answer:1, explanation:"The Enable input activates or disables decoder operation." }
+
+        ],
+
+
+      "Flip Flops":[
+
+        { question:"A Flip-Flop is primarily used to?", options:["Add numbers","Store one bit of information","Convert analog signals","Amplify signals"], answer:1, explanation:"A Flip-Flop is a bistable memory element capable of storing one binary bit." },
+
+        { question:"Which Flip-Flop has S and R inputs?", options:["JK Flip-Flop","D Flip-Flop","SR Flip-Flop","T Flip-Flop"], answer:2, explanation:"The SR Flip-Flop uses Set and Reset inputs." },
+
+        { question:"What is the invalid state of a NOR-based SR Flip-Flop?", options:["S=0, R=0","S=0, R=1","S=1, R=0","S=1, R=1"], answer:3, explanation:"For a NOR SR latch, S=R=1 produces an invalid condition." },
+
+        { question:"The JK Flip-Flop eliminates which problem?", options:["Clock problem","Invalid SR state","Storage problem","Power problem"], answer:1, explanation:"The JK Flip-Flop removes the invalid state present in the SR Flip-Flop." },
+
+        { question:"What happens in a JK Flip-Flop when J=K=1?", options:["No change","Set","Reset","Toggle"], answer:3, explanation:"When J=K=1, the JK Flip-Flop toggles its current state." },
+
+        { question:"The D Flip-Flop is also known as?", options:["Toggle Flip-Flop","Delay Flip-Flop","Reset Flip-Flop","Clock Flip-Flop"], answer:1, explanation:"D stands for Delay; the output follows the input at the triggering clock edge." },
+
+        { question:"The next state equation of a D Flip-Flop is?", options:["Q(next)=Q","Q(next)=D","Q(next)=NOT D","Q(next)=J"], answer:1, explanation:"For a D Flip-Flop, the next state equals the D input." },
+
+        { question:"A T Flip-Flop toggles when T is?", options:["0","1","Both 0 and 1","Undefined"], answer:1, explanation:"When T=1, the output toggles. When T=0, the state remains unchanged." },
+
+        { question:"Which Flip-Flop is most directly used for binary counters?", options:["SR","JK","D","T"], answer:3, explanation:"T Flip-Flops naturally toggle and are widely used in binary counters." },
+
+        { question:"Race-around condition is associated mainly with?", options:["SR Flip-Flop","JK Flip-Flop","D Flip-Flop","T Flip-Flop"], answer:1, explanation:"Race-around occurs in level-triggered JK Flip-Flops when J=K=1 and the clock pulse is too long." },
+
+        { question:"Race-around can be reduced using?", options:["Longer clock pulse","Master-Slave Flip-Flop","Removing clock","Increasing inputs"], answer:1, explanation:"A Master-Slave JK Flip-Flop prevents repeated toggling during one clock pulse." }
+
+        ],
+
+
+      "Registers":[
+
+        { question:"A Register is made up of a group of?", options:["Logic gates only","Flip-Flops","Multiplexers only","Encoders"], answer:1, explanation:"A Register is a collection of Flip-Flops used to store multiple bits." },
+
+        { question:"How many Flip-Flops are required for an 8-bit Register?", options:["2","4","8","16"], answer:2, explanation:"Each Flip-Flop stores one bit, so an 8-bit Register requires 8 Flip-Flops." },
+
+        { question:"The main purpose of a Register is?", options:["Long-term storage","Temporary storage of binary information","Analog conversion","Arithmetic multiplication"], answer:1, explanation:"Registers provide fast temporary storage inside digital systems." },
+
+        { question:"A Shift Register is used to?", options:["Only add numbers","Shift stored binary data","Convert analog signals","Decode instructions only"], answer:1, explanation:"Shift Registers move stored bits left or right with clock pulses." },
+
+        { question:"In a Serial-In Serial-Out Register, data is?", options:["Entered and read serially","Entered parallel and read serially","Entered serial and read parallel","Entered parallel and read parallel"], answer:0, explanation:"SISO registers accept and output data one bit at a time." },
+
+        { question:"In a Serial-In Parallel-Out Register, data is?", options:["Entered parallel and read parallel","Entered serially and read simultaneously from parallel outputs","Entered parallel and read serially","Never shifted"], answer:1, explanation:"Bits enter serially but become available simultaneously at parallel outputs." },
+
+        { question:"A Parallel-In Parallel-Out Register transfers data?", options:["One bit at a time","All bits simultaneously","Only right to left","Only left to right"], answer:1, explanation:"PIPO registers load and output all bits in parallel." },
+
+        { question:"Which Register operation moves every bit one position?", options:["Decoding","Shifting","Encoding","Complementing"], answer:1, explanation:"Shifting moves each stored bit left or right." },
+
+        { question:"A Register containing n Flip-Flops can store?", options:["n bytes","n bits","2n bits","n² bits"], answer:1, explanation:"Each Flip-Flop stores one bit." }
+
+        ],
+
+
+      "Register Transfer Language":[
+
+        { question:"RTL stands for?", options:["Real Time Logic","Register Transfer Language","Register Timing Logic","Random Transfer Language"], answer:1, explanation:"RTL stands for Register Transfer Language." },
+
+        { question:"RTL is used to describe?", options:["Web pages","Data transfers and micro-operations between registers","Only programming algorithms","Database operations"], answer:1, explanation:"RTL describes how binary information moves between registers and what micro-operations are performed." },
+
+        { question:"The RTL statement R2 ← R1 means?", options:["R1 is added to R2","Contents of R1 are transferred to R2","R2 is deleted","R1 and R2 are swapped"], answer:1, explanation:"The contents of source register R1 are transferred to destination register R2." },
+
+        { question:"In the operation R2 ← R1, which register is the source?", options:["R1","R2","Both","Neither"], answer:0, explanation:"R1 supplies the data, so it is the source register." },
+
+        { question:"In the operation R2 ← R1, which register is the destination?", options:["R1","R2","Both","Neither"], answer:1, explanation:"R2 receives the data, so it is the destination register." },
+
+        { question:"A Register Transfer generally occurs under control of?", options:["A control signal","A random signal","Only power supply","Output display"], answer:0, explanation:"A control signal determines when a register transfer is allowed." },
+
+        { question:"The expression P: R2 ← R1 means?", options:["Transfer occurs only when P=1","Transfer occurs only when P=0","P is stored in R2","R1 is deleted"], answer:0, explanation:"The control function P enables the transfer when P is equal to 1." },
+
+        { question:"A Micro-operation is?", options:["An operation performed on data stored in registers","A large program","A type of operating system","A network protocol"], answer:0, explanation:"Micro-operations are elementary operations performed on information stored in registers." },
+
+        { question:"Which of the following is NOT generally a micro-operation category?", options:["Arithmetic","Logic","Shift","Internet"], answer:3, explanation:"Arithmetic, logic and shift operations are micro-operation categories; Internet is unrelated." }
+
+        ],
+
+
+      "Arithmetic and Logic Micro Operations":[
+
+        { question:"Arithmetic Micro-operations include?", options:["Addition and subtraction","Only shifting","Only encoding","Only storage"], answer:0, explanation:"Arithmetic micro-operations perform arithmetic on register contents, such as addition and subtraction." },
+
+        { question:"Which operation is commonly used to perform subtraction in digital systems?", options:["AND operation","2's complement addition","OR operation","Shift operation only"], answer:1, explanation:"A − B can be performed as A + (2's complement of B)." },
+
+        { question:"The 2's complement of a binary number is obtained by?", options:["Adding 1 directly","Complementing all bits and adding 1","Only reversing bits","Performing XOR with 0"], answer:1, explanation:"First find the 1's complement, then add 1." },
+
+        { question:"Which is a logic micro-operation?", options:["Addition","Subtraction","AND","Increment"], answer:2, explanation:"AND is a bitwise logic micro-operation." },
+
+        { question:"The OR micro-operation produces 1 when?", options:["Both inputs are 0","At least one input is 1","Both inputs are 1 only","Inputs are different only"], answer:1, explanation:"OR gives 1 if one or both corresponding input bits are 1." },
+
+        { question:"The XOR operation produces 1 when two corresponding bits are?", options:["Both 0","Both 1","Different","Always 1"], answer:2, explanation:"XOR outputs 1 when the two input bits are different." },
+
+        { question:"The NOT micro-operation?", options:["Adds 1","Complements every bit","Shifts bits right","Stores data"], answer:1, explanation:"NOT changes every 0 to 1 and every 1 to 0." },
+
+        { question:"The operation R ← R + 1 is called?", options:["Decrement","Increment","Complement","Shift"], answer:1, explanation:"Adding 1 to a register is an increment micro-operation." },
+
+        { question:"The operation R ← R − 1 is called?", options:["Increment","Decrement","Transfer","OR operation"], answer:1, explanation:"Subtracting 1 from a register is decrementing." },
+
+        { question:"Which hardware unit commonly performs arithmetic and logic micro-operations?", options:["ALU","Keyboard","Monitor","Encoder only"], answer:0, explanation:"The Arithmetic Logic Unit performs arithmetic and logical operations." }
+
+        ],
+
+
+      "Shift Micro Operations":[
+
+        { question:"A Shift Micro-operation moves bits?", options:["Between memory devices only","To adjacent positions within a register","Only to the ALU","Outside the computer"], answer:1, explanation:"Shift operations move register bits left or right." },
+
+        { question:"A Logical Shift Right usually inserts?", options:["1 at MSB","0 at MSB","Previous LSB at MSB","Random bit"], answer:1, explanation:"Logical right shift inserts 0 into the most significant position." },
+
+        { question:"A Logical Shift Left usually inserts?", options:["0 at LSB","1 at LSB","Previous MSB at LSB","Random bit"], answer:0, explanation:"Logical left shift inserts 0 into the least significant position." },
+
+        { question:"A logical left shift of an unsigned binary number is approximately equivalent to?", options:["Division by 2","Multiplication by 2","Addition of 1","Complement"], answer:1, explanation:"Each left shift multiplies an unsigned binary value by 2 if overflow does not occur." },
+
+        { question:"A logical right shift of an unsigned binary number is approximately equivalent to?", options:["Multiplication by 2","Division by 2","Addition by 2","Complement"], answer:1, explanation:"Each right shift divides an unsigned binary value by 2, discarding the remainder." },
+
+        { question:"An Arithmetic Shift Right preserves?", options:["The least significant bit","The sign bit","All carry bits","Only zero bits"], answer:1, explanation:"Arithmetic right shift preserves the sign of a signed number by extending the sign bit." },
+
+        { question:"A Circular Shift is also called?", options:["Arithmetic shift","Rotate operation","Logical complement","Register transfer"], answer:1, explanation:"Circular shifting rotates bits so a shifted-out bit re-enters at the opposite end." },
+
+        { question:"In a Circular Shift Left, the bit shifted out from the MSB moves to?", options:["MSB again","LSB","Carry is always zero","Memory"], answer:1, explanation:"During a rotate-left operation, the MSB wraps around to the LSB." },
+
+        { question:"Which shift is most suitable for preserving the sign of a signed binary number?", options:["Logical Shift Left","Logical Shift Right","Arithmetic Shift Right","Circular Shift"], answer:2, explanation:"Arithmetic Shift Right extends the sign bit." },
+
+        { question:"Which micro-operation category is especially useful for multiplication and division by powers of 2?", options:["Shift micro-operation","Decoder operation","Encoding operation","Register transfer only"], answer:0, explanation:"Binary shifts efficiently implement multiplication or division by powers of 2." }
+
+        ],
+
+      "Instruction Codes and Computer Registers":[
+
+        { question:"An instruction code generally consists of?", options:["Only an operand","Only an opcode","Opcode and operand/address fields","Only a memory address"], answer:2, explanation:"An instruction usually contains an opcode specifying the operation and one or more operand or address fields." },
+
+        { question:"The opcode of an instruction specifies?", options:["Where data is stored","Which operation is to be performed","The size of memory","The clock frequency"], answer:1, explanation:"The opcode identifies the operation to be performed by the processor." },
+
+        { question:"The operand field of an instruction generally specifies?", options:["The operation only","The data or location of data","The clock pulse","The ALU type"], answer:1, explanation:"The operand field provides the data or information needed to perform the operation." },
+
+        { question:"Which register stores the address of the next instruction to be fetched?", options:["IR","PC","AC","DR"], answer:1, explanation:"The Program Counter contains the address of the next instruction." },
+
+        { question:"Which register stores the currently executing instruction?", options:["PC","AR","IR","DR"], answer:2, explanation:"The Instruction Register stores the current instruction being decoded or executed." },
+
+        { question:"Which register is commonly used to store arithmetic and logic results in a basic computer?", options:["AC","PC","IR","AR"], answer:0, explanation:"The Accumulator stores intermediate and final results of arithmetic and logic operations." },
+
+        { question:"AR usually stands for?", options:["Arithmetic Register","Address Register","Accumulator Register","Automatic Register"], answer:1, explanation:"AR stands for Address Register and stores memory addresses." },
+
+        { question:"DR usually stands for?", options:["Data Register","Decimal Register","Destination Register","Direct Register"], answer:0, explanation:"The Data Register temporarily stores data transferred to or from memory." },
+
+        { question:"The Program Counter is updated mainly to?", options:["Store arithmetic results","Point to the next instruction","Decode an instruction","Store input data"], answer:1, explanation:"After instruction execution, PC is updated to locate the next instruction." },
+
+        { question:"Which register is most directly involved in instruction decoding?", options:["IR","PC","AC","TR"], answer:0, explanation:"The Instruction Register holds the instruction whose opcode is decoded by the control unit." }
+
+        ],
+
+
+      "Common Bus System":[
+
+        { question:"A common bus system is used primarily to?", options:["Increase the number of memory locations","Transfer data between registers","Perform only arithmetic operations","Store programs permanently"], answer:1, explanation:"A common bus provides a shared path for transferring binary information between registers." },
+
+        { question:"A bus is best described as?", options:["A single memory cell","A group of communication lines","A type of flip-flop","An arithmetic circuit"], answer:1, explanation:"A bus consists of multiple lines used for transferring binary information." },
+
+        { question:"The main advantage of a common bus system is?", options:["It eliminates all registers","It reduces the number of required data transfer connections","It increases instruction size","It removes the need for memory"], answer:1, explanation:"A common bus reduces the large number of individual connections required between every pair of registers." },
+
+        { question:"Which device is commonly used to select one register's data onto a common bus?", options:["Multiplexer","Decoder only","Flip-Flop","Counter"], answer:0, explanation:"Multiplexers can select one of several register outputs to place onto the bus." },
+
+        { question:"If there are n registers connected to a common bus, the bus allows?", options:["All registers to drive the bus simultaneously","One selected register to place data on the bus at a time","No data transfer","Only memory access"], answer:1, explanation:"Normally only one source register should place data on a common bus at a time." },
+
+        { question:"Simultaneous outputs from multiple registers onto the same bus can cause?", options:["Faster execution","Bus contention","More storage","Automatic decoding"], answer:1, explanation:"Multiple devices driving conflicting values on a bus cause bus contention." },
+
+        { question:"A register transfer through a common bus generally requires?", options:["A source selection and destination control","Only a memory address","Only an opcode","No control signals"], answer:0, explanation:"The source must be selected onto the bus and the destination register must be enabled to load the data." },
+
+        { question:"A 16-bit common bus can transfer?", options:["1 bit at a time only","8 bits at a time","16 bits simultaneously","32 bits simultaneously"], answer:2, explanation:"The width of the bus determines how many bits can be transferred simultaneously." },
+
+        { question:"Which statement about a common bus is correct?", options:["It can only connect memory","It provides a shared path for data transfer","It replaces the ALU","It stores instructions permanently"], answer:1, explanation:"A common bus is a shared communication path among digital components." }
+
+        ],
+
+
+      "Computer Instructions and Instruction Cycle":[
+
+        { question:"A computer instruction is?", options:["A physical component","A binary code specifying an operation","A memory chip","A clock pulse"], answer:1, explanation:"An instruction is a binary-coded command that tells the computer which operation to perform." },
+
+        { question:"The first major step of an instruction cycle is generally?", options:["Execute","Fetch","Interrupt","Store result"], answer:1, explanation:"The processor first fetches the instruction from memory." },
+
+        { question:"During the fetch cycle, the instruction is transferred from memory to?", options:["PC","IR","AC","ALU"], answer:1, explanation:"The fetched instruction is loaded into the Instruction Register." },
+
+        { question:"Which register supplies the address of the instruction during the fetch cycle?", options:["AC","IR","PC","DR"], answer:2, explanation:"The Program Counter contains the address of the instruction to fetch." },
+
+        { question:"After an instruction is fetched, the next major operation is usually?", options:["Decode","Shutdown","Clear memory","Interrupt immediately"], answer:0, explanation:"The control unit decodes the instruction to determine the required operation." },
+
+        { question:"The instruction cycle generally includes?", options:["Fetch, Decode and Execute","Only Fetch","Only Decode","Only Execute"], answer:0, explanation:"The basic instruction cycle consists of fetching, decoding and executing an instruction." },
+
+        { question:"During the decode phase, the control unit determines?", options:["Only memory size","Which operation the instruction specifies","Only CPU temperature","The user's input language"], answer:1, explanation:"The opcode is decoded to determine the operation and required control signals." },
+
+        { question:"The execution phase of an instruction cycle?", options:["Fetches the next instruction only","Performs the operation specified by the instruction","Deletes the instruction","Stops the processor"], answer:1, explanation:"Execution carries out the operation indicated by the instruction." },
+
+        { question:"Why is the Program Counter usually incremented during instruction processing?", options:["To increase memory size","To point to the next instruction","To decode the opcode","To reset the ALU"], answer:1, explanation:"The PC is normally advanced so the processor can fetch the next sequential instruction." },
+
+        { question:"An instruction cycle is repeated?", options:["Only once after startup","For each instruction executed by the processor","Only during input operations","Only when interrupts occur"], answer:1, explanation:"The CPU repeatedly performs instruction cycles while executing a program." }
+
+        ],
+
+
+      "Memory Reference Instructions":[
+
+        { question:"A memory reference instruction generally accesses?", options:["Only CPU registers","A memory location","Only input devices","The clock generator"], answer:1, explanation:"Memory reference instructions use an address field to access a memory location." },
+
+        { question:"Which of the following is a common memory reference operation?", options:["AND","INPUT","HALT","CLEAR SCREEN"], answer:0, explanation:"AND is a common operation performed using data stored in memory." },
+
+        { question:"The instruction LDA generally means?", options:["Load Address","Load Accumulator","Logical Data Addition","Link Data Address"], answer:1, explanation:"LDA loads data from a specified memory location into the Accumulator." },
+
+        { question:"The instruction STA generally means?", options:["Store Accumulator","Start Arithmetic","Set Address","Store Address"], answer:0, explanation:"STA stores the contents of the Accumulator into a specified memory location." },
+
+        { question:"The instruction ADD in a basic computer generally?", options:["Adds a memory operand to AC","Adds PC to IR","Adds two memory addresses only","Clears the accumulator"], answer:0, explanation:"ADD typically adds the operand from memory to the contents of the Accumulator." },
+
+        { question:"The instruction BUN is primarily used for?", options:["Addition","Unconditional branching","Input","Logical complement"], answer:1, explanation:"BUN transfers program control unconditionally to a specified address." },
+
+        { question:"Which operation is performed by an AND memory reference instruction?", options:["Arithmetic addition","Bitwise AND between AC and memory data","Shift operation","Input operation"], answer:1, explanation:"The contents of AC are ANDed bit by bit with the operand from memory." },
+
+        { question:"The instruction ISZ generally performs?", options:["Increment memory word and skip next instruction if result becomes zero","Input a zero","Initialize stack","Shift accumulator right"], answer:0, explanation:"ISZ increments a memory word and skips the next instruction when the result is zero." },
+
+        { question:"Direct addressing means?", options:["The address field directly specifies the operand address","The operand is inside the opcode","No address is used","The address is obtained only from input"], answer:0, explanation:"In direct addressing, the instruction address field is the actual address of the operand." },
+
+        { question:"Indirect addressing means?", options:["No memory access occurs","The address field points to a location containing the effective address","The operand is always in AC","Only registers are used"], answer:1, explanation:"Indirect addressing requires an additional memory reference to obtain the effective address." }
+
+        ],
+
+
+      "Input Output and Interrupts":[
+
+        { question:"Input devices are used to?", options:["Enter data and instructions into the computer","Only store programs permanently","Perform arithmetic operations","Generate clock signals"], answer:0, explanation:"Input devices provide data and instructions to the computer system." },
+
+        { question:"Output devices are used to?", options:["Enter data into memory","Present processed information","Decode instructions","Generate interrupts only"], answer:1, explanation:"Output devices present the results of computer processing." },
+
+        { question:"An interrupt is?", options:["A permanent shutdown","A signal requiring processor attention","A memory location","A type of register"], answer:1, explanation:"An interrupt temporarily changes the normal flow of execution so the CPU can handle an event." },
+
+        { question:"When an interrupt occurs, the processor generally?", options:["Forgets the current program permanently","Temporarily suspends the current program and services the interrupt","Deletes memory","Stops forever"], answer:1, explanation:"The CPU saves the necessary state, services the interrupt, and later resumes the interrupted program." },
+
+        { question:"An Interrupt Service Routine is commonly abbreviated as?", options:["ISR","IR","ICR","IS"], answer:0, explanation:"ISR stands for Interrupt Service Routine." },
+
+        { question:"The main purpose of an ISR is to?", options:["Increase RAM size","Handle the event that caused the interrupt","Decode every instruction","Store all programs"], answer:1, explanation:"An ISR contains the instructions required to service a particular interrupt." },
+
+        { question:"After servicing an interrupt, the processor normally?", options:["Restarts the computer","Returns to the interrupted program","Deletes the program","Stops execution"], answer:1, explanation:"After completing the ISR, the processor restores execution of the interrupted program." },
+
+        { question:"Which is an example of an I/O operation?", options:["Reading keyboard input","Incrementing PC","Decoding opcode","Adding two registers"], answer:0, explanation:"Reading data from a keyboard is an input operation." },
+
+        { question:"An interrupt can improve CPU efficiency because?", options:["The CPU must continuously poll devices","The CPU can perform other work until attention is required","Memory is eliminated","Instructions are no longer fetched"], answer:1, explanation:"Interrupts allow the CPU to continue useful work instead of continuously checking device status." },
+
+        { question:"Polling differs from interrupts because polling?", options:["Allows devices to interrupt the CPU","Requires the CPU to repeatedly check device status","Never uses input devices","Stops the clock"], answer:1, explanation:"Polling repeatedly checks whether a device needs service, while interrupts notify the CPU when service is needed." }
+
+        ],
+
+
+      "Design of Basic Computer":[
+
+        { question:"A basic computer organization mainly consists of?", options:["CPU, memory and input/output components","Only memory","Only ALU","Only registers"], answer:0, explanation:"A computer system requires processing, storage and communication with input/output devices." },
+
+        { question:"The CPU primarily contains?", options:["ALU, control unit and registers","Only hard disk","Only monitor","Only keyboard"], answer:0, explanation:"The CPU consists mainly of the ALU, control unit and processor registers." },
+
+        { question:"The ALU is responsible for?", options:["Only storing programs","Arithmetic and logical operations","Only fetching instructions","Displaying output"], answer:1, explanation:"The Arithmetic Logic Unit performs arithmetic and logical processing." },
+
+        { question:"The Control Unit primarily?", options:["Stores user files permanently","Generates control signals for computer operations","Performs all arithmetic itself","Acts as an input device"], answer:1, explanation:"The Control Unit coordinates operations by generating appropriate control signals." },
+
+        { question:"Registers are used mainly for?", options:["Slow permanent storage","Fast temporary storage inside the CPU","Printing output","Internet communication"], answer:1, explanation:"Registers provide very fast storage for data, addresses and instructions during processing." },
+
+        { question:"The system bus can include?", options:["Data, address and control buses","Only a data bus","Only an address bus","Only an internet bus"], answer:0, explanation:"Computer systems commonly use data, address and control buses." },
+
+        { question:"The data bus transfers?", options:["Only memory addresses","Actual data and instructions","Only control signals","Only clock pulses"], answer:1, explanation:"The data bus carries binary data and instructions between components." },
+
+        { question:"The address bus is primarily used to?", options:["Transfer arithmetic results only","Specify locations in memory or I/O","Store instructions permanently","Generate output"], answer:1, explanation:"Addresses identify memory locations or I/O devices involved in an operation." },
+
+        { question:"The control bus carries?", options:["Only numerical data","Control and timing signals","Only memory addresses","Only program instructions"], answer:1, explanation:"Control lines carry signals such as read, write, interrupt and timing signals." }
+
+        ],
+
+
+      "Hardwired and Microprogrammed Control":[
+
+        { question:"A Hardwired Control Unit generates control signals using?", options:["Fixed hardware logic circuits","Only software programs","Hard disk storage","Input devices"], answer:0, explanation:"Hardwired control uses combinational and sequential logic circuits to generate control signals." },
+
+        { question:"A Microprogrammed Control Unit generates control signals using?", options:["Microinstructions stored in control memory","Only external input","Only ALU operations","Mechanical switches"], answer:0, explanation:"Microinstructions stored in control memory specify the required control signals." },
+
+        { question:"Which control unit is generally faster?", options:["Hardwired control","Microprogrammed control","Both are always identical","Neither"], answer:0, explanation:"Hardwired control is generally faster because control signals are generated directly by hardware logic." },
+
+        { question:"Which control approach is generally easier to modify?", options:["Hardwired control","Microprogrammed control","Neither","Only register control"], answer:1, explanation:"Microprogrammed control can be modified by changing microinstructions in control memory." },
+
+        { question:"Hardwired control is generally more suitable for?", options:["Simple instruction sets requiring high speed","Frequent instruction set modification","Only input devices","Web applications"], answer:0, explanation:"Hardwired control is fast and commonly associated with simpler instruction sets." },
+
+        { question:"Microprogrammed control is generally advantageous when?", options:["Flexibility is important","No control memory is available","The CPU has no instructions","Only one operation exists"], answer:0, explanation:"Microprogramming makes complex control sequences easier to design and modify." },
+
+        { question:"A major disadvantage of hardwired control is?", options:["It is too flexible","It is difficult to modify","It cannot generate signals","It has no speed advantage"], answer:1, explanation:"Changing a hardwired control unit often requires redesigning hardware circuitry." },
+
+        { question:"A major disadvantage of microprogrammed control is generally?", options:["It is less flexible","It may be slower than hardwired control","It cannot use memory","It has no instructions"], answer:1, explanation:"Fetching and executing microinstructions can make microprogrammed control slower." },
+
+        { question:"Microprogrammed control is based on?", options:["A sequence of microinstructions","A single opcode only","A keyboard command","A hard disk sector"], answer:0, explanation:"A microprogram is an ordered sequence of microinstructions controlling processor operations." }
+
+        ],
+
+
+      "Control Memory and Address Sequencing":[
+
+        { question:"Control memory stores?", options:["User documents","Microinstructions","Only arithmetic data","Output images"], answer:1, explanation:"Control memory stores the microinstructions used by a microprogrammed control unit." },
+
+        { question:"A microinstruction contains?", options:["Control information for micro-operations","Only a user password","Only a memory address","Only input data"], answer:0, explanation:"Microinstructions specify control signals and may contain sequencing information." },
+
+        { question:"The purpose of address sequencing is to?", options:["Determine the address of the next microinstruction","Increase RAM capacity","Store output","Decode keyboard input"], answer:0, explanation:"Address sequencing determines which microinstruction will be executed next." },
+
+        { question:"The Control Address Register usually contains?", options:["The address of the current or next microinstruction","The user's memory address only","The accumulator value","The opcode result only"], answer:0, explanation:"The control address register selects a location in control memory." },
+
+        { question:"Sequential microinstruction execution means?", options:["The next address is normally the next consecutive control memory location","Addresses are random","The CPU stops after each microinstruction","Only one microinstruction exists"], answer:0, explanation:"Normally the control address advances sequentially unless branching occurs." },
+
+        { question:"A microprogram branch is used to?", options:["Select a different next microinstruction address","Delete control memory","Stop the ALU permanently","Increase register size"], answer:0, explanation:"Branching changes the normal sequential flow of microinstruction execution." },
+
+        { question:"Conditional branching in a microprogram depends on?", options:["A specified condition or status bit","Only the monitor","The keyboard layout","The number of users"], answer:0, explanation:"Conditions such as flags or status bits can determine the next microinstruction address." },
+
+        { question:"Mapping from an instruction opcode to a control memory address is used to?", options:["Begin the appropriate microprogram","Delete the instruction","Store the opcode in RAM only","Increase clock speed"], answer:0, explanation:"The opcode can select the starting address of the microprogram for that instruction." },
+
+        { question:"Control memory is mainly associated with?", options:["Hardwired control","Microprogrammed control","Only input systems","External storage"], answer:1, explanation:"Microprogrammed control relies on control memory to store microinstructions." }
+
+        ],
+
+
+      "Design of Control Unit":[
+
+        { question:"The primary responsibility of a Control Unit is to?", options:["Generate control signals and coordinate operations","Store all user files","Display graphics","Perform only multiplication"], answer:0, explanation:"The Control Unit coordinates processor operations by issuing appropriate control signals." },
+
+        { question:"The Control Unit coordinates?", options:["Data movement and micro-operations","Only monitor brightness","Only keyboard input","Only file storage"], answer:0, explanation:"Control signals coordinate transfers between registers, memory operations and ALU micro-operations." },
+
+        { question:"Control signals determine?", options:["When and how hardware components perform operations","Only memory size","The user's password","The monitor resolution"], answer:0, explanation:"Control signals specify the timing and execution of hardware operations." },
+
+        { question:"The design of a control unit depends heavily on?", options:["Instruction set architecture","Screen size","Keyboard color","Internet speed"], answer:0, explanation:"The instruction set and processor organization determine required control sequences." },
+
+        { question:"A complex instruction may require?", options:["Multiple micro-operations","No control signals","No registers","Only one memory bit"], answer:0, explanation:"Complex instructions are executed through a sequence of elementary micro-operations." },
+
+        { question:"The timing of micro-operations is generally synchronized using?", options:["Clock signals","Monitor signals","Mouse signals","Internet signals"], answer:0, explanation:"Clock pulses provide timing and synchronization for sequential operations." },
+
+        { question:"The Control Unit directly performs arithmetic calculations?", options:["Yes, always","No, arithmetic is mainly performed by the ALU","Only during interrupts","Only in RISC"], answer:1, explanation:"The Control Unit controls operations while the ALU performs arithmetic and logic." },
+
+        { question:"An effective control unit design should aim for?", options:["Correct sequencing and efficient generation of control signals","Maximum screen brightness","Minimum memory addresses","Only input operations"], answer:0, explanation:"The control unit must generate correctly timed control signals for reliable execution." }
+
+        ],
+
+
+      "RISC vs CISC":[
+
+        { question:"RISC stands for?", options:["Reduced Instruction Set Computer","Random Instruction System Computer","Register Instruction System Control","Real Integrated System Computer"], answer:0, explanation:"RISC stands for Reduced Instruction Set Computer." },
+
+        { question:"CISC stands for?", options:["Complex Instruction Set Computer","Central Instruction System Computer","Computer Integrated System Control","Compact Instruction Set Computer"], answer:0, explanation:"CISC stands for Complex Instruction Set Computer." },
+
+        { question:"RISC architectures generally have?", options:["A relatively small and simple instruction set","Only one instruction","A very large number of highly complex instructions","No registers"], answer:0, explanation:"RISC focuses on simpler instructions that can often execute efficiently." },
+
+        { question:"CISC architectures generally provide?", options:["A larger and more complex instruction set","No memory instructions","Only load instructions","Only one addressing mode"], answer:0, explanation:"CISC architectures typically support many complex instructions and addressing modes." },
+
+        { question:"RISC instructions are often designed to?", options:["Execute efficiently and use simpler formats","Require many different hardware stages","Always access memory multiple times","Never use registers"], answer:0, explanation:"RISC emphasizes simple instructions and efficient execution." },
+
+        { question:"Which architecture commonly emphasizes a load/store design?", options:["RISC","CISC only","Neither","Analog computer"], answer:0, explanation:"RISC architectures commonly restrict memory access primarily to explicit load and store instructions." },
+
+        { question:"Which architecture generally has more complex instruction decoding?", options:["RISC","CISC","Both always equal","Neither"], answer:1, explanation:"CISC instructions are generally more varied and complex, requiring more complex decoding." },
+
+        { question:"Microprogrammed control is historically associated more strongly with?", options:["Complex instruction architectures","Only simple RISC instructions","No instruction sets","Input devices"], answer:0, explanation:"Microprogramming is particularly useful for implementing complex instruction sets." },
+
+        { question:"Which statement is generally correct?", options:["RISC focuses on simpler instructions while CISC provides more complex instructions","RISC has no registers","CISC has no control unit","Both have identical instruction philosophies"], answer:0, explanation:"RISC and CISC differ mainly in their instruction set design philosophy." },
+
+        { question:"The main objective of RISC design is generally?", options:["Efficient execution of simpler instructions","Maximum instruction complexity","Elimination of registers","Removal of the control unit"], answer:0, explanation:"RISC emphasizes simplified instructions and efficient processor implementation." }
+
+        ]
+
+    },
+
+    "Python": {
+
+        "Python Features and Basic Data Types":[
+
+            { question:"Python is primarily known as a?", options:["Low-level assembly language","High-level interpreted language","Machine language","Only markup language"], answer:1, explanation:"Python is a high-level programming language that is generally interpreted." },
+
+            { question:"Which of the following is a major feature of Python?", options:["Very complex syntax","Readability and simple syntax","Only manual memory allocation","No object-oriented support"], answer:1, explanation:"Python is popular for its clean and readable syntax." },
+
+            { question:"Python is considered dynamically typed because?", options:["Variables must always have fixed types","Variable types are determined at runtime","Only integers can be stored","Types cannot change"], answer:1, explanation:"Python determines the type of an object at runtime." },
+
+            { question:"Which symbol starts a single-line comment in Python?", options:["//","#","/*","--"], answer:1, explanation:"Python uses # to begin a single-line comment." },
+
+            { question:"Which function is commonly used to display output in Python?", options:["echo()","display()","print()","output()"], answer:2, explanation:"The print() function displays output." },
+
+            { question:"Which keyword is used to define a variable in Python?", options:["var","let","int","No keyword is required"], answer:3, explanation:"Python variables are created by assigning a value without declaring a type keyword." },
+
+            { question:"Which of the following is a valid Python variable name?", options:["2value","my-value","my_value","class"], answer:2, explanation:"my_value is valid because underscores are allowed and the name does not begin with a digit." },
+
+            { question:"Python source files commonly use which extension?", options:[".java",".cpp",".py",".html"], answer:2, explanation:"Python source files normally use the .py extension." },
+
+            { question:"Which feature allows Python code to run on different operating systems?", options:["Platform independence","Manual compilation only","Fixed hardware dependency","Assembly integration only"], answer:0, explanation:"Python is portable and can run on many operating systems with a suitable interpreter." },
+
+            { question:"Python supports?", options:["Only procedural programming","Only object-oriented programming","Multiple programming paradigms","No functions"], answer:2, explanation:"Python supports procedural, object-oriented and functional programming styles." }
+
+            ],
+
+        "Numbers Boolean and Strings":[
+
+            { question:"Which data type is used for integer numbers in Python?", options:["float","int","str","bool"], answer:1, explanation:"The int type represents integer numbers." },
+
+            { question:"Which data type represents decimal numbers?", options:["int","float","bool","str"], answer:1, explanation:"The float type represents floating-point numbers." },
+
+            { question:"Which type can represent complex numbers in Python?", options:["complex","imaginary","float","number"], answer:0, explanation:"Python provides the built-in complex type." },
+
+            { question:"Which is a valid complex number in Python?", options:["3 + 4i","3 + 4j","3i + 4","complex(3,4) only"], answer:1, explanation:"Python uses j to represent the imaginary part of a complex number." },
+
+            { question:"What is the Boolean value of 0 in a Boolean context?", options:["True","False","None","Error"], answer:1, explanation:"Zero evaluates to False in a Boolean context." },
+
+            { question:"Which of the following represents a Boolean value?", options:["TRUE","true","True","1 only"], answer:2, explanation:"Python Boolean literals are True and False with capital first letters." },
+
+            { question:"Strings in Python are generally?", options:["Mutable","Immutable","Only numeric","Always lists"], answer:1, explanation:"Python strings cannot be modified in place because they are immutable." },
+
+            { question:"Which can be used to create a string in Python?", options:["Single quotes","Double quotes","Triple quotes","All of these"], answer:3, explanation:"Python supports single, double and triple quotes for strings." },
+
+            { question:"Which operation joins two strings?", options:["*","/","+","%"], answer:2, explanation:"The + operator concatenates strings." },
+
+            { question:"What does the * operator do with a string?", options:["Divides it","Repeats it","Deletes it","Converts it to integer"], answer:1, explanation:"The * operator repeats a string a specified number of times." },
+
+            { question:"Which function returns the type of an object?", options:["datatype()","type()","typeof()","objectType()"], answer:1, explanation:"type() returns the type of an object." },
+
+            { question:"What is the result type of 5 / 2 in Python?", options:["int","float","bool","str"], answer:1, explanation:"The / operator performs true division and returns a float." }
+
+            ],
+
+        "Functions Scope and Lambda":[
+
+            { question:"Which keyword is used to define a function in Python?", options:["function","func","def","define"], answer:2, explanation:"Python functions are defined using the def keyword." },
+
+            { question:"Which keyword is used to return a value from a function?", options:["output","print","return","result"], answer:2, explanation:"The return statement sends a value back from a function." },
+
+            { question:"A function without an explicit return statement returns?", options:["0","False","None","An error"], answer:2, explanation:"Python functions return None by default when no return statement is provided." },
+
+            { question:"A local variable is normally accessible?", options:["Everywhere in the program","Only inside its function or local scope","Only outside the function","Only inside a class"], answer:1, explanation:"A local variable belongs to the scope in which it is created." },
+
+            { question:"A global variable is generally declared?", options:["Inside a loop only","Outside functions","Inside a class only","Inside lambda only"], answer:1, explanation:"Variables created at module level can generally be accessed as global variables." },
+
+            { question:"Which keyword allows modification of a global variable inside a function?", options:["global","outer","static","public"], answer:0, explanation:"The global keyword refers to a global variable inside a function." },
+
+            { question:"Variable scope refers to?", options:["Variable memory size","Where a variable can be accessed","Variable data type only","Variable output format"], answer:1, explanation:"Scope determines the region of a program where a variable name is accessible." },
+
+            { question:"A lambda function is?", options:["A class","An anonymous function","A loop","An exception"], answer:1, explanation:"A lambda creates a small anonymous function." },
+
+            { question:"Which keyword is used to create a lambda function?", options:["lambda","def","anonymous","function"], answer:0, explanation:"Python uses the lambda keyword for anonymous functions." },
+
+            { question:"Lambda functions are generally most suitable for?", options:["Large multi-statement programs","Short simple expressions","Defining classes","Handling files only"], answer:1, explanation:"Lambda functions are best suited for short single-expression operations." },
+
+            { question:"What is the scope of a variable defined inside a function?", options:["Global scope","Local scope","Module scope only","Class scope automatically"], answer:1, explanation:"Variables created inside a function normally have local scope." }
+
+            ],
+
+        "Loops and Flow Control":[
+
+            { question:"Which loop is commonly used to iterate over a sequence in Python?", options:["for","repeat","loop","iterate"], answer:0, explanation:"The for loop is commonly used to iterate over sequences and iterables." },
+
+            { question:"Which loop continues while a condition remains True?", options:["for","while","switch","case"], answer:1, explanation:"A while loop repeatedly executes while its condition is True." },
+
+            { question:"Which keyword immediately terminates a loop?", options:["continue","skip","break","return"], answer:2, explanation:"break exits the nearest enclosing loop." },
+
+            { question:"Which keyword skips the remaining code of the current loop iteration?", options:["break","continue","pass","return"], answer:1, explanation:"continue skips to the next iteration of the loop." },
+
+            { question:"Which keyword does nothing and acts as a placeholder?", options:["pass","skip","continue","ignore"], answer:0, explanation:"pass is a null statement often used as a placeholder." },
+
+            { question:"Which statement is used for conditional execution?", options:["if","for","def","import"], answer:0, explanation:"The if statement executes code conditionally." },
+
+            { question:"Which keyword provides an alternative condition after if?", options:["elseif","elif","else if","otherwise"], answer:1, explanation:"Python uses elif for additional conditional checks." },
+
+            { question:"Which block executes when no previous if or elif condition is True?", options:["finally","default","else","except"], answer:2, explanation:"The else block executes when preceding conditions are false." },
+
+            { question:"What does range(5) produce values for?", options:["1 to 5","0 to 5","0 to 4","1 to 4"], answer:2, explanation:"range(5) produces 0, 1, 2, 3 and 4." },
+
+            { question:"An infinite loop occurs when?", options:["A loop condition eventually becomes False","A loop condition never becomes False","break is used","range() is used"], answer:1, explanation:"A loop can become infinite if its terminating condition is never reached." },
+
+            { question:"Nested loops are?", options:["Loops inside other loops","Loops without conditions","Functions inside classes","Only while loops"], answer:0, explanation:"A nested loop is a loop contained inside another loop." }
+
+            ],
+
+        "Exception Handling":[
+
+            { question:"An exception is?", options:["Normal program output","An error event during program execution","A variable type","A Python loop"], answer:1, explanation:"An exception is an event that disrupts the normal flow of program execution." },
+
+            { question:"Which keyword is used to test code that may raise an exception?", options:["try","test","check","catch"], answer:0, explanation:"The try block contains code that may raise an exception." },
+
+            { question:"Which keyword handles an exception in Python?", options:["catch","except","handle","error"], answer:1, explanation:"Python uses except blocks to handle exceptions." },
+
+            { question:"Which block executes regardless of whether an exception occurs?", options:["else","except","finally","try"], answer:2, explanation:"The finally block executes whether or not an exception occurs." },
+
+            { question:"Which block can execute when no exception occurs in a try block?", options:["else","finally only","break","pass"], answer:0, explanation:"The else block can run when the try block completes without an exception." },
+
+            { question:"Which exception may occur when dividing by zero?", options:["ValueError","TypeError","ZeroDivisionError","IndexError"], answer:2, explanation:"Division by zero raises ZeroDivisionError." },
+
+            { question:"Which exception may occur when converting 'abc' to int?", options:["ValueError","ZeroDivisionError","KeyError","StopIteration"], answer:0, explanation:"An invalid conversion to an integer raises ValueError." },
+
+            { question:"Which exception can occur when accessing a list index outside its valid range?", options:["IndexError","NameError","TypeError","FileError"], answer:0, explanation:"Invalid list positions raise IndexError." },
+
+            { question:"Why is exception handling useful?", options:["It prevents every logical mistake","It allows controlled handling of runtime errors","It removes all syntax rules","It replaces functions"], answer:1, explanation:"Exception handling helps programs respond gracefully to runtime errors." },
+
+            { question:"A try block must generally be followed by?", options:["Only for","except or finally","Only class","Only import"], answer:1, explanation:"A try statement requires exception handling or cleanup blocks such as except or finally." }
+
+            ],
+
+        "Shared References":[
+
+            { question:"In Python, variables generally store?", options:["Only copies of objects","References to objects","Only machine instructions","Only integers"], answer:1, explanation:"Python variable names are references bound to objects." },
+
+            { question:"Two variables can refer to?", options:["Only different objects","The same object","Only integers","Only functions"], answer:1, explanation:"Multiple names can reference the same object." },
+
+            { question:"If two variables reference the same mutable object, modifying the object through one variable can?", options:["Never affect the other","Be visible through the other variable","Delete both variables","Cause syntax error"], answer:1, explanation:"Both names refer to the same underlying mutable object." },
+
+            { question:"Which operator checks whether two references point to the same object?", options:["==","is","=","!="], answer:1, explanation:"The is operator checks object identity." },
+
+            { question:"Which operator generally compares object values?", options:["is","==","=","->"], answer:1, explanation:"The == operator checks equality of values." },
+
+            { question:"Which built-in function can show an object's identity?", options:["type()","id()","len()","ref()"], answer:1, explanation:"id() returns an identity value for an object during its lifetime." },
+
+            { question:"Lists are important when studying shared references because lists are?", options:["Immutable","Mutable","Always numeric","Not objects"], answer:1, explanation:"Lists are mutable objects, so changes can be observed through shared references." },
+
+            { question:"Which assignment can create another reference to the same list?", options:["b = a","b = copy(a) automatically","b = list only","b == a"], answer:0, explanation:"Simple assignment binds b to the same object referenced by a." }
+
+            ],
+
+        "File Input Output":[
+
+            { question:"File I/O stands for?", options:["File Input and Output","Function Input Operation","Final Internal Output","File Integer Object"], answer:0, explanation:"File I/O means reading data from and writing data to files." },
+
+            { question:"Which function is commonly used to open a file in Python?", options:["file()","open()","readfile()","load()"], answer:1, explanation:"The open() function opens a file." },
+
+            { question:"Which mode is used to read a text file?", options:["w","r","a","x"], answer:1, explanation:"The r mode opens a file for reading." },
+
+            { question:"Which mode is used to write to a file?", options:["r","w","a","read"], answer:1, explanation:"The w mode opens a file for writing." },
+
+            { question:"What can happen when a file is opened using w mode?", options:["Existing contents may be overwritten","The file can only be read","The file cannot be created","Nothing can be written"], answer:0, explanation:"Writing mode generally overwrites an existing file." },
+
+            { question:"Which mode is used to add data to the end of a file?", options:["a","r","w","x only"], answer:0, explanation:"Append mode adds new content to the end of a file." },
+
+            { question:"Which method reads the entire contents of a file?", options:["read()","write()","append()","close()"], answer:0, explanation:"read() reads file contents." },
+
+            { question:"Which method writes text to an opened file?", options:["read()","write()","load()","input()"], answer:1, explanation:"write() sends text data to a writable file." },
+
+            { question:"Why should a file generally be closed after use?", options:["To release system resources and ensure operations are completed","To delete the file","To convert it to JSON","To change its name"], answer:0, explanation:"Closing releases resources and helps ensure data is properly handled." },
+
+            { question:"Which statement is commonly preferred for automatic file closing?", options:["with open(...) as file","if open(...)","while open(...)","for open(...)"], answer:0, explanation:"The with statement automatically closes the file when the block ends." }
+
+            ],
+
+        "JSON Files":[
+
+            { question:"JSON stands for?", options:["Java Source Object Network","JavaScript Object Notation","Joined System Object Notation","Java Standard Output Name"], answer:1, explanation:"JSON stands for JavaScript Object Notation." },
+
+            { question:"JSON is commonly used for?", options:["Data storage and exchange","Only arithmetic","Only drawing graphics","Replacing Python syntax"], answer:0, explanation:"JSON is widely used for structured data storage and exchange." },
+
+            { question:"Which Python module is commonly used to work with JSON?", options:["json","file","data","js"], answer:0, explanation:"Python provides the built-in json module." },
+
+            { question:"Which function converts JSON text into a Python object?", options:["json.loads()","json.dumps()","json.write()","json.open()"], answer:0, explanation:"json.loads() loads JSON from a string into a Python object." },
+
+            { question:"Which function converts a Python object into a JSON string?", options:["json.loads()","json.dumps()","json.read()","json.convert()"], answer:1, explanation:"json.dumps() converts Python objects to JSON-formatted strings." },
+
+            { question:"Which function loads JSON data directly from a file?", options:["json.load()","json.loads()","json.dump()","json.dumps()"], answer:0, explanation:"json.load() reads JSON data from an opened file." },
+
+            { question:"Which function writes Python data as JSON to a file?", options:["json.dump()","json.load()","json.loads()","json.read()"], answer:0, explanation:"json.dump() serializes Python data into a file." },
+
+            { question:"A JSON object is most similar to which Python structure?", options:["list","dictionary","tuple","set"], answer:1, explanation:"JSON objects consist of key-value pairs similar to Python dictionaries." },
+
+            { question:"A JSON array is most similar to which Python structure?", options:["dictionary","list","string","integer"], answer:1, explanation:"JSON arrays correspond closely to Python lists." }
+
+            ],
+
+        "Classes and Objects":[
+
+            { question:"A class is best described as?", options:["A blueprint for creating objects","A loop","A file type","An exception"], answer:0, explanation:"A class defines the structure and behavior of objects." },
+
+            { question:"An object is?", options:["An instance of a class","A Python keyword","A file mode","A loop variable"], answer:0, explanation:"An object is an instance created from a class." },
+
+            { question:"Which keyword is used to define a class?", options:["class","object","define","struct"], answer:0, explanation:"Python classes are defined using the class keyword." },
+
+            { question:"Which method is commonly called when an object is created?", options:["__start__","__init__","__create__","main"], answer:1, explanation:"The __init__ method initializes an object after creation." },
+
+            { question:"What does self generally refer to in an instance method?", options:["The current object instance","The parent class only","A global variable","The Python interpreter"], answer:0, explanation:"self refers to the instance on which the method is being called." },
+
+            { question:"An instance variable belongs to?", options:["The entire class only","A specific object instance","All modules","Only the interpreter"], answer:1, explanation:"Each object can have its own instance variables." },
+
+            { question:"A class variable is generally shared by?", options:["One object only","All instances of the class","Only local functions","Only global variables"], answer:1, explanation:"Class variables belong to the class and are shared among its instances unless overridden." },
+
+            { question:"An instance method usually operates on?", options:["A specific object using self","Only global data","Only class memory","No object"], answer:0, explanation:"Instance methods receive the object reference through self." },
+
+            { question:"A class method is commonly associated with?", options:["The class itself","Only one instance","Only files","Only loops"], answer:0, explanation:"Class methods operate with class-level information and typically receive cls." },
+
+            { question:"Which decorator is commonly used for a class method?", options:["@classmethod","@staticmethod only","@class","@method"], answer:0, explanation:"@classmethod defines a method that receives the class as its first argument." }
+
+            ],
+
+        "Inheritance":[
+
+            { question:"Inheritance allows?", options:["A class to acquire properties and methods from another class","A function to become a loop","Files to become classes","Variables to become constants"], answer:0, explanation:"Inheritance allows a derived class to reuse and extend features of another class." },
+
+            { question:"The class being inherited from is commonly called?", options:["Parent or base class","Child class","Object variable","Instance method"], answer:0, explanation:"The original class is called the parent, superclass or base class." },
+
+            { question:"The class that inherits from another class is called?", options:["Derived or child class","Base class only","Global class","Static class"], answer:0, explanation:"The inheriting class is called a derived class or child class." },
+
+            { question:"Single inheritance means?", options:["One child inherits from one parent","One parent has no methods","Multiple parents inherit from one child","No inheritance"], answer:0, explanation:"Single inheritance involves one derived class inheriting from one base class." },
+
+            { question:"Multiple inheritance means?", options:["A class inherits from more than one parent class","Only one object exists","Only one method exists","No parent classes exist"], answer:0, explanation:"Python supports inheritance from multiple parent classes." },
+
+            { question:"Multilevel inheritance refers to?", options:["Inheritance through multiple levels of classes","Multiple files only","One class with no parent","Only functions"], answer:0, explanation:"In multilevel inheritance, one derived class becomes the base for another derived class." },
+
+            { question:"Which function is commonly used to access parent class behavior?", options:["super()","parent()","base()","inherit()"], answer:0, explanation:"super() provides access to methods of a parent class." },
+
+            { question:"Method overriding occurs when?", options:["A child class provides its own version of an inherited method","A method is deleted","A function becomes global","A loop ends"], answer:0, explanation:"A derived class can redefine an inherited method with its own implementation." },
+
+            { question:"One major advantage of inheritance is?", options:["Code reuse","Removing all classes","Preventing methods","Eliminating objects"], answer:0, explanation:"Inheritance promotes code reuse and hierarchical program design." },
+
+            { question:"Which type of inheritance is explicitly included in your syllabus?", options:["Single and multiple inheritance","Only operator inheritance","File inheritance","Loop inheritance"], answer:0, explanation:"Your syllabus specifically includes multilevel and multiple inheritance concepts as well." }
+
+            ],
+
+        "Lists - Basic Operations": [
+
+            { question: "Which symbol is used to create a list in Python?", options: [ "()", "[]", "{}", "<>" ], answer: 1, explanation: "Lists are created using square brackets []." },
+
+            { question: "Which of the following is a valid Python list?", options: [ "(1, 2, 3)", "[1, 2, 3]", "{1, 2, 3}", "<1, 2, 3>" ], answer: 1, explanation: "Square brackets are used to create lists." },
+
+            { question: "Are Python lists mutable?", options: [ "Yes", "No", "Only numeric lists", "Only empty lists" ], answer: 0, explanation: "Lists are mutable, meaning their elements can be modified after creation." },
+
+            { question: "Which method adds one element to the end of a list?", options: [ "add()", "append()", "insert()", "extend()" ], answer: 1, explanation: "append() adds a single element at the end of a list." },
+
+            { question: "What does append() add to a list?", options: [ "Only multiple elements", "One element as a single item", "Only integers", "Only strings" ], answer: 1, explanation: "append() adds its argument as one single element." },
+
+            { question: "Which method inserts an element at a specified index?", options: [ "append()", "insert()", "extend()", "add()" ], answer: 1, explanation: "insert(index, value) inserts an element at the specified position." },
+
+            { question: "Which method adds multiple elements from another iterable to a list?", options: [ "append()", "extend()", "insert()", "push()" ], answer: 1, explanation: "extend() adds each element of an iterable individually to the list." },
+
+            { question: "What is the result of [1, 2].append([3, 4])?", options: [ "[1, 2, 3, 4]", "[1, 2, [3, 4]]", "[[1, 2], [3, 4]]", "Error" ], answer: 1, explanation: "append() adds the entire list [3, 4] as one element." },
+
+            { question: "What is the result of [1, 2].extend([3, 4])?", options: [ "[1, 2, [3, 4]]", "[1, 2, 3, 4]", "[[1, 2], [3, 4]]", "Error" ], answer: 1, explanation: "extend() adds every element from the supplied iterable individually." },
+
+            { question: "Which method removes and returns the last element by default?", options: [ "remove()", "delete()", "pop()", "clear()" ], answer: 2, explanation: "pop() removes and returns the last list element when no index is supplied." },
+
+            { question: "Which method removes the first occurrence of a specified value?", options: [ "pop()", "remove()", "delete()", "clear()" ], answer: 1, explanation: "remove(value) removes the first matching value from the list." },
+
+            { question: "What happens if remove() is called for a value that does not exist?", options: [ "Nothing happens", "IndexError", "ValueError", "The list becomes empty" ], answer: 2, explanation: "remove() raises ValueError if the specified value is not found." },
+
+            { question: "Which statement removes all elements from a list?", options: [ "list.remove()", "list.clear()", "list.delete()", "list.popall()" ], answer: 1, explanation: "clear() removes every element from the list." },
+
+            { question: "Which function returns the number of elements in a list?", options: [ "size()", "count()", "length()", "len()" ], answer: 3, explanation: "len(list) returns the total number of elements." },
+
+            { question: "Which method returns the number of occurrences of a value in a list?", options: [ "count()", "len()", "index()", "find()" ], answer: 0, explanation: "count(value) returns how many times a value occurs." },
+
+            { question: "Which method returns the index of the first occurrence of an element?", options: [ "find()", "search()", "index()", "position()" ], answer: 2, explanation: "index(value) returns the position of the first occurrence." },
+
+            { question: "Which method sorts a list in ascending order by default?", options: [ "sort()", "sortedlist()", "arrange()", "order()" ], answer: 0, explanation: "sort() rearranges the original list in ascending order by default." },
+
+            { question: "Which method reverses the order of elements in the same list?", options: [ "reverse()", "reversed()", "sort(reverse)", "flip()" ], answer: 0, explanation: "reverse() reverses the elements of the existing list." },
+
+            { question: "What does list.copy() generally create?", options: [ "A reference only", "A shallow copy of the list", "An empty list", "A tuple" ], answer: 1, explanation: "copy() creates a shallow copy of the list." },
+
+            { question: "What is the output of len([10, 20, 30])?", options: [ "2", "3", "4", "30" ], answer: 1, explanation: "The list contains three elements." }
+
+            ],
+
+        "Lists - Indexing, Slicing & Comprehension": [
+
+            { question: "What is the index of the first element in a Python list?", options: [ "0", "1", "-1", "Depends on list" ], answer: 0, explanation: "Python uses zero-based indexing." },
+
+            { question: "What does index -1 represent in a Python list?", options: [ "First element", "Last element", "Second element", "Invalid index" ], answer: 1, explanation: "Negative indexing starts from the end, so -1 represents the last element." },
+
+            { question: "For a = [10, 20, 30, 40], what is a[0]?", options: [ "10", "20", "30", "40" ], answer: 0, explanation: "Index 0 refers to the first element." },
+
+            { question: "For a = [10, 20, 30, 40], what is a[-1]?", options: [ "10", "20", "30", "40" ], answer: 3, explanation: "Index -1 refers to the last element." },
+
+            { question: "What is the result of [10, 20, 30, 40][1:3]?", options: [ "[10, 20]", "[20, 30]", "[20, 30, 40]", "[10, 20, 30]" ], answer: 1, explanation: "Slicing includes the start index but excludes the stop index." },
+
+            { question: "In list slicing a[start:stop], is stop included?", options: [ "Always", "Never", "Only for negative values", "Only in tuples" ], answer: 1, explanation: "The stop index is excluded from Python slices." },
+
+            { question: "What does a[:] usually produce?", options: [ "First element", "Last element", "A shallow copy of the whole list", "An empty list" ], answer: 2, explanation: "A complete slice generally creates a shallow copy of the list." },
+
+            { question: "What is the result of [1, 2, 3, 4, 5][::2]?", options: [ "[1, 2, 3]", "[1, 3, 5]", "[2, 4]", "[5, 3, 1]" ], answer: 1, explanation: "The step value 2 selects every second element starting from index 0." },
+
+            { question: "What does a[::-1] commonly do for a list?", options: [ "Sorts it", "Copies it", "Reverses it", "Deletes it" ], answer: 2, explanation: "A slice with a step of -1 traverses the list in reverse order." },
+
+            { question: "Which statement correctly iterates through list elements?", options: [ "for x in myList:", "loop x myList:", "foreach(myList):", "while each myList:" ], answer: 0, explanation: "Python commonly iterates over a list using for x in myList." },
+
+            { question: "Which function can provide both index and value while iterating?", options: [ "index()", "enumerate()", "range()", "iterate()" ], answer: 1, explanation: "enumerate() provides an index and corresponding element during iteration." },
+
+            { question: "What is a nested list?", options: [ "A list containing another list", "A sorted list", "An empty list", "A tuple inside a dictionary only" ], answer: 0, explanation: "A nested list contains one or more lists as elements." },
+
+            { question: "What is a matrix in Python commonly represented as?", options: [ "A string", "A list of lists", "A set", "A single integer" ], answer: 1, explanation: "A matrix can be represented using nested lists, where each inner list represents a row." },
+
+            { question: "For matrix = [[1,2],[3,4]], what is matrix[1][0]?", options: [ "1", "2", "3", "4" ], answer: 2, explanation: "matrix[1] is [3,4], and index 0 of that row is 3." },
+
+            { question: "What is a list comprehension?", options: [ "A method to delete lists", "A concise way to create lists", "A way to convert lists into tuples", "A sorting algorithm" ], answer: 1, explanation: "List comprehensions provide a compact syntax for creating lists." },
+
+            { question: "Which is a valid list comprehension?", options: [ "[x*x for x in range(5)]", "{x*x for x in range(5)}", "(x*x while x in range(5))", "[for x range(5): x*x]" ], answer: 0, explanation: "A list comprehension has the general form [expression for item in iterable]." },
+
+            { question: "What does [x*x for x in range(4)] produce?", options: [ "[1, 4, 9, 16]", "[0, 1, 4, 9]", "[0, 1, 2, 3]", "[1, 2, 3, 4]" ], answer: 1, explanation: "range(4) produces 0,1,2,3 and each value is squared." },
+
+            { question: "Which list comprehension creates only even numbers from 0 to 9?", options: [ "[x for x in range(10) if x % 2 == 0]", "[x % 2 for x in range(10)]", "[x for x == 0]", "[even(x) for x in range(10)]" ], answer: 0, explanation: "The condition x % 2 == 0 filters even values." },
+
+            { question: "Can a list comprehension contain a condition?", options: [ "No", "Yes", "Only for strings", "Only with tuples" ], answer: 1, explanation: "A conditional filter can be added using if inside a list comprehension." },
+
+            { question: "What is the main advantage of list comprehension?", options: [ "Always faster than every possible method", "More concise creation and transformation of lists", "Makes lists immutable", "Prevents iteration" ], answer: 1, explanation: "List comprehensions provide concise and readable syntax for many list creation tasks." }
+
+            ],
+
+        "Dictionaries - Operations & Comprehension": [
+
+            { question: "Which symbol is used to create a dictionary?", options: [ "[]", "()", "{}", "<>" ], answer: 2, explanation: "Dictionaries are generally created using curly braces." },
+
+            { question: "A dictionary stores data as:", options: [ "Only values", "Key-value pairs", "Ordered indexes only", "Characters only" ], answer: 1, explanation: "A dictionary stores mappings between keys and values." },
+
+            { question: "Which of the following is a valid dictionary?", options: [ "[1: 'A']", "{'name': 'John'}", "(name = John)", "<name, John>" ], answer: 1, explanation: "Dictionary entries use key: value pairs inside curly braces." },
+
+            { question: "How can a dictionary value be accessed?", options: [ "Using its key", "Using only numeric index", "Using append()", "Using pop only" ], answer: 0, explanation: "Dictionary values are normally accessed using their keys." },
+
+            { question: "For d = {'a': 10}, what does d['a'] return?", options: [ "'a'", "10", "0", "Error" ], answer: 1, explanation: "The key 'a' maps to the value 10." },
+
+            { question: "Are dictionary keys generally required to be unique?", options: [ "Yes", "No", "Only numbers", "Only strings" ], answer: 0, explanation: "Dictionary keys must be unique within a dictionary." },
+
+            { question: "Can dictionary values be duplicated?", options: [ "No", "Yes", "Only integers", "Only strings" ], answer: 1, explanation: "Different keys can store the same value." },
+
+            { question: "Which method safely retrieves a value and can provide a default?", options: [ "find()", "get()", "search()", "index()" ], answer: 1, explanation: "get() retrieves a value and can return a default instead of raising an error for a missing key." },
+
+            { question: "What does d.get('x') return if 'x' does not exist and no default is supplied?", options: [ "0", "False", "None", "KeyError" ], answer: 2, explanation: "get() returns None by default when the key is absent." },
+
+            { question: "Which method returns all dictionary keys?", options: [ "values()", "keys()", "items()", "getkeys()" ], answer: 1, explanation: "keys() returns a view of the dictionary keys." },
+
+            { question: "Which method returns all dictionary values?", options: [ "keys()", "values()", "items()", "get()" ], answer: 1, explanation: "values() returns a view containing dictionary values." },
+
+            { question: "Which method returns key-value pairs?", options: [ "pairs()", "values()", "items()", "keys()" ], answer: 2, explanation: "items() returns dictionary key-value pairs." },
+
+            { question: "Which method can add or update multiple dictionary entries?", options: [ "append()", "extend()", "update()", "insert()" ], answer: 2, explanation: "update() adds or updates key-value pairs." },
+
+            { question: "Which method removes a key and returns its value?", options: [ "remove()", "delete()", "pop()", "clear()" ], answer: 2, explanation: "pop(key) removes the specified key and returns its associated value." },
+
+            { question: "What does clear() do to a dictionary?", options: [ "Sorts it", "Removes all items", "Deletes only keys", "Makes it immutable" ], answer: 1, explanation: "clear() removes all key-value pairs from the dictionary." },
+
+            { question: "What is dictionary comprehension?", options: [ "A concise way to create dictionaries", "A method to delete dictionaries", "A loop that only reads dictionaries", "A way to create tuples" ], answer: 0, explanation: "Dictionary comprehension provides compact syntax for constructing dictionaries." },
+
+            { question: "Which is a valid dictionary comprehension?", options: [ "{x: x*x for x in range(5)}", "[x: x*x for x in range(5)]", "(x: x*x for x in range(5))", "{for x in range(5): x*x}" ], answer: 0, explanation: "Dictionary comprehensions use the syntax {key_expression: value_expression for item in iterable}." },
+
+            { question: "What does {x: x*x for x in range(3)} produce?", options: [ "{0:0, 1:1, 2:4}", "[0,1,4]", "{1:1,2:4,3:9}", "{0,1,4}" ], answer: 0, explanation: "Each number becomes a key and its square becomes the corresponding value." }
+
+            ],
+
+        "Tuples - Basic Operations": [
+
+            { question: "Which symbol is commonly used to create a tuple?", options: [ "[]", "()", "{}", "<>" ], answer: 1, explanation: "Tuples are commonly created using parentheses." },
+
+            { question: "Which of the following is a tuple?", options: [ "[1, 2, 3]", "(1, 2, 3)", "{1, 2, 3}", "<1, 2, 3>" ], answer: 1, explanation: "Parentheses are commonly used for tuples." },
+
+            { question: "Are tuples mutable?", options: [ "Yes", "No", "Only numeric tuples", "Only empty tuples" ], answer: 1, explanation: "Tuples are immutable and cannot be modified after creation." },
+
+            { question: "Which operation is NOT allowed directly on a tuple?", options: [ "Indexing", "Iteration", "Changing an element", "Slicing" ], answer: 2, explanation: "Tuple elements cannot be changed because tuples are immutable." },
+
+            { question: "Which function returns the number of elements in a tuple?", options: [ "count()", "len()", "size()", "length()" ], answer: 1, explanation: "len() returns the total number of elements." },
+
+            { question: "Which method counts occurrences of a value in a tuple?", options: [ "len()", "count()", "index()", "find()" ], answer: 1, explanation: "count(value) returns how many times a value occurs." },
+
+            { question: "Which method returns the first index of a value in a tuple?", options: [ "find()", "search()", "index()", "position()" ], answer: 2, explanation: "index(value) returns the index of the first matching element." },
+
+            { question: "How is a single-element tuple commonly written?", options: [ "(5)", "(5,)", "[5]", "{5}" ], answer: 1, explanation: "A trailing comma distinguishes a one-element tuple from a normal parenthesized expression." },
+
+            { question: "What is type((5)) generally?", options: [ "tuple", "int", "list", "set" ], answer: 1, explanation: "(5) is simply the integer 5 enclosed in parentheses." },
+
+            { question: "What is type((5,))?", options: [ "int", "list", "tuple", "set" ], answer: 2, explanation: "The comma creates a single-element tuple." },
+
+            { question: "Which statement best describes tuple indexing?", options: [ "Tuples cannot be indexed", "Tuples support indexing like lists", "Only negative indexing is allowed", "Only strings can be indexed" ], answer: 1, explanation: "Tuples support indexing and slicing similarly to lists." },
+
+            { question: "Why are tuples often used?", options: [ "To store data that should not be modified", "To make all values mutable", "To avoid indexing", "To prevent iteration" ], answer: 0, explanation: "Tuples are useful when data should remain unchanged." },
+
+            { question: "Which data structure is generally more suitable for fixed records?", options: [ "Tuple", "Mutable list only", "Loop", "Exception" ], answer: 0, explanation: "Tuples are often used to represent fixed collections of values." },
+
+            { question: "Can a tuple contain duplicate values?", options: [ "No", "Yes", "Only strings", "Only integers" ], answer: 1, explanation: "Tuples can contain duplicate values." },
+
+            { question: "Can a tuple contain different data types?", options: [ "No", "Yes", "Only with inheritance", "Only empty tuples" ], answer: 1, explanation: "Python tuples can store objects of different data types." },
+
+            { question: "Which operation creates a slice of a tuple?", options: [ "tuple[1:3]", "tuple.append()", "tuple.add()", "tuple.update()" ], answer: 0, explanation: "Tuples support slicing using the same slice notation as lists." }
+
+            ],
+
+        "Sets - Basic Operations": [
+
+            { question: "Which symbol is generally used to create a non-empty set?", options: [ "[]", "()", "{}", "<>" ], answer: 2, explanation: "Curly braces can be used to create a non-empty set." },
+
+            { question: "What is the main property of a Python set?", options: [ "Elements are always indexed", "Duplicate elements are automatically removed", "Elements must be strings", "Elements are stored as key-value pairs" ], answer: 1, explanation: "Sets store unique elements, so duplicate values are removed." },
+
+            { question: "What is the result of {1, 2, 2, 3}?", options: [ "{1, 2, 2, 3}", "{1, 2, 3}", "[1, 2, 3]", "Error" ], answer: 1, explanation: "Duplicate values are not stored separately in a set." },
+
+            { question: "How is an empty set created?", options: [ "{}", "[]", "set()", "()" ], answer: 2, explanation: "{} creates an empty dictionary, while set() creates an empty set." },
+
+            { question: "Are Python sets ordered by index like lists?", options: [ "Yes", "No", "Only integer sets", "Only empty sets" ], answer: 1, explanation: "Sets do not provide normal positional indexing like lists." },
+
+            { question: "Which method adds one element to a set?", options: [ "append()", "add()", "insert()", "push()" ], answer: 1, explanation: "add(value) inserts one element into a set." },
+
+            { question: "Which method adds multiple elements from an iterable to a set?", options: [ "append()", "extend()", "update()", "insert()" ], answer: 2, explanation: "update() adds elements from another iterable to a set." },
+
+            { question: "Which method removes an element and raises an error if it does not exist?", options: [ "discard()", "remove()", "clear()", "pop()" ], answer: 1, explanation: "remove() raises an error if the requested element is absent." },
+
+            { question: "Which method removes an element without raising an error if it does not exist?", options: [ "remove()", "discard()", "delete()", "clear()" ], answer: 1, explanation: "discard() safely removes an element if present." },
+
+            { question: "What does set.pop() generally do?", options: [ "Removes the last indexed item", "Removes an arbitrary element", "Sorts the set", "Duplicates the set" ], answer: 1, explanation: "Sets are unordered, so pop() removes an arbitrary element." },
+
+            { question: "Which operation finds elements present in both sets?", options: [ "Union", "Intersection", "Difference", "Symmetric difference" ], answer: 1, explanation: "Intersection returns elements common to both sets." },
+
+            { question: "Which operator can represent set union?", options: [ "&", "|", "^", "%" ], answer: 1, explanation: "The | operator performs set union." },
+
+            { question: "Which operator can represent set intersection?", options: [ "|", "&", "^", "-" ], answer: 1, explanation: "The & operator performs set intersection." },
+
+            { question: "Which operation returns elements present in one set but not another?", options: [ "Union", "Intersection", "Difference", "Equality" ], answer: 2, explanation: "Set difference returns elements belonging to one set but not the other." },
+
+            { question: "What does symmetric difference return?", options: [ "Only common elements", "Elements present in exactly one of the sets", "All duplicate elements", "Only the first set" ], answer: 1, explanation: "Symmetric difference excludes common elements and keeps elements unique to either set." },
+
+            { question: "Which operation checks whether one set is contained within another?", options: [ "issubset()", "isinside()", "contains()", "subset()" ], answer: 0, explanation: "issubset() checks whether all elements of one set occur in another set." },
+
+            { question: "Which operation checks whether two sets have no common elements?", options: [ "isdisjoint()", "isempty()", "isunique()", "separate()" ], answer: 0, explanation: "isdisjoint() returns True when two sets have no common elements." },
+
+            { question: "Which data structure is most suitable for automatically removing duplicate values?", options: [ "List", "Tuple", "Set", "String" ], answer: 2, explanation: "Sets automatically store only unique elements." }
+
+            ],
+
+        "NumPy Array Arithmetic": [
+
+            { question: "Which library is commonly imported as np in Python for numerical computing?", options: ["Pandas", "NumPy", "Matplotlib", "SciPy"], answer: 1, explanation: "NumPy is conventionally imported using: import numpy as np." },
+
+            { question: "Which function is used to create a NumPy array from a Python list?", options: ["np.list()", "np.array()", "np.create()", "np.makeArray()"], answer: 1, explanation: "np.array() converts a Python list or sequence into a NumPy array." },
+
+            { question: "What is the result of np.array([1, 2, 3]) + 2?", options: ["[3, 4, 5]", "[1, 2, 3, 2]", "[2, 4, 6]", "Error"], answer: 0, explanation: "NumPy performs element-wise arithmetic, so 2 is added to every element." },
+
+            { question: "What is the result of np.array([1, 2, 3]) * 2?", options: ["[1, 4, 9]", "[2, 4, 6]", "[3, 4, 5]", "[1, 2, 3, 2]"], answer: 1, explanation: "Multiplication with a scalar is applied element-wise." },
+
+            { question: "What does the + operator do between two NumPy arrays of the same shape?", options: ["Concatenates arrays", "Adds corresponding elements", "Multiplies corresponding elements", "Always produces an error"], answer: 1, explanation: "The + operator performs element-wise addition in NumPy." },
+
+            { question: "What is the result of np.array([1, 2]) * np.array([3, 4])?", options: ["[3, 8]", "11", "[4, 6]", "Error"], answer: 0, explanation: "The * operator performs element-wise multiplication, producing [1×3, 2×4]." },
+
+            { question: "Which operator performs element-wise division in NumPy?", options: ["//", "/", "%", "**"], answer: 1, explanation: "The / operator performs element-wise division." },
+
+            { question: "What does np.array([2, 3, 4]) ** 2 produce?", options: ["[4, 9, 16]", "[4, 6, 8]", "[2, 9, 16]", "Error"], answer: 0, explanation: "Exponentiation is performed element-wise on every array element." },
+
+            { question: "Which function returns the sum of all elements in a NumPy array?", options: ["np.add()", "np.total()", "np.sum()", "np.plus()"], answer: 2, explanation: "np.sum() calculates the sum of array elements." },
+
+            { question: "What is np.mean(np.array([2, 4, 6]))?", options: ["3", "4", "6", "12"], answer: 1, explanation: "Mean = (2 + 4 + 6) / 3 = 4." },
+
+            { question: "Which function returns the largest value in a NumPy array?", options: ["np.large()", "np.max()", "np.high()", "np.maximumValue()"], answer: 1, explanation: "np.max() returns the maximum element." },
+
+            { question: "Which function returns the smallest value in a NumPy array?", options: ["np.min()", "np.small()", "np.low()", "np.minimumValue()"], answer: 0, explanation: "np.min() returns the minimum element." }
+
+            ],
+
+
+        "Reshaping Arrays": [
+
+            { question: "What does the shape attribute of a NumPy array represent?", options: ["Number of bytes", "Dimensions of the array", "Data type only", "Sum of elements"], answer: 1, explanation: "shape represents the size of the array along each dimension." },
+
+            { question: "What is the shape of np.array([[1,2,3],[4,5,6]])?", options: ["(6,)", "(2, 3)", "(3, 2)", "(1, 6)"], answer: 1, explanation: "The array has 2 rows and 3 columns." },
+
+            { question: "Which method is commonly used to change the shape of a NumPy array?", options: ["resizeOnly()", "reshape()", "shapeChange()", "transform()"], answer: 1, explanation: "reshape() changes the dimensions without changing the elements." },
+
+            { question: "Can an array of 12 elements be reshaped into shape (3, 4)?", options: ["Yes", "No", "Only if elements are integers", "Only in Python lists"], answer: 0, explanation: "3 × 4 = 12, so all elements fit exactly." },
+
+            { question: "Can an array of 10 elements be reshaped into shape (3, 3)?", options: ["Yes", "No", "Only with broadcasting", "Only if dtype is float"], answer: 1, explanation: "3 × 3 = 9, which does not equal 10." },
+
+            { question: "What does np.array([1,2,3,4]).reshape(2,2) produce?", options: ["[[1,2],[3,4]]", "[[1,2,3,4]]", "[[1],[2],[3],[4]]", "Error"], answer: 0, explanation: "The four elements are arranged row-wise into 2 rows and 2 columns." },
+
+            { question: "What does -1 mean in np.reshape()?", options: ["Delete an axis", "Automatically calculate that dimension", "Reverse the array", "Create negative values"], answer: 1, explanation: "NumPy automatically determines the dimension represented by -1." },
+
+            { question: "What is the result shape of an array with 12 elements after reshape(3, -1)?", options: ["(3, 3)", "(3, 4)", "(4, 3)", "(12,)"], answer: 1, explanation: "12 / 3 = 4, so NumPy calculates the second dimension as 4." },
+
+            { question: "Which method converts a multidimensional array into a one-dimensional array?", options: ["flatten()", "reshapeOnly()", "dimension()", "matrix()"], answer: 0, explanation: "flatten() returns a one-dimensional copy of the array." },
+
+            { question: "What does arr.ravel() generally do?", options: ["Deletes the array", "Flattens the array into one dimension", "Sorts the array", "Converts it to a dictionary"], answer: 1, explanation: "ravel() returns a flattened view of an array when possible." },
+
+            { question: "Which condition must be satisfied before reshaping an array?", options: ["New dimensions must contain the same total number of elements", "Number of rows must always increase", "Array must contain integers", "Array must be one-dimensional"], answer: 0, explanation: "The total number of elements must remain unchanged." },
+
+            { question: "What is the result of np.arange(6).reshape(2,3).shape?", options: ["(6,)", "(2,3)", "(3,2)", "(1,6)"], answer: 1, explanation: "The array is explicitly reshaped into 2 rows and 3 columns." }
+
+            ],
+
+
+        "NumPy Indexing and Slicing": [
+
+            { question: "What is the index of the first element of a NumPy array?", options: ["1", "0", "-1", "Depends on array size"], answer: 1, explanation: "Python and NumPy use zero-based indexing." },
+
+            { question: "What is arr[0] for arr = np.array([10,20,30])?", options: ["10", "20", "30", "0"], answer: 0, explanation: "Index 0 refers to the first element." },
+
+            { question: "What is arr[-1] for arr = np.array([10,20,30])?", options: ["10", "20", "30", "Error"], answer: 2, explanation: "Negative index -1 refers to the last element." },
+
+            { question: "What does arr[1:4] return?", options: ["Elements at indices 1,2,3", "Elements at indices 1,2,3,4", "Only index 4", "All elements"], answer: 0, explanation: "The ending index in Python slicing is excluded." },
+
+            { question: "For arr = np.array([0,1,2,3,4]), what is arr[:3]?", options: ["[0,1,2]", "[0,1,2,3]", "[1,2,3]", "[3,4]"], answer: 0, explanation: "Slicing from the beginning up to index 3 excludes index 3." },
+
+            { question: "For arr = np.array([0,1,2,3,4]), what is arr[::2]?", options: ["[0,1,2]", "[0,2,4]", "[1,3]", "[2,4]"], answer: 1, explanation: "The third slicing value is the step, so every second element is selected." },
+
+            { question: "How do you access the element in row 1 and column 2 of a 2D array using NumPy indexing?", options: ["arr[1][2]", "arr(1,2)", "arr{1,2}", "arr<1,2>"], answer: 0, explanation: "arr[1][2] accesses row index 1 followed by column index 2." },
+
+            { question: "Which syntax is also commonly used for row 1 and column 2?", options: ["arr[1,2]", "arr(1,2)", "arr{1,2}", "arr<1,2>"], answer: 0, explanation: "NumPy supports comma-separated indexing for multidimensional arrays." },
+
+            { question: "What does arr[:, 1] select in a 2D array?", options: ["All rows and column 1", "Row 1 and all columns", "Only first row", "Entire array"], answer: 0, explanation: ": means all rows, while 1 selects the second column." },
+
+            { question: "What does arr[1, :] select?", options: ["All rows", "Second row and all columns", "Second column", "First row only"], answer: 1, explanation: "Index 1 selects the second row and : selects all columns." },
+
+            { question: "What is boolean indexing used for in NumPy?", options: ["Selecting elements based on a condition", "Changing array shape", "Creating matrices only", "Sorting strings"], answer: 0, explanation: "Boolean indexing filters elements according to True or False conditions." },
+
+            { question: "What does arr[arr > 5] return?", options: ["Elements greater than 5", "Indexes greater than 5", "Boolean values only", "An error"], answer: 0, explanation: "The condition creates a boolean mask that selects values greater than 5." }
+
+            ],
+
+
+        "Vectors and Matrices": [
+
+            { question: "A one-dimensional NumPy array is commonly used to represent a?", options: ["Vector", "Database", "Dictionary", "File"], answer: 0, explanation: "A 1D NumPy array is commonly used as a vector." },
+
+            { question: "A two-dimensional NumPy array is commonly used to represent a?", options: ["Matrix", "String", "Set", "Function"], answer: 0, explanation: "A 2D array consists of rows and columns and can represent a matrix." },
+
+            { question: "What is the shape of a vector containing 5 elements?", options: ["(5,)", "(1,5,1)", "(5,5)", "(1,)"], answer: 0, explanation: "A standard one-dimensional NumPy vector has shape (5,)." },
+
+            { question: "What does np.dot(a, b) calculate for two one-dimensional arrays?", options: ["Dot product", "Array concatenation", "Element-wise division", "Array reshaping"], answer: 0, explanation: "np.dot() calculates the dot product for compatible vectors." },
+
+            { question: "Which operator performs matrix multiplication in modern NumPy syntax?", options: ["*", "@", "+", "//"], answer: 1, explanation: "The @ operator performs matrix multiplication." },
+
+            { question: "What does the * operator generally do between two NumPy matrices?", options: ["Matrix multiplication", "Element-wise multiplication", "Matrix addition", "Matrix transpose"], answer: 1, explanation: "The * operator performs element-wise multiplication." },
+
+            { question: "Which function creates an identity matrix?", options: ["np.identity()", "np.zeros()", "np.ones()", "np.matrixOnly()"], answer: 0, explanation: "np.identity(n) creates an n × n identity matrix." },
+
+            { question: "What is special about an identity matrix?", options: ["All elements are zero", "Diagonal elements are 1 and others are 0", "All elements are 1", "It has only one row"], answer: 1, explanation: "An identity matrix has 1s on the main diagonal and 0s elsewhere." },
+
+            { question: "Which attribute gives the number of dimensions of a NumPy array?", options: ["arr.ndim", "arr.dimension", "arr.size", "arr.count"], answer: 0, explanation: "ndim returns the number of array dimensions." },
+
+            { question: "Which attribute gives the total number of elements in an array?", options: ["arr.shape", "arr.size", "arr.ndim", "arr.lengthOnly"], answer: 1, explanation: "size returns the total number of elements." },
+
+            { question: "What does arr.T represent for a two-dimensional NumPy array?", options: ["Transpose", "Total sum", "Type", "Temporary array"], answer: 0, explanation: "The T attribute gives the transpose of a matrix." },
+
+            { question: "If A has shape (2,3), what is the shape of A.T?", options: ["(2,3)", "(3,2)", "(6,)", "(3,3)"], answer: 1, explanation: "Transpose swaps rows and columns." }
+
+            ],
+
+
+        "NumPy Broadcasting": [
+
+            { question: "What is broadcasting in NumPy?", options: ["Sending data over a network", "Performing operations on arrays with compatible shapes", "Sorting arrays", "Saving arrays to files"], answer: 1, explanation: "Broadcasting allows NumPy to perform operations between arrays of different but compatible shapes." },
+
+            { question: "Can a scalar be broadcast to every element of a NumPy array?", options: ["Yes", "No", "Only for 2D arrays", "Only for integer arrays"], answer: 0, explanation: "A scalar can be conceptually expanded to match every element of an array." },
+
+            { question: "What happens in np.array([1,2,3]) + 5?", options: ["5 is added to every element", "Only first element changes", "Arrays are concatenated", "Error"], answer: 0, explanation: "The scalar 5 is broadcast across the array." },
+
+            { question: "Which pair of shapes is broadcast-compatible?", options: ["(3,1) and (1,4)", "(3,2) and (4,2)", "(2,3) and (4,5)", "(2,2) and (3,3)"], answer: 0, explanation: "Dimensions of size 1 can expand, allowing (3,1) and (1,4) to produce shape (3,4)." },
+
+            { question: "What is the result shape when arrays of shape (3,1) and (1,4) are combined?", options: ["(3,4)", "(1,1)", "(4,3)", "(3,1)"], answer: 0, explanation: "Broadcasting expands the dimensions of size 1 to produce a 3 × 4 result." },
+
+            { question: "Are arrays with shapes (2,3) and (3,) compatible for broadcasting?", options: ["Yes", "No", "Only with reshape()", "Only if values are equal"], answer: 0, explanation: "The shape (3,) matches the last dimension of (2,3), so it can be broadcast across rows." },
+
+            { question: "What is the main advantage of broadcasting?", options: ["Avoids unnecessary loops", "Deletes duplicate values", "Changes data type automatically", "Creates files"], answer: 0, explanation: "Broadcasting enables efficient vectorized operations without explicit Python loops." },
+
+            { question: "What does vectorized computation mean in NumPy?", options: ["Performing operations on entire arrays at once", "Drawing vectors only", "Creating dictionaries", "Writing loops manually"], answer: 0, explanation: "Vectorization performs operations on many elements simultaneously using optimized array operations." },
+
+            { question: "Are shapes (2,3) and (2,1) compatible for broadcasting?", options: ["Yes", "No", "Only after flatten()", "Only for matrices of zeros"], answer: 0, explanation: "The dimension 1 can expand to match 3, so broadcasting is possible." },
+
+            { question: "What is the result of np.array([[1],[2]]) + np.array([10,20,30])?", options: ["[[11,21,31],[12,22,32]]", "[[11],[22]]", "[10,20,30]", "Error"], answer: 0, explanation: "The first array has shape (2,1) and the second has shape (3,), producing a broadcasted shape of (2,3)." },
+
+            { question: "Broadcasting mainly depends on?", options: ["Compatible array shapes", "Array variable names", "Only data types", "File size"], answer: 0, explanation: "Broadcasting rules compare array dimensions and require them to be equal or one of them to be 1." },
+
+            { question: "Why is NumPy usually faster than manual Python loops for numerical operations?", options: ["It uses optimized vectorized operations", "It never uses memory", "It cannot process large arrays", "It converts everything into strings"], answer: 0, explanation: "NumPy performs many numerical operations using optimized low-level implementations." }
+
+            ]
+    },
+
+    
+
 },
 
 semester4: {
