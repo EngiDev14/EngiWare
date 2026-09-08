@@ -43,103 +43,127 @@ onclick="toggleTheme()">
 
 // ================= Firebase =================
 
-import { db }
-from "../js/firebase.js";
+import { db } from "../js/firebase.js";
 
 import {
+    collection,
+    getDocs
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-collection,
-getDocs
-
-}
-
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 // ================= Load Lectures =================
 
 (async () => {
 
-const branch =
-localStorage.getItem("branch");
+    const container = document.getElementById("lectureContainer");
 
-const semester =
-localStorage.getItem("semester");
+    try {
 
-const subject =
-localStorage.getItem("subject");
+        const branch = localStorage.getItem("branch");
+        const semester = localStorage.getItem("semester");
+        const subject = localStorage.getItem("subject");
 
-const container =
-document.getElementById("lectureContainer");
+        console.log("Branch:", branch);
+        console.log("Semester:", semester);
+        console.log("Subject:", subject);
 
-if(!branch || !semester || !subject){
+        if (!branch || !semester || !subject) {
 
-container.innerHTML = `
+            container.innerHTML = `
+                <div class="resource-card">
+                    Invalid Selection ❌
+                </div>
+            `;
 
-<div class="resource-card">
+            return;
+        }
 
-Invalid Selection ❌
 
-</div>
+        container.innerHTML = `
+            <div class="resource-card">
+                Loading lectures... ⏳
+            </div>
+        `;
 
-`;
 
-return;
+        const snapshot = await getDocs(collection(db, "lectures"));
 
-}
+        console.log("Total lectures:", snapshot.size);
 
-container.innerHTML = "";
+        let found = false;
 
-const snapshot =
-await getDocs(collection(db,"lectures"));
+        container.innerHTML = "";
 
-let found = false;
 
-snapshot.forEach((doc)=>{
+        snapshot.forEach((doc) => {
 
-const lecture = doc.data();
+            const lecture = doc.data();
 
-if(
+            console.log("Lecture data:", lecture);
 
-lecture.branch.toLowerCase() === branch.toLowerCase() &&
 
-lecture.semester.toLowerCase() === semester.toLowerCase() &&
+            if (
 
-lecture.subject.toLowerCase() === subject.toLowerCase()
+                String(lecture.branch).toLowerCase() ===
+                String(branch).toLowerCase()
 
-){
+                &&
 
-found = true;
+                String(lecture.semester).toLowerCase() ===
+                String(semester).toLowerCase()
 
-container.innerHTML += `
+                &&
 
-<a
-href="${lecture.lectureUrl}"
-target="_blank"
-class="resource-card">
+                String(lecture.subject).toLowerCase() ===
+                String(subject).toLowerCase()
 
-🎥 ${lecture.title}
+            ) {
 
-</a>
+                found = true;
 
-`;
+                container.innerHTML += `
 
-}
+                    <a
+                        href="${lecture.lectureUrl}"
+                        target="_blank"
+                        class="resource-card">
 
-});
+                        🎥 ${lecture.title}
 
-if(!found){
+                    </a>
 
-container.innerHTML = `
+                `;
 
-<div class="resource-card">
+            }
 
-Lectures Coming Soon 🚀
+        });
 
-</div>
 
-`;
+        if (!found) {
 
-}
+            container.innerHTML = `
+                <div class="resource-card">
+                    Lectures Coming Soon 🚀
+                </div>
+            `;
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error("Lecture loading error:", error);
+
+        container.innerHTML = `
+            <div class="resource-card">
+                Error loading lectures ❌
+                <br><br>
+                Check browser console (F12).
+            </div>
+        `;
+
+    }
 
 })();
 
